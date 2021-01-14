@@ -1,0 +1,3 @@
+djangocms-installer
+django-parler
+Pillow
