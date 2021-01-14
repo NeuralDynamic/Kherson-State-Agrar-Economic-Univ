@@ -182,6 +182,7 @@ INSTALLED_APPS = [
     'library',
     'gallery',
     'news',
+    'university'
 ]
 
 LANGUAGES = (
