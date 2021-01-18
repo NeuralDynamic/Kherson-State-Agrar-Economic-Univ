@@ -23,6 +23,7 @@ class Gallery(Model):
     class Meta(object): 
         verbose_name_plural="Galleries"
         verbose_name="Gallery"
+    #endregion
 
     #region         -----Internal Methods-----
     def _images(self)->Html:

@@ -129,3 +129,6 @@ dmypy.json
 
 # Layouts ignore
 layouts/node_modules
+
+#Database
+website/project.db

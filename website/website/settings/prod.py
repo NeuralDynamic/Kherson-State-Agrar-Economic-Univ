@@ -10,10 +10,10 @@ ALLOWED_HOSTS = ['127.0.0.1']
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'PASSWORD': os.environ['DATABASE_PASSWORD'],
+        'ENGINE': 'django.db.backends.sqlite3',
         'HOST': os.environ['DATABASE_HOST'],
         'NAME': os.environ['DATABASE_NAME'],
-        'PASSWORD': os.environ['DATABASE_PASSWORD'],
         'PORT': os.environ['DATABASE_PORT'],
         'USER': os.environ['DATABASE_USER'],
     }
