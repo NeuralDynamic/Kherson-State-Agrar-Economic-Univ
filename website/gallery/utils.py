@@ -22,8 +22,8 @@ def render_related_images(images: List[str])->Html:
     for image in images]
     return format_html("\n".join(html))
 
-def reverse_related_url(model: str, 
-id: int, title: str)->Html:
+def reverse_related_url(model: str, id: int, 
+title: str)->Html:
     """
     Displays the title of model and
     link to the CRUD admin form\n
