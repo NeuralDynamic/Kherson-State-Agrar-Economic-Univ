@@ -13,7 +13,13 @@ urlpatterns = [
 ]
 
 
-urlpatterns += i18n_patterns(path("admin/", admin.site.urls), path("", include("cms.urls")))
+urlpatterns += i18n_patterns(
+
+    path('jet/', include('jet.urls', 'jet')),
+    path("admin/", admin.site.urls), 
+    
+    path("", include("cms.urls"))
+)
 
 # This is only needed when using runserver.
 if settings.DEBUG:
