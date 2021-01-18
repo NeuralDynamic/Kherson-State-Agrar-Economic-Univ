@@ -1,3 +1,4 @@
 djangocms-installer
 django-parler
 Pillow
+psycopg2

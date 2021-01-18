@@ -14,12 +14,10 @@ DATABASES = {
         'HOST': os.environ['DATABASE_HOST'],
         'NAME': os.environ['DATABASE_NAME'],
         'PASSWORD': os.environ['DATABASE_PASSWORD'],
-        'PORT': os.environ['DATABASE_PORT']
-        'USER': os.environ['DATABASE_USER']
+        'PORT': os.environ['DATABASE_PORT'],
+        'USER': os.environ['DATABASE_USER'],
     }
 }
-
-print(DATABASES['default'])
 
 
 print(">>> START PROJECT WITH PROD SETTINGS <<<")
