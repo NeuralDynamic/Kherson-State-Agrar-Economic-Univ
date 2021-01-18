@@ -29,6 +29,8 @@ djangocms-video==3.0.0
 easy-thumbnails==2.7.1
 html5lib==1.1
 Pillow==8.1.0
+psycopg2==2.8.6
+python-dotenv==0.15.0
 pytz==2020.5
 rcssmin==1.0.6
 rjsmin==1.1.0
