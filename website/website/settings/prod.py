@@ -10,14 +10,16 @@ ALLOWED_HOSTS = ['127.0.0.1']
 
 DATABASES = {
     'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
-        'PORT': '',
-        'USER': ''
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': os.environ['DATABASE_HOST'],
+        'NAME': os.environ['DATABASE_NAME'],
+        'PASSWORD': os.environ['DATABASE_PASSWORD'],
+        'PORT': os.environ['DATABASE_PORT']
+        'USER': os.environ['DATABASE_USER']
     }
 }
+
+print(DATABASES['default'])
+
 
 print(">>> START PROJECT WITH PROD SETTINGS <<<")
