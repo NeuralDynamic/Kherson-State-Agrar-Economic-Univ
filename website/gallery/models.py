@@ -63,13 +63,15 @@ class Image(Model):
         return reverse_related_url(
         title=self.gallery.title,
         id=self.gallery.pk, 
-        model="gallery")
+        model="gallery",
+        app="gallery")
 
     def _title(self)->Html:
         """@return editing link"""
         return reverse_related_url(
         id=self.pk, model="image",
-        title=self.image.name)
+        title=self.image.name,
+        app="gallery")
 
     def __str__(self)->str:
         """@return image url"""

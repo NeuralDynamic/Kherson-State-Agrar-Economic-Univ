@@ -22,7 +22,7 @@ def render_related_images(images: List[str])->Html:
     return format_html(html)
 
 def reverse_related_url(model: str, id: int, 
-title: str)->Html:
+title: str, app: str)->Html:
     """
     Displays link to the CRUD admin form\n
     :param title: title to show\n
@@ -30,8 +30,7 @@ title: str)->Html:
     :param model: model name\n
     @return editing link
     """
-    url=f"admin:gallery_{model}_change"
+    url=f"admin:{app}_{model}_change"
     link=reverse(viewname=url, args=[id])
     html=f"<a href='{link}'>{title}</a>"
     return format_html(html)
-#endregion

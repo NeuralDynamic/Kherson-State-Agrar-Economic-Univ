@@ -1,6 +1,6 @@
 #region				-----External Imports-----
 from django.db.models import (Model, CharField, TextField, 
-SET_NULL, ForeignKey, DateTimeField)
+OneToOneField, DateTimeField, CASCADE, ForeignKey)
 from django.utils import timezone
 from typing import TypeVar
 #endregion
@@ -28,11 +28,23 @@ class NewsFeed(Model):
     #endregion
 
     #region         -----Internal Methods-----
+    def _papers(self)->Html:
+        """@return related images"""
+        return render_related_papers(
+        papers=self.paper_set.all()[:5])
+
+    def __str__(self)->str:
+        """@return gallery title"""
+        return self._title()
+
+    def _title(self)->str:
+        """@return gallery title"""
+        return self.title
     #endregion
 
 class Paper(Model):
     #region           -----Information-----
-    story=TextField(max_length=500, blank=True, null=True)
+    story=TextField(max_length=1500, blank=False, default="")
     title=CharField(max_length=100, blank=False)
     #endregion
 
@@ -41,8 +53,10 @@ class Paper(Model):
     #endregion
 
     #region            -----Relation-----
-    gallery=ForeignKey(Gallery, blank=True, 
-    null=True, on_delete=SET_NULL)
+    news_feed=ForeignKey("NewsFeed", blank=False,
+    null=False, on_delete=CASCADE, default=1)
+    gallery=OneToOneField(Gallery, blank=False, 
+    null=True, on_delete=CASCADE, default=1)
     #endregion
 
     #region            -----Metadata----- 
@@ -52,4 +66,30 @@ class Paper(Model):
     #endregion
 
     #region         -----Internal Methods-----
+    def _news_feed(self)->Html:
+        """@return gallery link"""
+        return reverse_related_url(
+        title=self.news_feed.title,
+        id=self.news_feed.pk, 
+        model="newsfeed",
+        app="news")
+
+    def _gallery(self)->Html:
+        """@return gallery link"""
+        return reverse_related_url(
+        title=self.gallery.title,
+        id=self.gallery.pk, 
+        model="gallery",
+        app="gallery")
+
+    def _title(self)->Html:
+        """@return editing link"""
+        return reverse_related_url(
+        id=self.pk, model="paper",
+        title=self.title,
+        app="news")
+
+    def __str__(self)->str:
+        """@return image url"""
+        return self.title
     #endregion

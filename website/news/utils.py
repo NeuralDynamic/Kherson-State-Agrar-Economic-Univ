@@ -16,23 +16,20 @@ def render_related_papers(papers: List[str])->Html:
     :param papers: list of papers\n
     @return rendered HTML page
     """
-    html=[f"""<img src='{image}' style='
-    height: 70px; width: 70px'; 
-    display: inline-block;">"""
-    for image in images]
-    return format_html("\n".join(html))
+    html="<ul>"+"\n".join([f"<li>{paper}</li>"
+    for paper in papers])+"</ul>"
+    return format_html(html)
 
 def reverse_related_url(model: str, id: int, 
-title: str)->Html:
+title: str, app: str)->Html:
     """
-    Displays the title of model and
-    link to the CRUD admin form\n
+    Displays link to the CRUD admin form\n
     :param title: title to show\n
     :param id: id of instance\n
     :param model: model name\n
     @return editing link
     """
-    url=f"admin:news_{model}_change"
+    url=f"admin:{app}_{model}_change"
     link=reverse(viewname=url, args=[id])
     html=f"<a href='{link}'>{title}</a>"
     return format_html(html)
