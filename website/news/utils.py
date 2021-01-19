@@ -9,28 +9,30 @@ Html=TypeVar("Html", str, bytes)
 #endregion
 
 #region             -----Render Functions-----
-def render_related_images(images: List[str])->Html:
+def render_related_papers(papers: List[str])->Html:
     """
     Generates and beautifies HTML code
-    for displaying related images\n
-    :param images: list of images\n
+    for displaying related papers\n
+    :param papers: list of papers\n
     @return rendered HTML page
     """
-    html="\n".join([f"""<img src='{image}' 
-    style='display: inline-block; height: 70px; 
-    width: 70px;'>""" for image in images])
-    return format_html(html)
+    html=[f"""<img src='{image}' style='
+    height: 70px; width: 70px'; 
+    display: inline-block;">"""
+    for image in images]
+    return format_html("\n".join(html))
 
 def reverse_related_url(model: str, id: int, 
 title: str)->Html:
     """
-    Displays link to the CRUD admin form\n
+    Displays the title of model and
+    link to the CRUD admin form\n
     :param title: title to show\n
     :param id: id of instance\n
     :param model: model name\n
     @return editing link
     """
-    url=f"admin:gallery_{model}_change"
+    url=f"admin:news_{model}_change"
     link=reverse(viewname=url, args=[id])
     html=f"<a href='{link}'>{title}</a>"
     return format_html(html)

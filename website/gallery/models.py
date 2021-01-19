@@ -15,8 +15,8 @@ Html=TypeVar("Html", str, bytes)
 
 class Gallery(Model):
     #region           -----Information-----
-    description=TextField(max_length=500, blank=True, null=True)
-    title=CharField(max_length=100, blank=False)
+    description=TextField(max_length=1500, blank=True, null=True)
+    title=CharField(max_length=100, blank=False, null=False)
     #endregion
 
     #region            -----Metadata-----
@@ -30,11 +30,11 @@ class Gallery(Model):
         """@return related images"""
         return render_related_images(
         images=self.image_set.all()[:5])
-    
+
     def __str__(self)->str:
         """@return gallery title"""
         return self._title()
-
+        
     def _title(self)->str:
         """@return gallery title"""
         return self.title
@@ -42,19 +42,19 @@ class Gallery(Model):
 
 class Image(Model): 
     #region           -----Information-----
-    description=TextField(max_length=500, blank=True, null=True)
+    description=TextField(max_length=1500, blank=True, null=True)
     image=ImageField(upload_to="images", blank=False)
+    #endregion
+
+    #region            -----Relation-----
+    gallery=ForeignKey("Gallery", blank=False, 
+    null=False, on_delete=CASCADE, default=1)
     #endregion
 
     #region            -----Metadata----- 
     class Meta(object):
         verbose_name_plural="Images"
         verbose_name="Image"
-    #endregion
-
-    #region            -----Relation-----
-    gallery=ForeignKey("Gallery", blank=False, null=False,
-    on_delete=CASCADE, default=1)
     #endregion
 
     #region         -----Internal Methods-----
