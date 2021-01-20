@@ -1,4 +1,5 @@
 #region				-----External Imports-----
+from django.apps import AppConfig
 #endregion
 
 #region				-----Internal Imports-----
@@ -7,8 +8,12 @@
 #region				   -----Type Hints-----
 #endregion
 
-from django.apps import AppConfig
-
-
 class LibraryConfig(AppConfig):
     name = 'library'
+
+    def ready(self)->None:
+        """
+        Connects app signals
+        @return None
+        """
+        import library.signals

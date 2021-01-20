@@ -134,4 +134,4 @@ layouts/node_modules
 website/project.db
 
 #media
-website/media/images
+website/media/

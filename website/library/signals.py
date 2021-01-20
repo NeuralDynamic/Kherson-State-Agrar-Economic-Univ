@@ -4,16 +4,15 @@ from django.dispatch import receiver
 #endregion
 
 #region             -----Internal Imports-----
-from .models import Paper
+from .models import Book
 #endregion
 
-@receiver(post_delete, sender=Paper)
-def delete_on_delete(instance: Paper,
+@receiver(post_delete, sender=Book)
+def delete_on_delete(instance: Book,
 **kwargs)->None:
     """
-    Deletes related gallery of paper\n
-    :param instance: paper instance\n
+    Deletes related cover of book\n
+    :param instance: book instance\n
     @return None
     """
-    (instance.gallery.delete() if
-    instance.gallery else None)
+    instance.cover.delete(save=False)

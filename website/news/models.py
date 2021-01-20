@@ -1,6 +1,7 @@
 #region				-----External Imports-----
 from django.db.models import (Model, CharField, TextField, 
-OneToOneField, DateTimeField, CASCADE, ForeignKey)
+OneToOneField, DateTimeField, CASCADE, SET_NULL, 
+ForeignKey)
 from django.utils import timezone
 from typing import TypeVar
 #endregion
@@ -29,16 +30,16 @@ class NewsFeed(Model):
 
     #region         -----Internal Methods-----
     def _papers(self)->Html:
-        """@return related images"""
+        """@return related papers"""
         return render_related_papers(
         papers=self.paper_set.all()[:5])
 
     def __str__(self)->str:
-        """@return gallery title"""
+        """@return feed title"""
         return self._title()
 
     def _title(self)->str:
-        """@return gallery title"""
+        """@return feed title"""
         return self.title
     #endregion
 
@@ -55,8 +56,8 @@ class Paper(Model):
     #region            -----Relation-----
     news_feed=ForeignKey("NewsFeed", blank=False,
     null=False, on_delete=CASCADE, default=1)
-    gallery=OneToOneField(Gallery, blank=False, 
-    null=True, on_delete=CASCADE, default=1)
+    gallery=OneToOneField(Gallery, blank=True, 
+    null=True, on_delete=SET_NULL)
     #endregion
 
     #region            -----Metadata----- 
@@ -76,11 +77,12 @@ class Paper(Model):
 
     def _gallery(self)->Html:
         """@return gallery link"""
-        return reverse_related_url(
-        title=self.gallery.title,
-        id=self.gallery.pk, 
-        model="gallery",
-        app="gallery")
+        if self.gallery:
+            return reverse_related_url(
+            title=self.gallery.title,
+            id=self.gallery.pk, 
+            model="gallery",
+            app="gallery")
 
     def _title(self)->Html:
         """@return editing link"""

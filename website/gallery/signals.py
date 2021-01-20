@@ -18,7 +18,7 @@ def delete_on_change(instance: Image,
     """
     (Image.objects.filter(pk=instance.pk).
     first().image.delete(save=False) if
-    instance.pk else "Do nothing")
+    instance.pk else None)
 
 @receiver(post_delete, sender=Image)
 def delete_on_delete(instance: Image,
