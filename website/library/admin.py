@@ -11,10 +11,10 @@ from .models import Library, Book
 class LibraryAdmin(ModelAdmin):
     fields=["title", "description", "_books"]
     readonly_fields=["_books"]
-    list_display=["_title"]
+    list_display=["__str__"]
     
 class BookAdmin(ModelAdmin):
-    list_display=["_title", "_library"]
+    list_display=["__str__", "_library"]
     fields=["title", "description", 
     "authors", "cover", "library"]
 #endregion

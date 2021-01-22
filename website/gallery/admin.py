@@ -11,11 +11,11 @@ from .models import Gallery, Image
 class GalleryAdmin(ModelAdmin):
     fields=["title", "description", "_images"]
     readonly_fields=["_images"]
-    list_display=["_title"]
+    list_display=["__str__"]
 
 class ImageAdmin(ModelAdmin):
-    list_display=["_title", "_url", "_gallery"]
     fields=["image", "gallery", "description"]
+    list_display=["_title", "_gallery"]
 #endregion
 
 #region               -----Page Record-----

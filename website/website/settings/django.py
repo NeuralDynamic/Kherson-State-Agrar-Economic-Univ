@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'news',
     'university',
     'compressor',
+    'multi_email_field',
 ]
 
 MIDDLEWARE = [

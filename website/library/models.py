@@ -33,10 +33,6 @@ class Library(Model):
 
     def __str__(self)->str:
         """@return library title"""
-        return self._title()
-
-    def _title(self)->str:
-        """@return library title"""
         return self.title
     #endregion
 
@@ -69,10 +65,6 @@ class Book(Model):
         app="library")
 
     def __str__(self)->str:
-        """@return book title"""
-        return self._title()
-
-    def _title(self)->str:
         """@return book title"""
         return self.title
     #endregion

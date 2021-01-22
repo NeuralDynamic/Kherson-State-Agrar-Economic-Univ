@@ -2,3 +2,4 @@ djangocms-installer
 django-parler
 Pillow
 psycopg2
+django-multi-email-field

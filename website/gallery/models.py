@@ -33,10 +33,6 @@ class Gallery(Model):
 
     def __str__(self)->str:
         """@return gallery title"""
-        return self._title()
-        
-    def _title(self)->str:
-        """@return gallery title"""
         return self.title
     #endregion
 
@@ -74,10 +70,6 @@ class Image(Model):
         app="gallery")
 
     def __str__(self)->str:
-        """@return image url"""
-        return self._url()
-
-    def _url(self)->str:
         """@return image url"""
         return self.image.url
     #endregion

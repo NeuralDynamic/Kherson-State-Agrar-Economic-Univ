@@ -1,14 +1,13 @@
 #region				-----External Imports-----
-#endregion
-
-#region				-----Internal Imports-----
-#endregion
-
-#region				   -----Type Hints-----
-#endregion
-
 from django.apps import AppConfig
-
+#endregion
 
 class UniversityConfig(AppConfig):
     name = 'university'
+
+    def ready(self)->None:
+        """
+        Connects app signals
+        @return None
+        """
+        import university.signals

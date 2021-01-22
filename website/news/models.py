@@ -36,10 +36,6 @@ class NewsFeed(Model):
 
     def __str__(self)->str:
         """@return feed title"""
-        return self._title()
-
-    def _title(self)->str:
-        """@return feed title"""
         return self.title
     #endregion
 
@@ -83,13 +79,6 @@ class Paper(Model):
             id=self.gallery.pk, 
             model="gallery",
             app="gallery")
-
-    def _title(self)->Html:
-        """@return editing link"""
-        return reverse_related_url(
-        id=self.pk, model="paper",
-        title=self.title,
-        app="news")
 
     def __str__(self)->str:
         """@return image url"""

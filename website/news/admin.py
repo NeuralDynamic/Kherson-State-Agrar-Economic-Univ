@@ -11,11 +11,11 @@ from .models import NewsFeed, Paper
 class NewsFeedAdmin(ModelAdmin):
     fields=["title", "description", "_papers"]
     readonly_fields=["_papers"]
-    list_display=["_title"]
+    list_display=["__str__"]
     
 class PaperAdmin(ModelAdmin):
+    list_display=["__str__", "_news_feed", "_gallery"]
     fields=["title", "story", "news_feed", "gallery"]
-    list_display=["_title", "_news_feed", "_gallery"]
 #endregion
 
 #region               -----Page Record-----
