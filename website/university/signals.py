@@ -7,7 +7,6 @@ from django.dispatch import receiver
 from .models import (Staff, Faculty, Cathedra)
 #endregion
 
-
 #region               -----Subdivisions-----
 @receiver(post_delete, sender=Cathedra)
 @receiver(post_delete, sender=Faculty)
@@ -18,6 +17,7 @@ def delete_on_delete(instance: object,
     :param instance: object instance\n
     @return None
     """
+    instance.emblem.delete(save=False)
     (instance.gallery.delete() if
     instance.gallery else None)
 #endregion
@@ -31,6 +31,7 @@ def delete_on_delete(instance: Staff,
     :param instance: staff instance\n
     @return None
     """
+    instance.photo.delete(save=False)
     (instance.library.delete() if
     instance.library else None)
 #endregion

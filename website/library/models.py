@@ -1,12 +1,11 @@
 #region				-----External Imports-----
 from django.db.models import (Model, TextField, CharField, 
-ImageField, ForeignKey, CASCADE)
+ImageField, ManyToManyField, CASCADE)
 from typing import TypeVar
 #endregion
 
 #region				-----Internal Imports-----
-from .utils import (render_related_books,
-reverse_related_url)
+from .utils import (render_related_books)
 #endregion
 
 #region				   -----Type Hints-----
@@ -45,8 +44,7 @@ class Book(Model):
     #endregion
 
     #region            -----Relation-----
-    library=ForeignKey("Library", blank=False,
-    null=False, on_delete=CASCADE, default=1)
+    library=ManyToManyField("Library")
     #endregion
 
     #region            -----Metadata----- 
@@ -56,14 +54,6 @@ class Book(Model):
     #endregion
 
     #region         -----Internal Methods-----
-    def _library(self)->Html:
-        """@return libraty link"""
-        return reverse_related_url(
-        title=self.library.title,
-        id=self.library.pk, 
-        model="library",
-        app="library")
-
     def __str__(self)->str:
         """@return book title"""
         return self.title

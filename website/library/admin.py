@@ -14,9 +14,9 @@ class LibraryAdmin(ModelAdmin):
     list_display=["__str__"]
     
 class BookAdmin(ModelAdmin):
-    list_display=["__str__", "_library"]
     fields=["title", "description", 
     "authors", "cover", "library"]
+    list_display=["__str__"]
 #endregion
 
 #region               -----Page Record-----

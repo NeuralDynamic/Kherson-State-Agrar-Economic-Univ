@@ -25,8 +25,8 @@ class FacultyAdmin(ModelAdmin):
 
 class StaffAdmin(ModelAdmin):
     fields=["photo", "first_name", "second_name", 
-    "third_name", "phone", "rank", "library", 
-    "description"]
+    "third_name", "phone", "emails", "rank",
+    "library", "description"]
     list_display=["__str__", "phone", "rank"]
 #endregion
 

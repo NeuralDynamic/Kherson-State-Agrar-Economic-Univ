@@ -19,18 +19,4 @@ def render_related_books(books: List[str])->Html:
     html="<ul>"+"\n".join([f"<li>{book}</li>"
     for book in books])+"</ul>"
     return format_html(html)
-
-def reverse_related_url(model: str, id: int, 
-title: str, app: str)->Html:
-    """
-    Displays link to the CRUD admin form\n
-    :param title: title to show\n
-    :param id: id of instance\n
-    :param model: model name\n
-    @return editing link
-    """
-    url=f"admin:{app}_{model}_change"
-    link=reverse(viewname=url, args=[id])
-    html=f"<a href='{link}'>{title}</a>"
-    return format_html(html)
 #endregion

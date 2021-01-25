@@ -2,16 +2,13 @@
 from django.db.models import (Model, URLField, OneToOneField,
 CASCADE, CharField, ForeignKey, SET_NULL, ImageField, 
 TextField, DateTimeField)
-from multi_email_field.forms import MultiEmailField
 from django.utils import timezone
+from multi_email_field.fields import MultiEmailField
 #endregion
 
 #region				-----Internal Imports-----
 from gallery.models import Gallery
 from library.models import Library
-#endregion
-
-#region				   -----Type Hints-----
 #endregion
 
 #region             -----Connecting Table-----
