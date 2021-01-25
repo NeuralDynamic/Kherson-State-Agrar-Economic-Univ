@@ -1,0 +1,12 @@
+.footer{
+    display: block;
+    margin-top: auto;
+    width: calc(100% - 80px);
+    max-width: 1440px;
+    margin: 10px auto;
+}
+
+.footer__block{
+    width: 100%;
+    border-bottom: 2px solid #DADADA;
+}

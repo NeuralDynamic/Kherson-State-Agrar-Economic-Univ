@@ -137,8 +137,8 @@ html {
  * Address `outline` inconsistency between Chrome and other browsers.
  */
 
-a:focus {
-    outline: thin dotted;
+ :focus {
+    outline: none;
 }
 
 /**
