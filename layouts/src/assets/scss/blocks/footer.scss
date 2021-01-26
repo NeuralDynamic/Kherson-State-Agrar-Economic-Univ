@@ -4,9 +4,111 @@
     width: calc(100% - 80px);
     max-width: 1440px;
     margin: 10px auto;
+
+    .social-links {
+        padding: 10px;
+
+        ul{
+            width: 100%;
+            display: flex;
+        }
+    }
+
+    .contact-data{
+        padding: 10px;
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 20px;
+
+        a{
+            color: rgba(0, 0, 0, 0.6);
+        }
+    }
+
+    .contact-me-form{
+        display: block;
+        padding-bottom: 20px;
+
+        input,
+        textarea{
+            width: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            margin-bottom: 10px;
+            border-bottom: 5px solid $white;
+            font-size: 18px;
+            filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.05));
+            padding: 15px;
+        }
+
+        input::placeholder,
+        textarea::placeholder{
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        textarea{
+            min-height: 150px;
+            max-height: 250px; 
+        }
+
+        button{
+            width: 100%;
+            padding: 13px 121px;
+            background: linear-gradient(45.33deg, rgba(33, 221, 202, 0.5) 0%, #4CEB80 100%);
+            color: $white;
+            font-size: 22px;
+        }
+    }
+    
+    .internal-links{
+        .internal-links__header{
+            font-size: 20px;
+            color: rgba(0, 0, 0, 0.6);
+            border-bottom: 2px solid $white;
+        }
+
+        .internal-links__body{
+            padding: 10px;
+
+            a{
+                font-size: 18px;
+                text-decoration: underline;
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    }
 }
 
 .footer__block{
+    display: flex;
     width: 100%;
     border-bottom: 2px solid #DADADA;
+}
+
+.social-links__link{
+    margin-right: 25px;
+    height: 40px;
+    width: 40px;
+
+    a{
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+
+    img{
+        height: 130%;
+        width: 130%;
+    }
+
+}
+
+.contact-data__contacts{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__copyright{
+    color: #979797;
+    padding: 10px 0;
 }

@@ -3,8 +3,9 @@
     border: 3px solid #FFFFFF;
     box-sizing: border-box;
     border-radius: 20px;
-    height: 100%;
+    min-height: calc(100vh - 60px);
     width: calc(100% - 80px);
     max-width: 1440px;
     margin: 0 auto;
+    margin-bottom: 10px;
 }

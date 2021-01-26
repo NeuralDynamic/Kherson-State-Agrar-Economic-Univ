@@ -132,8 +132,8 @@ html {
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
  */
-a:focus {
-    outline: thin dotted;
+:focus {
+    outline: none;
 }
 
 /**
@@ -369,10 +369,18 @@ textarea {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',  'Helvetica Neue', sans-serif;
     font-size: 16px;
     color: #000000;
     overflow-y: auto;
+}
+
+div {
+    display: block;
+}
+
+input, textarea {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',  'Helvetica Neue', sans-serif;
 }
 
 .d-flex {
@@ -411,4 +419,232 @@ body {
 
 .bold {
     font-weight: 700;
+}
+
+.wrapper {
+    height: 100%;
+    width: auto;
+    display: block;
+    position: relative;
+    padding: 2% 30px;
+}
+
+.row {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.column {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: block;
+    margin: 0 15px;
+}
+
+section {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: block;
+    z-index: 9;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+a.phone-link {
+    line-height: 25px;
+    padding: 5px 0 5px 30px;
+    background-image: url(/assets/images/svg/phone.svg);
+    background-position: 2px 10px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+
+a.email-link {
+    line-height: 25px;
+    padding: 5px 0 5px 30px;
+    background-image: url(/assets/images/svg/email.svg);
+    background-position: 2px 10px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+
+.page {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(161, 255, 206, 0.69) 0%, rgba(250, 255, 209, 0.5) 100%);
+    min-height: 100vh;
+    padding-top: calc(60px + 10px);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    left: 0;
+    background: white;
+    text-align: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.main {
+    background: linear-gradient(174.61deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.6) 100%);
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 20px;
+    min-height: calc(100vh - 60px);
+    width: calc(100% - 80px);
+    max-width: 1440px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.footer {
+    display: block;
+    margin-top: auto;
+    width: calc(100% - 80px);
+    max-width: 1440px;
+    margin: 10px auto;
+}
+
+.footer .social-links {
+    padding: 10px;
+}
+
+.footer .social-links ul {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.footer .contact-data {
+    padding: 10px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 20px;
+}
+
+.footer .contact-data a {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.footer .contact-me-form {
+    display: block;
+    padding-bottom: 20px;
+}
+
+.footer .contact-me-form input,
+    .footer .contact-me-form textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    margin-bottom: 10px;
+    border-bottom: 5px solid #ffffff;
+    font-size: 18px;
+    -webkit-filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.05));
+    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.05));
+    padding: 15px;
+}
+
+.footer .contact-me-form input::-webkit-input-placeholder, .footer .contact-me-form textarea::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.footer .contact-me-form input::-moz-placeholder, .footer .contact-me-form textarea::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.footer .contact-me-form input:-ms-input-placeholder, .footer .contact-me-form textarea:-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.footer .contact-me-form input::-ms-input-placeholder, .footer .contact-me-form textarea::-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.footer .contact-me-form input::placeholder,
+    .footer .contact-me-form textarea::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.footer .contact-me-form textarea {
+    min-height: 150px;
+    max-height: 250px;
+}
+
+.footer .contact-me-form button {
+    width: 100%;
+    padding: 13px 121px;
+    background: linear-gradient(45.33deg, rgba(33, 221, 202, 0.5) 0%, #4CEB80 100%);
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.footer .internal-links .internal-links__header {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    border-bottom: 2px solid #ffffff;
+}
+
+.footer .internal-links .internal-links__body {
+    padding: 10px;
+}
+
+.footer .internal-links .internal-links__body a {
+    font-size: 18px;
+    text-decoration: underline;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.footer__block {
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    border-bottom: 2px solid #DADADA;
+}
+
+.social-links__link {
+    margin-right: 25px;
+    height: 40px;
+    width: 40px;
+}
+
+.social-links__link a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.social-links__link img {
+    height: 130%;
+    width: 130%;
+}
+
+.contact-data__contacts {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.footer__copyright {
+    color: #979797;
+    padding: 10px 0;
 }
