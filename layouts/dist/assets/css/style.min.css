@@ -559,7 +559,8 @@ header {
   .footer .internal-links .internal-links__header {
     font-size: 20px;
     color: rgba(0, 0, 0, 0.6);
-    border-bottom: 2px solid #ffffff; }
+    border-bottom: 2px solid #ffffff;
+    padding: 5px 0; }
   .footer .internal-links .internal-links__body {
     padding: 10px; }
     .footer .internal-links .internal-links__body a {
@@ -576,16 +577,14 @@ header {
 
 .social-links__link {
   margin-right: 25px;
-  height: 40px;
-  width: 40px;
   transition: transform .5s; }
   .social-links__link a {
     display: block;
+    height: fit-content;
+    width: fit-content; }
+  .social-links__link img {
     height: 100%;
     width: 100%; }
-  .social-links__link img {
-    height: 130%;
-    width: 130%; }
   .social-links__link:hover {
     transform: scale(1.1); }
 
