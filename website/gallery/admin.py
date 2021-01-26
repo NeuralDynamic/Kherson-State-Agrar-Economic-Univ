@@ -13,7 +13,6 @@ from .models import (Gallery, Image)
 Http=TypeVar("Http", Dict, List)
 #endregion
 
-#region               -----Admin Forms-----
 @register(Gallery)
 class GalleryAdmin(ModelAdmin):
     #region           ----Configuration-----
@@ -49,4 +48,3 @@ class ImageAdmin(ModelAdmin):
     fields=["image", "gallery", "description"]
     list_display=["_title", "_gallery"]
     #endregion
-#endregion

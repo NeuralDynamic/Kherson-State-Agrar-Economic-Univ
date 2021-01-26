@@ -16,9 +16,10 @@ def delete_on_change(instance: Image,
     :param instance: image instance\n
     @return None
     """
-    (Image.objects.filter(pk=instance.pk).
-    first().image.delete(save=False) if
-    instance.pk else None)
+    try: gallery=Image.objects.get(pk=instance.pk)
+    except: return "No such object in database"
+    if gallery.image!=instance.image:
+        gallery.image.delete(save=False)
 
 @receiver(post_delete, sender=Image)
 def delete_on_delete(instance: Image,

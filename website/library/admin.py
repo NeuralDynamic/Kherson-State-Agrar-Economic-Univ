@@ -1,5 +1,5 @@
 #region				-----External Imports-----
-from django.contrib.admin import ModelAdmin
+from django.contrib.admin import (ModelAdmin, register)
 from django.contrib import admin
 #endregion
 
@@ -7,19 +7,14 @@ from django.contrib import admin
 from .models import Library, Book
 #endregion
 
-#region               -----Admin Pages-----
+@register(Library)
 class LibraryAdmin(ModelAdmin):
     fields=["title", "description", "_books"]
     readonly_fields=["_books"]
     list_display=["__str__"]
 
+@register(Book)
 class BookAdmin(ModelAdmin):
-    fields=["title", "description", 
-    "authors", "cover", "library"]
+    fields=["cover", "title", "description", 
+    "authors", "libraries"]
     list_display=["__str__"]
-#endregion
-
-#region               -----Page Record-----
-admin.site.register(Library, LibraryAdmin)
-admin.site.register(Book, BookAdmin)
-#endregion
