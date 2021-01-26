@@ -408,8 +408,8 @@ a {
 
 a.phone-link {
   line-height: 25px;
-  padding: 5px 0 5px 30px;
-  background-image: url(/assets/images/svg/phone.svg);
+  padding: 5px 0 5px 25px;
+  background-image: url(/assets/images/svg/phone2.svg);
   background-position: 2px 10px;
   background-repeat: no-repeat;
   background-size: 20px 20px; }
@@ -419,6 +419,14 @@ a.email-link {
   padding: 5px 0 5px 30px;
   background-image: url(/assets/images/svg/email.svg);
   background-position: 2px 10px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px; }
+
+a.location-link {
+  line-height: 25px;
+  padding: 5px 0 5px 30px;
+  background-image: url(/assets/images/svg/location.svg);
+  background-position: 2px 8px;
   background-repeat: no-repeat;
   background-size: 20px 20px; }
 
@@ -629,6 +637,9 @@ header {
   .faculty-header__description h2 {
     text-align: center; }
 
+.faculty-departments-list {
+  padding: 15px 0; }
+
 .tns-outer {
   padding: 0 !important;
   width: 100%; }
@@ -794,7 +805,7 @@ header {
   width: 100%; }
 
 .teacher-card .teacher-data {
-  width: calc(100% - $card-profile-photo-size);
+  width: calc(100% - 120px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -818,6 +829,51 @@ header {
   .teacher-card .teacher-contacts .email-link {
     font-size: 14px;
     background-size: 14px 14px;
-    padding-left: 25px;
+    padding-left: 20px;
     line-height: 15px;
     background-position: 2px 7px; }
+
+.department-card {
+  width: calc(50% - 30px);
+  margin-bottom: 15px; }
+  .department-card .department-card__link {
+    height: 100%;
+    width: 100%;
+    padding: 15px 20px;
+    cursor: pointer;
+    padding-bottom: 30px; }
+  .department-card .department-card__body {
+    display: flex;
+    width: 100%; }
+  .department-card .department-data {
+    width: calc(100% - 120px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 20px; }
+    .department-card .department-data .department-title {
+      text-align: center; }
+  .department-card .department-image {
+    width: fit-content; }
+    .department-card .department-image .department-image__container {
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover; }
+  .department-card .department-contacts {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: flex-end; }
+    .department-card .department-contacts .phone-link,
+    .department-card .department-contacts .email-link {
+      width: fit-content;
+      font-size: 14px;
+      background-size: 14px 14px;
+      padding-left: 20px;
+      line-height: 15px;
+      background-position: 2px 7px; }

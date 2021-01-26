@@ -88,6 +88,7 @@ input, textarea, button{
 // FACULTY IMPORTS
 
 @import "blocks/faculty/header.scss";
+@import "blocks/faculty/departments.scss";
 
 // VENDORS
 
@@ -97,3 +98,4 @@ input, textarea, button{
 
 @import "components/card.scss";
 @import "components/teacher_card.scss";
+@import "components/department_card.scss";

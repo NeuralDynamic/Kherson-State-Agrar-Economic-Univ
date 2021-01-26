@@ -1,5 +1,8 @@
-.teacher-card{
-    .teacher-card__link{
+.department-card{
+    width: calc(50% - 30px);
+    margin-bottom: 15px;
+
+    .department-card__link{
         height: 100%;
         width: 100%;
         padding: 15px 20px;
@@ -7,32 +10,28 @@
         padding-bottom: 30px;
     }
 
-    .teacher-name{
-        font-size: 20px;
-        color: #197326;
-        font-weight: 600;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .teacher-card__body{
+    .department-card__body{
         display: flex;
         width: 100%;
     }
 
-    .teacher-data{
+    .department-data{
         width: calc(100% - #{$card-photo-size});
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        max-width: 250px;
+        align-items: flex-end;
+        padding: 0 20px;
+
+        .department-title{
+            text-align: center;
+        }
     }
 
-    .teacher-image{
+    .department-image{
         width: fit-content;
 
-        .teacher-image__container{
+        .department-image__container{
             height: $card-photo-size;
             width: $card-photo-size;
             border-radius: 50%;
@@ -43,12 +42,15 @@
         }
     }
 
-    .teacher-contacts{
+    .department-contacts{
         display: flex;
         flex-direction: column;
+        width: fit-content;
+        align-items: flex-end;
 
         .phone-link,
         .email-link{
+            width: fit-content;
             font-size: 14px;
             background-size: 14px 14px;
             padding-left: 20px;
