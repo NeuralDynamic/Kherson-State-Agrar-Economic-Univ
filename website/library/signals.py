@@ -13,7 +13,7 @@ def delete_on_change(instance: Book,
     """
     Deletes an old version file when 
     the cover was updated by admin\n
-    :param instance: cover instance\n
+    :param instance: book instance\n
     @return None
     """
     try: old_book=Book.objects.get(pk=instance.pk)

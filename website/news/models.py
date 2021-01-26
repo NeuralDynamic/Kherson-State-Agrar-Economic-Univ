@@ -1,7 +1,8 @@
 #region				-----External Imports-----
 from django.db.models import (Model, CharField, TextField, 
 OneToOneField, DateTimeField, CASCADE, SET_NULL, 
-ForeignKey)
+ForeignKey, ImageField)
+from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from typing import TypeVar
 #endregion
@@ -18,31 +19,42 @@ Html=TypeVar("Html", str, bytes)
 
 class NewsFeed(Model):
     #region           -----Information-----
-    description=TextField(max_length=500, blank=True, null=True)
-    title=CharField(max_length=100, blank=False)
+    description=TextField(verbose_name=_("Description"),
+    max_length=500, blank=True, null=True)
+    title=CharField(verbose_name=_("Title"),
+    max_length=100, blank=False)
     #endregion
 
     #region            -----Metadata----- 
     class Meta(object):
-        verbose_name_plural="News Feed"
-        verbose_name="News Feed"
+        verbose_name_plural=_("News Feed")
+        verbose_name=_("News Feed")
     #endregion
 
     #region         -----Internal Methods-----
     def _papers(self)->Html:
         """@return related papers"""
         return render_related_papers(
-        papers=self.paper_set.all()[:5])
+        papers=self.papers.all()[:5])
 
     def __str__(self)->str:
         """@return feed title"""
         return self.title
     #endregion
 
+    #region          -----Rename Methods-----
+    _papers.short_description="Papers"
+    #endregion
+
 class Paper(Model):
     #region           -----Information-----
-    story=TextField(max_length=1500, blank=False, default="")
-    title=CharField(max_length=100, blank=False)
+    header=ImageField(verbose_name=_("Header"), 
+    upload_to="headers", blank=False, 
+    default="")
+    story=TextField(verbose_name=_("Story"),
+    max_length=1500, blank=False)
+    title=CharField(verbose_name=_("Title"),
+    max_length=100, blank=False)
     #endregion
 
     #region            -----Database-----
@@ -50,16 +62,17 @@ class Paper(Model):
     #endregion
 
     #region            -----Relation-----
-    news_feed=ForeignKey("NewsFeed", blank=False,
-    null=False, on_delete=CASCADE, default=1)
+    news_feed=ForeignKey("NewsFeed", default=1, 
+    null=False, on_delete=CASCADE, blank=False, 
+    related_name="papers")
     gallery=OneToOneField(Gallery, blank=True, 
     null=True, on_delete=SET_NULL)
     #endregion
 
     #region            -----Metadata----- 
     class Meta(object):
-        verbose_name_plural="Papers"
-        verbose_name="Paper"
+        verbose_name_plural=_("Papers")
+        verbose_name=_("Paper")
     #endregion
 
     #region         -----Internal Methods-----

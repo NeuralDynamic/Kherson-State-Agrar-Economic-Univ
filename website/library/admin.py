@@ -9,12 +9,16 @@ from .models import Library, Book
 
 @register(Library)
 class LibraryAdmin(ModelAdmin):
+    #region           ----Configuration-----
     fields=["title", "description", "_books"]
     readonly_fields=["_books"]
     list_display=["__str__"]
+    #endregion
 
 @register(Book)
 class BookAdmin(ModelAdmin):
+    #region           ----Configuration-----
     fields=["cover", "title", "description", 
     "authors", "libraries"]
     list_display=["__str__"]
+    #endregion
