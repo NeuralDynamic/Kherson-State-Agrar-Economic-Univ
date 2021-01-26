@@ -382,6 +382,8 @@ input, textarea, button {
   display: flex;
   position: relative;
   margin-bottom: 15px; }
+  .row.f-wrap {
+    flex-wrap: wrap; }
 
 .column {
   height: 100%;
@@ -402,7 +404,7 @@ section {
 a {
   color: #000000;
   text-decoration: none;
-  font-size: 20px; }
+  font-size: 16px; }
 
 a.phone-link {
   line-height: 25px;
@@ -501,7 +503,7 @@ header {
   .footer .contact-data {
     padding: 10px;
     color: rgba(0, 0, 0, 0.6);
-    font-size: 20px; }
+    font-size: 16px; }
     .footer .contact-data a {
       color: rgba(0, 0, 0, 0.6); }
   .footer .contact-me-form {
@@ -515,10 +517,13 @@ header {
       background: rgba(255, 255, 255, 0.5);
       margin-bottom: 10px;
       border-bottom: 5px solid #ffffff;
-      font-size: 18px;
+      font-size: 16px;
       filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.05));
       padding: 15px;
-      color: rgba(0, 0, 0, 0.7); }
+      color: rgba(0, 0, 0, 0.7);
+      -webkit-box-shadow: 0px 12px 27px -15px rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0px 12px 27px -15px rgba(0, 0, 0, 0.25);
+      box-shadow: 0px 12px 27px -15px rgba(0, 0, 0, 0.25); }
     .footer .contact-me-form input::placeholder,
     .footer .contact-me-form textarea::placeholder {
       color: rgba(0, 0, 0, 0.5); }
@@ -527,12 +532,12 @@ header {
       max-height: 250px; }
     .footer .contact-me-form button {
       position: relative;
-      font-weight: 600;
+      font-weight: 500;
       width: 100%;
       padding: 13px 121px;
       background: linear-gradient(45.33deg, rgba(33, 221, 202, 0.5) 0%, #4CEB80 100%);
       color: #ffffff;
-      font-size: 22px; }
+      font-size: 20px; }
       .footer .contact-me-form button:after {
         content: '';
         position: absolute;
@@ -557,14 +562,14 @@ header {
         .footer .contact-me-form button:hover:before {
           height: 100%; }
   .footer .internal-links .internal-links__header {
-    font-size: 20px;
+    font-size: 18px;
     color: rgba(0, 0, 0, 0.6);
     border-bottom: 2px solid #ffffff;
     padding: 5px 0; }
   .footer .internal-links .internal-links__body {
     padding: 10px; }
     .footer .internal-links .internal-links__body a {
-      font-size: 18px;
+      font-size: 15px;
       text-decoration: underline;
       display: block;
       width: 100%;
@@ -594,13 +599,16 @@ header {
 
 .footer__copyright {
   color: #383838;
-  padding: 10px 0; }
+  padding: 10px 0;
+  font-size: 14px; }
 
 .faculty-header__main {
   align-items: center; }
 
 .faculty-header__icon {
-  margin-right: 15px; }
+  margin-right: 15px;
+  height: 90px;
+  width: 90px; }
   .faculty-header__icon img {
     width: 100%;
     height: 100%; }
@@ -609,12 +617,12 @@ header {
   width: fit-content;
   max-width: calc(100% - 150px);
   height: fit-content;
-  font-size: 48px;
+  font-size: 32px;
   color: #197326;
   mix-blend-mode: normal; }
 
 .faculty-header__description {
-  font-size: 20px;
+  font-size: 18px;
   border-top: 3px solid #ffffff;
   border-bottom: 3px solid #ffffff;
   padding: 40px 10px; }
@@ -755,54 +763,61 @@ header {
   float: left; }
 
 /*# sourceMappingURL=sourcemaps/tiny-slider.css.map */
-.teacher-card {
+.card {
   width: calc(100% - 30px);
-  margin: 0 15px;
-  background: linear-gradient(107.48deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.12) 100%);
-  border-radius: 20px;
-  border: 1px solid #fafafa;
-  -webkit-box-shadow: 7px 7px 20px -9px rgba(0, 0, 0, 0.2), -7px -7px 20px -9px rgba(255, 255, 255, 0.5);
-  -moz-box-shadow: 7px 7px 20px -9px rgba(0, 0, 0, 0.2), -7px -7px 20px -9px rgba(255, 255, 255, 0.2);
-  box-shadow: 7px 7px 20px -9px rgba(0, 0, 0, 0.2), -7px -7px 20px -9px rgba(51, 51, 51, 0.01); }
-  .teacher-card .teacher-card__link {
-    height: 100%;
-    width: 100%;
-    padding: 15px 20px;
-    cursor: pointer;
-    padding-bottom: 30px; }
-  .teacher-card .teacher-name {
-    font-size: 20px;
-    color: #197326;
-    font-weight: 600;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px; }
-  .teacher-card .teacher-card__body {
-    display: flex;
-    width: 100%; }
-  .teacher-card .teacher-data {
-    width: calc(100% - $card-profile-photo-size);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: 250px; }
-  .teacher-card .teacher-image {
-    width: fit-content; }
-    .teacher-card .teacher-image .teacher-image__container {
-      height: 120px;
-      width: 120px;
-      border-radius: 50%;
-      overflow: hidden;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover; }
-  .teacher-card .teacher-contacts {
-    display: flex;
-    flex-direction: column; }
-    .teacher-card .teacher-contacts .phone-link,
-    .teacher-card .teacher-contacts .email-link {
-      font-size: 14px;
-      background-size: 14px 14px;
-      padding-left: 25px;
-      line-height: 15px;
-      background-position: 2px 7px; }
+  margin: 0 15px; }
+  .card.glassed {
+    background: linear-gradient(107.48deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.12) 100%);
+    border-radius: 20px;
+    border: 1px solid #fafafa;
+    -webkit-box-shadow: 7px 7px 20px -9px rgba(0, 0, 0, 0.2), -7px -7px 20px -9px rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: 7px 7px 20px -9px rgba(0, 0, 0, 0.2), -7px -7px 20px -9px rgba(255, 255, 255, 0.2);
+    box-shadow: 7px 7px 20px -9px rgba(0, 0, 0, 0.2), -7px -7px 20px -9px rgba(51, 51, 51, 0.01); }
+
+.teacher-card .teacher-card__link {
+  height: 100%;
+  width: 100%;
+  padding: 15px 20px;
+  cursor: pointer;
+  padding-bottom: 30px; }
+
+.teacher-card .teacher-name {
+  font-size: 20px;
+  color: #197326;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px; }
+
+.teacher-card .teacher-card__body {
+  display: flex;
+  width: 100%; }
+
+.teacher-card .teacher-data {
+  width: calc(100% - $card-profile-photo-size);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 250px; }
+
+.teacher-card .teacher-image {
+  width: fit-content; }
+  .teacher-card .teacher-image .teacher-image__container {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+.teacher-card .teacher-contacts {
+  display: flex;
+  flex-direction: column; }
+  .teacher-card .teacher-contacts .phone-link,
+  .teacher-card .teacher-contacts .email-link {
+    font-size: 14px;
+    background-size: 14px 14px;
+    padding-left: 25px;
+    line-height: 15px;
+    background-position: 2px 7px; }

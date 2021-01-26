@@ -11,6 +11,10 @@
     display: flex;
     position: relative;
     margin-bottom: 15px;
+
+    &.f-wrap{
+        flex-wrap: wrap;
+    }
 }
 
 .column{

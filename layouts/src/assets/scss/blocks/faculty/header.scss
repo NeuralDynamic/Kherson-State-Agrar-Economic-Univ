@@ -4,6 +4,8 @@
 
 .faculty-header__icon{
     margin-right: 15px;
+    height: 90px;
+    width: 90px;
 
     img{
         width: 100%;
@@ -15,13 +17,13 @@
     width: fit-content;
     max-width: calc(100% - 150px);
     height: fit-content;
-    font-size: 48px;
+    font-size: 32px;
     color: #197326;
     mix-blend-mode: normal;
 }
 
 .faculty-header__description{
-    font-size: 20px;
+    font-size: 18px;
     border-top: 3px solid #ffffff;
     border-bottom: 3px solid #ffffff;
     padding: 40px 10px;

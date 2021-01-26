@@ -17,7 +17,7 @@
     .contact-data{
         padding: 10px;
         color: rgba(0, 0, 0, 0.6);
-        font-size: 20px;
+        font-size: 16px;
 
         a{
             color: rgba(0, 0, 0, 0.6);
@@ -38,10 +38,13 @@
             background: rgba(255, 255, 255, 0.5);
             margin-bottom: 10px;
             border-bottom: 5px solid $white;
-            font-size: 18px;
+            font-size: 16px;
             filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.05));
             padding: 15px;
             color: rgba(0, 0, 0, 0.7);
+            -webkit-box-shadow: 0px 12px 27px -15px rgba(0,0,0,0.25);
+            -moz-box-shadow: 0px 12px 27px -15px rgba(0,0,0,0.25);
+            box-shadow: 0px 12px 27px -15px rgba(0,0,0,0.25);
         }
 
         input::placeholder,
@@ -56,12 +59,12 @@
 
         button{
             position: relative;
-            font-weight: 600;
+            font-weight: 500;
             width: 100%;
             padding: 13px 121px;
             background: $buttons-color;
             color: $white;
-            font-size: 22px;
+            font-size: 20px;
 
             &:after {
                 content: '';
@@ -103,7 +106,7 @@
     
     .internal-links{
         .internal-links__header{
-            font-size: 20px;
+            font-size: 18px;
             color: rgba(0, 0, 0, 0.6);
             border-bottom: 2px solid $white;
             padding: 5px 0;
@@ -113,7 +116,7 @@
             padding: 10px;
 
             a{
-                font-size: 18px;
+                font-size: 15px;
                 text-decoration: underline;
                 display: block;
                 width: 100%;
@@ -160,4 +163,5 @@
 .footer__copyright{
     color: #383838;
     padding: 10px 0;
+    font-size: 14px;
 }
