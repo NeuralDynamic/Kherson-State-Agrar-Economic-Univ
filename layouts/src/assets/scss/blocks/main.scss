@@ -1,5 +1,15 @@
 .main{
-    background: linear-gradient(174.61deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.6) 100%);
+    // background: linear-gradient(174.61deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.6) 100%);
+
+    // background: linear-gradient(
+    //     to right bottom, 
+    //   rgba(255,255,255,0.7),
+    //   rgba(255,255,255,0.3)
+    // );
+
+    background: linear-gradient(107.48deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.12) 100%);
+    // backdrop-filter: blur(50px);
+
     border: 3px solid #FFFFFF;
     box-sizing: border-box;
     border-radius: 20px;
@@ -8,4 +18,5 @@
     max-width: 1440px;
     margin: 0 auto;
     margin-bottom: 10px;
+    padding: 30px 0;
 }

@@ -3,6 +3,10 @@
    License: none (public domain)
 */
 
+html{
+    min-width: fit-content;
+}
+
 *,
 *:before,
 *:after{
@@ -10,10 +14,6 @@
     margin: 0;
     padding: 0;
     border: 0;
-}
-
-html, body{
-    height: 100%;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -33,7 +33,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font: inherit;
-	vertical-align: baseline;
+    vertical-align: baseline;
 }
 
 /* make sure to set some focus styles for accessibility */

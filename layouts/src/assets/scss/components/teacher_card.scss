@@ -1,0 +1,76 @@
+.teacher-card{
+    width: calc(100% - 30px);
+    margin: 0 15px;
+
+    background: linear-gradient(107.48deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.12) 100%);
+    // backdrop-filter: blur(50px);
+    border-radius: 20px;
+    border: 1px solid rgb(250, 250, 250);
+
+    -webkit-box-shadow: 7px 7px 20px -9px rgba(0,0,0,0.2),
+                        -7px -7px 20px -9px rgba(255,255,255,0.5);
+    -moz-box-shadow: 7px 7px 20px -9px rgba(0,0,0,0.2),
+                    -7px -7px 20px -9px rgba(255,255,255,0.2);
+    box-shadow: 7px 7px 20px -9px rgba(0,0,0,0.2),
+                -7px -7px 20px -9px rgba(51, 51, 51, 0.01);
+
+    .teacher-card__link{
+        height: 100%;
+        width: 100%;
+        padding: 15px 20px;
+        cursor: pointer;
+        padding-bottom: 30px;
+    }
+
+    .teacher-name{
+        font-size: 20px;
+        color: #197326;
+        font-weight: 600;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .teacher-card__body{
+        display: flex;
+        width: 100%;
+    }
+
+    .teacher-data{
+        width: calc(100% - $card-profile-photo-size);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 250px;
+    }
+
+    .teacher-image{
+        width: fit-content;
+
+        .teacher-image__container{
+            height: $card-profile-photo-size;
+            width: $card-profile-photo-size;
+            border-radius: 50%;
+            overflow: hidden;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover
+        }
+    }
+
+    .teacher-contacts{
+        display: flex;
+        flex-direction: column;
+
+        .phone-link,
+        .email-link{
+            font-size: 14px;
+            background-size: 14px 14px;
+            padding-left: 25px;
+            line-height: 15px;
+            background-position: 2px 7px;
+        }
+    }
+
+}
+
