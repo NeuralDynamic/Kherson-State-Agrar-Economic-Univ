@@ -1,6 +1,6 @@
 #region             -----External Imports-----
 from django.utils.html import format_html
-from typing import TypeVar, List
+from typing import (TypeVar, List)
 from django.urls import reverse
 #endregion
 

@@ -12,7 +12,7 @@ class LibraryAdmin(ModelAdmin):
     fields=["title", "description", "_books"]
     readonly_fields=["_books"]
     list_display=["__str__"]
-    
+
 class BookAdmin(ModelAdmin):
     fields=["title", "description", 
     "authors", "cover", "library"]
