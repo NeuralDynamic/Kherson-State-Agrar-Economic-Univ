@@ -16,14 +16,21 @@
     background-image: url(/assets/images/svg/arrow-left.svg);
 }
 
-.teacherSlider__container{
+.slider__container{
     padding: 15px 0;
 }
 
-.teacherSlider__nextSlideButton,
-.teacherSlider__prevSlideButton{
+.slider__nextSlideButton,
+.slider__prevSlideButton{
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.slider_slide{
+    .slide__image{
+        display: flex;
+        justify-content: center;
+    }
 }

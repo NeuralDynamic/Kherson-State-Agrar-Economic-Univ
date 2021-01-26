@@ -396,7 +396,8 @@ section {
   width: 100%;
   position: relative;
   display: block;
-  padding: 0 30px; }
+  padding: 0 30px;
+  margin-bottom: 30px; }
   section .section-title {
     font-size: 20px;
     color: #197326; }
@@ -445,14 +446,18 @@ a.location-link {
 .prev-slide-button {
   background-image: url(/assets/images/svg/arrow-left.svg); }
 
-.teacherSlider__container {
+.slider__container {
   padding: 15px 0; }
 
-.teacherSlider__nextSlideButton,
-.teacherSlider__prevSlideButton {
+.slider__nextSlideButton,
+.slider__prevSlideButton {
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  justify-content: center; }
+
+.slider_slide .slide__image {
+  display: flex;
   justify-content: center; }
 
 .page {
@@ -638,7 +643,7 @@ header {
     text-align: center; }
 
 .faculty-departments-list {
-  padding: 15px 0;
+  padding-top: 15px;
   margin-bottom: 0; }
 
 .faculty-specialities {
