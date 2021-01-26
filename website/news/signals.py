@@ -16,7 +16,7 @@ def delete_on_change(instance: Paper,
     :param instance: paper instance\n
     @return None
     """
-    try: old_paper=Book.objects.get(pk=instance.pk)
+    try: old_paper=Paper.objects.get(pk=instance.pk)
     except: return "No such object in database"
     if old_paper.header!=instance.header:
         old_paper.header.delete(save=False)

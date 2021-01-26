@@ -2,6 +2,7 @@
 from django.db.models import (Model, URLField, OneToOneField,
 CASCADE, CharField, ForeignKey, SET_NULL, ImageField, 
 TextField, DateTimeField)
+from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from multi_email_field.fields import MultiEmailField
 #endregion
@@ -14,7 +15,8 @@ from library.models import Library
 #region             -----Connecting Table-----
 class StaffCathedra(Model):
     #region           -----Information-----
-    rank=CharField(max_length=100, blank=True, null=True)
+    rank=CharField(verbose_name=_("Rank"),
+    max_length=100, blank=True, null=True)
     #endregion
 
     #region            -----Relation-----
@@ -24,7 +26,8 @@ class StaffCathedra(Model):
     #endregion
 class StaffFaculty(Model):
     #region           -----Information-----
-    position=CharField(max_length=100, blank=True, null=True)
+    position=CharField(verbose_name=_("Position"),
+    max_length=100, blank=True, null=True)
     #endregion
 
     #region            -----Relation-----
@@ -37,9 +40,12 @@ class StaffFaculty(Model):
 #region               -----Subdivisions-----
 class Speciality(Model):
     #region           -----Information-----
-    description=TextField(max_length=1500, blank=False, default="")
-    title=CharField(max_length=100, blank=False, default="")
-    number=CharField(max_length=10, blank=False, default="")
+    description=TextField(verbose_name=_("Description"),
+    max_length=1500, blank=False, default="")
+    number=CharField(verbose_name=_("Number"),
+    max_length=10, blank=False, default="")
+    title=CharField(verbose_name=_("Title"),
+    max_length=100, blank=False, default="")
     #endregion
 
     #region            -----Relation-----
@@ -65,7 +71,7 @@ class Cathedra(Model):
     emblem=ImageField(upload_to="emblems", blank=False, default="")
     title=CharField(max_length=100, blank=False, default="")
     number=CharField(max_length=20, blank=False, default="")
-    goal=CharField(max_length=500, blank=False, default="")
+    goal=TextField(max_length=1500, blank=False, default="")
     #endregion
 
     #region            -----Database-----
