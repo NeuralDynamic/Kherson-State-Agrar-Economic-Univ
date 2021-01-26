@@ -638,7 +638,29 @@ header {
     text-align: center; }
 
 .faculty-departments-list {
-  padding: 15px 0; }
+  padding: 15px 0;
+  margin-bottom: 0; }
+
+.faculty-specialities {
+  padding: 15px; }
+
+.faculty-specialities-table {
+  width: 100%;
+  filter: drop-shadow(0px 5px 11px rgba(0, 0, 0, 0.25)); }
+  .faculty-specialities-table tr {
+    background: #ffffff; }
+  .faculty-specialities-table tbody tr {
+    border-top: 1px solid #DADADA; }
+  .faculty-specialities-table th {
+    font-size: 18px;
+    color: #197326; }
+    .faculty-specialities-table th:first-child {
+      width: 40%; }
+  .faculty-specialities-table td {
+    font-size: 16px; }
+  .faculty-specialities-table th, .faculty-specialities-table td {
+    text-align: start;
+    padding: 10px 15px; }
 
 .tns-outer {
   padding: 0 !important;
