@@ -431,6 +431,14 @@ a.location-link {
   background-repeat: no-repeat;
   background-size: 20px 20px; }
 
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: normal; }
+
+b {
+  font-weight: 600; }
+
 .next-slide-button,
 .prev-slide-button {
   height: 25px;
@@ -904,3 +912,49 @@ header {
       padding-left: 20px;
       line-height: 15px;
       background-position: 2px 7px; }
+
+section.hiding {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 3px solid #FFFFFF;
+  border-radius: 10px;
+  padding: 0 30px;
+  margin: 0 30px;
+  width: calc(100% - 60px); }
+  section.hiding .section-title {
+    cursor: pointer;
+    line-height: 26px;
+    padding: 10px 0 10px 0;
+    position: relative;
+    transition: border-bottom .3s; }
+  section.hiding .section-title::before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    right: 0;
+    top: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(/assets/images/svg/arrow-right.svg);
+    transition: transform .3s; }
+  section.hiding .section-body {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+    transition-delay: 0s; }
+    section.hiding .section-body .content {
+      height: 0;
+      transition: height .1s linear;
+      transition-delay: .3s;
+      position: relative; }
+  section.hiding.active .section-title {
+    border-bottom: 2px solid #FFFFFF; }
+  section.hiding.active .section-title::before {
+    transform: rotate(90deg); }
+  section.hiding.active .section-body {
+    padding: 15px;
+    visibility: visible;
+    opacity: 1; }
+    section.hiding.active .section-body .content {
+      height: fit-content; }

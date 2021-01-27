@@ -58,6 +58,7 @@ input, textarea, button{
 
 @import "grid";
 @import "links";
+@import "text";
 @import "slider";
 
 .page{
@@ -100,3 +101,4 @@ input, textarea, button{
 @import "components/card.scss";
 @import "components/teacher_card.scss";
 @import "components/department_card.scss";
+@import "components/sections.scss";

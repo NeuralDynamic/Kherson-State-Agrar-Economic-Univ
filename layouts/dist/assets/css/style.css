@@ -457,6 +457,7 @@ section {
     position: relative;
     display: block;
     padding: 0 30px;
+    margin-bottom: 30px;
 }
 
 section .section-title {
@@ -515,17 +516,24 @@ a.location-link {
     background-image: url(/assets/images/svg/arrow-left.svg);
 }
 
-.teacherSlider__container {
+.slider__container {
     padding: 15px 0;
 }
 
-.teacherSlider__nextSlideButton,
-.teacherSlider__prevSlideButton {
+.slider__nextSlideButton,
+.slider__prevSlideButton {
     cursor: pointer;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.slider_slide .slide__image {
+    display: -ms-flexbox;
+    display: flex;
     -ms-flex-pack: center;
     justify-content: center;
 }
@@ -806,7 +814,44 @@ header {
 }
 
 .faculty-departments-list {
-    padding: 15px 0;
+    padding-top: 15px;
+    margin-bottom: 0;
+}
+
+.faculty-specialities {
+    padding: 15px;
+}
+
+.faculty-specialities-table {
+    width: 100%;
+    -webkit-filter: drop-shadow(0px 5px 11px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0px 5px 11px rgba(0, 0, 0, 0.25));
+}
+
+.faculty-specialities-table tr {
+    background: #ffffff;
+}
+
+.faculty-specialities-table tbody tr {
+    border-top: 1px solid #DADADA;
+}
+
+.faculty-specialities-table th {
+    font-size: 18px;
+    color: #197326;
+}
+
+.faculty-specialities-table th:first-child {
+    width: 40%;
+}
+
+.faculty-specialities-table td {
+    font-size: 16px;
+}
+
+.faculty-specialities-table th, .faculty-specialities-table td {
+    text-align: start;
+    padding: 10px 15px;
 }
 
 .tns-outer {

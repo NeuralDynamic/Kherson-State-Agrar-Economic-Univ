@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/assets/js/sliders.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -590,6 +590,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/assets/js/sections.js":
+/*!***********************************!*\
+  !*** ./src/assets/js/sections.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("const hiding_sections_header = document.querySelectorAll('section.hiding .section-title');\r\n\r\nhiding_sections_header.forEach(item => {\r\n    item.addEventListener('click',event => {\r\n        let $this = event.currentTarget;\r\n        let parent = $this.parentElement;\r\n\r\n        if (parent.classList.contains('active')) {\r\n            parent.classList.remove('active');\r\n        }else{\r\n            parent.classList.add('active');\r\n        }\r\n    });\r\n});\n\n//# sourceURL=webpack:///./src/assets/js/sections.js?");
+
+/***/ }),
+
 /***/ "./src/assets/js/sliders.js":
 /*!**********************************!*\
   !*** ./src/assets/js/sliders.js ***!
@@ -599,6 +610,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var tiny_slider_src_tiny_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tiny-slider/src/tiny-slider */ \"./node_modules/tiny-slider/src/tiny-slider.js\");\n\r\n\r\n\r\n// Teacher sliders\r\n\r\nconst sliders = document.querySelectorAll('.slider');\r\n\r\nsliders.forEach(item => {\r\n    const container = item.querySelector('.slider__container');\r\n    const prev_button = item.querySelector('.slider__prevSlideButton');\r\n    const next_button = item.querySelector('.slider__nextSlideButton');\r\n    \r\n    const slider = Object(tiny_slider_src_tiny_slider__WEBPACK_IMPORTED_MODULE_0__[\"tns\"])({\r\n        container: container,\r\n        items: 3,\r\n        autoplay: true,\r\n        // mouseDrag: true,\r\n        autoplayButton:false,\r\n        autoplayTimeout:3000,\r\n        nav:false,\r\n        prevButton: prev_button,\r\n        nextButton: next_button,\r\n    });\r\n\r\n    item.querySelector('[data-action=\"stop\"]').style.display = 'none'\r\n});\n\n//# sourceURL=webpack:///./src/assets/js/sliders.js?");
+
+/***/ }),
+
+/***/ 0:
+/*!********************************************************************!*\
+  !*** multi ./src/assets/js/sections.js ./src/assets/js/sliders.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/sections.js */\"./src/assets/js/sections.js\");\nmodule.exports = __webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/sliders.js */\"./src/assets/js/sliders.js\");\n\n\n//# sourceURL=webpack:///multi_./src/assets/js/sections.js_./src/assets/js/sliders.js?");
 
 /***/ })
 

@@ -16,17 +16,24 @@
     background-image: url(/assets/images/svg/arrow-left.svg);
 }
 
-.teacherSlider__container {
+.slider__container {
     padding: 15px 0;
 }
 
-.teacherSlider__nextSlideButton,
-.teacherSlider__prevSlideButton {
+.slider__nextSlideButton,
+.slider__prevSlideButton {
     cursor: pointer;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.slider_slide .slide__image {
+    display: -ms-flexbox;
+    display: flex;
     -ms-flex-pack: center;
     justify-content: center;
 }
