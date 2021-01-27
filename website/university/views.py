@@ -1,4 +1,5 @@
 #region				-----External Imports-----
+from django.shortcuts import render
 #endregion
 
 #region				-----Internal Imports-----
@@ -6,7 +7,3 @@
 
 #region				   -----Type Hints-----
 #endregion
-
-from django.shortcuts import render
-
-# Create your views here.

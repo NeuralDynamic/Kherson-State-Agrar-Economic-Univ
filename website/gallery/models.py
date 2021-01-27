@@ -1,6 +1,7 @@
 #region				-----External Imports-----
 from django.db.models import (Model, CharField, TextField,
 ImageField, ForeignKey, CASCADE)
+from django.utils.translation import ugettext_lazy as _
 from typing import TypeVar
 #endregion
 
@@ -15,46 +16,52 @@ Html=TypeVar("Html", str, bytes)
 
 class Gallery(Model):
     #region           -----Information-----
-    description=TextField(max_length=500, blank=True, null=True)
-    title=CharField(max_length=100, blank=False)
+    description=TextField(verbose_name=_("Description"),
+    max_length=1500, blank=True, null=True)
+    title=CharField(verbose_name=_("Title"),
+    max_length=100, blank=False)
     #endregion
 
     #region            -----Metadata-----
-    class Meta(object): 
-        verbose_name_plural="Galleries"
-        verbose_name="Gallery"
+    class Meta(object):
+        verbose_name_plural=_("Galleries")
+        verbose_name=_("Gallery")
     #endregion
 
     #region         -----Internal Methods-----
     def _images(self)->Html:
         """@return related images"""
         return render_related_images(
-        images=self.image_set.all()[:5])
-    
-    def __str__(self)->str:
-        """@return gallery title"""
-        return self._title()
+        images=self.images.all()[:5])
 
-    def _title(self)->str:
+    def __str__(self)->str:
         """@return gallery title"""
         return self.title
     #endregion
 
-class Image(Model): 
+    #region          -----Rename Methods-----
+    _images.short_description=_("Images")
+    #endregion
+
+class Image(Model):
     #region           -----Information-----
-    description=TextField(max_length=500, blank=True, null=True)
-    image=ImageField(upload_to="images", blank=False)
+    description=TextField(verbose_name=_("Description"),
+    max_length=1500, blank=True, null=True)
+    image=ImageField(verbose_name=_("Image"),
+    upload_to="images", blank=False)
+    #endregion
+
+    #region            -----Relation-----
+    gallery=ForeignKey("Gallery", blank=False, 
+    null=False, on_delete=CASCADE, default=1,
+    verbose_name=_("Gallery"),
+    related_name="images")
     #endregion
 
     #region            -----Metadata----- 
     class Meta(object):
-        verbose_name_plural="Images"
-        verbose_name="Image"
-    #endregion
-
-    #region            -----Relation-----
-    gallery=ForeignKey("Gallery", blank=False, null=False,
-    on_delete=CASCADE, default=1)
+        verbose_name_plural=_("Images")
+        verbose_name=_("Image")
     #endregion
 
     #region         -----Internal Methods-----
@@ -63,19 +70,17 @@ class Image(Model):
         return reverse_related_url(
         title=self.gallery.title,
         id=self.gallery.pk, 
-        model="gallery")
+        model="gallery",
+        app="gallery")
 
     def _title(self)->Html:
         """@return editing link"""
         return reverse_related_url(
         id=self.pk, model="image",
-        title=self.image.name)
+        title=self.image.name,
+        app="gallery")
 
     def __str__(self)->str:
-        """@return image url"""
-        return self._url()
-
-    def _url(self)->str:
         """@return image url"""
         return self.image.url
     #endregion

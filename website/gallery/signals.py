@@ -7,6 +7,20 @@ from django.dispatch import receiver
 from .models import Image
 #endregion
 
+@receiver(pre_save, sender=Image)
+def delete_on_change(instance: Image,
+**kwargs)->None:
+    """
+    Deletes an old version file when 
+    the image was updated by admin\n
+    :param instance: image instance\n
+    @return None
+    """
+    try: old_image=sender.objects.get(pk=instance.pk)
+    except: return "No such object in database"
+    if old_image.image!=instance.image:
+        old_image.image.delete(save=False)
+
 @receiver(post_delete, sender=Image)
 def delete_on_delete(instance: Image,
 **kwargs)->None:
@@ -17,16 +31,3 @@ def delete_on_delete(instance: Image,
     @return None
     """
     instance.image.delete(save=False)
-
-@receiver(pre_save, sender=Image)
-def delete_on_change(instance: Image,
-**kwargs)->None:
-    """
-    Deletes an old version file when 
-    the image was updated by admin\n
-    :param instance: image instance\n
-    @return None
-    """
-    (Image.objects.filter(pk=instance.pk).
-    first().image.delete(save=False) if
-    instance.pk else "Do nothing")
