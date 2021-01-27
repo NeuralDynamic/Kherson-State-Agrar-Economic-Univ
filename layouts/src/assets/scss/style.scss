@@ -93,6 +93,12 @@ input, textarea, button{
 @import "blocks/faculty/specialities.scss";
 @import "blocks/faculty/scientific-society.scss";
 
+// DEPARTMENT IMPORTS
+
+@import "blocks/department/header.scss";
+@import "blocks/department/intro.scss";
+@import "blocks/department/links.scss";
+
 // VENDORS
 
 @import "vendors/tiny-slider.scss";
@@ -103,3 +109,4 @@ input, textarea, button{
 @import "components/teacher_card.scss";
 @import "components/department_card.scss";
 @import "components/sections.scss";
+@import "components/hiding_list.scss";

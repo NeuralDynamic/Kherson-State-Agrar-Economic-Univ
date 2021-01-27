@@ -590,6 +590,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/assets/js/cards.js":
+/*!********************************!*\
+  !*** ./src/assets/js/cards.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("const department_cards = document.querySelectorAll('.department-card');\r\n\r\n\r\ndepartment_cards.forEach(item => {\r\n    item.addEventListener('click', event => {\r\n        const current_card = event.currentTarget;\r\n        const link_cont = current_card.querySelector('.department-card__link');\r\n        window.location.replace(link_cont.getAttribute('data-department-link'));\r\n    });\r\n}); \n\n//# sourceURL=webpack:///./src/assets/js/cards.js?");
+
+/***/ }),
+
+/***/ "./src/assets/js/hiding-list.js":
+/*!**************************************!*\
+  !*** ./src/assets/js/hiding-list.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("const hiding_lists = document.querySelectorAll('.hiding-list .hiding-list__title');\r\n\r\nhiding_lists.forEach(item => {\r\n    item.addEventListener('click',event => {\r\n        let $this = event.currentTarget;\r\n        let parent = $this.parentElement;\r\n\r\n        if (parent.classList.contains('active')) {\r\n            parent.classList.remove('active');\r\n        }else{\r\n            parent.classList.add('active');\r\n        }\r\n    });\r\n});\n\n//# sourceURL=webpack:///./src/assets/js/hiding-list.js?");
+
+/***/ }),
+
 /***/ "./src/assets/js/sections.js":
 /*!***********************************!*\
   !*** ./src/assets/js/sections.js ***!
@@ -614,13 +636,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var tiny
 /***/ }),
 
 /***/ 0:
-/*!********************************************************************!*\
-  !*** multi ./src/assets/js/sections.js ./src/assets/js/sliders.js ***!
-  \********************************************************************/
+/*!****************************************************************************************************************************!*\
+  !*** multi ./src/assets/js/cards.js ./src/assets/js/hiding-list.js ./src/assets/js/sections.js ./src/assets/js/sliders.js ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/sections.js */\"./src/assets/js/sections.js\");\nmodule.exports = __webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/sliders.js */\"./src/assets/js/sliders.js\");\n\n\n//# sourceURL=webpack:///multi_./src/assets/js/sections.js_./src/assets/js/sliders.js?");
+eval("__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/cards.js */\"./src/assets/js/cards.js\");\n__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/hiding-list.js */\"./src/assets/js/hiding-list.js\");\n__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/sections.js */\"./src/assets/js/sections.js\");\nmodule.exports = __webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/sliders.js */\"./src/assets/js/sliders.js\");\n\n\n//# sourceURL=webpack:///multi_./src/assets/js/cards.js_./src/assets/js/hiding-list.js_./src/assets/js/sections.js_./src/assets/js/sliders.js?");
 
 /***/ })
 
