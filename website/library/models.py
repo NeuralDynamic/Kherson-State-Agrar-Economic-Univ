@@ -39,7 +39,7 @@ class Library(Model):
     #endregion
 
     #region          -----Rename Methods-----
-    _books.short_description="Books"
+    _books.short_description=_("Books")
     #endregion
 
 class Book(Model):
@@ -56,6 +56,7 @@ class Book(Model):
 
     #region            -----Relation-----
     libraries=ManyToManyField("Library", blank=False,
+    verbose_name=_("Libraries"),
     related_name="books")
     #endregion
 

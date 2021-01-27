@@ -34,9 +34,9 @@ class FacultyAdmin(ModelAdmin):
 @register(Staff)
 class StaffAdmin(ModelAdmin):
     #region           ----Configuration-----
-    list_display=["__str__", "phone", "rank"]
+    list_display=["__str__", "phone"]
     fields=["photo", "first_name", 
     "second_name", "third_name", 
-    "phone", "emails", "rank",
-    "library", "description"]
+    "phone", "emails", "library", 
+    "description"]
     #endregion

@@ -1,7 +1,7 @@
 #region				-----External Imports-----
 from django.db.models import (Model, URLField, OneToOneField,
 CASCADE, CharField, ForeignKey, SET_NULL, ImageField, 
-TextField, DateTimeField)
+TextField, DateField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from multi_email_field.fields import MultiEmailField
@@ -20,10 +20,12 @@ class StaffCathedra(Model):
     #endregion
 
     #region            -----Relation-----
-    staff=ForeignKey("Staff", on_delete=CASCADE, null=True)
     cathedra=ForeignKey("Cathedra", on_delete=CASCADE, 
-    null=True)
+    null=True, verbose_name=_("Cathedra"))
+    staff=ForeignKey("Staff", on_delete=CASCADE, 
+    null=True, verbose_name=_("Staff"))
     #endregion
+
 class StaffFaculty(Model):
     #region           -----Information-----
     position=CharField(verbose_name=_("Position"),
@@ -31,9 +33,10 @@ class StaffFaculty(Model):
     #endregion
 
     #region            -----Relation-----
-    staff=ForeignKey("Staff", on_delete=CASCADE, null=True)
     faculty=ForeignKey("Faculty", on_delete=CASCADE, 
-    null=True)
+    null=True, verbose_name=_("Faculty"))
+    staff=ForeignKey("Staff", on_delete=CASCADE, 
+    null=True, verbose_name=_("Staff"))
     #endregion
 #endregion
 
@@ -50,13 +53,14 @@ class Speciality(Model):
 
     #region            -----Relation-----
     cathedra=ForeignKey("Cathedra", blank=False,
-    null=False, on_delete=CASCADE, default=1)
+    null=False, on_delete=CASCADE, default=1,
+    verbose_name=_("Cathedra"))
     #endregion
 
     #region            -----Metadata-----
     class Meta(object):
-        verbose_name_plural="Specialities"
-        verbose_name="Speciality"
+        verbose_name_plural=_("Specialities")
+        verbose_name=_("Speciality")
     #endregion
 
     #region         -----Internal Methods-----
@@ -67,28 +71,36 @@ class Speciality(Model):
 
 class Cathedra(Model):
     #region           -----Information-----
-    description=TextField(max_length=1500, blank=False, default="")
-    emblem=ImageField(upload_to="emblems", blank=False, default="")
-    title=CharField(max_length=100, blank=False, default="")
-    number=CharField(max_length=20, blank=False, default="")
-    goal=TextField(max_length=1500, blank=False, default="")
+    description=TextField(verbose_name=_("Description"),
+    max_length=1500, blank=False, default="")
+    emblem=ImageField(upload_to="emblems", blank=False,
+    verbose_name=_("Emblem"), default="")
+    goal=TextField(max_length=1500, blank=False,
+    verbose_name=_("Goal"), default="")
+    number=CharField(verbose_name=_("Number"),
+    max_length=20, blank=False, default="")
+    title=CharField(verbose_name=_("Title"),
+    max_length=100, blank=False, default="")
     #endregion
 
     #region            -----Database-----
-    created_at=DateTimeField(default=timezone.now)
+    created_at=DateField(default=timezone.now,
+    verbose_name=_("Created at"))
     #endregion
 
     #region            -----Relation-----
     faculty=ForeignKey("Faculty", blank=False,
-    null=False, on_delete=CASCADE, default=1)
+    null=False, on_delete=CASCADE, default=1,
+    verbose_name=_("Faculty"))
     gallery=ForeignKey(Gallery, blank=True,
-    null=True, on_delete=SET_NULL)
+    null=True, on_delete=SET_NULL,
+    verbose_name=_("Gallery"))
     #endregion
 
     #region            -----Metadata-----
     class Meta(object):
-        verbose_name_plural="Cathedras"
-        verbose_name="Cathedra"
+        verbose_name_plural=_("Cathedras")
+        verbose_name=_("Cathedra")
     #endregion
 
     #region         -----Internal Methods-----
@@ -96,23 +108,27 @@ class Cathedra(Model):
         """@return title of cathedra"""
         return self.title
     #endregion
-    
+
 class Faculty(Model):
     #region           -----Information-----
-    description=TextField(max_length=1500, blank=False, default="")
-    emblem=ImageField(upload_to="emblems", blank=False, default="")
-    title=CharField(max_length=100, blank=False, default="")
+    description=TextField(verbose_name=_("Description"),
+    max_length=1500, blank=False, default="")
+    emblem=ImageField(upload_to="emblems", blank=False,
+    verbose_name=_("Emblem"), default="")
+    title=CharField(verbose_name=_("Title"),
+    max_length=100, blank=False, default="")
     #endregion
 
     #region            -----Relation-----
     gallery=ForeignKey(Gallery, blank=True,
-    null=True, on_delete=SET_NULL)
+    null=True, on_delete=SET_NULL,
+    verbose_name=_("Gallery"))
     #endregion
 
     #region            -----Metadata-----
     class Meta(object):
-        verbose_name_plural="Faculties"
-        verbose_name="Faculty"
+        verbose_name_plural=_("Faculties")
+        verbose_name=_("Faculty")
     #endregion
 
     #region         -----Internal Methods-----
@@ -125,22 +141,28 @@ class Faculty(Model):
 #region                  -----Staff-----
 class Links(Model):
     #region           -----Information-----
-    google_scholar=URLField(max_length=200, blank=True, null=True)
-    web_of_science=URLField(max_length=200, blank=True, null=True)
-    researchgate=URLField(max_length=200, blank=True, null=True)
-    scopus=URLField(max_length=200, blank=True, null=True)
-    orcid=URLField(max_length=200, blank=True, null=True)
+    google_scholar=URLField(max_length=200, blank=True,
+    verbose_name=_("Google Scholar"), null=True)
+    web_of_science=URLField(max_length=200, blank=True,
+    verbose_name=_("Web Of Science"), null=True)
+    researchgate=URLField(max_length=200, blank=True,
+    verbose_name=_("Researchgate"), null=True)
+    scopus=URLField(verbose_name=_("Scopus"),
+    max_length=200, blank=True, null=True)
+    orcid=URLField(verbose_name=_("ORCID"),
+    max_length=200, blank=True, null=True)
     #endregion
 
     #region            -----Relation-----
     staff=OneToOneField("Staff", blank=False,
-    null=False, on_delete=CASCADE, default=1)
+    null=False, on_delete=CASCADE, default=1,
+    verbose_name=_("Staff"))
     #endregion    
 
     #region            -----Metadata-----
     class Meta(object):
-        verbose_name_plural="Links"
-        verbose_name="Links"
+        verbose_name_plural=_("Links")
+        verbose_name=_("Links")
     #endregion
 
     #region         -----Internal Methods-----
@@ -153,25 +175,31 @@ class Links(Model):
 
 class Staff(Model):
     #region           -----Information-----
-    description=TextField(max_length=1500, blank=False)
-    photo=ImageField(upload_to="photos", blank=False)
-    second_name=CharField(max_length=40, blank=False)
-    first_name=CharField(max_length=40, blank=False)
-    third_name=CharField(max_length=40, blank=False)
-    phone=CharField(max_length=20, blank=False)
-    rank=CharField(max_length=40, blank=False)
+    description=TextField(verbose_name=_("Description"),
+    max_length=1500, blank=False)
+    photo=ImageField(verbose_name=_("Photo"),
+    upload_to="photos", blank=False)
+    second_name=CharField(max_length=40, blank=False,
+    verbose_name=_("Second name"))
+    first_name=CharField(max_length=40, blank=False,
+    verbose_name=_("First name"))
+    third_name=CharField(max_length=40, blank=False,
+    verbose_name=_("Third name"))
+    phone=CharField(max_length=20, blank=False,
+    verbose_name=_("Phone number"))
     emails=MultiEmailField()
     #endregion
 
     #region            -----Relation-----
     library=ForeignKey(Library, blank=True,
-    null=True, on_delete=SET_NULL)
+    null=True, on_delete=SET_NULL,
+    verbose_name=_("Library"))
     #endregion
 
     #region            -----Metadata-----
     class Meta(object):
-        verbose_name_plural="Staff"
-        verbose_name="Staff"
+        verbose_name_plural=_("Staff")
+        verbose_name=_("Staff")
     #endregion
 
     #region         -----Internal Methods-----

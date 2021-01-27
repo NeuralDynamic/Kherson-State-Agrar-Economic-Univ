@@ -1,9 +1,11 @@
 #region				-----External Imports-----
 from django.apps import AppConfig
+from django.utils.translation import ugettext_lazy as _
 #endregion
 
 class NewsConfig(AppConfig):
-    name = 'news'
+    verbose_name=_("News App")
+    name="news"
 
     def ready(self)->None:
         """

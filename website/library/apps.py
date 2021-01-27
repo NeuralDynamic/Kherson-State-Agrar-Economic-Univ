@@ -1,15 +1,11 @@
 #region				-----External Imports-----
+from django.utils.translation import ugettext_lazy as _
 from django.apps import AppConfig
 #endregion
 
-#region				-----Internal Imports-----
-#endregion
-
-#region				   -----Type Hints-----
-#endregion
-
 class LibraryConfig(AppConfig):
-    name = 'library'
+    verbose_name=_("Library App")
+    name = "library"
 
     def ready(self)->None:
         """

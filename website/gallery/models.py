@@ -40,7 +40,7 @@ class Gallery(Model):
     #endregion
 
     #region          -----Rename Methods-----
-    _images.short_description="Images"
+    _images.short_description=_("Images")
     #endregion
 
 class Image(Model):
@@ -54,6 +54,7 @@ class Image(Model):
     #region            -----Relation-----
     gallery=ForeignKey("Gallery", blank=False, 
     null=False, on_delete=CASCADE, default=1,
+    verbose_name=_("Gallery"),
     related_name="images")
     #endregion
 

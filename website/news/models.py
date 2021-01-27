@@ -43,7 +43,7 @@ class NewsFeed(Model):
     #endregion
 
     #region          -----Rename Methods-----
-    _papers.short_description="Papers"
+    _papers.short_description=_("Papers")
     #endregion
 
 class Paper(Model):
@@ -63,10 +63,12 @@ class Paper(Model):
 
     #region            -----Relation-----
     news_feed=ForeignKey("NewsFeed", default=1, 
-    null=False, on_delete=CASCADE, blank=False, 
+    null=False, on_delete=CASCADE, blank=False,
+    verbose_name=_("News Feed"),
     related_name="papers")
     gallery=OneToOneField(Gallery, blank=True, 
-    null=True, on_delete=SET_NULL)
+    null=True, on_delete=SET_NULL, 
+    verbose_name=_("Gallery"))
     #endregion
 
     #region            -----Metadata----- 
