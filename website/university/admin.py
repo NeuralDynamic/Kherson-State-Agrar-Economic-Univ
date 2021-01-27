@@ -5,29 +5,43 @@ from django.contrib import admin
 
 #region				-----Internal Imports-----
 from .models import (Links, Staff, Speciality,
-Cathedra, Faculty)
+Cathedra, Faculty, StaffCathedra, StaffFaculty)
 #endregion
+
+@register(StaffCathedra)
+class StaffCathedraAdmin(ModelAdmin):
+    #region           ----Configuration-----
+    list_display=["staff", "rank", "cathedras"]
+    #endregion
+
+@register(StaffFaculty)
+class StaffFacultyAdmin(ModelAdmin):
+    #region           ----Configuration-----
+    list_display=["staff", "position", "faculties"]
+    #endregion
 
 @register(Speciality)
 class SpecialityAdmin(ModelAdmin):
     #region           ----Configuration-----
-    fields=["number", "title", "description"]
+    fields=["number", "title", "cathedra",
+    "description"]
     list_display=["__str__", "number"]
     #endregion
 
 @register(Cathedra)
 class CathedraAdmin(ModelAdmin):
     #region           ----Configuration-----
-    fields=["emblem", "title", "created_at", 
-    "goal", "description", "gallery"]
+    fields=["emblem", "title", "faculty",
+    "created_at", "goal", "description", 
+    "gallery"]
     list_display=["__str__"]
     #endregion
 
 @register(Faculty)
 class FacultyAdmin(ModelAdmin):
     #region           ----Configuration-----
-    fields=["emblem", "title", 
-    "description", "gallery"]
+    fields=["emblem", "title", "description", 
+    "gallery"]
     list_display=["__str__"]
     #endregion
 

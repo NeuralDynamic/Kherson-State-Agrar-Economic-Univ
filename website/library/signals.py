@@ -16,7 +16,7 @@ def delete_on_change(instance: Book,
     :param instance: book instance\n
     @return None
     """
-    try: old_book=Book.objects.get(pk=instance.pk)
+    try: old_book=sender.objects.get(pk=instance.pk)
     except: return "No such object in database"
     if old_book.cover!=instance.cover:
         old_book.cover.delete(save=False)

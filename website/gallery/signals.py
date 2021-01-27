@@ -16,7 +16,7 @@ def delete_on_change(instance: Image,
     :param instance: image instance\n
     @return None
     """
-    try: old_image=Image.objects.get(pk=instance.pk)
+    try: old_image=sender.objects.get(pk=instance.pk)
     except: return "No such object in database"
     if old_image.image!=instance.image:
         old_image.image.delete(save=False)

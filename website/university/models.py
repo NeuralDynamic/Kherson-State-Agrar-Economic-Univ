@@ -1,7 +1,7 @@
 #region				-----External Imports-----
 from django.db.models import (Model, URLField, OneToOneField,
 CASCADE, CharField, ForeignKey, SET_NULL, ImageField, 
-TextField, DateField)
+TextField, DateField, ManyToManyField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from multi_email_field.fields import MultiEmailField
@@ -20,10 +20,22 @@ class StaffCathedra(Model):
     #endregion
 
     #region            -----Relation-----
-    cathedra=ForeignKey("Cathedra", on_delete=CASCADE, 
+    cathedras=ForeignKey("Cathedra", on_delete=CASCADE, 
     null=True, verbose_name=_("Cathedra"))
     staff=ForeignKey("Staff", on_delete=CASCADE, 
     null=True, verbose_name=_("Staff"))
+    #endregion
+
+    #region            -----Metadata-----
+    class Meta(object):
+        verbose_name_plural=_("Cathedra staffs")
+        verbose_name=_("Cathedra staff")
+    #endregion
+
+    #region         -----Internal Methods-----
+    def __str__(self)->str:
+        """@return name of staff and its rank"""
+        return f"{self.staff} {self.cathedras}"
     #endregion
 
 class StaffFaculty(Model):
@@ -33,10 +45,22 @@ class StaffFaculty(Model):
     #endregion
 
     #region            -----Relation-----
-    faculty=ForeignKey("Faculty", on_delete=CASCADE, 
+    faculties=ForeignKey("Faculty", on_delete=CASCADE, 
     null=True, verbose_name=_("Faculty"))
     staff=ForeignKey("Staff", on_delete=CASCADE, 
     null=True, verbose_name=_("Staff"))
+    #endregion
+
+    #region            -----Metadata-----
+    class Meta(object):
+        verbose_name_plural=_("Faculty staffs")
+        verbose_name=_("Faculty staff")
+    #endregion
+
+    #region         -----Internal Methods-----
+    def __str__(self)->str:
+        """@return name of staff and its rank"""
+        return f"{self.staff} {self.faculties}"
     #endregion
 #endregion
 
@@ -73,8 +97,9 @@ class Cathedra(Model):
     #region           -----Information-----
     description=TextField(verbose_name=_("Description"),
     max_length=1500, blank=False, default="")
-    emblem=ImageField(upload_to="emblems", blank=False,
-    verbose_name=_("Emblem"), default="")
+    emblem=ImageField(upload_to="cathedras/emblems", 
+    blank=False, verbose_name=_("Emblem"), 
+    default="")
     goal=TextField(max_length=1500, blank=False,
     verbose_name=_("Goal"), default="")
     number=CharField(verbose_name=_("Number"),
@@ -95,6 +120,8 @@ class Cathedra(Model):
     gallery=ForeignKey(Gallery, blank=True,
     null=True, on_delete=SET_NULL,
     verbose_name=_("Gallery"))
+    staffs=ManyToManyField("StaffCathedra",
+    verbose_name=_("Staff"))
     #endregion
 
     #region            -----Metadata-----
@@ -113,8 +140,9 @@ class Faculty(Model):
     #region           -----Information-----
     description=TextField(verbose_name=_("Description"),
     max_length=1500, blank=False, default="")
-    emblem=ImageField(upload_to="emblems", blank=False,
-    verbose_name=_("Emblem"), default="")
+    emblem=ImageField(upload_to="faculties/emblems", 
+    blank=False, verbose_name=_("Emblem"), 
+    default="")
     title=CharField(verbose_name=_("Title"),
     max_length=100, blank=False, default="")
     #endregion
@@ -123,6 +151,8 @@ class Faculty(Model):
     gallery=ForeignKey(Gallery, blank=True,
     null=True, on_delete=SET_NULL,
     verbose_name=_("Gallery"))
+    staffs=ManyToManyField("StaffFaculty",
+    verbose_name=_("Staff"))
     #endregion
 
     #region            -----Metadata-----
