@@ -1,0 +1,30 @@
+.faculty-scientific-society__header{
+    display: flex;
+}
+
+.faculty-scientific-society__icon{
+    height: 120px;
+    width: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(/assets/images/scientific_society.png);
+}
+
+.faculty-scientific-society__intro-text{
+    width: calc(100% - 120px);
+    height: 100%;
+    text-align: center;
+    padding: 15px;
+}
+
+.faculty-scientific-society__description,
+.faculty-scientific-society__contacts{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;   
+}
+
+.faculty-scientific-society__description a{
+    text-decoration: underline;
+}

@@ -675,6 +675,32 @@ header {
     text-align: start;
     padding: 10px 15px; }
 
+.faculty-scientific-society__header {
+  display: flex; }
+
+.faculty-scientific-society__icon {
+  height: 120px;
+  width: 120px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(/assets/images/scientific_society.png); }
+
+.faculty-scientific-society__intro-text {
+  width: calc(100% - 120px);
+  height: 100%;
+  text-align: center;
+  padding: 15px; }
+
+.faculty-scientific-society__description,
+.faculty-scientific-society__contacts {
+  padding: 15px;
+  display: flex;
+  flex-direction: column; }
+
+.faculty-scientific-society__description a {
+  text-decoration: underline; }
+
 .tns-outer {
   padding: 0 !important;
   width: 100%; }
@@ -919,6 +945,7 @@ section.hiding {
   border-radius: 10px;
   padding: 0 30px;
   margin: 0 30px;
+  margin-bottom: 30px;
   width: calc(100% - 60px);
   -webkit-box-shadow: 7px 7px 20px -9px rgba(0, 0, 0, 0.2), -7px -7px 20px -9px rgba(255, 255, 255, 0.5);
   -moz-box-shadow: 7px 7px 20px -9px rgba(0, 0, 0, 0.2), -7px -7px 20px -9px rgba(255, 255, 255, 0.2);
