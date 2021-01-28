@@ -4,6 +4,7 @@ CASCADE, CharField, ForeignKey, SET_NULL, ImageField,
 TextField, DateField, ManyToManyField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
+from parler.models import (TranslatableModel, TranslatedFields)
 from multi_email_field.fields import MultiEmailField
 #endregion
 
@@ -13,10 +14,11 @@ from library.models import Library
 #endregion
 
 #region             -----Connecting Table-----
-class StaffCathedra(Model):
-    #region           -----Information-----
+class StaffCathedra(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
     rank=CharField(verbose_name=_("Rank"),
-    max_length=100, blank=True, null=True)
+    max_length=100, blank=True, null=True))
     #endregion
 
     #region            -----Relation-----
@@ -38,10 +40,11 @@ class StaffCathedra(Model):
         return f"{self.staff} {self.cathedras}"
     #endregion
 
-class StaffFaculty(Model):
+class StaffFaculty(TranslatableModel):
     #region           -----Information-----
+    translations=TranslatedFields(
     position=CharField(verbose_name=_("Position"),
-    max_length=100, blank=True, null=True)
+    max_length=100, blank=True, null=True))
     #endregion
 
     #region            -----Relation-----
@@ -65,14 +68,19 @@ class StaffFaculty(Model):
 #endregion
 
 #region               -----Subdivisions-----
-class Speciality(Model):
-    #region           -----Information-----
+class Speciality(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
     description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=False, default="")
+    max_length=1500, blank=False, default=""),
+
+    title=CharField(verbose_name=_("Title"),
+    max_length=100, blank=False, default=""))
+    #endregion
+
+    #region           -----Information-----
     number=CharField(verbose_name=_("Number"),
     max_length=10, blank=False, default="")
-    title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default="")
     #endregion
 
     #region            -----Relation-----
@@ -93,19 +101,25 @@ class Speciality(Model):
         return self.title
     #endregion
 
-class Cathedra(Model):
-    #region           -----Information-----
+class Cathedra(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
     description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=False, default="")
+    max_length=1500, blank=False, default=""),
+
+    goal=TextField(max_length=1500, blank=False,
+    verbose_name=_("Goal"), default=""),
+
+    title=CharField(verbose_name=_("Title"),
+    max_length=100, blank=False, default=""))
+    #endregion
+
+    #region           -----Information-----
     emblem=ImageField(upload_to="cathedras/emblems", 
     blank=False, verbose_name=_("Emblem"), 
     default="")
-    goal=TextField(max_length=1500, blank=False,
-    verbose_name=_("Goal"), default="")
     number=CharField(verbose_name=_("Number"),
     max_length=20, blank=False, default="")
-    title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default="")
     #endregion
 
     #region            -----Database-----
@@ -136,15 +150,20 @@ class Cathedra(Model):
         return self.title
     #endregion
 
-class Faculty(Model):
-    #region           -----Information-----
+class Faculty(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
     description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=False, default="")
+    max_length=1500, blank=False, default=""),
+
+    title=CharField(verbose_name=_("Title"),
+    max_length=100, blank=False, default=""))
+    #endregion
+
+    #region           -----Information-----
     emblem=ImageField(upload_to="faculties/emblems", 
     blank=False, verbose_name=_("Emblem"), 
     default="")
-    title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default="")
     #endregion
 
     #region            -----Relation-----
@@ -169,6 +188,50 @@ class Faculty(Model):
 #endregion
 
 #region                  -----Staff-----
+class Staff(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
+    description=TextField(verbose_name=_("Description"),
+    max_length=1500, blank=False),
+
+    second_name=CharField(max_length=40, blank=False,
+    verbose_name=_("Second name")),
+
+    first_name=CharField(max_length=40, blank=False,
+    verbose_name=_("First name")),
+
+    third_name=CharField(max_length=40, blank=False,
+    verbose_name=_("Third name")))
+    #endregion
+
+    #region           -----Information-----
+    photo=ImageField(verbose_name=_("Photo"),
+    upload_to="photos", blank=False)
+    phone=CharField(max_length=20, blank=False,
+    verbose_name=_("Phone number"))
+    emails=MultiEmailField()
+    #endregion
+
+    #region            -----Relation-----
+    library=ForeignKey(Library, blank=True,
+    null=True, on_delete=SET_NULL,
+    verbose_name=_("Library"))
+    #endregion
+
+    #region            -----Metadata-----
+    class Meta(object):
+        verbose_name_plural=_("Staff")
+        verbose_name=_("Staff")
+    #endregion
+
+    #region         -----Internal Methods-----
+    def __str__(self)->str:
+        """@return staff information"""
+        return (self.second_name+
+        " "+self.first_name+
+        " "+self.third_name)
+    #endregion
+
 class Links(Model):
     #region           -----Information-----
     google_scholar=URLField(max_length=200, blank=True,
@@ -201,42 +264,5 @@ class Links(Model):
         return (self.staff.second_name+
         " "+self.staff.first_name+
         " "+self.staff.third_name)
-    #endregion
-
-class Staff(Model):
-    #region           -----Information-----
-    description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=False)
-    photo=ImageField(verbose_name=_("Photo"),
-    upload_to="photos", blank=False)
-    second_name=CharField(max_length=40, blank=False,
-    verbose_name=_("Second name"))
-    first_name=CharField(max_length=40, blank=False,
-    verbose_name=_("First name"))
-    third_name=CharField(max_length=40, blank=False,
-    verbose_name=_("Third name"))
-    phone=CharField(max_length=20, blank=False,
-    verbose_name=_("Phone number"))
-    emails=MultiEmailField()
-    #endregion
-
-    #region            -----Relation-----
-    library=ForeignKey(Library, blank=True,
-    null=True, on_delete=SET_NULL,
-    verbose_name=_("Library"))
-    #endregion
-
-    #region            -----Metadata-----
-    class Meta(object):
-        verbose_name_plural=_("Staff")
-        verbose_name=_("Staff")
-    #endregion
-
-    #region         -----Internal Methods-----
-    def __str__(self)->str:
-        """@return staff information"""
-        return (self.second_name+
-        " "+self.first_name+
-        " "+self.third_name)
     #endregion
 #endregion

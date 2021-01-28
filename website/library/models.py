@@ -1,7 +1,8 @@
 #region				-----External Imports-----
-from django.db.models import (Model, TextField, CharField, 
-ImageField, ManyToManyField, CASCADE)
+from django.db.models import (TextField, CharField, ImageField, 
+ManyToManyField, CASCADE)
 from django.utils.translation import ugettext_lazy as _
+from parler.models import (TranslatableModel, TranslatedFields)
 from typing import TypeVar
 #endregion
 
@@ -13,12 +14,13 @@ from .utils import render_related_books
 Html=TypeVar("Html", str, bytes)
 #endregion
 
-class Library(Model):
-    #region           -----Information-----
+class Library(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
     description=TextField(verbose_name=_("Description"),
-    max_length=500, blank=True, null=True)
+    max_length=500, blank=True, null=True),
     title=CharField(verbose_name=_("Title"),
-    max_length=500, blank=False)
+    max_length=500, blank=False))
     #endregion
 
     #region            -----Metadata----- 
@@ -42,16 +44,20 @@ class Library(Model):
     _books.short_description=_("Books")
     #endregion
 
-class Book(Model):
-    #region           -----Information-----
+class Book(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
     description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=True, null=True)
+    max_length=1500, blank=True, null=True),
     authors=TextField(verbose_name=_("Authors"),
-    max_length=500, blank=False)
+    max_length=500, blank=False),
+    title=CharField(verbose_name=_("Title"),
+    max_length=100, blank=False))
+    #endregion
+
+    #region           -----Information-----
     cover=ImageField(verbose_name=_("Cover"),
     upload_to="covers", blank=False)
-    title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False)
     #endregion
 
     #region            -----Relation-----

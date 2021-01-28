@@ -1,6 +1,7 @@
 #region				-----External Imports-----
-from django.contrib.admin import (ModelAdmin, register)
+from django.contrib.admin import register
 from django.contrib import admin
+from parler.admin import TranslatableAdmin
 #endregion
 
 #region				-----Internal Imports-----
@@ -8,7 +9,7 @@ from .models import Library, Book
 #endregion
 
 @register(Library)
-class LibraryAdmin(ModelAdmin):
+class LibraryAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["title", "description", "_books"]
     readonly_fields=["_books"]
@@ -16,7 +17,7 @@ class LibraryAdmin(ModelAdmin):
     #endregion
 
 @register(Book)
-class BookAdmin(ModelAdmin):
+class BookAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["cover", "title", "description", 
     "authors", "libraries"]

@@ -1,6 +1,7 @@
 #region				-----External Imports-----
-from django.contrib.admin import (ModelAdmin, register)
+from django.contrib.admin import register
 from django.contrib import admin
+from parler.admin import TranslatableAdmin
 #endregion
 
 #region				-----Internal Imports-----
@@ -9,19 +10,19 @@ Cathedra, Faculty, StaffCathedra, StaffFaculty)
 #endregion
 
 @register(StaffCathedra)
-class StaffCathedraAdmin(ModelAdmin):
+class StaffCathedraAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     list_display=["staff", "rank", "cathedras"]
     #endregion
 
 @register(StaffFaculty)
-class StaffFacultyAdmin(ModelAdmin):
+class StaffFacultyAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     list_display=["staff", "position", "faculties"]
     #endregion
 
 @register(Speciality)
-class SpecialityAdmin(ModelAdmin):
+class SpecialityAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["number", "title", "cathedra",
     "description"]
@@ -29,7 +30,7 @@ class SpecialityAdmin(ModelAdmin):
     #endregion
 
 @register(Cathedra)
-class CathedraAdmin(ModelAdmin):
+class CathedraAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["emblem", "title", "faculty",
     "created_at", "goal", "description", 
@@ -38,7 +39,7 @@ class CathedraAdmin(ModelAdmin):
     #endregion
 
 @register(Faculty)
-class FacultyAdmin(ModelAdmin):
+class FacultyAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["emblem", "title", "description", 
     "gallery"]
@@ -46,7 +47,7 @@ class FacultyAdmin(ModelAdmin):
     #endregion
 
 @register(Staff)
-class StaffAdmin(ModelAdmin):
+class StaffAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     list_display=["__str__", "phone"]
     fields=["photo", "first_name", 

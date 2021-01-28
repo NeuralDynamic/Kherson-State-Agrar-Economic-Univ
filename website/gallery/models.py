@@ -1,7 +1,8 @@
 #region				-----External Imports-----
-from django.db.models import (Model, CharField, TextField,
+from django.db.models import (CharField, TextField,
 ImageField, ForeignKey, CASCADE)
 from django.utils.translation import ugettext_lazy as _
+from parler.models import (TranslatableModel, TranslatedFields)
 from typing import TypeVar
 #endregion
 
@@ -14,12 +15,13 @@ reverse_related_url)
 Html=TypeVar("Html", str, bytes)
 #endregion
 
-class Gallery(Model):
-    #region           -----Information-----
+class Gallery(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
     description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=True, null=True)
+    max_length=1500, blank=True, null=True),
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False)
+    max_length=100, blank=False))
     #endregion
 
     #region            -----Metadata-----
@@ -43,12 +45,13 @@ class Gallery(Model):
     _images.short_description=_("Images")
     #endregion
 
-class Image(Model):
-    #region           -----Information-----
+class Image(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
     description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=True, null=True)
+    max_length=1500, blank=True, null=True),
     image=ImageField(verbose_name=_("Image"),
-    upload_to="images", blank=False)
+    upload_to="images", blank=False))
     #endregion
 
     #region            -----Relation-----
