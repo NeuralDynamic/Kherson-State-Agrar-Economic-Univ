@@ -103,6 +103,7 @@ input, textarea, button{
 
 @import "blocks/teacher/intro.scss";
 @import "blocks/teacher/disciplines.scss";
+@import "blocks/teacher/library.scss";
 
 // VENDORS
 
@@ -116,3 +117,4 @@ input, textarea, button{
 @import "components/sections.scss";
 @import "components/hiding_list.scss";
 @import "components/linked_list.scss";
+@import "components/book_card.scss";
