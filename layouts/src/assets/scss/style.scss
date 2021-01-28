@@ -2,10 +2,22 @@
 @import "reset";
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+                Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
+                'Helvetica Neue', sans-serif;
     font-size: 16px;
-    color: $black;
+    color: $font-color;
     overflow-y: auto;
+}
+
+div{
+    display: block;
+}
+
+input, textarea, button{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+                Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
+                'Helvetica Neue', sans-serif;
 }
 
 .d-flex{
@@ -43,3 +55,58 @@ body {
 .bold{
     font-weight: 700
 }
+
+@import "grid";
+@import "links";
+@import "text";
+@import "slider";
+
+.page{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: calc(#{$header_height} + 10px);
+}
+
+.page::before{
+    content: '';
+    position: fixed;
+    top:0; 
+    left:0;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(180deg, 
+                rgba(161, 255, 206, 0.69) 0%, 
+                rgba(250, 255, 209, 0.5) 100%);
+    z-index:-1;
+}
+
+@import "blocks/header.scss";
+@import "blocks/main.scss";
+@import "blocks/footer.scss";
+
+// FACULTY IMPORTS
+
+@import "blocks/faculty/header.scss";
+@import "blocks/faculty/departments.scss";
+@import "blocks/faculty/specialities.scss";
+@import "blocks/faculty/scientific-society.scss";
+
+// DEPARTMENT IMPORTS
+
+@import "blocks/department/header.scss";
+@import "blocks/department/intro.scss";
+@import "blocks/department/links.scss";
+
+// VENDORS
+
+@import "vendors/tiny-slider.scss";
+
+// COMPONENTS
+
+@import "components/card.scss";
+@import "components/teacher_card.scss";
+@import "components/department_card.scss";
+@import "components/sections.scss";
+@import "components/hiding_list.scss";

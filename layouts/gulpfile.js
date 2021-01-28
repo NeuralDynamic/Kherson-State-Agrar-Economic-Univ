@@ -202,12 +202,7 @@ function images(cb) {
             imagemin.gifsicle({interlaced: true}),
             imagemin.mozjpeg({quality: 95, progressive: true}),
             imagemin.optipng({optimizationLevel: 5}),
-            imagemin.svgo({
-                plugins: [
-                    { removeViewBox: true },
-                    { cleanupIDs: false }
-                ]
-            })
+            imagemin.svgo({ plugins: [{ removeViewBox: false }] })
         ]))
         .pipe(dest(path.build.images))
         .pipe(browserSync.reload({stream: true}));
@@ -250,4 +245,3 @@ exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;
-

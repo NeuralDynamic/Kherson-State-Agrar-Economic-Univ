@@ -1,0 +1,32 @@
+a{
+    color: $black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a.phone-link{
+    line-height: 25px;
+    padding: 5px 0 5px 25px;
+    background-image: url(#{$url-redirrect}/images/svg/phone2.svg);
+    background-position: 2px 10px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+
+a.email-link{
+    line-height: 25px;
+    padding: 5px 0 5px 30px;
+    background-image: url(#{$url-redirrect}/images/svg/email.svg);
+    background-position: 2px 10px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+
+a.location-link{
+    line-height: 25px;
+    padding: 5px 0 5px 30px;
+    background-image: url(#{$url-redirrect}/images/svg/location.svg);
+    background-position: 2px 8px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}

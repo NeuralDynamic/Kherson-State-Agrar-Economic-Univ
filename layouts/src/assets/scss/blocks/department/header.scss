@@ -1,0 +1,35 @@
+.department-header{
+    display: flex;
+    align-items: center;
+}
+
+.department-header__icon{
+    margin-right: 15px;
+    height: 90px;
+    width: 90px;
+
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.department-header__content{
+    width: calc(100% - 120px);
+
+    .department-header__faculty-link{
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+
+        a{
+            font-size: 20px;
+        }
+    }
+
+    .department-data__title{
+        font-size: 28px;
+        text-align: end;
+        color: #197326;
+    }
+}

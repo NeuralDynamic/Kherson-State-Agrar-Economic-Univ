@@ -1,14 +1,15 @@
 #region				-----External Imports-----
-#endregion
-
-#region				-----Internal Imports-----
-#endregion
-
-#region				   -----Type Hints-----
-#endregion
-
 from django.apps import AppConfig
-
+from django.utils.translation import ugettext_lazy as _
+#endregion
 
 class UniversityConfig(AppConfig):
-    name = 'university'
+    verbose_name=_("University App")
+    name="university"
+
+    def ready(self)->None:
+        """
+        Connects app signals
+        @return None
+        """
+        import university.signals

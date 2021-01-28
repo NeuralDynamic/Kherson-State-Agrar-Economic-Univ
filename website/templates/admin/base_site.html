@@ -1,0 +1,37 @@
+{% extends "admin/base_site.html" %}
+{% load static i18n %}
+
+{% block extrahead %}
+
+{{ block.super }}
+    <script type="text/javascript" src="{% static "admin/js/vendor/jquery/jquery.js" %}"></script>
+    <script type="text/javascript" src="{% static "admin/js/jquery.init.js" %}"></script>
+    <script>
+        django.gettext = window.gettext;
+    </script>
+    <style>
+        #container{
+            width: auto;
+        }
+        .changelink{
+            display: none !important;
+        }
+    </style>
+{% endblock %}
+
+{% block userlinks %}
+
+<div class="" style="display: flex;">
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_available_languages as LANGUAGES %}
+    {% get_language_info_list for LANGUAGES as languages %}
+    {% for language in languages %}
+        {% if LANGUAGE_CODE != language.code %}
+        <a style="margin-right: 15px;" href="/{{ language.code }}{{ request.get_full_path|slice:'3:' }}">{{ language.code }}</a>
+        {% endif %}
+    {% endfor %}
+    
+</div>
+
+{{ block.super }}
+{% endblock %}

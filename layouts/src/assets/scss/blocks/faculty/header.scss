@@ -1,0 +1,34 @@
+.faculty-header__main{
+    align-items: center;
+}
+
+.faculty-header__icon{
+    margin-right: 15px;
+    height: 90px;
+    width: 90px;
+
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.faculty-header__title{
+    width: fit-content;
+    max-width: calc(100% - 150px);
+    height: fit-content;
+    font-size: 28px;
+    color: #197326;
+    mix-blend-mode: normal;
+}
+
+.faculty-header__description{
+    font-size: 16px;
+    border-top: 3px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
+    padding: 40px 10px;
+
+    h2{
+        text-align: center;
+    }
+}
