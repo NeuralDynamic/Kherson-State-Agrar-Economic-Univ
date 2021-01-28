@@ -16,9 +16,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: gallery/apps.py:7
 msgid "Gallery App"
@@ -26,22 +27,22 @@ msgstr "Галерея"
 
 #: gallery/forms.py:14
 msgid "Add images"
-msgstr "Добавить изображения"
+msgstr "Додати зображення"
 
 #: gallery/models.py:19 gallery/models.py:48 library/models.py:18
 #: library/models.py:47 university/models.py:70 university/models.py:98
 #: university/models.py:141 university/models.py:208
 msgid "Description"
-msgstr "Описание"
+msgstr "Опис"
 
 #: gallery/models.py:21 library/models.py:20 library/models.py:53
 #: university/models.py:74 university/models.py:107 university/models.py:146
 msgid "Title"
-msgstr "Название"
+msgstr "Назва"
 
 #: gallery/models.py:27
 msgid "Galleries"
-msgstr "Галереи"
+msgstr "Галереї"
 
 #: gallery/models.py:28 gallery/models.py:57 university/models.py:122
 #: university/models.py:153
@@ -50,23 +51,23 @@ msgstr "Галерея"
 
 #: gallery/models.py:43 gallery/models.py:63
 msgid "Images"
-msgstr "Изображения"
+msgstr "Зображення"
 
 #: gallery/models.py:50 gallery/models.py:64
 msgid "Image"
-msgstr "Изображение"
+msgstr "Зображення"
 
 #: library/apps.py:7
 msgid "Library App"
-msgstr "Библиотека"
+msgstr "Бібліотека"
 
 #: library/models.py:26 library/models.py:59
 msgid "Libraries"
-msgstr "Библиотеки"
+msgstr "Бібліотеки"
 
 #: library/models.py:27 university/models.py:226
 msgid "Library"
-msgstr "Библиотека"
+msgstr "Бібліотека"
 
 #: library/models.py:42 library/models.py:65
 msgid "Books"
@@ -74,11 +75,11 @@ msgstr "Книги"
 
 #: library/models.py:49
 msgid "Authors"
-msgstr "Авторы"
+msgstr "Автори"
 
 #: library/models.py:51
 msgid "Cover"
-msgstr "Обложка"
+msgstr "Обкладинка"
 
 #: library/models.py:66
 msgid "Book"
@@ -86,11 +87,11 @@ msgstr "Книга"
 
 #: university/apps.py:7
 msgid "University App"
-msgstr "Университет"
+msgstr "Університет"
 
 #: university/models.py:18
 msgid "Rank"
-msgstr "Звание"
+msgstr "Звання"
 
 #: university/models.py:24 university/models.py:81 university/models.py:130
 msgid "Cathedra"
@@ -100,19 +101,19 @@ msgstr "Кафедра"
 #: university/models.py:155 university/models.py:189 university/models.py:231
 #: university/models.py:232
 msgid "Staff"
-msgstr "Работник"
+msgstr "Працівник"
 
 #: university/models.py:31
 msgid "Cathedra staffs"
-msgstr "Сотрудники кафедр"
+msgstr "Працівники кафедр"
 
 #: university/models.py:32
 msgid "Cathedra staff"
-msgstr "Сотрудник кафедры"
+msgstr "Працівник кафедри"
 
 #: university/models.py:43
 msgid "Position"
-msgstr "Должность"
+msgstr "Посада"
 
 #: university/models.py:49 university/models.py:119 university/models.py:161
 msgid "Faculty"
@@ -120,11 +121,11 @@ msgstr "Факультет"
 
 #: university/models.py:56
 msgid "Faculty staffs"
-msgstr "Сотрудники факультетов"
+msgstr "Працівники факультетів"
 
 #: university/models.py:57
 msgid "Faculty staff"
-msgstr "Сотрудник факультета"
+msgstr "Працівник факультету"
 
 #: university/models.py:72 university/models.py:105
 msgid "Number"
@@ -132,31 +133,31 @@ msgstr "Номер"
 
 #: university/models.py:86
 msgid "Specialities"
-msgstr "Специальности"
+msgstr "Спеціальності"
 
 #: university/models.py:87
 msgid "Speciality"
-msgstr "Специальность"
+msgstr "Спеціальність"
 
 #: university/models.py:101 university/models.py:144
 msgid "Emblem"
-msgstr "Эмблема"
+msgstr "Емблема"
 
 #: university/models.py:104
 msgid "Goal"
-msgstr "Цель"
+msgstr "Мета"
 
 #: university/models.py:113
 msgid "Created at"
-msgstr "Создано в"
+msgstr "Створено в"
 
 #: university/models.py:129
 msgid "Cathedras"
-msgstr "Кафедры"
+msgstr "Кафедри"
 
 #: university/models.py:160
 msgid "Faculties"
-msgstr "Факультеты"
+msgstr "Факультети"
 
 #: university/models.py:175
 msgid "Google Scholar"
@@ -180,23 +181,23 @@ msgstr ""
 
 #: university/models.py:194 university/models.py:195
 msgid "Links"
-msgstr "Ссылки"
+msgstr "Посилання"
 
 #: university/models.py:210
 msgid "Photo"
-msgstr "Фотография"
+msgstr "Фотографія"
 
 #: university/models.py:213
 msgid "Second name"
-msgstr "Фамилия"
+msgstr "Прізвище"
 
 #: university/models.py:215
 msgid "First name"
-msgstr "Имя"
+msgstr "Ім'я"
 
 #: university/models.py:217
 msgid "Third name"
-msgstr "Отчество"
+msgstr "По батькові"
 
 #: university/models.py:219
 msgid "Phone number"
@@ -211,23 +212,23 @@ msgid "en"
 msgstr ""
 
 #: website/settings/django.py:149 website/settings/third_party/cms.py:22
-msgid "uk"
+msgid "ua"
 msgstr ""
 
 #~ msgid "News App"
-#~ msgstr "Новости"
+#~ msgstr "Стрічка новин"
 
 #~ msgid "News Feed"
-#~ msgstr "Новостная лента"
+#~ msgstr "Стрічка новин"
 
 #~ msgid "Papers"
-#~ msgstr "Статьи"
+#~ msgstr "Статті"
 
 #~ msgid "Header"
 #~ msgstr "Заголовок"
 
 #~ msgid "Story"
-#~ msgstr "История"
+#~ msgstr "Історія"
 
 #~ msgid "Paper"
-#~ msgstr "Статья"
+#~ msgstr "Стаття"

@@ -119,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LANGUAGE_CODE = 'ua'
+LANGUAGE_CODE = 'uk'
 
 TIME_ZONE = 'Europe/Kiev'
 
@@ -130,8 +130,8 @@ USE_L10N = True
 USE_TZ = True
 
 EXTRA_LANG_INFO = {
-    'ua': {
-        'code': 'ua',
+    'uk': {
+        'code': 'uk',
         'name': 'Ukrainian',
         'name_local': u'\u0055\u006b\u0072\u0061\u0069\u006e\u0069\u0061\u006e', #unicode codepoints here
     },
@@ -146,7 +146,7 @@ LANGUAGES = (
 # Add custom languages not provided by Django
 LANG_INFO = dict(django.conf.locale.LANG_INFO, **EXTRA_LANG_INFO)
 django.conf.locale.LANG_INFO = LANG_INFO
-LANGUAGES = (*LANGUAGES, ('ua', gettext('ua')),)
+LANGUAGES = (*LANGUAGES, ('uk', gettext('uk')),)
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),

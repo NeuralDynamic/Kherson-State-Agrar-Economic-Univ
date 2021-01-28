@@ -1,6 +1,6 @@
 from .cms import CMS_LANGUAGES
 
-PARLER_DEFAULT_LANGUAGE_CODE = "ua"
+PARLER_DEFAULT_LANGUAGE_CODE = "uk"
 
 # Used django cms languages
 PARLER_LANGUAGES = {
