@@ -99,6 +99,11 @@ input, textarea, button{
 @import "blocks/department/intro.scss";
 @import "blocks/department/links.scss";
 
+// TEACHER IMPORTS
+
+@import "blocks/teacher/intro.scss";
+@import "blocks/teacher/disciplines.scss";
+
 // VENDORS
 
 @import "vendors/tiny-slider.scss";
@@ -110,3 +115,4 @@ input, textarea, button{
 @import "components/department_card.scss";
 @import "components/sections.scss";
 @import "components/hiding_list.scss";
+@import "components/linked_list.scss";

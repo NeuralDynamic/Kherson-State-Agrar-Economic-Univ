@@ -1,11 +1,4 @@
 .teacher-card{
-    .teacher-card__link{
-        height: 100%;
-        width: 100%;
-        padding: 15px 20px;
-        cursor: pointer;
-        padding-bottom: 30px;
-    }
 
     .teacher-name{
         font-size: 20px;
@@ -27,6 +20,10 @@
         flex-direction: column;
         justify-content: space-between;
         max-width: 250px;
+    }
+
+    .teacher-rank{
+        font-size: 14px;
     }
 
     .teacher-image{

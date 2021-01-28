@@ -1,0 +1,18 @@
+.teacher-disciplines{
+    padding: 15px 50px;
+    padding-left: 70px;
+
+    ul{
+        list-style: disc ;
+        display: flex;
+        flex-basis: 33.333333%;
+        flex-wrap: wrap;
+        
+        li{
+            // width: fit-content;
+            flex: 0 0 33.333333%;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    }
+}

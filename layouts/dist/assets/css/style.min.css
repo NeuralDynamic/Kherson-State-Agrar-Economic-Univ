@@ -407,29 +407,45 @@ a {
   text-decoration: none;
   font-size: 16px; }
 
-a.phone-link {
-  line-height: 25px;
-  padding: 5px 0 5px 25px;
-  background-image: url(/assets/images/svg/phone2.svg);
+a.phone-link,
+a.email-link,
+a.location-link {
   background-position: 2px 10px;
   background-repeat: no-repeat;
-  background-size: 20px 20px; }
+  background-size: 20px 20px;
+  line-height: 25px; }
+
+a.phone-link {
+  padding: 5px 0 5px 25px;
+  background-image: url(/assets/images/svg/phone2.svg); }
 
 a.email-link {
-  line-height: 25px;
   padding: 5px 0 5px 30px;
-  background-image: url(/assets/images/svg/email.svg);
-  background-position: 2px 10px;
-  background-repeat: no-repeat;
-  background-size: 20px 20px; }
+  background-image: url(/assets/images/svg/email.svg); }
 
 a.location-link {
-  line-height: 25px;
   padding: 5px 0 5px 30px;
-  background-image: url(/assets/images/svg/location.svg);
-  background-position: 2px 8px;
+  background-image: url(/assets/images/svg/location.svg); }
+
+a.univ-link {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: 20px 20px; }
+  background-size: auto 100%; }
+
+a.web-science {
+  background-image: url(/assets/images/web-science.webp); }
+
+a.researchgate {
+  background-image: url(/assets/images/Researchgate.webp); }
+
+a.google-scholar {
+  background-image: url(/assets/images/google-scholar.webp); }
+
+a.orcid {
+  background-image: url(/assets/images/orcid.png); }
 
 p {
   font-size: 16px;
@@ -503,7 +519,7 @@ header {
   border: 3px solid #FFFFFF;
   box-sizing: border-box;
   border-radius: 20px;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 120px);
   width: calc(100% - 80px);
   max-width: 1440px;
   margin: 0 auto;
@@ -764,6 +780,83 @@ header {
   .department-contacts a {
     margin-right: 30px; }
 
+.teacher-intro-block {
+  width: 100%;
+  display: flex;
+  padding: 15px 30px; }
+  .teacher-intro-block .teacher-profile {
+    width: 40%; }
+  .teacher-intro-block .teacher-profile__name {
+    font-size: 28px;
+    text-align: center;
+    color: #197326;
+    margin-bottom: 20px; }
+  .teacher-intro-block .teacher-profile__photo {
+    margin-bottom: 20px;
+    max-height: 300px; }
+    .teacher-intro-block .teacher-profile__photo img {
+      max-height: 300px;
+      width: auto;
+      display: block;
+      margin: auto;
+      -webkit-box-shadow: 10px 10px 27px -17px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 10px 10px 27px -17px rgba(0, 0, 0, 0.75);
+      box-shadow: 10px 10px 27px -17px rgba(0, 0, 0, 0.75);
+      transition: transform .5s; }
+      .teacher-intro-block .teacher-profile__photo img:hover {
+        transform: scale(1.03); }
+  .teacher-intro-block .teacher-profile__rank {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 50px; }
+  .teacher-intro-block .teacher-univ-data {
+    width: 60%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    .teacher-intro-block .teacher-univ-data .title {
+      color: #197326;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 30px; }
+  .teacher-intro-block .teacher-univ-data__info {
+    padding: 0 30px; }
+    .teacher-intro-block .teacher-univ-data__info p {
+      width: 100%;
+      text-align: center; }
+  .teacher-intro-block .teacher-univ-data__workplaces {
+    padding: 0 30px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center; }
+    .teacher-intro-block .teacher-univ-data__workplaces a {
+      text-decoration: underline;
+      font-size: 18px;
+      line-height: 18px; }
+  .teacher-intro-block .teacher-univ-data__workspaces-list {
+    width: fit-content; }
+  .teacher-intro-block .teacher-univ-data__links {
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-around; }
+    .teacher-intro-block .teacher-univ-data__links .univ-link {
+      height: 40px;
+      width: 40px; }
+
+.teacher-disciplines {
+  padding: 15px 50px;
+  padding-left: 70px; }
+  .teacher-disciplines ul {
+    list-style: disc;
+    display: flex;
+    flex-basis: 33.333333%;
+    flex-wrap: wrap; }
+    .teacher-disciplines ul li {
+      flex: 0 0 33.333333%;
+      font-size: 18px;
+      margin-bottom: 20px; }
+
 .tns-outer {
   padding: 0 !important;
   width: 100%; }
@@ -908,13 +1001,12 @@ header {
     -webkit-box-shadow: 7px 7px 20px -9px rgba(0, 0, 0, 0.2), -7px -7px 20px -9px rgba(255, 255, 255, 0.5);
     -moz-box-shadow: 7px 7px 20px -9px rgba(0, 0, 0, 0.2), -7px -7px 20px -9px rgba(255, 255, 255, 0.2);
     box-shadow: 7px 7px 20px -9px rgba(0, 0, 0, 0.2), -7px -7px 20px -9px rgba(51, 51, 51, 0.01); }
-
-.teacher-card .teacher-card__link {
-  height: 100%;
-  width: 100%;
-  padding: 15px 20px;
-  cursor: pointer;
-  padding-bottom: 30px; }
+  .card.linked-card .card__link {
+    height: 100%;
+    width: 100%;
+    padding: 15px 20px;
+    cursor: pointer;
+    padding-bottom: 30px; }
 
 .teacher-card .teacher-name {
   font-size: 20px;
@@ -934,6 +1026,9 @@ header {
   flex-direction: column;
   justify-content: space-between;
   max-width: 250px; }
+
+.teacher-card .teacher-rank {
+  font-size: 14px; }
 
 .teacher-card .teacher-image {
   width: fit-content; }
@@ -960,12 +1055,6 @@ header {
 .department-card {
   width: calc(50% - 30px);
   margin-bottom: 15px; }
-  .department-card .department-card__link {
-    height: 100%;
-    width: 100%;
-    padding: 15px 20px;
-    cursor: pointer;
-    padding-bottom: 30px; }
   .department-card .department-card__body {
     display: flex;
     width: 100%; }
@@ -1097,3 +1186,33 @@ section.hiding {
     height: fit-content; }
   .hiding-list.active .hiding-list__title::after {
     transform: rotate(90deg); }
+
+.linked-line-list .row {
+  align-items: center;
+  margin-bottom: 0; }
+
+.linked-line-list .linked-line-list__link {
+  position: relative;
+  display: block;
+  width: 80px;
+  min-height: 60px;
+  height: 100%; }
+  .linked-line-list .linked-line-list__link::before {
+    content: '';
+    background: #3CC13B;
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+  .linked-line-list .linked-line-list__link::after {
+    content: '';
+    background: #3CC13B;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%); }
