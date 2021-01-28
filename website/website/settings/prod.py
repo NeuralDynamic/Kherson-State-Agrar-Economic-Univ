@@ -1,6 +1,10 @@
+from dotenv import load_dotenv
+
 from .django import *
 from .project import *
 from .third_party import *
+
+load_dotenv()
 
 SECRET_KEY = 'Au+Sr,t>U]<8\Zn8Z3X!uTq<Q#4<sQS^Ezda5DhkV}C)&Nu{Sjy@Hq#y`nM2'
 

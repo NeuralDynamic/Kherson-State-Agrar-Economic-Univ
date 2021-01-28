@@ -1,0 +1,67 @@
+.hiding-list{
+    margin-bottom: 15px;
+
+    .hiding-list__title{
+        position: relative;
+        padding-left: 15px;
+        cursor: pointer;
+
+        &::before{
+            content: '';
+            position: absolute;
+            background-color: #000000c0;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            left: 0;
+            top: 6px;
+        }
+
+        &::after{
+            content: '';
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            right: 0;
+            top: 12px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url(/assets/images/svg/arrow-right.svg);
+            transition: transform .3s;
+        }
+    }
+
+
+    .hiding-list__body{
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+        transition-delay: 0s;
+        height: 0;
+
+        li{
+            margin-bottom: 15px;
+
+            a{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &.active{
+        .hiding-list__body{
+            padding: 15px;
+            padding-left: 20px;
+            visibility: visible;
+            opacity: 1;
+            height: fit-content;
+        }
+
+        .hiding-list__title{
+            &::after{
+                transform: rotate(90deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.wrapper{
+    height: 100%;
+    width: auto;
+    display: block;
+    position: relative;
+    padding: 2% 30px;
+}
+
+.row{
+    width: 100%;
+    display: flex;
+    position: relative;
+    margin-bottom: 15px;
+
+    &.f-wrap{
+        flex-wrap: wrap;
+    }
+}
+
+.column{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: block;
+    margin: 0 15px;
+}
+
+section{
+    width: 100%;
+    position: relative;
+    display: block;
+    padding: 0 30px;
+    margin-bottom: 30px;
+
+    .section-title{
+        font-size: 20px;
+        color: #197326;
+    }
+}

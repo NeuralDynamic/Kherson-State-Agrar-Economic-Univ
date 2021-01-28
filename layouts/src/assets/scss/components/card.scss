@@ -1,0 +1,21 @@
+$card-photo-size: 120px;
+
+.card{
+    width: calc(100% - 30px);
+    margin: 0 15px;
+
+    &.glassed{
+        background: linear-gradient(107.48deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.12) 100%);
+        // backdrop-filter: blur(50px);
+        border-radius: 20px;
+        border: 1px solid rgb(250, 250, 250);
+    
+        -webkit-box-shadow: 7px 7px 20px -9px rgba(0,0,0,0.2),
+                            -7px -7px 20px -9px rgba(255,255,255,0.5);
+        -moz-box-shadow: 7px 7px 20px -9px rgba(0,0,0,0.2),
+                        -7px -7px 20px -9px rgba(255,255,255,0.2);
+        box-shadow: 7px 7px 20px -9px rgba(0,0,0,0.2),
+                    -7px -7px 20px -9px rgba(51, 51, 51, 0.01);
+
+    }
+}

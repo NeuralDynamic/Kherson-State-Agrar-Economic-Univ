@@ -18,15 +18,15 @@ CMS_LANGUAGES = {
             'hide_untranslated': False,
         },
         {
-            'code': 'ua',
-            'name': gettext('ua'),
+            'code': 'uk',
+            'name': gettext('uk'),
             'redirect_on_fallback': True,
             'public': True,
             'hide_untranslated': False,
         },
     ],
     'default': {
-        'fallbacks': ['ru', 'en', 'ua'],
+        'fallbacks': ['ru', 'en', 'uk'],
         'redirect_on_fallback': False,
         'public': True,
         'hide_untranslated': False,

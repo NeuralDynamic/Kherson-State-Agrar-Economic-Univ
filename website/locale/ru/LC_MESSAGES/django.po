@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-27 15:31+0200\n"
+"POT-Creation-Date: 2021-01-28 10:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,225 +20,214 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\gallery\apps.py:7
+#: gallery/apps.py:7
 msgid "Gallery App"
 msgstr "Галерея"
 
-#: .\gallery\forms.py:14
+#: gallery/forms.py:14
 msgid "Add images"
 msgstr "Добавить изображения"
 
-#: .\gallery\models.py:19 .\gallery\models.py:48 .\library\models.py:18
-#: .\library\models.py:47 .\news\models.py:22 .\university\models.py:70
-#: .\university\models.py:98 .\university\models.py:140
-#: .\university\models.py:206
+#: gallery/models.py:19 gallery/models.py:48 library/models.py:18
+#: library/models.py:47 university/models.py:70 university/models.py:98
+#: university/models.py:141 university/models.py:208
 msgid "Description"
 msgstr "Описание"
 
-#: .\gallery\models.py:21 .\library\models.py:20 .\library\models.py:53
-#: .\news\models.py:24 .\news\models.py:56 .\university\models.py:74
-#: .\university\models.py:106 .\university\models.py:144
+#: gallery/models.py:21 library/models.py:20 library/models.py:53
+#: university/models.py:74 university/models.py:107 university/models.py:146
 msgid "Title"
 msgstr "Название"
 
-#: .\gallery\models.py:27
+#: gallery/models.py:27
 msgid "Galleries"
 msgstr "Галереи"
 
-#: .\gallery\models.py:28 .\gallery\models.py:57 .\news\models.py:71
-#: .\university\models.py:121 .\university\models.py:151
+#: gallery/models.py:28 gallery/models.py:57 university/models.py:122
+#: university/models.py:153
 msgid "Gallery"
 msgstr "Галерея"
 
-#: .\gallery\models.py:43 .\gallery\models.py:63
+#: gallery/models.py:43 gallery/models.py:63
 msgid "Images"
 msgstr "Изображения"
 
-#: .\gallery\models.py:50 .\gallery\models.py:64
+#: gallery/models.py:50 gallery/models.py:64
 msgid "Image"
 msgstr "Изображение"
 
-#: .\library\apps.py:7
+#: library/apps.py:7
 msgid "Library App"
 msgstr "Библиотека"
 
-#: .\library\models.py:26 .\library\models.py:59
+#: library/models.py:26 library/models.py:59
 msgid "Libraries"
 msgstr "Библиотеки"
 
-#: .\library\models.py:27 .\university\models.py:224
+#: library/models.py:27 university/models.py:226
 msgid "Library"
 msgstr "Библиотека"
 
-#: .\library\models.py:42 .\library\models.py:65
+#: library/models.py:42 library/models.py:65
 msgid "Books"
 msgstr "Книги"
 
-#: .\library\models.py:49
+#: library/models.py:49
 msgid "Authors"
 msgstr "Авторы"
 
-#: .\library\models.py:51
+#: library/models.py:51
 msgid "Cover"
 msgstr "Обложка"
 
-#: .\library\models.py:66
+#: library/models.py:66
 msgid "Book"
 msgstr "Книга"
 
-#: .\news\apps.py:7
-msgid "News App"
-msgstr "Новости"
-
-#: .\news\models.py:30 .\news\models.py:31 .\news\models.py:67
-msgid "News Feed"
-msgstr "Новостная лента"
-
-#: .\news\models.py:46 .\news\models.py:76
-msgid "Papers"
-msgstr "Статьи"
-
-#: .\news\models.py:51
-msgid "Header"
-msgstr "Заголовок"
-
-#: .\news\models.py:54
-msgid "Story"
-msgstr "История"
-
-#: .\news\models.py:77
-msgid "Paper"
-msgstr "Статья"
-
-#: .\university\apps.py:7
+#: university/apps.py:7
 msgid "University App"
 msgstr "Университет"
 
-#: .\university\models.py:18
+#: university/models.py:18
 msgid "Rank"
 msgstr "Звание"
 
-#: .\university\models.py:24 .\university\models.py:81
-#: .\university\models.py:129
+#: university/models.py:24 university/models.py:81 university/models.py:130
 msgid "Cathedra"
 msgstr "Кафедра"
 
-#: .\university\models.py:26 .\university\models.py:51
-#: .\university\models.py:123 .\university\models.py:153
-#: .\university\models.py:187 .\university\models.py:229
-#: .\university\models.py:230
+#: university/models.py:26 university/models.py:51 university/models.py:124
+#: university/models.py:155 university/models.py:189 university/models.py:231
+#: university/models.py:232
 msgid "Staff"
 msgstr "Работник"
 
-#: .\university\models.py:31
+#: university/models.py:31
 msgid "Cathedra staffs"
 msgstr "Сотрудники кафедр"
 
-#: .\university\models.py:32
+#: university/models.py:32
 msgid "Cathedra staff"
 msgstr "Сотрудник кафедры"
 
-#: .\university\models.py:43
+#: university/models.py:43
 msgid "Position"
 msgstr "Должность"
 
-#: .\university\models.py:49 .\university\models.py:118
-#: .\university\models.py:159
+#: university/models.py:49 university/models.py:119 university/models.py:161
 msgid "Faculty"
 msgstr "Факультет"
 
-#: .\university\models.py:56
+#: university/models.py:56
 msgid "Faculty staffs"
 msgstr "Сотрудники факультетов"
 
-#: .\university\models.py:57
+#: university/models.py:57
 msgid "Faculty staff"
 msgstr "Сотрудник факультета"
 
-#: .\university\models.py:72 .\university\models.py:104
+#: university/models.py:72 university/models.py:105
 msgid "Number"
 msgstr "Номер"
 
-#: .\university\models.py:86
+#: university/models.py:86
 msgid "Specialities"
 msgstr "Специальности"
 
-#: .\university\models.py:87
+#: university/models.py:87
 msgid "Speciality"
 msgstr "Специальность"
 
-#: .\university\models.py:101 .\university\models.py:143
+#: university/models.py:101 university/models.py:144
 msgid "Emblem"
 msgstr "Эмблема"
 
-#: .\university\models.py:103
+#: university/models.py:104
 msgid "Goal"
 msgstr "Цель"
 
-#: .\university\models.py:112
+#: university/models.py:113
 msgid "Created at"
 msgstr "Создано в"
 
-#: .\university\models.py:128
+#: university/models.py:129
 msgid "Cathedras"
 msgstr "Кафедры"
 
-#: .\university\models.py:158
+#: university/models.py:160
 msgid "Faculties"
 msgstr "Факультеты"
 
-#: .\university\models.py:173
+#: university/models.py:175
 msgid "Google Scholar"
 msgstr ""
 
-#: .\university\models.py:175
+#: university/models.py:177
 msgid "Web Of Science"
 msgstr ""
 
-#: .\university\models.py:177
+#: university/models.py:179
 msgid "Researchgate"
 msgstr ""
 
-#: .\university\models.py:178
+#: university/models.py:180
 msgid "Scopus"
 msgstr ""
 
-#: .\university\models.py:180
+#: university/models.py:182
 msgid "ORCID"
 msgstr ""
 
-#: .\university\models.py:192 .\university\models.py:193
+#: university/models.py:194 university/models.py:195
 msgid "Links"
 msgstr "Ссылки"
 
-#: .\university\models.py:208
+#: university/models.py:210
 msgid "Photo"
 msgstr "Фотография"
 
-#: .\university\models.py:211
+#: university/models.py:213
 msgid "Second name"
 msgstr "Фамилия"
 
-#: .\university\models.py:213
+#: university/models.py:215
 msgid "First name"
 msgstr "Имя"
 
-#: .\university\models.py:215
+#: university/models.py:217
 msgid "Third name"
 msgstr "Отчество"
 
-#: .\university\models.py:217
+#: university/models.py:219
 msgid "Phone number"
 msgstr "Телефон"
 
-#: .\website\settings\django.py:142 .\website\settings\third_party\cms.py:15
+#: website/settings/django.py:142 website/settings/third_party/cms.py:15
 msgid "ru"
 msgstr ""
 
-#: .\website\settings\django.py:143 .\website\settings\third_party\cms.py:8
+#: website/settings/django.py:143 website/settings/third_party/cms.py:8
 msgid "en"
 msgstr ""
 
-#: .\website\settings\django.py:149 .\website\settings\third_party\cms.py:22
-msgid "ua"
+#: website/settings/django.py:149 website/settings/third_party/cms.py:22
+msgid "uk"
 msgstr ""
+
+#~ msgid "News App"
+#~ msgstr "Новости"
+
+#~ msgid "News Feed"
+#~ msgstr "Новостная лента"
+
+#~ msgid "Papers"
+#~ msgstr "Статьи"
+
+#~ msgid "Header"
+#~ msgstr "Заголовок"
+
+#~ msgid "Story"
+#~ msgstr "История"
+
+#~ msgid "Paper"
+#~ msgstr "Статья"
