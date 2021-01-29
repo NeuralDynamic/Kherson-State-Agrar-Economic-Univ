@@ -6,6 +6,7 @@ const sliderstate = {
 };
 
 function start_radio_slider_loop(slider,i){
+    stop_radio_slider_loop(i)
     const container = slider.querySelector('.slider__container');
     const navigation = container.querySelector('.navigation-manual');
     const radio_inputs = navigation.querySelectorAll('input[type="radio"]');
@@ -61,7 +62,7 @@ radio_sliders.forEach(function (item, i) {
             sliderstate.counter = index + 1;
             setTimeout(()=>{
                 start_radio_slider_loop(item,i);
-            },3000);
+            },5000);
         });
 
         radio_button.addEventListener('change', event => {
