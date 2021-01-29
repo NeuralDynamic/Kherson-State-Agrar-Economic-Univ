@@ -12,6 +12,18 @@ section.news-slider{
                         -7px -7px 20px -9px rgba(255,255,255,0.2);
         box-shadow: 7px 7px 20px -9px rgba(0,0,0,0.2),
                     -7px -7px 20px -9px rgba(51, 51, 51, 0.01);
+
+        .slider__slide{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            a{
+                display: block;
+                height: 100%;
+                width: 100%;
+            }
+        }
     }   
 
     .article-banner{

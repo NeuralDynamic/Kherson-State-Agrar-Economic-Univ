@@ -1,29 +1,34 @@
-const radio_sliders = document.querySelectorAll('.slider-radio');
+import { tns } from 'tiny-slider/src/tiny-slider';
 
-const sliderstate = {
+const radio_sliders = document.querySelectorAll('.slider-radio');
+const scroller_sliders = document.querySelectorAll('.slider-scroller');
+
+const slidersstate = {
     counter:0,
-    loop_time:4000
+    loop_time:4000,
+    per_slide:3,
+    line_items:3
 };
 
 function start_radio_slider_loop(slider,i){
-    stop_radio_slider_loop(i)
+    stop_slider_loop(i)
     const container = slider.querySelector('.slider__container');
     const navigation = container.querySelector('.navigation-manual');
     const radio_inputs = navigation.querySelectorAll('input[type="radio"]');
     const interval_loop = setInterval(()=>{
-        if (sliderstate.counter === radio_inputs.length) {
-            sliderstate.counter = 0;
+        if (slidersstate.counter === radio_inputs.length) {
+            slidersstate.counter = 0;
         }
-        radio_inputs[sliderstate.counter].checked = true;
+        radio_inputs[slidersstate.counter].checked = true;
         var event = new Event('change');
-        radio_inputs[sliderstate.counter].dispatchEvent(event);
-        sliderstate.counter++;
-    },sliderstate.loop_time);
-    sliderstate['r' + i] = interval_loop;
+        radio_inputs[slidersstate.counter].dispatchEvent(event);
+        slidersstate.counter++;
+    },slidersstate.loop_time);
+    slidersstate['r' + i] = interval_loop;
 }
 
-function stop_radio_slider_loop(i){
-    clearInterval(sliderstate['r' + i]);
+function stop_slider_loop(i){
+    clearInterval(slidersstate['r' + i]);
 }
 
 radio_sliders.forEach(function (item, i) {
@@ -58,8 +63,8 @@ radio_sliders.forEach(function (item, i) {
         // set margin for slide while radio was checked
 
         navigation_label.addEventListener('click', event => {
-            stop_radio_slider_loop(i);
-            sliderstate.counter = index + 1;
+            stop_slider_loop(i);
+            slidersstate.counter = index + 1;
             setTimeout(()=>{
                 start_radio_slider_loop(item,i);
             },5000);
@@ -77,3 +82,24 @@ radio_sliders.forEach(function (item, i) {
     container.style.width = slides.length*100 + '%';
     navigation_manual.style.width = 100/slides.length + '%';    
 });
+
+
+scroller_sliders.forEach(item => {
+    const container = item.querySelector('.slider__container');
+    const prev_button = item.querySelector('.slider__prevSlideButton');
+    const next_button = item.querySelector('.slider__nextSlideButton');
+
+    const slider = tns({
+        container: container,
+        items: 3,
+        autoplay: true,
+        // mouseDrag: true,
+        autoplayButton:false,
+        autoplayTimeout:3000,
+        nav:false,
+        prevButton: prev_button,
+        nextButton: next_button,
+    });
+
+    // item.querySelector('[data-action="stop"]').style.display = 'none';
+}); 
