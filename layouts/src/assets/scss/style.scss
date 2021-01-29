@@ -14,7 +14,7 @@ div{
     display: block;
 }
 
-input, textarea, button{
+input, textarea, button, h5, h4, h3, h2, h1{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
                 Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
                 'Helvetica Neue', sans-serif;
@@ -59,7 +59,6 @@ input, textarea, button{
 @import "grid";
 @import "links";
 @import "text";
-@import "slider";
 
 .page{
     position: relative;
@@ -105,6 +104,11 @@ input, textarea, button{
 @import "blocks/teacher/disciplines.scss";
 @import "blocks/teacher/library.scss";
 
+// NEWS
+
+@import "blocks/news/intro.scss";
+@import "blocks/news/slider.scss";
+
 // VENDORS
 
 @import "vendors/tiny-slider.scss";
@@ -118,3 +122,4 @@ input, textarea, button{
 @import "components/hiding_list.scss";
 @import "components/linked_list.scss";
 @import "components/book_card.scss";
+@import "components/slider.scss";
