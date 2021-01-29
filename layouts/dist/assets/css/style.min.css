@@ -885,9 +885,7 @@ section.news-slider {
   section.news-slider .article-description {
     text-align: right;
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical; }
+    text-overflow: ellipsis; }
 
 .tns-outer {
   padding: 0 !important;
