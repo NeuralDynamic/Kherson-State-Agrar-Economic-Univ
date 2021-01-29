@@ -483,7 +483,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10; }
+  z-index: 10;
+  display: flex;
+  padding: 0 20%;
+  justify-content: space-around; }
 
 .main {
   background: linear-gradient(107.48deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.12) 100%);
@@ -788,7 +791,7 @@ header {
     padding: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; }
+    justify-content: space-around; }
     .teacher-intro-block .teacher-univ-data .title {
       color: #197326;
       font-size: 20px;
@@ -799,6 +802,8 @@ header {
     .teacher-intro-block .teacher-univ-data__info p {
       width: 100%;
       text-align: center; }
+  .teacher-intro-block .teacher-univ-data__achievements {
+    padding: 0 30px; }
   .teacher-intro-block .teacher-univ-data__workplaces {
     padding: 0 30px;
     margin-bottom: 40px;
@@ -893,7 +898,8 @@ section.news-slider {
   section.news-slider .article-description {
     text-align: right;
     overflow: hidden;
-    text-overflow: ellipsis; }
+    text-overflow: ellipsis;
+    max-height: 150px; }
 
 .tns-outer {
   padding: 0 !important;

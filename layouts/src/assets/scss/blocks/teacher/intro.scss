@@ -48,7 +48,7 @@
         padding: 30px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
 
         .title{
             color: #197326;
@@ -65,6 +65,10 @@
             width: 100%;
             text-align: center;
         }
+    }
+
+    .teacher-univ-data__achievements{
+        padding: 0 30px;
     }
 
     .teacher-univ-data__workplaces{
