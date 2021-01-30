@@ -108,6 +108,7 @@ input, textarea, button, h5, h4, h3, h2, h1{
 
 @import "blocks/news/intro.scss";
 @import "blocks/news/slider.scss";
+@import "blocks/news/news.scss";
 
 // VENDORS
 
@@ -123,3 +124,4 @@ input, textarea, button, h5, h4, h3, h2, h1{
 @import "components/linked_list.scss";
 @import "components/book_card.scss";
 @import "components/slider.scss";
+@import "components/news_card.scss";
