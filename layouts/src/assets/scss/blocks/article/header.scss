@@ -1,0 +1,21 @@
+.article-container{
+
+    .article-header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        .article-header__title{
+            width: fit-content;
+            font-size: 30px;
+            line-height: 35px;
+        }
+
+        .article-header__date{
+            white-space: nowrap;
+            width: fit-content;
+            padding-top: 10px;
+        }
+    }
+
+}

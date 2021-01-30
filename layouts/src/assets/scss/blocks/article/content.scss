@@ -1,0 +1,23 @@
+.article-container{
+    .article-image{
+        margin-bottom: 50px;
+
+        img{
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: auto;
+        }
+    }
+
+    .article-content{
+        .article-data{
+            padding: 0 50px;
+            margin-bottom: 50px;
+            
+            p{
+                font-size: 18px;
+            }
+        }
+    }
+}

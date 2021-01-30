@@ -913,6 +913,37 @@ section.news-slider {
     margin-left: 0;
     margin-right: 0; }
 
+.article-container {
+  padding: 0 100px;
+  margin-top: 200px; }
+
+.article-container .article-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px; }
+  .article-container .article-header .article-header__title {
+    width: fit-content;
+    font-size: 30px;
+    line-height: 35px; }
+  .article-container .article-header .article-header__date {
+    white-space: nowrap;
+    width: fit-content;
+    padding-top: 10px; }
+
+.article-container .article-image {
+  margin-bottom: 50px; }
+  .article-container .article-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto; }
+
+.article-container .article-content .article-data {
+  padding: 0 50px;
+  margin-bottom: 50px; }
+  .article-container .article-content .article-data p {
+    font-size: 18px; }
+
 .tns-outer {
   padding: 0 !important;
   width: 100%; }

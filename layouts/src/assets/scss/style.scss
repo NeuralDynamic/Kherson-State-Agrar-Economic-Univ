@@ -110,6 +110,12 @@ input, textarea, button, h5, h4, h3, h2, h1{
 @import "blocks/news/slider.scss";
 @import "blocks/news/news.scss";
 
+// ARTICLE
+
+@import "blocks/article/article.scss";
+@import "blocks/article/header.scss";
+@import "blocks/article/content.scss";
+
 // VENDORS
 
 @import "vendors/tiny-slider.scss";
