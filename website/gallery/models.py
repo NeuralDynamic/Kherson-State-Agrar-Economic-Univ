@@ -3,7 +3,7 @@ from django.db.models import (CharField, TextField,
 ImageField, ForeignKey, CASCADE)
 from django.utils.translation import ugettext_lazy as _
 from parler.models import (TranslatableModel, TranslatedFields)
-from typing import TypeVar
+from typing import (TypeVar, List)
 #endregion
 
 #region				-----Internal Imports-----
@@ -20,6 +20,7 @@ class Gallery(TranslatableModel):
     translations=TranslatedFields(
     description=TextField(verbose_name=_("Description"),
     max_length=1500, blank=True, null=True),
+
     title=CharField(verbose_name=_("Title"),
     max_length=100, blank=False))
     #endregion
@@ -31,6 +32,11 @@ class Gallery(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__title",
+        "translations__description"]
+
     def _images(self)->Html:
         """@return related images"""
         return render_related_images(
@@ -49,9 +55,13 @@ class Image(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
     description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=True, null=True),
+    max_length=1500, blank=True, null=True))
+    #endregion
+
+    #region           -----Information-----
     image=ImageField(verbose_name=_("Image"),
-    upload_to="images", blank=False))
+    upload_to="images", blank=False,
+    default="")
     #endregion
 
     #region            -----Relation-----
@@ -68,6 +78,10 @@ class Image(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__description"]
+
     def _gallery(self)->Html:
         """@return gallery link"""
         return reverse_related_url(

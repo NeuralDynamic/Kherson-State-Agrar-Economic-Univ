@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'compressor',
     'multi_email_field',
     'parler',
+    'searcher',
 ]
 
 MIDDLEWARE = [

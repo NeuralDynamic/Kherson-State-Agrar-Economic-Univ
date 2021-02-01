@@ -11,7 +11,7 @@ from .models import (Gallery, Image)
 
 class GalleryAdminForm(TranslatableModelForm):
     #region           -----Information-----
-    images=FileField(label=_("Add images"), required=True,
+    images=FileField(label=_("Add images"), required=False,
     widget=ClearableFileInput(attrs={"multiple": True}))
     #endregion
 

@@ -3,7 +3,7 @@ from django.db.models import (TextField, CharField, ImageField,
 ManyToManyField, CASCADE)
 from django.utils.translation import ugettext_lazy as _
 from parler.models import (TranslatableModel, TranslatedFields)
-from typing import TypeVar
+from typing import (TypeVar, List)
 #endregion
 
 #region				-----Internal Imports-----
@@ -19,6 +19,7 @@ class Library(TranslatableModel):
     translations=TranslatedFields(
     description=TextField(verbose_name=_("Description"),
     max_length=500, blank=True, null=True),
+
     title=CharField(verbose_name=_("Title"),
     max_length=500, blank=False))
     #endregion
@@ -30,6 +31,11 @@ class Library(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__title",
+        "translations__description"]
+
     def _books(self)->Html:
         """@return related books"""
         return render_related_books(
@@ -49,8 +55,10 @@ class Book(TranslatableModel):
     translations=TranslatedFields(
     description=TextField(verbose_name=_("Description"),
     max_length=1500, blank=True, null=True),
+
     authors=TextField(verbose_name=_("Authors"),
     max_length=500, blank=False),
+    
     title=CharField(verbose_name=_("Title"),
     max_length=100, blank=False))
     #endregion
@@ -73,6 +81,12 @@ class Book(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__title",
+        "translations__description",
+        "translations__authors"]
+
     def __str__(self)->str:
         """@return book title"""
         return self.title

@@ -5,7 +5,7 @@ ForeignKey, ImageField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from parler.models import (TranslatableModel, TranslatedFields)
-from typing import TypeVar
+from typing import (TypeVar, List)
 #endregion
 
 #region				-----Internal Imports-----
@@ -23,6 +23,7 @@ class NewsFeed(TranslatableModel):
     translations=TranslatedFields(
     description=TextField(verbose_name=_("Description"),
     max_length=500, blank=True, null=True),
+
     title=CharField(verbose_name=_("Title"),
     max_length=100, blank=False))
     #endregion
@@ -34,6 +35,11 @@ class NewsFeed(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__title",
+        "translations__description"]
+
     def _papers(self)->Html:
         """@return related papers"""
         return render_related_papers(
@@ -59,6 +65,7 @@ class Paper(TranslatableModel):
     translations=TranslatedFields(
     story=TextField(verbose_name=_("Story"),
     max_length=1500, blank=False),
+    
     title=CharField(verbose_name=_("Title"),
     max_length=100, blank=False))
     #endregion
@@ -84,6 +91,11 @@ class Paper(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__title",
+        "translations__story"]
+
     def _news_feed(self)->Html:
         """@return gallery link"""
         return reverse_related_url(

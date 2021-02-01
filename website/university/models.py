@@ -5,6 +5,7 @@ TextField, DateField, ManyToManyField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from parler.models import (TranslatableModel, TranslatedFields)
+from typing import (TypeVar, List)
 from multi_email_field.fields import MultiEmailField
 #endregion
 
@@ -35,6 +36,10 @@ class StaffCathedra(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__rank"]
+
     def __str__(self)->str:
         """@return name of staff and its rank"""
         return f"{self.staff} {self.cathedras}"
@@ -61,6 +66,10 @@ class StaffFaculty(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__position"]
+
     def __str__(self)->str:
         """@return name of staff and its rank"""
         return f"{self.staff} {self.faculties}"
@@ -96,6 +105,11 @@ class Speciality(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__title",
+        "translations__description"]
+
     def __str__(self)->str:
         """@return title of speciality"""
         return self.title
@@ -145,6 +159,12 @@ class Cathedra(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__title",
+        "translations__description",
+        "translations__goal"]
+
     def __str__(self)->str:
         """@return title of cathedra"""
         return self.title
@@ -181,6 +201,11 @@ class Faculty(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__title",
+        "translations__description"]
+
     def __str__(self)->str:
         """@return title of faculty"""
         return self.title
@@ -225,6 +250,13 @@ class Staff(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__first_name",
+        "translations__second_name",
+        "translations__description",
+        "translations__third_name"]
+
     def __str__(self)->str:
         """@return staff information"""
         return (self.second_name+
