@@ -2,6 +2,8 @@
 <html lang="ru">
 <head>
     {{> head }}
+
+    <link rel="stylesheet" href="assets/css/lightgallery.min.css">
 </head>
 <body>
 
@@ -10,7 +12,9 @@
 
         <main class="main" id="swup" class="transition-fade">
             {{> gallery__intro }}
-            {{> gallery__galleries }}
+
+            {{> gallery_single__header }}
+            {{> gallery_single__photos }}
         </main>
     
         {{> footer }}

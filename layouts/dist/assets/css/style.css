@@ -551,6 +551,15 @@ b {
     z-index: -1;
 }
 
+.transition-fade {
+    transition: 0.4s;
+    opacity: 1;
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
+}
+
 header {
     position: fixed;
     width: 100%;
@@ -1133,10 +1142,14 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(/assets/images/news-banner.jpg);
+    background-image: url(/assets/images/news-banner.webp);
 }
 
 .news-intro__title {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     font-size: 36px;
     color: #ffffff;
     text-transform: uppercase;
@@ -1261,6 +1274,90 @@ section.news-slider .article-description {
 
 .article-container .article-content .article-data p {
     font-size: 18px;
+}
+
+.gallery-intro {
+    top: -3px;
+    left: -3px;
+    position: absolute;
+    width: calc(100% + 6px);
+    height: 200px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-left: 50px;
+    margin-bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(/assets/images/news-banner.webp);
+}
+
+.gallery-intro .gallery-intro__title {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 36px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.gallery-container {
+    margin-top: 200px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 30%;
+    flex-basis: 30%;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: left;
+    justify-content: left;
+    padding: 30px;
+}
+
+.gallery-container .card {
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    margin: 0 auto 20px auto;
+}
+
+.gallery-container .card:last-child {
+    margin: 0 auto 20px auto;
+}
+
+.gallery-single-header {
+    margin-top: 200px;
+    padding: 0 50px;
+}
+
+.gallery-single-header h2 {
+    font-size: 24px;
+}
+
+.gallery-list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 30%;
+    flex-basis: 30%;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: left;
+    justify-content: left;
+    padding: 30px 50px;
+}
+
+.gallery-list .card {
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    margin: 0 auto 20px auto;
+}
+
+.gallery-list .card:last-child {
+    margin: 0 auto 20px auto;
 }
 
 .tns-outer {
@@ -2010,4 +2107,70 @@ section.hiding.active .section-body .content {
     padding-left: 20px;
     visibility: visible;
     opacity: 1;
+}
+
+.gallery-card {
+    height: 350px;
+    position: relative;
+}
+
+.gallery-card .card__link {
+    padding: 0 !important;
+}
+
+.gallery-card .card-body {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-card .gallery-card__image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gallery-card .gallery-card__data {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    min-height: 90px;
+}
+
+.gallery-card .gallery-card__data::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.gallery-card .gallery-card__title {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 15px;
+    font-size: 22px;
+    z-index: 3;
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    min-height: 90px;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    transition: height 0s linear 0.33s, opacity 0.33s linear;
 }

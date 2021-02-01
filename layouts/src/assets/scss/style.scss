@@ -121,6 +121,7 @@ input, textarea, button, h5, h4, h3, h2, h1{
 //  GALLERY
 
 @import "blocks/gallery/intro.scss";
+@import "blocks/gallery/galleries.scss";
 
 // VENDORS
 
@@ -137,3 +138,4 @@ input, textarea, button, h5, h4, h3, h2, h1{
 @import "components/book_card.scss";
 @import "components/slider.scss";
 @import "components/news_card.scss";
+@import "components/gallery_card.scss";
