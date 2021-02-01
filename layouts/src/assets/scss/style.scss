@@ -81,6 +81,8 @@ input, textarea, button, h5, h4, h3, h2, h1{
     z-index:-1;
 }
 
+@import "swup";
+
 @import "blocks/header.scss";
 @import "blocks/main.scss";
 @import "blocks/footer.scss";
@@ -115,6 +117,10 @@ input, textarea, button, h5, h4, h3, h2, h1{
 @import "blocks/article/article.scss";
 @import "blocks/article/header.scss";
 @import "blocks/article/content.scss";
+
+//  GALLERY
+
+@import "blocks/gallery/intro.scss";
 
 // VENDORS
 

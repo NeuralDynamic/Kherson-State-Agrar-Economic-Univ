@@ -47,7 +47,6 @@ radio_sliders.forEach(function (item, i) {
         radio_button.setAttribute('id','radio' + (index + 1));
         if (index === 0) {
             radio_button.checked = true;
-            console.log(radio_button);
         }
 
         const navigation_label = document.createElement('label');
