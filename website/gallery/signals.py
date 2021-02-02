@@ -7,7 +7,7 @@ from PIL import Image as Editor
 #endregion
 
 #region             -----Internal Imports-----
-from .settings import SIZES, EXTENSION
+from .settings import (SIZES, FORMAT)
 from .models import Image
 #endregion
 
@@ -50,16 +50,22 @@ def create_on_save(instance: Image,
     image=Editor.open(instance.large_image.path)
     name=image.filename.split("/")[-1].split(".")[0]
 
-    pathes=[f"{name}_{size}.{EXTENSION.lower()}" 
+    #*Generates pathes the images save to
+    pathes=[f"{name}_{size}.{FORMAT.lower()}" 
     for size in SIZES]
 
-    parameters={f"{size}_image": path 
+    #*Associates images with model fields
+    parameters={f"{size}_image": path
     for path, size in zip(pathes, SIZES)}
 
-    for path, size in zip(pathes, SIZES):
-        image.resize(size=SIZES[size]).save(
-        optimize=True, quality=75, fp=path)
+    #*Generates images with three sizes
+    [image.resize(size=SIZES[size]).save(
+    optimize=True, quality=75, fp=path)
+    for path, size in zip(pathes, SIZES)]
     
-    Image.objects.filter(pk=instance.pk).update(**parameters)
+    #*Updates model parameters
+    (Image.objects.filter(pk=instance.pk)
+    .update(**parameters))
 
+    #*Removes temporary image
     remove(image.filename)
