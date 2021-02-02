@@ -634,6 +634,17 @@ eval("const hiding_lists = document.querySelectorAll('.hiding-list .hiding-list_
 
 /***/ }),
 
+/***/ "./src/assets/js/script.js":
+/*!*********************************!*\
+  !*** ./src/assets/js/script.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("const burger = document.querySelector('.header__burger');\r\n\r\nburger.addEventListener('click', event=>{\r\n    const current_burder = event.currentTarget;\r\n    const menu = document.getElementById('menu');\r\n    const body = document.getElementsByTagName('body');\r\n\r\n    if (current_burder.classList.contains('active')) {\r\n        current_burder.classList.remove('active');\r\n        menu.classList.remove('active');\r\n        // document.body.classList.remove('no-scroll');\r\n    }else{\r\n        current_burder.classList.add('active');\r\n        menu.classList.add('active');\r\n        // document.body.classList.add('no-scroll');\r\n    }\r\n});\n\n//# sourceURL=webpack:///./src/assets/js/script.js?");
+
+/***/ }),
+
 /***/ "./src/assets/js/sections.js":
 /*!***********************************!*\
   !*** ./src/assets/js/sections.js ***!
@@ -669,13 +680,13 @@ eval("// import Swup from 'swup';\r\n\r\n// const swup = new Swup();\n\n//# sour
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************************************************************************************************************!*\
-  !*** multi ./src/assets/js/cards.js ./src/assets/js/gallery-slider.js ./src/assets/js/hiding-list.js ./src/assets/js/sections.js ./src/assets/js/sliders.js ./src/assets/js/swup.js ***!
-  \**************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./src/assets/js/cards.js ./src/assets/js/gallery-slider.js ./src/assets/js/hiding-list.js ./src/assets/js/script.js ./src/assets/js/sections.js ./src/assets/js/sliders.js ./src/assets/js/swup.js ***!
+  \****************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/cards.js */\"./src/assets/js/cards.js\");\n__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/gallery-slider.js */\"./src/assets/js/gallery-slider.js\");\n__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/hiding-list.js */\"./src/assets/js/hiding-list.js\");\n__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/sections.js */\"./src/assets/js/sections.js\");\n__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/sliders.js */\"./src/assets/js/sliders.js\");\nmodule.exports = __webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/swup.js */\"./src/assets/js/swup.js\");\n\n\n//# sourceURL=webpack:///multi_./src/assets/js/cards.js_./src/assets/js/gallery-slider.js_./src/assets/js/hiding-list.js_./src/assets/js/sections.js_./src/assets/js/sliders.js_./src/assets/js/swup.js?");
+eval("__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/cards.js */\"./src/assets/js/cards.js\");\n__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/gallery-slider.js */\"./src/assets/js/gallery-slider.js\");\n__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/hiding-list.js */\"./src/assets/js/hiding-list.js\");\n__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/script.js */\"./src/assets/js/script.js\");\n__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/sections.js */\"./src/assets/js/sections.js\");\n__webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/sliders.js */\"./src/assets/js/sliders.js\");\nmodule.exports = __webpack_require__(/*! /mnt/c/Users/nikkr/Programming/ksau/project/layouts/src/assets/js/swup.js */\"./src/assets/js/swup.js\");\n\n\n//# sourceURL=webpack:///multi_./src/assets/js/cards.js_./src/assets/js/gallery-slider.js_./src/assets/js/hiding-list.js_./src/assets/js/script.js_./src/assets/js/sections.js_./src/assets/js/sliders.js_./src/assets/js/swup.js?");
 
 /***/ })
 

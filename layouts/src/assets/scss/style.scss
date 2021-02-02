@@ -10,6 +10,10 @@ body {
     overflow-y: auto;
 }
 
+body.no-scroll {
+    overflow-y: hidden;
+}
+
 div{
     display: block;
 }
@@ -81,11 +85,29 @@ input, textarea, button, h5, h4, h3, h2, h1{
     z-index:-1;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 @import "swup";
 
 @import "blocks/header.scss";
 @import "blocks/main.scss";
 @import "blocks/footer.scss";
+@import "blocks/menu.scss";
 
 // FACULTY IMPORTS
 

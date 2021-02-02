@@ -377,6 +377,10 @@ body {
     overflow-y: auto;
 }
 
+body.no-scroll {
+    overflow-y: hidden;
+}
+
 div {
     display: block;
 }
@@ -560,7 +564,7 @@ html.is-animating .transition-fade {
     opacity: 0;
 }
 
-header {
+.header {
     position: fixed;
     width: 100%;
     height: 50px;
@@ -579,6 +583,61 @@ header {
     padding: 0 20%;
     -ms-flex-pack: distribute;
     justify-content: space-around;
+}
+
+.header a {
+    font-size: 20px;
+}
+
+.header__burger {
+    position: absolute;
+    display: -ms-flexbox;
+    display: flex;
+    right: 50px;
+    top: 7px;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    padding: 3px 0;
+}
+
+.header__burger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.7);
+    transition: .5s;
+}
+
+.header__burger.active {
+    display: block;
+}
+
+.header__burger.active span:first-child,
+    .header__burger.active span:last-child {
+    position: absolute;
+    top: 45%;
+    left: 0;
+}
+
+.header__burger.active span:first-child {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.header__burger.active span:nth-child(2) {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.header__burger.active span:last-child {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 .main {
@@ -1350,13 +1409,18 @@ section.news-slider .article-description {
     padding: 30px 50px;
 }
 
-.gallery-list .card {
+.gallery-list a {
     -ms-flex: 0 0 30%;
     flex: 0 0 30%;
     margin: 0 auto 20px auto;
 }
 
-.gallery-list .card:last-child {
+.gallery-list a img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery-list a:last-child {
     margin: 0 auto 20px auto;
 }
 
