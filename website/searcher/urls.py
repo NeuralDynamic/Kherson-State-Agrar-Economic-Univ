@@ -5,3 +5,7 @@ from django.urls import path
 #region             -----Internal Imports-----
 from . import views
 #endregion
+
+urlpatterns = [
+    path(route="search/<str:phrase>", view=views.search)
+]

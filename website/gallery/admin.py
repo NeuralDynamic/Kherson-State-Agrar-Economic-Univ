@@ -46,6 +46,6 @@ class GalleryAdmin(TranslatableAdmin):
 @register(Image)
 class ImageAdmin(TranslatableAdmin):
     #region           ----Configuration-----
-    fields=["image", "gallery", "description"]
+    fields=["large_image", "gallery", "description", "alt"]
     list_display=["_title", "_gallery"]
     #endregion

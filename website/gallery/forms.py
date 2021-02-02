@@ -22,7 +22,7 @@ class GalleryAdminForm(TranslatableModelForm):
         :param gallery: gallery class instance\n
         @return None
         """
-        [Image(gallery=gallery, image=image).save()
+        [Image(gallery=gallery, large_image=image).save()
         for image in self.files.getlist("images")]
     def validate_image_extensions(self)->None:
         """

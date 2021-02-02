@@ -59,9 +59,17 @@ class Image(TranslatableModel):
     #endregion
 
     #region           -----Information-----
-    image=ImageField(verbose_name=_("Image"),
-    upload_to="images", blank=False,
-    default="")
+    large_image=ImageField(blank=False, default="",
+    verbose_name=_("Image"), upload_to="images",
+    max_length=400)
+    medium_image=ImageField(blank=True,
+    upload_to="images", default="",
+    max_length=400)
+    small_image=ImageField(blank=True,
+    upload_to="images", default="",
+    max_length=400)
+    alt=CharField(max_length=100, 
+    blank=True, default="image")
     #endregion
 
     #region            -----Relation-----
@@ -90,14 +98,20 @@ class Image(TranslatableModel):
         model="gallery",
         app="gallery")
 
+    def related(self)->List:
+        """@return related images"""
+        return [self.large_image, 
+        self.medium_image, 
+        self.small_image]
+
     def _title(self)->Html:
         """@return editing link"""
         return reverse_related_url(
+        title=self.large_image.name,
         id=self.pk, model="image",
-        title=self.image.name,
         app="gallery")
 
     def __str__(self)->str:
         """@return image url"""
-        return self.image.url
+        return self.large_image.url
     #endregion
