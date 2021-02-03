@@ -1,0 +1,25 @@
+<div class="card glassed department-card linked-card">
+    <div class="card__link" data-link="">
+        <div class="department-card__body">
+            <div class="department-image">
+                <div class="department-image__container" 
+                    {% if cathedra.emblem %}style="background-image: url({{ cathedra.emblem.url }});"{% endif %}>
+                </div>
+            </div>
+            <div class="department-data">
+                <div class="department-title">
+                    {{ cathedra.title }}
+                </div>
+                <div class="department-contacts">
+                    <a href="tel:+380552416216" class="phone-link">
+                        {{ cathedra.phone }}
+                    </a>
+                    <a href="mailto:{{ cathedra.email }}" class="email-link">
+                        {{ cathedra.email }}
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
