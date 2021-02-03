@@ -4,8 +4,8 @@ CMS_LANGUAGES = {
     ## Customize this
     1: [
         {
-            'code': 'en',
-            'name': gettext('en'),
+            'code': 'uk',
+            'name': gettext('uk'),
             'redirect_on_fallback': True,
             'public': True,
             'hide_untranslated': False,
@@ -18,15 +18,15 @@ CMS_LANGUAGES = {
             'hide_untranslated': False,
         },
         {
-            'code': 'uk',
-            'name': gettext('uk'),
+            'code': 'en',
+            'name': gettext('en'),
             'redirect_on_fallback': True,
             'public': True,
             'hide_untranslated': False,
         },
     ],
     'default': {
-        'fallbacks': ['ru', 'en', 'uk'],
+        'fallbacks': ['uk', 'ru', 'en',],
         'redirect_on_fallback': False,
         'public': True,
         'hide_untranslated': False,

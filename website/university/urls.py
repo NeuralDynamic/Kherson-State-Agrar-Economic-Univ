@@ -5,11 +5,11 @@ from django.urls import path
 #region				-----Internal Imports-----
 from .views import faculty_view
 from .views import teacher_view
-#endregion
+#endregionsudo nginx -t
 
 
 urlpatterns = [
-    path('/faculty/<int:faculty_id>/', faculty_view),
+    path('faculty/<int:faculty_id>/', faculty_view, name="faculty"),
 
-    path('/teacher/<int:teacher_id>/', teacher_view),
+    path('teacher/<int:teacher_id>/', teacher_view, name="teacher"),
 ]

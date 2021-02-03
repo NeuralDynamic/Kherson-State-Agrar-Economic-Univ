@@ -1,4 +1,5 @@
 #region				-----External Imports-----
+from djangocms_text_ckeditor.fields import HTMLField
 from django.db.models import (CharField, TextField,
 ImageField, ForeignKey, CASCADE)
 from django.utils.translation import ugettext_lazy as _
@@ -18,8 +19,8 @@ Html=TypeVar("Html", str, bytes)
 class Gallery(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
-    description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=True, null=True),
+    description=HTMLField(verbose_name=_("Description"),
+    blank=True, null=True),
 
     title=CharField(verbose_name=_("Title"),
     max_length=100, blank=False))
@@ -54,8 +55,8 @@ class Gallery(TranslatableModel):
 class Image(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
-    description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=True, null=True))
+    description=HTMLField(verbose_name=_("Description"),
+    blank=True, null=True))
     #endregion
 
     #region           -----Information-----

@@ -1,0 +1,27 @@
+<div class="card glassed teacher-card linked-card">
+    <div class="card__link" data-link="{% url 'teacher' teacher_id=teacher.id %}">
+        <div class="teacher-name">
+            {{ teacher.first_name }} {{ teacher.second_name }} {{ teacher.third_name }}
+        </div>
+        <div class="teacher-card__body">
+            <div class="teacher-data">
+                <div class="teacher-rank">
+                    {{ teacher.rank }}
+                </div>
+                <div class="teacher-contacts">
+                    <a href="tel:{{ teacher.phone }}" class="phone-link">
+                        {{ teacher.phone }}
+                    </a>
+                    <a href="mailto:office@ksau.kherson.ua" class="email-link">
+                        {{ teacher.emails }}
+                    </a>
+                </div>
+            </div>
+            <div class="teacher-image">
+                <div class="teacher-image__container" 
+                    {% if teacher.photo %}style="background-image: url({{ teacher.photo.url}});"{% endif %}>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

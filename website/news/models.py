@@ -1,4 +1,5 @@
 #region				-----External Imports-----
+from djangocms_text_ckeditor.fields import HTMLField
 from django.db.models import (CharField, TextField, 
 OneToOneField, DateTimeField, CASCADE, SET_NULL, 
 ForeignKey, ImageField)
@@ -21,8 +22,8 @@ Html=TypeVar("Html", str, bytes)
 class NewsFeed(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
-    description=TextField(verbose_name=_("Description"),
-    max_length=500, blank=True, null=True),
+    description=HTMLField(verbose_name=_("Description"),
+    blank=True, null=True),
 
     title=CharField(verbose_name=_("Title"),
     max_length=100, blank=False))
@@ -63,8 +64,8 @@ class Paper(TranslatableModel):
 
     #region           -----Translation-----
     translations=TranslatedFields(
-    story=TextField(verbose_name=_("Story"),
-    max_length=1500, blank=False),
+    story=HTMLField(verbose_name=_("Story"),
+    blank=False),
     
     title=CharField(verbose_name=_("Title"),
     max_length=100, blank=False))

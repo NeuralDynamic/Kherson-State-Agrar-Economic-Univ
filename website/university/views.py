@@ -26,11 +26,15 @@ def faculty_view(request, faculty_id):
     # TODO add database query for faculty
     context = dict()
     faculty = None
-    # context['faculty'] = faculty
+    teachers = None
+    
     # if faculty.emblem:
     #     width, height = get_image_dimensions(instance.emblem.file)
     #     context['emblem_height'] = height
     #     context['emblem_width'] = width
+
+    context['faculty'] = faculty
+    context['teachers'] = teachers
     return render(request,'university/faculty.html',context=context)
 
 #endregion

@@ -10,7 +10,8 @@ SECRET_KEY = 'rt^p8v+8e*gyo4!)qx&4gkb^n5o1w6fc-$bvko9-=5slu225bv'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['ksau.neuraldynamics.online','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['ksau.neuraldynamics.online','localhost',
+                 '127.0.0.1','212.111.209.71']
 
 DATABASES = {
     'default': {
