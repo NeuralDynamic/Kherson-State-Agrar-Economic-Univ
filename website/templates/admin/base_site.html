@@ -4,6 +4,7 @@
 {% block extrahead %}
 
 {{ block.super }}
+    
     <script type="text/javascript" src="{% static "admin/js/vendor/jquery/jquery.js" %}"></script>
     <script type="text/javascript" src="{% static "admin/js/jquery.init.js" %}"></script>
     <script>
@@ -15,6 +16,9 @@
         }
         .changelink{
             display: none !important;
+        }
+        .cke.cke_reset.cke_chrome{
+            width: auto !important;
         }
     </style>
 {% endblock %}

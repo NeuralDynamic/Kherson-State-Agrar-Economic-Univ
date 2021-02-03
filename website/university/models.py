@@ -1,5 +1,6 @@
 #region				-----External Imports-----
 from datetime import date
+from djangocms_text_ckeditor.fields import HTMLField
 from django.db.models import (Model, URLField, OneToOneField,
 CASCADE, CharField, ForeignKey, SET_NULL, ImageField, 
 TextField, DateField, ManyToManyField, IntegerField)
@@ -81,8 +82,8 @@ class StaffFaculty(TranslatableModel):
 class ScientificSociety(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
-    description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=False, default=""),
+    description=HTMLField(verbose_name=_("Description"),
+    blank=False, default=""),
 
     sub_title=CharField(verbose_name=_("Sub title"),
     max_length=400, blank=False, default=""))
@@ -96,7 +97,7 @@ class ScientificSociety(TranslatableModel):
 
     #region            -----Relation-----
     staff=ManyToManyField("Staff",
-    verbose_name=_("Staff"))
+    verbose_name=_("Staffs"))
     #endregion
 
     #region            -----Metadata-----
@@ -132,8 +133,8 @@ class Discipline(TranslatableModel):
 class Speciality(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
-    description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=False, default=""),
+    description=HTMLField(verbose_name=_("Description"),
+    blank=False, default=""),
 
     title=CharField(verbose_name=_("Title"),
     max_length=100, blank=False, default=""))
@@ -171,10 +172,10 @@ class Speciality(TranslatableModel):
 class Cathedra(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
-    description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=False, default=""),
+    description=HTMLField(verbose_name=_("Description"),
+    blank=False, default=""),
 
-    goal=TextField(max_length=1500, blank=False,
+    goal=TextField(blank=False,
     verbose_name=_("Goal"), default=""),
 
     title=CharField(verbose_name=_("Title"),
@@ -228,13 +229,13 @@ class Cathedra(TranslatableModel):
 class Faculty(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
-    description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=False, default=""),
+    description=HTMLField(verbose_name=_("Description"),
+    blank=False, default=""),
 
     title=CharField(verbose_name=_("Title"),
     max_length=100, blank=False, default=""),
     
-    council_of_employers=TextField(verbose_name=_("Council of employers"),
+    council_of_employers=HTMLField(verbose_name=_("Council of employers"),
     blank=False, default=""))
     #endregion
 
@@ -323,10 +324,10 @@ class Staff(TranslatableModel):
     rank=CharField(max_length=100, blank=True,
     verbose_name=_("Rank")),
 
-    methodical_works=TextField(blank=False,
+    methodical_works=HTMLField(blank=False,
     verbose_name=_("Methodical works")),
 
-    description=TextField(blank=False,
+    description=HTMLField(blank=False,
     verbose_name=_("Description")))
     #endregion
 

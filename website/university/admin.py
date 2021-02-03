@@ -74,6 +74,6 @@ class StaffAdmin(TranslatableAdmin):
 @register(ScientificSociety)
 class ScientificSocietyAdmin(TranslatableAdmin):
     #region           ----Configuration-----
-    fields=["description", "phone", "emails"
-    "staff"]
+    fields=["staff", "phone", 
+    "emails","description"]
     #endregion

@@ -1,4 +1,5 @@
 #region				-----External Imports-----
+from djangocms_text_ckeditor.fields import HTMLField
 from django.db.models import (TextField, CharField, ImageField, 
 ManyToManyField, CASCADE, URLField)
 from django.utils.translation import ugettext_lazy as _
@@ -17,7 +18,7 @@ Html=TypeVar("Html", str, bytes)
 class Library(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
-    description=TextField(verbose_name=_("Description"),
+    description=HTMLField(verbose_name=_("Description"),
     max_length=500, blank=True, null=True),
 
     title=CharField(verbose_name=_("Title"),
@@ -53,10 +54,10 @@ class Library(TranslatableModel):
 class Book(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
-    description=TextField(verbose_name=_("Description"),
+    description=HTMLField(verbose_name=_("Description"),
     max_length=1500, blank=True, null=True),
 
-    authors=TextField(verbose_name=_("Authors"),
+    authors=HTMLField(verbose_name=_("Authors"),
     max_length=500, blank=False),
     
     title=CharField(verbose_name=_("Title"),
