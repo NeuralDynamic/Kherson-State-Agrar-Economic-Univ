@@ -555,6 +555,23 @@ b {
     z-index: -1;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 .transition-fade {
     transition: 0.4s;
     opacity: 1;
@@ -836,6 +853,83 @@ html.is-animating .transition-fade {
     color: #383838;
     padding: 10px 0;
     font-size: 14px;
+}
+
+.menu {
+    position: fixed;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    top: 50px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 50px);
+    transition: opacity .5s, visibility .5s;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.menu.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu.active .menu-section {
+    margin-top: 0 !important;
+}
+
+.menu.active .menu-section::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    transition-delay: .2s;
+}
+
+.menu .menu-section {
+    height: calc(100vh - 50px);
+    width: 100%;
+    position: relative;
+    transition: all 0.5s linear;
+    margin-top: -100%;
+}
+
+.menu .menu-section:nth-child(2n) {
+    margin-top: 100%;
+}
+
+.menu .menu-section .section-data {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.menu .menu-section .section-title {
+    font-size: 20px;
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 2px solid #DADADA;
+    margin-bottom: 30px;
+}
+
+.menu .menu-section .content {
+    padding: 0 10px;
+}
+
+.menu .menu-section .content ul li {
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 15px 0;
+    border-bottom: 2px solid #00000086;
 }
 
 .faculty-header__main {

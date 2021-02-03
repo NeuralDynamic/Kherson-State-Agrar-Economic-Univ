@@ -439,16 +439,16 @@ a.univ-link {
   background-size: auto 100%; }
 
 a.web-science {
-  background-image: url(/assets/images/icons/web-science.webp); }
+  background-image: url(/assets/images/web-science.webp); }
 
 a.researchgate {
-  background-image: url(/assets/images/icons/Researchgate.webp); }
+  background-image: url(/assets/images/Researchgate.webp); }
 
 a.google-scholar {
-  background-image: url(/assets/images/icons/google-scholar.webp); }
+  background-image: url(/assets/images/google-scholar.webp); }
 
 a.orcid {
-  background-image: url(/assets/images/icons/orcid.png); }
+  background-image: url(/assets/images/orcid.png); }
 
 p {
   font-size: 16px;
