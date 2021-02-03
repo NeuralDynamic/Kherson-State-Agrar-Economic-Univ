@@ -3,10 +3,13 @@ from django.urls import path
 #endregion
 
 #region				-----Internal Imports-----
+from .views import faculty_view
 from .views import teacher_view
 #endregion
 
 
 urlpatterns = [
+    path('/faculty/<int:faculty_id>/', faculty_view),
+
     path('/teacher/<int:teacher_id>/', teacher_view),
 ]

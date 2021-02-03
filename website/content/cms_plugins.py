@@ -40,10 +40,6 @@ class FooterBlock(CMSPluginBase):
 
     #region            -----Rendering-----
     def render(self, context, instance, placeholder):
-        # if instance.logo:
-        #     width, height = get_image_dimensions(instance.logo.file)
-        #     instance.logo_height = height
-        #     instance.logo_width = width
         context.update({"instance": instance})
         return context
     #endregion

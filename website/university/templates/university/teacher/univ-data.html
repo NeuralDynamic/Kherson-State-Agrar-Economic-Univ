@@ -3,9 +3,9 @@
     <div class="">
         <div class="title">{% trans 'Професiйнi досягнення та нагороди' %}</div>
         <div class="teacher-univ-data__achievements">
-            {% for achievement in teacher.achievements %}
+            {% for reward in teacher.rewards %}
             <p>
-                · {{ achievement.title }} ({{ achievement.year }} {% trans 'year' %})
+                · {{ reward.title }} ({{ reward.year }} {% trans 'year' %})
             </p>
             {% endfor %}
         </div>
