@@ -220,6 +220,9 @@ class Staff(Model):
     emails=MultiEmailField()
     #endregion
 
+    scientific_title=CharField(max_length=40, blank=False,
+    verbose_name=_("Second name"))
+
     #region            -----Relation-----
     library=ForeignKey(Library, blank=True,
     null=True, on_delete=SET_NULL,
