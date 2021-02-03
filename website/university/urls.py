@@ -5,7 +5,7 @@ from django.urls import path
 #region				-----Internal Imports-----
 from .views import faculty_view
 from .views import teacher_view
-#endregion
+#endregionsudo nginx -t
 
 
 urlpatterns = [
