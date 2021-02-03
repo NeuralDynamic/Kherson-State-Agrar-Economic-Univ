@@ -78,6 +78,33 @@ class StaffFaculty(TranslatableModel):
 #endregion
 
 #region               -----Subdivisions-----
+class ScientificSociety(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
+    description=TextField(verbose_name=_("Description"),
+    max_length=1500, blank=False, default=""),
+
+    sub_title=CharField(verbose_name=_("Sub title"),
+    max_length=400, blank=False, default=""))
+    #endregion
+
+    #region           -----Information-----
+    phone=CharField(max_length=20, blank=False,
+    verbose_name=_("Phone number"))
+    emails=MultiEmailField()
+    #endregion
+
+    #region            -----Relation-----
+    staff=ManyToManyField("Staff",
+    verbose_name=_("Staff"))
+    #endregion
+
+    #region            -----Metadata-----
+    class Meta(object):
+        verbose_name_plural=_("Scientific Societies")
+        verbose_name=_("Scientific Society")
+    #endregion
+
 class Discipline(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
@@ -205,7 +232,10 @@ class Faculty(TranslatableModel):
     max_length=1500, blank=False, default=""),
 
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default=""))
+    max_length=100, blank=False, default=""),
+    
+    council_of_employers=TextField(verbose_name=_("Council of employers"),
+    blank=False, default=""))
     #endregion
 
     #region           -----Information-----
@@ -221,6 +251,10 @@ class Faculty(TranslatableModel):
     related_name="faculties")
     staff=ManyToManyField("StaffFaculty",
     verbose_name=_("Staff"))
+    scientific_society=ForeignKey(ScientificSociety, blank=True,
+    null=True, on_delete=SET_NULL,
+    verbose_name=_("Scientific Societies"),
+    related_name="scientific_society")
     #endregion
 
     #region            -----Metadata-----
