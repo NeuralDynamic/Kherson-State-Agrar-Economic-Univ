@@ -439,16 +439,16 @@ a.univ-link {
   background-size: auto 100%; }
 
 a.web-science {
-  background-image: url(/assets/images/web-science.webp); }
+  background-image: url(/assets/images/icons/web-science.webp); }
 
 a.researchgate {
-  background-image: url(/assets/images/Researchgate.webp); }
+  background-image: url(/assets/images/icons/Researchgate.webp); }
 
 a.google-scholar {
-  background-image: url(/assets/images/google-scholar.webp); }
+  background-image: url(/assets/images/icons/google-scholar.webp); }
 
 a.orcid {
-  background-image: url(/assets/images/orcid.png); }
+  background-image: url(/assets/images/icons/orcid.png); }
 
 p {
   font-size: 16px;
@@ -681,7 +681,6 @@ html.is-animating .transition-fade {
   left: 0;
   width: 100vw;
   height: calc(100vh - 50px);
-  transition: opacity .5s, visibility .5s;
   z-index: 100;
   overflow: hidden; }
   .menu.active {
@@ -704,7 +703,7 @@ html.is-animating .transition-fade {
     height: calc(100vh - 50px);
     width: 100%;
     position: relative;
-    transition: all 0.5s linear;
+    transition: all 0.8s linear;
     margin-top: -100%; }
     .menu .menu-section:nth-child(2n) {
       margin-top: 100%; }

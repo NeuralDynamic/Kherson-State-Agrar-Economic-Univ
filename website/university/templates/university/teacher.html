@@ -1,0 +1,75 @@
+{% load i18n %}
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section>
+    <div class="teacher-intro-block">
+        <div class="teacher-profile">
+            <h3 class="teacher-profile__name">
+                {{ teacher.first_name }} {{ teacher.second_name }} {{ teacher.third_name }}
+            </h3>
+            <div class="teacher-profile__photo">
+                <img src="{% if teacher.photo %}teacher.photo.url{% endif %}" 
+                     alt="{{ teacher.first_name }} {{ teacher.second_name }} - ksau teacher">
+            </div>
+            <div class="teacher-profile__rank">
+                {{ teacher.rank }}
+            </div>
+            <div class="teacher-profile__contacts row">
+                <div class="column">
+                    {% for email in teacher.emails %}
+                    <div class="row">
+                        <a href="mailto:{{ email }}" class="email-link">
+                            {{ email }}
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="column">
+                    <div class="row">
+                        <a href="tel:{{ teacher.phone|default_if_none:'' }}" class="phone-link">
+                            {{ teacher.phone|default_if_none:'' }}
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'university/teacher/univ-data.html' %}
+</section>
+<section>
+    <div class="section-title">{% trans 'Дисципліни' %}</div>
+    <div class="teacher-disciplines">
+        <ul>
+            {% for discipline in  teacher.disciplines %}
+            <li>{{ discipline.title }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+<section class="hiding">
+    <div class="section-title">
+        {% trans 'Основнi науковi та методичi працi' %}
+    </div>
+    <div class="section-body">
+        <div class="content">
+            {{ teacher.works }}
+        </div>
+    </div>
+</section>
+<section>
+    <div class="section-title">
+        {% trans 'Видання' %}
+    </div>
+    <div class="teacher-library">
+        {% for book in teacher.library.books %}
+            {% include 'utils/book-card.html' %}
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

@@ -1,17 +1,17 @@
 #region				-----External Imports-----
 from django.core.validators import validate_image_file_extension
-from django.forms import (FileField, ClearableFileInput,
-ModelForm)
+from django.forms import (FileField, ClearableFileInput)
 from django.utils.translation import ugettext_lazy as _
+from parler.forms import TranslatableModelForm
 #endregion
 
 #region				-----Internal Imports-----
 from .models import (Gallery, Image)
 #endregion
 
-class GalleryAdminForm(ModelForm):
+class GalleryAdminForm(TranslatableModelForm):
     #region           -----Information-----
-    images=FileField(label=_("Add images"), required=True,
+    images=FileField(label=_("Add images"), required=False,
     widget=ClearableFileInput(attrs={"multiple": True}))
     #endregion
 
@@ -22,7 +22,7 @@ class GalleryAdminForm(ModelForm):
         :param gallery: gallery class instance\n
         @return None
         """
-        [Image(gallery=gallery, image=image).save()
+        [Image(gallery=gallery, large_image=image).save()
         for image in self.files.getlist("images")]
     def validate_image_extensions(self)->None:
         """

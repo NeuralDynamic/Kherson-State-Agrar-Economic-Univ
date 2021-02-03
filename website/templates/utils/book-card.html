@@ -1,0 +1,13 @@
+<div class="card book-card">
+    <a href="{{ book.url }}" target="_blank" rel="noopener noreferrer">
+        <div class="card-body">
+            <div class="book-card__photo" {% if books.cover %}style="background-image: url({{ books.cover.url }});" {% endif %}></div>
+            <div class="book-card__title">
+                {{ book.title }}
+            </div>
+            <div class="book-card__author">
+                {{ book.authors }}
+            </div>
+        </div>  
+    </a> 
+</div>

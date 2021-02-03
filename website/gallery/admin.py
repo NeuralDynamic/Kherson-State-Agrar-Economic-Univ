@@ -1,6 +1,7 @@
 #region				-----External Imports-----
-from django.contrib.admin import (ModelAdmin, register)
+from django.contrib.admin import register
 from django.contrib import admin
+from parler.admin import TranslatableAdmin
 from typing import (TypeVar, Dict, List)
 #endregion
 
@@ -14,7 +15,7 @@ Http=TypeVar("Http", Dict, List)
 #endregion
 
 @register(Gallery)
-class GalleryAdmin(ModelAdmin):
+class GalleryAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     readonly_fields=["_images"]
     list_display=["__str__"]
@@ -43,8 +44,8 @@ class GalleryAdmin(ModelAdmin):
     #endregion
 
 @register(Image)
-class ImageAdmin(ModelAdmin):
+class ImageAdmin(TranslatableAdmin):
     #region           ----Configuration-----
-    fields=["image", "gallery", "description"]
+    fields=["large_image", "gallery", "description", "alt"]
     list_display=["_title", "_gallery"]
     #endregion

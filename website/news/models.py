@@ -1,10 +1,11 @@
 #region				-----External Imports-----
-from django.db.models import (Model, CharField, TextField, 
+from django.db.models import (CharField, TextField, 
 OneToOneField, DateTimeField, CASCADE, SET_NULL, 
 ForeignKey, ImageField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
-from typing import TypeVar
+from parler.models import (TranslatableModel, TranslatedFields)
+from typing import (TypeVar, List)
 #endregion
 
 #region				-----Internal Imports-----
@@ -17,12 +18,14 @@ reverse_related_url)
 Html=TypeVar("Html", str, bytes)
 #endregion
 
-class NewsFeed(Model):
-    #region           -----Information-----
+class NewsFeed(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
     description=TextField(verbose_name=_("Description"),
-    max_length=500, blank=True, null=True)
+    max_length=500, blank=True, null=True),
+
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False)
+    max_length=100, blank=False))
     #endregion
 
     #region            -----Metadata----- 
@@ -32,6 +35,11 @@ class NewsFeed(Model):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__title",
+        "translations__description"]
+
     def _papers(self)->Html:
         """@return related papers"""
         return render_related_papers(
@@ -46,15 +54,20 @@ class NewsFeed(Model):
     _papers.short_description=_("Papers")
     #endregion
 
-class Paper(Model):
+class Paper(TranslatableModel):
     #region           -----Information-----
     header=ImageField(verbose_name=_("Header"), 
     upload_to="headers", blank=False, 
     default="")
+    #endregion
+
+    #region           -----Translation-----
+    translations=TranslatedFields(
     story=TextField(verbose_name=_("Story"),
-    max_length=1500, blank=False)
+    max_length=1500, blank=False),
+    
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False)
+    max_length=100, blank=False))
     #endregion
 
     #region            -----Database-----
@@ -78,6 +91,11 @@ class Paper(Model):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__title",
+        "translations__story"]
+
     def _news_feed(self)->Html:
         """@return gallery link"""
         return reverse_related_url(
