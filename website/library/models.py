@@ -1,6 +1,6 @@
 #region				-----External Imports-----
 from django.db.models import (TextField, CharField, ImageField, 
-ManyToManyField, CASCADE)
+ManyToManyField, CASCADE, URLField)
 from django.utils.translation import ugettext_lazy as _
 from parler.models import (TranslatableModel, TranslatedFields)
 from typing import (TypeVar, List)
@@ -64,12 +64,14 @@ class Book(TranslatableModel):
     #endregion
 
     #region           -----Information-----
+    link=URLField(verbose_name=_("Link"), null=True,
+    max_length=300, blank=True)
     cover=ImageField(verbose_name=_("Cover"),
     upload_to="covers", blank=False)
     #endregion
 
     #region            -----Relation-----
-    libraries=ManyToManyField("Library", blank=False,
+    library=ManyToManyField("Library", blank=False,
     verbose_name=_("Libraries"),
     related_name="books")
     #endregion

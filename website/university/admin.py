@@ -6,7 +6,8 @@ from parler.admin import TranslatableAdmin
 
 #region				-----Internal Imports-----
 from .models import (Links, Staff, Speciality,
-Cathedra, Faculty, StaffCathedra, StaffFaculty)
+Cathedra, Faculty, StaffCathedra, StaffFaculty,
+Discipline, Reward)
 #endregion
 
 @register(StaffCathedra)
@@ -19,6 +20,13 @@ class StaffCathedraAdmin(TranslatableAdmin):
 class StaffFacultyAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     list_display=["staff", "position", "faculties"]
+    #endregion
+
+@register(Discipline)
+class DisciplineAdmin(TranslatableAdmin):
+    #region           ----Configuration-----
+    fields=["title", "staff"]
+    list_display=["__str__"]
     #endregion
 
 @register(Speciality)
@@ -43,6 +51,13 @@ class FacultyAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["emblem", "title", "description", 
     "gallery"]
+    list_display=["__str__"]
+    #endregion
+
+@register(Reward)
+class RewardAdmin(TranslatableAdmin):
+    #region           ----Configuration-----
+    fields=["title", "year", "staff"]
     list_display=["__str__"]
     #endregion
 

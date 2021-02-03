@@ -81,7 +81,8 @@ class Paper(TranslatableModel):
     related_name="papers")
     gallery=OneToOneField(Gallery, blank=True, 
     null=True, on_delete=SET_NULL, 
-    verbose_name=_("Gallery"))
+    verbose_name=_("Gallery"),
+    related_name="paper")
     #endregion
 
     #region            -----Metadata----- 
