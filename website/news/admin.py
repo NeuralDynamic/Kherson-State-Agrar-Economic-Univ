@@ -1,6 +1,7 @@
 #region				-----External Imports-----
-from django.contrib.admin import (ModelAdmin, register)
+from django.contrib.admin import register
 from django.contrib import admin
+from parler.admin import TranslatableAdmin
 #endregion
 
 #region				-----Internal Imports-----
@@ -8,7 +9,7 @@ from .models import NewsFeed, Paper
 #endregion
 
 @register(NewsFeed)
-class NewsFeedAdmin(ModelAdmin):
+class NewsFeedAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["title", "description", "_papers"]
     readonly_fields=["_papers"]
@@ -16,7 +17,7 @@ class NewsFeedAdmin(ModelAdmin):
     #endregion
 
 @register(Paper)
-class PaperAdmin(ModelAdmin):
+class PaperAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["header", "title", "story", 
     "news_feed", "gallery"]

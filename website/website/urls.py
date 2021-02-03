@@ -6,6 +6,7 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic import RedirectView
 from django.urls import include, path
+from django.template.defaulttags import register
 
 admin.autodiscover()
 
@@ -13,15 +14,14 @@ urlpatterns = [
     path('favicon.ico/', RedirectView.as_view(url='/assets/images/favicon.png'), name='favicon'),
 
     path("sitemap.xml", sitemap, {"sitemaps": {"cmspages": CMSSitemap}}),
+    path("", include("searcher.urls"))
 ]
 
-
 urlpatterns += i18n_patterns(
-
     path('jet/', include('jet.urls', 'jet')),
-    path("admin/", admin.site.urls), 
-    
-    path("", include("cms.urls"))
+    path("admin/", admin.site.urls),
+    path("", include("cms.urls")),
+  
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # This is only needed when using runserver.

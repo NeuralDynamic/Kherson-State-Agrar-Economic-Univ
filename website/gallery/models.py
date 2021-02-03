@@ -1,8 +1,9 @@
 #region				-----External Imports-----
-from django.db.models import (Model, CharField, TextField,
+from django.db.models import (CharField, TextField,
 ImageField, ForeignKey, CASCADE)
 from django.utils.translation import ugettext_lazy as _
-from typing import TypeVar
+from parler.models import (TranslatableModel, TranslatedFields)
+from typing import (TypeVar, List)
 #endregion
 
 #region				-----Internal Imports-----
@@ -14,12 +15,14 @@ reverse_related_url)
 Html=TypeVar("Html", str, bytes)
 #endregion
 
-class Gallery(Model):
-    #region           -----Information-----
+class Gallery(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
     description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=True, null=True)
+    max_length=1500, blank=True, null=True),
+
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False)
+    max_length=100, blank=False))
     #endregion
 
     #region            -----Metadata-----
@@ -29,6 +32,11 @@ class Gallery(Model):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__title",
+        "translations__description"]
+
     def _images(self)->Html:
         """@return related images"""
         return render_related_images(
@@ -43,12 +51,25 @@ class Gallery(Model):
     _images.short_description=_("Images")
     #endregion
 
-class Image(Model):
-    #region           -----Information-----
+class Image(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
     description=TextField(verbose_name=_("Description"),
-    max_length=1500, blank=True, null=True)
-    image=ImageField(verbose_name=_("Image"),
-    upload_to="images", blank=False)
+    max_length=1500, blank=True, null=True))
+    #endregion
+
+    #region           -----Information-----
+    large_image=ImageField(blank=False, default="",
+    verbose_name=_("Image"), upload_to="images",
+    max_length=400)
+    medium_image=ImageField(blank=True,
+    upload_to="images", default="",
+    max_length=400)
+    small_image=ImageField(blank=True,
+    upload_to="images", default="",
+    max_length=400)
+    alt=CharField(max_length=100, 
+    blank=True, default="image")
     #endregion
 
     #region            -----Relation-----
@@ -65,6 +86,10 @@ class Image(Model):
     #endregion
 
     #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__description"]
+
     def _gallery(self)->Html:
         """@return gallery link"""
         return reverse_related_url(
@@ -73,14 +98,20 @@ class Image(Model):
         model="gallery",
         app="gallery")
 
+    def related(self)->List:
+        """@return related images"""
+        return [self.large_image, 
+        self.medium_image, 
+        self.small_image]
+
     def _title(self)->Html:
         """@return editing link"""
         return reverse_related_url(
+        title=self.large_image.name,
         id=self.pk, model="image",
-        title=self.image.name,
         app="gallery")
 
     def __str__(self)->str:
         """@return image url"""
-        return self.image.url
+        return self.large_image.url
     #endregion

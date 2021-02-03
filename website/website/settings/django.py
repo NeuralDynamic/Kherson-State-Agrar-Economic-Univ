@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'university',
     'compressor',
     'multi_email_field',
+    'parler',
+    'searcher',
     'content',
 ]
 
