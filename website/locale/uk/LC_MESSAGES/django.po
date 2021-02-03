@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-28 10:36+0200\n"
+"POT-Creation-Date: 2021-02-01 11:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,13 +30,14 @@ msgid "Add images"
 msgstr "Додати зображення"
 
 #: gallery/models.py:19 gallery/models.py:48 library/models.py:18
-#: library/models.py:47 university/models.py:70 university/models.py:98
-#: university/models.py:141 university/models.py:208
+#: library/models.py:47 news/models.py:22 university/models.py:70
+#: university/models.py:98 university/models.py:141 university/models.py:208
 msgid "Description"
 msgstr "Опис"
 
 #: gallery/models.py:21 library/models.py:20 library/models.py:53
-#: university/models.py:74 university/models.py:107 university/models.py:146
+#: news/models.py:24 news/models.py:56 university/models.py:74
+#: university/models.py:107 university/models.py:146
 msgid "Title"
 msgstr "Назва"
 
@@ -44,8 +45,8 @@ msgstr "Назва"
 msgid "Galleries"
 msgstr "Галереї"
 
-#: gallery/models.py:28 gallery/models.py:57 university/models.py:122
-#: university/models.py:153
+#: gallery/models.py:28 gallery/models.py:57 news/models.py:71
+#: university/models.py:122 university/models.py:153
 msgid "Gallery"
 msgstr "Галерея"
 
@@ -84,6 +85,30 @@ msgstr "Обкладинка"
 #: library/models.py:66
 msgid "Book"
 msgstr "Книга"
+
+#: news/apps.py:7
+msgid "News App"
+msgstr "Стрічка новин"
+
+#: news/models.py:30 news/models.py:31 news/models.py:67
+msgid "News Feed"
+msgstr "Стрічка новин"
+
+#: news/models.py:46 news/models.py:76
+msgid "Papers"
+msgstr "Статті"
+
+#: news/models.py:51
+msgid "Header"
+msgstr "Заголовок"
+
+#: news/models.py:54
+msgid "Story"
+msgstr "Історія"
+
+#: news/models.py:77
+msgid "Paper"
+msgstr "Стаття"
 
 #: university/apps.py:7
 msgid "University App"
@@ -212,23 +237,5 @@ msgid "en"
 msgstr ""
 
 #: website/settings/django.py:149 website/settings/third_party/cms.py:22
-msgid "ua"
+msgid "uk"
 msgstr ""
-
-#~ msgid "News App"
-#~ msgstr "Стрічка новин"
-
-#~ msgid "News Feed"
-#~ msgstr "Стрічка новин"
-
-#~ msgid "Papers"
-#~ msgstr "Статті"
-
-#~ msgid "Header"
-#~ msgstr "Заголовок"
-
-#~ msgid "Story"
-#~ msgstr "Історія"
-
-#~ msgid "Paper"
-#~ msgstr "Стаття"

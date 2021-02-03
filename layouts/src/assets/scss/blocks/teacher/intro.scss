@@ -1,0 +1,102 @@
+.teacher-intro-block{
+    width: 100%;
+    display: flex;
+    padding: 15px 30px;
+
+    .teacher-profile{
+        width: 40%;
+    }    
+
+    .teacher-profile__name{
+        font-size: 28px;
+        text-align: center;
+        color: #197326;
+        margin-bottom: 20px;
+    }
+
+    .teacher-profile__photo{
+        margin-bottom: 20px;
+        max-height: 300px;
+        
+
+        img{
+            max-height: 300px;
+            width: auto;
+            display:block;
+            margin:auto;
+            -webkit-box-shadow: 10px 10px 27px -17px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 27px -17px rgba(0,0,0,0.75);
+            box-shadow: 10px 10px 27px -17px rgba(0,0,0,0.75);
+            transition: transform .5s;
+
+            &:hover{
+                transform: scale(1.03);
+            }
+        }
+
+        
+    }
+
+    .teacher-profile__rank{
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+
+    .teacher-univ-data{
+        width: 60%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .title{
+            color: #197326;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+
+    .teacher-univ-data__info{
+        padding: 0 30px;
+
+        p{
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .teacher-univ-data__achievements{
+        padding: 0 30px;
+    }
+
+    .teacher-univ-data__workplaces{
+        padding: 0 30px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+
+        a{
+            text-decoration: underline;
+            font-size: 18px;
+            line-height: 18px;
+        }
+    }
+
+    .teacher-univ-data__workspaces-list{
+        width: fit-content;
+    }
+
+    .teacher-univ-data__links{
+        padding: 0 30px;
+        display: flex;
+        justify-content: space-around;
+
+        .univ-link{
+            height: 40px;
+            width: 40px;
+        }
+    }
+    
+}

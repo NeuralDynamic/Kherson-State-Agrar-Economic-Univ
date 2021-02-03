@@ -1,0 +1,36 @@
+{% load cms_tags menu_tags sekizai_tags static compress i18n %}
+
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+
+    {% include 'head.html' %}
+
+    {% compress css %}
+        <link rel="stylesheet" href="{% static '/css/style.min.css' %}" type="text/css" media="all">
+    {% endcompress %}
+
+    {% block header %}{% endblock %}
+    {% block styles %}{% endblock %}
+    {% render_block "css" %}
+
+</head>
+<body>
+    {% cms_toolbar %}
+
+    <div class="page">
+        {% include 'header.html' %}
+        {% include 'menu.html' %}
+        
+        <main class="main">
+            {% block content %}{% endblock %}
+        </main>
+
+        {% include 'footer.html' %}
+    
+    </div>
+    {% compress js %}
+        <script type="module" src="{% static '/js/app.js' %}"></script>
+    {% endcompress %}
+</body>
+</html>

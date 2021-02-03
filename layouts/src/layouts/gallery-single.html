@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {{> head }}
+
+    <link rel="stylesheet" href="assets/css/lightgallery.min.css">
+</head>
+<body>
+
+    <div class="page">
+        {{> header }}
+        {{> menu }}
+
+        <main class="main" id="swup" class="transition-fade">
+            {{> gallery__intro }}
+
+            {{> gallery_single__header }}
+            {{> gallery_single__photos }}
+        </main>
+    
+        {{> footer }}
+    </div>
+
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

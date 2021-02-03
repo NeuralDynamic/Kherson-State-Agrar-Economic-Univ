@@ -1,0 +1,51 @@
+{% load i18n cms_tags %}
+
+<footer class="footer">
+    {% static_placeholder "footer" %}
+    <div class="footer__block">
+        <div class="column">
+            <div class="internal-links">
+                <div class="internal-links__header">
+                    {% trans 'Часто шукають' %}
+                </div>
+                <div class="internal-links__body">
+                    {% static_placeholder "faq questions links" %}
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="internal-links">
+                <div class="internal-links__header">
+                    {% trans 'Партнери' %}
+                </div>
+                <div class="internal-links__body">
+                    {% static_placeholder "partners links" %}
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="internal-links">
+                <div class="internal-links__header">
+                    {% trans 'Інтернет джерела' %}
+                </div>
+                <div class="internal-links__body">
+                    {% static_placeholder "internet resourses links" %}
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="internal-links">
+                <div class="internal-links__header">
+                    {% trans 'Міжнародні звязки' %}
+                </div>
+                <div class="internal-links__body">
+                    {% static_placeholder "international relations links" %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__copyright">
+        {% trans 'Херсонський державний аграрно-економічний університет' %} © 2006 - 2021
+    </div>
+</footer>
