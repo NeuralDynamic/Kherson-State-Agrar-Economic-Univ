@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'multi_email_field',
     'parler',
     'searcher',
+    'content',
 ]
 
 MIDDLEWARE = [
@@ -168,7 +169,7 @@ STATICFILES_DIRS = (
 )
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = '/assets/'
 
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 

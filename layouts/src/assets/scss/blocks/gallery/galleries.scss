@@ -1,0 +1,48 @@
+.gallery-container{
+    margin-top: 200px;
+    display: flex;
+    flex-basis: 30%;
+    flex-wrap: wrap;
+    justify-content: left;
+    padding: 30px;
+
+    .card{
+        flex: 0 0 30%;
+        margin: 0 auto 20px auto;
+
+        &:last-child{
+            margin: 0 auto 20px auto;
+        }
+    }
+}
+
+.gallery-single-header{
+    margin-top: 200px;
+    padding: 0 50px;
+
+    h2{
+        font-size: 24px;
+    }
+}
+
+.gallery-list{
+    display: flex;
+    flex-basis: 30%;
+    flex-wrap: wrap;
+    justify-content: left;
+    padding: 30px 50px ;
+
+    a{
+        flex: 0 0 30%;
+        margin: 0 auto 20px auto;
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+
+        &:last-child{
+            margin: 0 auto 20px auto;
+        }
+    }
+}

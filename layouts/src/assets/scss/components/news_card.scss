@@ -1,0 +1,82 @@
+.news-card{
+    height: 350px;
+    position: relative;
+
+    .card__link{
+        padding: 0 !important;
+    }
+
+    .card-body{
+        position: relative;
+        overflow: hidden;
+        padding: 15px;
+    }
+    
+    .news-card__image{
+        width: 100%;
+        height: 250px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        // border-top-left-radius: 20px;
+        // border-top-right-radius: 20px;
+    }
+
+    .news-card__data{
+        position: absolute;
+        top: 250px;
+        left: 0;
+        padding-top: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        transition: height 0s linear 0.33s, opacity 0.33s linear, top 0.33s linear;
+    }
+
+    .news-card__title{
+        position: relative;
+        padding: 0 15px;
+        font-size: 24px;
+        z-index: 2;
+        transition: height 0s linear 0.33s, opacity 0.33s linear;
+    }
+
+    .news-card__description{
+        position: relative;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+        transition-delay: 0s;
+    }
+
+    &:hover{
+        .news-card__data{
+            top: 0;
+        }
+
+        .news-card__data::before{
+            content: '';
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(107.48deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            transition: height 0s linear 0.33s, opacity 0.33s linear, backdrop-filter .33s linear, background .33s ease-out;
+            transition-delay: .2s;
+        }
+
+        .news-card__description{
+            z-index: 2;
+            padding: 15px 0;
+            padding-left: 20px;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.news-intro{
+    top: -3px;
+    left: -3px;
+    position: absolute;
+    width: calc(100% + 6px);
+    height: 200px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    margin-bottom: 0;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(/assets/images/news-banner.webp);
+}
+
+.news-intro__title{
+    user-select: none;
+    font-size: 36px;
+    color: #ffffff;
+    text-transform: uppercase;
+}

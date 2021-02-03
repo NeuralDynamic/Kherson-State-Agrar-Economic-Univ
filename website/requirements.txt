@@ -1,9 +1,9 @@
 asgiref==3.3.1
 dj-database-url==0.5.0
-Django==3.1.5
+Django==3.0.10
 django-appconf==1.0.4
 django-classy-tags==2.0.0
-django-cms==3.8.0
+django-cms==3.7.4
 django-compressor==2.4
 django-filer==2.0.2
 django-formtools==2.2
@@ -32,7 +32,7 @@ html5lib==1.1
 Pillow==8.1.0
 psycopg2==2.8.6
 python-dotenv==0.15.0
-pytz==2020.5
+pytz==2021.1
 rcssmin==1.0.6
 rjsmin==1.1.0
 six==1.15.0

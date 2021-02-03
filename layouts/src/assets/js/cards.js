@@ -1,10 +1,10 @@
-const department_cards = document.querySelectorAll('.department-card');
+const linked_cards = document.querySelectorAll('.linked-card');
 
-
-department_cards.forEach(item => {
+linked_cards.forEach(item => {
     item.addEventListener('click', event => {
         const current_card = event.currentTarget;
-        const link_cont = current_card.querySelector('.department-card__link');
-        window.location.replace(link_cont.getAttribute('data-department-link'));
+        const link_cont = current_card.querySelector('.card__link');
+        const win = window.open(link_cont.getAttribute('data-link'), '_blank');
+        win.focus();
     });
 }); 

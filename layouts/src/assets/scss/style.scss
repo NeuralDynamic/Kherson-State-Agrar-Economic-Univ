@@ -10,11 +10,15 @@ body {
     overflow-y: auto;
 }
 
+body.no-scroll {
+    overflow-y: hidden;
+}
+
 div{
     display: block;
 }
 
-input, textarea, button{
+input, textarea, button, h5, h4, h3, h2, h1{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
                 Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
                 'Helvetica Neue', sans-serif;
@@ -59,7 +63,6 @@ input, textarea, button{
 @import "grid";
 @import "links";
 @import "text";
-@import "slider";
 
 .page{
     position: relative;
@@ -82,9 +85,29 @@ input, textarea, button{
     z-index:-1;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@import "swup";
+
 @import "blocks/header.scss";
 @import "blocks/main.scss";
 @import "blocks/footer.scss";
+@import "blocks/menu.scss";
 
 // FACULTY IMPORTS
 
@@ -99,6 +122,29 @@ input, textarea, button{
 @import "blocks/department/intro.scss";
 @import "blocks/department/links.scss";
 
+// TEACHER IMPORTS
+
+@import "blocks/teacher/intro.scss";
+@import "blocks/teacher/disciplines.scss";
+@import "blocks/teacher/library.scss";
+
+// NEWS
+
+@import "blocks/news/intro.scss";
+@import "blocks/news/slider.scss";
+@import "blocks/news/news.scss";
+
+// ARTICLE
+
+@import "blocks/article/article.scss";
+@import "blocks/article/header.scss";
+@import "blocks/article/content.scss";
+
+//  GALLERY
+
+@import "blocks/gallery/intro.scss";
+@import "blocks/gallery/galleries.scss";
+
 // VENDORS
 
 @import "vendors/tiny-slider.scss";
@@ -110,3 +156,8 @@ input, textarea, button{
 @import "components/department_card.scss";
 @import "components/sections.scss";
 @import "components/hiding_list.scss";
+@import "components/linked_list.scss";
+@import "components/book_card.scss";
+@import "components/slider.scss";
+@import "components/news_card.scss";
+@import "components/gallery_card.scss";
