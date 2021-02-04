@@ -1,25 +1,48 @@
 .menu{
     position: fixed;
     display: flex;
-    opacity: 0;
-    visibility: hidden;
     top: 50px;
     left: 0;
     width: 100vw;
     height: calc(100vh - 50px);
-    // transition: opacity .5s, visibility .5s;
-    z-index: 100;
+    z-index: -1;
     overflow: hidden;
 
     &.active{
-        opacity: 1;
-        visibility: visible;
+        // opacity: 1;
+        // visibility: visible;
+        z-index: 100;
 
         .menu-section{
-            margin-top: 0 !important;
+            bottom: 0 !important;
+        }
+    }
+
+    .menu-section{
+        $el_width: 20%;
+        $elements: 5;
+
+        height: calc(100vh - 50px);
+        width: #{$el_width};
+        position: fixed;
+        transition: top .7s, bottom .7s;
+        margin-top: calc(50px - 100vh);
+
+        @for $i from 0 to $elements {
+            &:nth-child(#{$i + 1}) {
+               left: calc(#{$el_width} * #{$i});
+            }
         }
 
-        .menu-section::before{
+        &:nth-child(2n + 1){
+            bottom: calc(100vh - 50px);
+        }
+
+        &:nth-child(2n){
+            bottom: -100%;
+        }
+
+        &::before{
             content: '';
             position: absolute;
             z-index: 1;
@@ -31,18 +54,6 @@
             backdrop-filter: blur(7px);
             // transition: height 0s linear 0.33s, opacity 0.33s linear, backdrop-filter .33s linear, background .33s ease-out;
             transition-delay: .2s;
-        }
-    }
-
-    .menu-section{
-        height: calc(100vh - 50px);
-        width: 100%;
-        position: relative;
-        transition: all 0.8s linear;
-        margin-top: -100%;
-
-        &:nth-child(2n){
-            margin-top: 100%;
         }
 
         .section-data{

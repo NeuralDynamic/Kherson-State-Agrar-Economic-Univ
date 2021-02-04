@@ -8,6 +8,7 @@ body {
     font-size: 16px;
     color: $font-color;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 body.no-scroll {
