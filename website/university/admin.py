@@ -67,9 +67,9 @@ class StaffAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     list_display=["__str__", "phone"]
     fields=["photo", "first_name", 
-    "second_name", "third_name", 
-    "phone", "emails", "library", 
-    "description"]
+    "second_name", "third_name", "rank",
+    "phone", "emails", "ndr_theme", "library", 
+    "methodical_works","description"]
     #endregion
 
 @register(ScientificSociety)

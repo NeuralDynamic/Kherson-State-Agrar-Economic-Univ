@@ -3,7 +3,7 @@
     <div class="">
         <div class="title">{% trans 'Професiйнi досягнення та нагороди' %}</div>
         <div class="teacher-univ-data__achievements">
-            {% for reward in teacher.rewards %}
+            {% for reward in rewards %}
             <p>
                 · {{ reward.title }} ({{ reward.year }} {% trans 'year' %})
             </p>
@@ -13,13 +13,12 @@
     <div class="teacher-univ-data__info">
         <div class="row">
             <p>
-                {% trans 'Тематика НДР' %}: 
-                {{ teacher.ndr_theme }}
+                {% trans 'Тематика НДР' %}: {{ teacher.ndr_theme }}
             </p>
         </div>
     </div>
     <div class="teacher-univ-data__links">
-        {% with links as teacher.links %}
+        {% with links as links %}
             {% if links.web_of_science %}
             <a href="{{ links.web_of_science }}" class="univ-link web-science" target="_blank" rel="noopener noreferrer" aria-label="web-science"></a>
             {% endif %}

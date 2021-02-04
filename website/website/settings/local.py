@@ -24,4 +24,8 @@ DATABASES = {
     }
 }
 
+MIDDLEWARE = MIDDLEWARE + ['silk.middleware.SilkyMiddleware',]
+
+INSTALLED_APPS = INSTALLED_APPS + ['silk']
+
 print(">>> START PROJECT WITH LOCAL SETTINGS <<<")

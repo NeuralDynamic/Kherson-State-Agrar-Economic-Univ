@@ -1,27 +1,20 @@
 #region				-----External Imports-----
 from datetime import date
-
 from djangocms_text_ckeditor.fields import HTMLField
-
 from django.db.models import (Model, URLField, OneToOneField,
 CASCADE, CharField, ForeignKey, SET_NULL, ImageField, 
 TextField, DateField, ManyToManyField, IntegerField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
-
 from gallery.models import Gallery
-
 from parler.models import (TranslatableModel, TranslatedFields)
-
 from typing import (TypeVar, List)
-
 from multi_email_field.fields import MultiEmailField
 #endregion
 
 #region				-----Internal Imports-----
 from .utils import MaterialBaseNode
 #endregion
-
 
 class ScientificSociety(TranslatableModel):
     #region           -----Translation-----
@@ -59,7 +52,8 @@ class Discipline(TranslatableModel):
 
     #region            -----Relation-----
     staff=ManyToManyField("Staff", blank=False,
-    null=True, verbose_name=_("Staff"))
+    null=True, verbose_name=_("Staff"),
+    related_name="disciplines")
     #endregion
 
     #region            -----Metadata-----
