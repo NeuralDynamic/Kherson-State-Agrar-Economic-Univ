@@ -865,7 +865,6 @@ html.is-animating .transition-fade {
     left: 0;
     width: 100vw;
     height: calc(100vh - 50px);
-    transition: opacity .5s, visibility .5s;
     z-index: 100;
     overflow: hidden;
 }
@@ -897,7 +896,7 @@ html.is-animating .transition-fade {
     height: calc(100vh - 50px);
     width: 100%;
     position: relative;
-    transition: all 0.5s linear;
+    transition: all 0.8s linear;
     margin-top: -100%;
 }
 

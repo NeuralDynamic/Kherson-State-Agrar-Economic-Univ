@@ -159,7 +159,7 @@ class Cathedra(TranslatableModel):
     related_name="cathedras")
     gallery=ForeignKey(Gallery, blank=True,
     null=True, on_delete=SET_NULL,
-    verbose_name=_("Gallery"),
+    verbose_name=_("Career guidance"),
     related_name="cathedras")
     staff=ManyToManyField("StaffCathedra",
     verbose_name=_("Staff"))

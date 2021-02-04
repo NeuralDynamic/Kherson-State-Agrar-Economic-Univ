@@ -8,10 +8,10 @@ burger.addEventListener('click', event=>{
     if (current_burder.classList.contains('active')) {
         current_burder.classList.remove('active');
         menu.classList.remove('active');
-        // document.body.classList.remove('no-scroll');
+        document.body.classList.remove('no-scroll');
     }else{
         current_burder.classList.add('active');
         menu.classList.add('active');
-        // document.body.classList.add('no-scroll');
+        document.body.classList.add('no-scroll');
     }
 });

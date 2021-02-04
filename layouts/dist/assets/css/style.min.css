@@ -335,7 +335,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',  'Helvetica Neue', sans-serif;
   font-size: 16px;
   color: #000000;
-  overflow-y: auto; }
+  overflow-y: auto;
+  overflow-x: hidden; }
 
 body.no-scroll {
   overflow-y: hidden; }
@@ -675,20 +676,37 @@ html.is-animating .transition-fade {
 .menu {
   position: fixed;
   display: flex;
-  opacity: 0;
-  visibility: hidden;
   top: 50px;
   left: 0;
   width: 100vw;
   height: calc(100vh - 50px);
-  z-index: 100;
+  z-index: -1;
   overflow: hidden; }
   .menu.active {
-    opacity: 1;
-    visibility: visible; }
+    z-index: 100; }
     .menu.active .menu-section {
-      margin-top: 0 !important; }
-    .menu.active .menu-section::before {
+      bottom: 0 !important; }
+  .menu .menu-section {
+    height: calc(100vh - 50px);
+    width: 20%;
+    position: fixed;
+    transition: top .7s, bottom .7s;
+    margin-top: calc(50px - 100vh); }
+    .menu .menu-section:nth-child(1) {
+      left: calc(20% * 0); }
+    .menu .menu-section:nth-child(2) {
+      left: calc(20% * 1); }
+    .menu .menu-section:nth-child(3) {
+      left: calc(20% * 2); }
+    .menu .menu-section:nth-child(4) {
+      left: calc(20% * 3); }
+    .menu .menu-section:nth-child(5) {
+      left: calc(20% * 4); }
+    .menu .menu-section:nth-child(2n + 1) {
+      bottom: calc(100vh - 50px); }
+    .menu .menu-section:nth-child(2n) {
+      bottom: -100%; }
+    .menu .menu-section::before {
       content: '';
       position: absolute;
       z-index: 1;
@@ -699,14 +717,6 @@ html.is-animating .transition-fade {
       background: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(7px);
       transition-delay: .2s; }
-  .menu .menu-section {
-    height: calc(100vh - 50px);
-    width: 100%;
-    position: relative;
-    transition: all 0.8s linear;
-    margin-top: -100%; }
-    .menu .menu-section:nth-child(2n) {
-      margin-top: 100%; }
     .menu .menu-section .section-data {
       position: relative;
       height: 100%;
