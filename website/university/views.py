@@ -38,3 +38,13 @@ def faculty_view(request, faculty_id):
     return render(request,'university/faculty.html',context=context)
 
 #endregion
+
+
+#region				   -----Faculty views-----
+
+def cathedra_view(request, cathedra_id):
+    # TODO add database query for cathedra
+    context = dict()
+    return render(request,'university/cathedra.html',context=context)
+
+#endregion
