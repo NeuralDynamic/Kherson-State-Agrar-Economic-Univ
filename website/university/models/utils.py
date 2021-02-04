@@ -83,11 +83,12 @@ class MaterialBaseNode(TranslatableModel):
     #region           -----Information-----
     translations=TranslatedFields(
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=True, null=True),
+    max_length=100),
     
     local_title=CharField(verbose_name=_("Local title"),max_length=100, 
     help_text=_("""Additional field with local name for best admin usage experience.
-Will be filled from title field, if field empty.""")),
+Will be filled from title field, if field empty."""), 
+    blank=True, null=True),
 
     content=HTMLField(verbose_name=_("Content"),
     blank=False, default="")
