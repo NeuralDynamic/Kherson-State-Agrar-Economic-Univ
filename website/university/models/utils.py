@@ -47,6 +47,7 @@ class StaffCathedra(TranslatableModel):
         return f"{self.staff} {self.cathedras}"
     #endregion
 
+
 class StaffFaculty(TranslatableModel):
     #region           -----Information-----
     translations=TranslatedFields(
@@ -75,4 +76,36 @@ class StaffFaculty(TranslatableModel):
     def __str__(self)->str:
         """@return name of staff and its rank"""
         return f"{self.staff} {self.faculties}"
+    #endregion
+
+
+class MaterialBaseNode(TranslatableModel):
+    #region           -----Information-----
+    translations=TranslatedFields(
+    title=CharField(verbose_name=_("Title"),
+    max_length=100, blank=True, null=True),
+    
+    local_title=CharField(verbose_name=_("Local title"),max_length=100, 
+    help_text=_("""Additional field with local name for best admin usage experience.
+Will be filled from title field, if field empty.""")),
+
+    content=HTMLField(verbose_name=_("Content"),
+    blank=False, default="")
+    )
+    #endregion
+
+    #region            -----Metadata-----
+    class Meta(object):
+        verbose_name_plural=_("Material-technical bases")
+        verbose_name=_("Material-technical base")
+    #endregion
+
+    #region         -----Internal Methods-----
+    def searching_fields(self)->List[str]:
+        """@return translated fields"""
+        return ["translations__title"]
+
+    def __str__(self)->str:
+        """@return local title of node"""
+        return f"{self.local_title}"
     #endregion

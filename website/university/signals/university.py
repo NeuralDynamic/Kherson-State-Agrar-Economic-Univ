@@ -2,7 +2,7 @@
 from django.db.models.signals import (post_delete, pre_save)
 from django.dispatch import receiver
 
-from university.models import Cathedra, Faculty
+from university.models import Cathedra, Faculty, MaterialBaseNode
 #endregion
 
 
@@ -33,3 +33,13 @@ def delete_emblems(instance: object,
     instance.emblem.delete(save=False)
     (instance.gallery.delete() if
     instance.gallery else None)
+
+@receiver(pre_save, sender=MaterialBaseNode)
+def local_title_fill_on_save(instance: object,
+**kwargs)->None:
+    """
+    Fill local title of MaterialBaseNode if won't fill by user
+    @return None
+    """
+    if not instance.local_title:
+        instance.local_title = instance.title
