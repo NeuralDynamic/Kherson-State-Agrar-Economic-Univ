@@ -3,17 +3,17 @@ from django.shortcuts import render
 #endregion
 
 #region				-----Internal Imports-----
+from .services.service import StaffService
 #endregion
 
 #region				   -----Type Hints-----
 #endregion
 
-
 #region				   -----Teacher views-----
 
 def teacher_view(request, teacher_id):
     # TODO add database query for teacher
-    teacher = None
+    teacher = StaffService().get_staff(pk=teacher_id)
     return render(request,'university/teacher.html',
                         context={'teacher':teacher})
 

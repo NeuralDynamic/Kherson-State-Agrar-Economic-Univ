@@ -1,23 +1,16 @@
 #region				-----External Imports-----
 from datetime import date
-
 from djangocms_text_ckeditor.fields import HTMLField
-
 from django.db.models import (Model, URLField, OneToOneField,
 CASCADE, CharField, ForeignKey, SET_NULL, ImageField, 
 TextField, DateField, ManyToManyField, IntegerField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
-
 from library.models import Library
-
 from parler.models import (TranslatableModel, TranslatedFields)
-
 from typing import (TypeVar, List)
-
 from multi_email_field.fields import MultiEmailField
 #endregion
-
 
 class Reward(TranslatableModel):
     YEAR_CHOICES = [(r,r) for r in reversed(
@@ -36,7 +29,8 @@ class Reward(TranslatableModel):
 
     #region            -----Relation-----
     staff=ManyToManyField("Staff", blank=False,
-    null=True, verbose_name=_("Staff"))
+    null=True, verbose_name=_("Staff"),
+    related_name="rewards")
     #endregion
 
     #region            -----Metadata-----
@@ -127,7 +121,7 @@ class Links(Model):
     #region            -----Relation-----
     staff=OneToOneField("Staff", blank=False,
     null=False, on_delete=CASCADE, default=1,
-    verbose_name=_("Staff"))
+    verbose_name=_("Staff"), related_name="links")
     #endregion    
 
     #region            -----Metadata-----
