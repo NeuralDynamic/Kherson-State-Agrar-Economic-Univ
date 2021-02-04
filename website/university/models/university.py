@@ -138,7 +138,7 @@ class Cathedra(TranslatableModel):
     default="")
     phone=CharField(max_length=20, blank=True,
     verbose_name=_("Phone number"))
-    emails=MultiEmailField()
+    emails=MultiEmailField(blank=True, null=True)
     year=IntegerField(verbose_name=_("Year"), 
     choices=YEAR_CHOICES, null=True)
     educational_programs=URLField(blank=True,
