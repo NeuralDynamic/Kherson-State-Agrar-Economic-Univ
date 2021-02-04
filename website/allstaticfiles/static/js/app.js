@@ -641,7 +641,7 @@ eval("const hiding_lists = document.querySelectorAll('.hiding-list .hiding-list_
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("const burger = document.querySelector('.header__burger');\r\n\r\nburger.addEventListener('click', event=>{\r\n    const current_burder = event.currentTarget;\r\n    const menu = document.getElementById('menu');\r\n    const body = document.getElementsByTagName('body');\r\n\r\n    if (current_burder.classList.contains('active')) {\r\n        current_burder.classList.remove('active');\r\n        menu.classList.remove('active');\r\n        // document.body.classList.remove('no-scroll');\r\n    }else{\r\n        current_burder.classList.add('active');\r\n        menu.classList.add('active');\r\n        // document.body.classList.add('no-scroll');\r\n    }\r\n});\n\n//# sourceURL=webpack:///./src/assets/js/script.js?");
+eval("const burger = document.querySelector('.header__burger');\r\n\r\nburger.addEventListener('click', event=>{\r\n    const current_burder = event.currentTarget;\r\n    const menu = document.getElementById('menu');\r\n    const body = document.getElementsByTagName('body');\r\n\r\n    if (current_burder.classList.contains('active')) {\r\n        current_burder.classList.remove('active');\r\n        menu.classList.remove('active');\r\n        document.body.classList.remove('no-scroll');\r\n    }else{\r\n        current_burder.classList.add('active');\r\n        menu.classList.add('active');\r\n        document.body.classList.add('no-scroll');\r\n    }\r\n});\n\n//# sourceURL=webpack:///./src/assets/js/script.js?");
 
 /***/ }),
 

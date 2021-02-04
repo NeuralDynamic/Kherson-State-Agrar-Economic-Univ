@@ -112,16 +112,16 @@ class Staff(TranslatableModel):
 
 class Links(Model):
     #region           -----Information-----
-    google_scholar=URLField(max_length=200, blank=True,
+    google_scholar=URLField(blank=True,
     verbose_name=_("Google Scholar"), null=True)
-    web_of_science=URLField(max_length=200, blank=True,
+    web_of_science=URLField(blank=True,
     verbose_name=_("Web Of Science"), null=True)
-    researchgate=URLField(max_length=200, blank=True,
+    researchgate=URLField(blank=True,
     verbose_name=_("Researchgate"), null=True)
     scopus=URLField(verbose_name=_("Scopus"),
-    max_length=200, blank=True, null=True)
+    blank=True, null=True)
     orcid=URLField(verbose_name=_("ORCID"),
-    max_length=200, blank=True, null=True)
+    blank=True, null=True)
     #endregion
 
     #region            -----Relation-----

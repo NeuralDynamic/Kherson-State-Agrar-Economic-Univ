@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+
+<section>
+    <div class="department-header">
+        <div class="department-header__icon">
+            <img height="{{ emblem_height }}" width="{{ enblem_width }}" 
+                {% if cathedra.emblem %}src="{{ cathedra.emblem.url }}"{% endif %} 
+                alt="{{ cathedra.title }} {% trans 'cathedra emblem'%}">
+        </div>
+        <div class="department-header__content">
+            <div class="department-header__faculty-link">
+                <a href="{% url '' faculty_id=cathedra.faculty_id %">{{ cathedra.faculty.title }}</a>
+            </div>
+            <div class="department-data__title">
+                {{ cathedra.title }}
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="department-intro">
+        <div class="department-year">
+            <p><b>{% trans 'Рік заснування кафедри' %}:</b> {%  %}</p>
+        </div>
+        <div class="department-description">
+            <p>
+                <b>{% trans 'Призначення кафедри' %}:</b> 
+                {{ cathedra.goal }}
+            </p>
+        </div>
+    </div>
+</section>
+
+{{> department__intro }}
+{{> department__teacherslider }}
+{{> department__links }}
+{{> department__material_base }}
+{{> department__gallery }}
+{{> department__history }}
+{{> department__contacts }}
+
+{% endblock %}

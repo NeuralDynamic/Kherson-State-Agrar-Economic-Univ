@@ -18,6 +18,10 @@ from typing import (TypeVar, List)
 from multi_email_field.fields import MultiEmailField
 #endregion
 
+#region				-----Internal Imports-----
+from .utils import MaterialBaseNode
+#endregion
+
 
 class ScientificSociety(TranslatableModel):
     #region           -----Translation-----
@@ -110,6 +114,9 @@ class Speciality(TranslatableModel):
     #endregion
 
 class Cathedra(TranslatableModel):
+    YEAR_CHOICES = [(r,r) for r in reversed(
+    range(1950, date.today().year+1))]
+
     #region           -----Translation-----
     translations=TranslatedFields(
     description=HTMLField(verbose_name=_("Description"),
@@ -119,15 +126,25 @@ class Cathedra(TranslatableModel):
     verbose_name=_("Goal"), default=""),
 
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default=""))
+    max_length=100, blank=False, default=""),
+    
+    history=HTMLField(verbose_name=_("History of cathedra"),
+    blank=True, default=""),)
     #endregion
 
     #region           -----Information-----
     emblem=ImageField(upload_to="cathedras/emblems", 
     blank=False, verbose_name=_("Emblem"), 
     default="")
-    number=CharField(verbose_name=_("Number"),
-    max_length=20, blank=False, default="")
+    phone=CharField(max_length=20, blank=True,
+    verbose_name=_("Phone number"))
+    emails=MultiEmailField()
+    year=IntegerField(verbose_name=_("Year"), 
+    choices=YEAR_CHOICES, null=True)
+    educational_programs=URLField(blank=True,
+    verbose_name=_("Educational programs link"), null=True)
+    catalog_of_disciplines=URLField(blank=True,
+    verbose_name=_("Catalog of disciplines link"), null=True)
     #endregion
 
     #region            -----Database-----
@@ -146,6 +163,8 @@ class Cathedra(TranslatableModel):
     related_name="cathedras")
     staff=ManyToManyField("StaffCathedra",
     verbose_name=_("Staff"))
+    material_technical_base=ManyToManyField(MaterialBaseNode,
+    verbose_name=_("Material-technical base"))
     #endregion
 
     #region            -----Metadata-----
@@ -159,7 +178,8 @@ class Cathedra(TranslatableModel):
         """@return translated fields"""
         return ["translations__title",
         "translations__description",
-        "translations__goal"]
+        "translations__goal",
+        "translations__history"]
 
     def __str__(self)->str:
         """@return title of cathedra"""

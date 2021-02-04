@@ -7,7 +7,7 @@ from parler.admin import TranslatableAdmin
 #region				-----Internal Imports-----
 from .models import (Links, Staff, Speciality,
 Cathedra, Faculty, StaffCathedra, StaffFaculty,
-Discipline, Reward, ScientificSociety)
+Discipline, Reward, ScientificSociety, MaterialBaseNode)
 #endregion
 
 @register(StaffCathedra)
@@ -76,4 +76,12 @@ class ScientificSocietyAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["staff", "phone", 
     "emails","description"]
+    #endregion
+
+@register(MaterialBaseNode)
+class MaterialBaseNodeAdmin(TranslatableAdmin):
+    #region           ----Configuration-----
+    list_display=["__str__", "title"]
+    fields=["title","local_title",
+            "content"]
     #endregion
