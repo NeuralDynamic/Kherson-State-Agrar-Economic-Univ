@@ -20,6 +20,6 @@ class LibraryAdmin(TranslatableAdmin):
 class BookAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["cover", "title", "description", 
-    "authors", "libraries"]
+    "authors", "library"]
     list_display=["__str__"]
     #endregion

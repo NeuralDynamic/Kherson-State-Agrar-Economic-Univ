@@ -1,21 +1,15 @@
 #region				-----External Imports-----
 from datetime import date
-
 from djangocms_text_ckeditor.fields import HTMLField
-
 from django.db.models import (Model, URLField, OneToOneField,
 CASCADE, CharField, ForeignKey, SET_NULL, ImageField, 
 TextField, DateField, ManyToManyField, IntegerField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
-
 from parler.models import (TranslatableModel, TranslatedFields)
-
 from typing import (TypeVar, List)
-
 from multi_email_field.fields import MultiEmailField
 #endregion
-
 
 class StaffCathedra(TranslatableModel):
     #region           -----Translation-----

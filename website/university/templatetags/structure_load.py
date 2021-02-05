@@ -7,7 +7,7 @@ register = template.Library()
 
 
 def render_menu():
-    faculties = Faculty.objects.all()
+    faculties = Faculty.objects.prefetch_related('cathedras').all()
     return {'faculties':faculties}
 
 

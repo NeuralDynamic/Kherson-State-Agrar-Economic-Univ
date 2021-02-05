@@ -3,19 +3,18 @@ from django.shortcuts import render
 #endregion
 
 #region				-----Internal Imports-----
+from .services.service import StaffService, FacultyService
 #endregion
 
 #region				   -----Type Hints-----
 #endregion
 
-
 #region				   -----Teacher views-----
 
 def teacher_view(request, teacher_id):
-    # TODO add database query for teacher
-    teacher = None
+    context = StaffService().get_staff(pk=teacher_id)
     return render(request,'university/teacher.html',
-                        context={'teacher':teacher})
+                        context=context)
 
 #endregion
 
@@ -24,17 +23,7 @@ def teacher_view(request, teacher_id):
 
 def faculty_view(request, faculty_id):
     # TODO add database query for faculty
-    context = dict()
-    faculty = None
-    teachers = None
-    
-    # if faculty.emblem:
-    #     width, height = get_image_dimensions(instance.emblem.file)
-    #     context['emblem_height'] = height
-    #     context['emblem_width'] = width
-
-    context['faculty'] = faculty
-    context['teachers'] = teachers
+    context = FacultyService().get_faculty(faculty_id)
     return render(request,'university/faculty.html',context=context)
 
 #endregion

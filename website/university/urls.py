@@ -6,13 +6,12 @@ from django.urls import path
 from .views import cathedra_view
 from .views import faculty_view
 from .views import teacher_view
-#endregionsudo nginx -t
-
+#endregion
 
 urlpatterns = [
     path('cathedra/<int:cathedra_id>/', cathedra_view, name="cathedra"),
 
     path('faculty/<int:faculty_id>/', faculty_view, name="faculty"),
-
+    
     path('teacher/<int:teacher_id>/', teacher_view, name="teacher"),
 ]

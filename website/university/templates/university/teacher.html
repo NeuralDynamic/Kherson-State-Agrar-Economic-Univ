@@ -36,14 +36,14 @@
                 </div>
             </div>
         </div>
+        {% include 'university/teacher/univ-data.html' %}
     </div>
-    {% include 'university/teacher/univ-data.html' %}
 </section>
 <section>
     <div class="section-title">{% trans 'Дисципліни' %}</div>
     <div class="teacher-disciplines">
         <ul>
-            {% for discipline in teacher.disciplines %}
+            {% for discipline in teacher.disciplines.all %}
             <li>{{ discipline.title }}</li>
             {% endfor %}
         </ul>
@@ -55,7 +55,7 @@
     </div>
     <div class="section-body">
         <div class="content">
-            {{ teacher.works }}
+            {{ teacher.methodical_works }}
         </div>
     </div>
 </section>
@@ -65,7 +65,7 @@
         {% trans 'Видання' %}
     </div>
     <div class="teacher-library">
-        {% for book in teacher.library.books %}
+        {% for book in teacher.library.books.all %}
             {% include 'utils/book-card.html' %}
         {% endfor %}
     </div>

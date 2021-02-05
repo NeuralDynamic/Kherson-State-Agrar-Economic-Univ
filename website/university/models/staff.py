@@ -1,23 +1,16 @@
 #region				-----External Imports-----
 from datetime import date
-
 from djangocms_text_ckeditor.fields import HTMLField
-
 from django.db.models import (Model, URLField, OneToOneField,
 CASCADE, CharField, ForeignKey, SET_NULL, ImageField, 
 TextField, DateField, ManyToManyField, IntegerField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
-
 from library.models import Library
-
 from parler.models import (TranslatableModel, TranslatedFields)
-
 from typing import (TypeVar, List)
-
 from multi_email_field.fields import MultiEmailField
 #endregion
-
 
 class Reward(TranslatableModel):
     YEAR_CHOICES = [(r,r) for r in reversed(
@@ -30,13 +23,14 @@ class Reward(TranslatableModel):
     #endregion
 
     #region           -----Information-----
-    year = IntegerField(verbose_name=_("Year"), 
+    year=IntegerField(verbose_name=_("Year"), 
     choices=YEAR_CHOICES, null=True)
     #endregion
 
     #region            -----Relation-----
     staff=ManyToManyField("Staff", blank=False,
-    null=True, verbose_name=_("Staff"))
+    null=True, verbose_name=_("Staff"),
+    related_name="rewards")
     #endregion
 
     #region            -----Metadata-----
@@ -66,11 +60,14 @@ class Staff(TranslatableModel):
     rank=CharField(max_length=100, blank=True,
     verbose_name=_("Rank")),
 
-    methodical_works=HTMLField(blank=False,
+    methodical_works=HTMLField(blank=True,
     verbose_name=_("Methodical works")),
 
-    description=HTMLField(blank=False,
-    verbose_name=_("Description")))
+    description=HTMLField(blank=True,
+    verbose_name=_("Description")),
+    
+    ndr_theme=TextField(blank=True,
+    verbose_name=_("Topics of research work")))
     #endregion
 
     #region           -----Information-----
@@ -127,7 +124,7 @@ class Links(Model):
     #region            -----Relation-----
     staff=OneToOneField("Staff", blank=False,
     null=False, on_delete=CASCADE, default=1,
-    verbose_name=_("Staff"))
+    verbose_name=_("Staff"), related_name="links")
     #endregion    
 
     #region            -----Metadata-----

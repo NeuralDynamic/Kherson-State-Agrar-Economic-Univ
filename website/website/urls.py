@@ -18,6 +18,8 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
+
+    path('', include('gallery.urls')),
     
     path('university/',include('university.urls')),
 
@@ -31,5 +33,6 @@ urlpatterns += i18n_patterns(
 
 # This is only needed when using runserver.
 if settings.DEBUG:
+    urlpatterns += [path('silk/', include('silk.urls', namespace='silk'))]
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
