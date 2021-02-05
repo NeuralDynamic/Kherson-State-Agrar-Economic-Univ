@@ -2,7 +2,7 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 from library.models import Library, Book
-from university.models import Staff, Faculty
+from university.models import Staff, Faculty, StaffFaculty, Speciality
 #endregion
 
 class FacultyService(object):
@@ -16,10 +16,12 @@ class FacultyService(object):
             .prefetch_related('gallery')
             .get(pk=pk))
 
+            print(faculty)
             context['faculty'] = faculty
 
             try:
-                teachers = faculty.staff.all()
+                teachers = StaffFaculty.objects.select_related("staff")\
+                    .filter(faculties=faculty.pk).all()
                 print(teachers)
                 context['teachers'] = teachers
             except ObjectDoesNotExist:
@@ -43,6 +45,13 @@ class FacultyService(object):
                 gallery = faculty.gallery.images.all()
                 print(gallery)
                 context['gallery'] = gallery
+            except ObjectDoesNotExist:
+                pass
+
+            try:
+                specialities = Speciality.objects.filter(cathedra__faculty__pk=faculty.pk)
+                print(specialities)
+                context['specialities'] = gallery
             except ObjectDoesNotExist:
                 pass
             
