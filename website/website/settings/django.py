@@ -1,4 +1,4 @@
-import os, pathlib, sysls
+import os, pathlib, sys
 
 import django.conf.locale
 from django.conf import global_settings
