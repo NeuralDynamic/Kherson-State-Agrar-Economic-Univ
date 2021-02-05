@@ -12,8 +12,8 @@
 <section>
     <div class="gallery-container">
         {% for gallery in galleries %}
-        <div class="card white gallery-card linked-card">
-            <div class="card__link" data-link="{% url 'gallery' gallery_id=gallery.id %}">
+        <div class="card white gallery-card">
+            <a class="card__link" href="{% url 'gallery' gallery_id=gallery.id %}">
                 <div class="card-body">
                     <div class="gallery-card__image" 
                         style="background-image: url({{ gallery.images.first.medium_image.url }});"></div>
@@ -23,7 +23,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
         {% endfor %}
     </div>

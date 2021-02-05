@@ -18,8 +18,10 @@ def gallery_catalog_view(request):
                         context={'galleries':galleries})
 
 def gallery_view(request, gallery_id):
+    gallery = Gallery.objects.get(pk=gallery_id)
     images = Image.objects.filter(gallery_id=gallery_id).all()
     return render(request,'gallery/gallery.html',
-                        context={'images':images})
+                        context={'gallery':gallery,
+                                'images':images})
 
 #endregion

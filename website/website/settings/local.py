@@ -24,7 +24,7 @@ DATABASES = {
     }
 }
 
-# MIDDLEWARE = MIDDLEWARE + ['silk.middleware.SilkyMiddleware',]
+MIDDLEWARE = MIDDLEWARE + ['silk.middleware.SilkyMiddleware',]
 
 INSTALLED_APPS = INSTALLED_APPS + ['silk']
 
