@@ -1,5 +1,5 @@
 #region				-----External Imports-----
-from django.contrib.admin import register
+from django.contrib.admin import register, ModelAdmin
 from django.contrib import admin
 from parler.admin import TranslatableAdmin
 #endregion
@@ -33,6 +33,7 @@ class DisciplineAdmin(TranslatableAdmin):
 class SpecialityAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["number", "title", "cathedra",
+    "educational_level",
     "description"]
     list_display=["__str__", "number"]
     #endregion
@@ -51,7 +52,7 @@ class CathedraAdmin(TranslatableAdmin):
 class FacultyAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["emblem", "title", "description", 
-    "gallery"]
+    "gallery", "scientific_society"]
     list_display=["__str__"]
     #endregion
 
@@ -86,3 +87,6 @@ class MaterialBaseNodeAdmin(TranslatableAdmin):
     fields=["title","local_title",
             "content"]
     #endregion
+
+@register(Links)
+class LinksAdmin(ModelAdmin): pass

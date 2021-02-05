@@ -3,7 +3,7 @@ from datetime import date
 from djangocms_text_ckeditor.fields import HTMLField
 from django.db.models import (Model, URLField, OneToOneField,
 CASCADE, CharField, ForeignKey, SET_NULL, ImageField, 
-TextField, DateField, ManyToManyField, IntegerField)
+TextField, DateField, ManyToManyField, IntegerField, Choices)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from gallery.models import Gallery
@@ -34,7 +34,8 @@ class ScientificSociety(TranslatableModel):
 
     #region            -----Relation-----
     staff=ManyToManyField("Staff",
-    verbose_name=_("Staffs"))
+    verbose_name=_("Staffs"),
+    related_name="staff")
     #endregion
 
     #region            -----Metadata-----
@@ -69,10 +70,17 @@ class Discipline(TranslatableModel):
     #endregion
 
 class Speciality(TranslatableModel):
+    EDUCATIONAL_RANKS=[(l, l) for l in [_("Junior bachelor"), 
+    _("Bachelor"), _("Master"), _("PHD"),
+    _("Doctor of Philosophy")]]
     #region           -----Translation-----
     translations=TranslatedFields(
     description=HTMLField(verbose_name=_("Description"),
     blank=False, default=""),
+
+    educational_level=CharField(choices=EDUCATIONAL_RANKS,
+    blank=False, null=True, max_length=200,
+    verbose_name=_("Educational Level")),
 
     title=CharField(verbose_name=_("Title"),
     max_length=100, blank=False, default=""))
@@ -158,7 +166,7 @@ class Cathedra(TranslatableModel):
     staff=ManyToManyField("StaffCathedra",
     verbose_name=_("Staff"))
     material_technical_base=ManyToManyField(MaterialBaseNode,
-    verbose_name=_("Material-technical base"))
+    verbose_name=_("Material-technical base"), blank=True)
     #endregion
 
     #region            -----Metadata-----

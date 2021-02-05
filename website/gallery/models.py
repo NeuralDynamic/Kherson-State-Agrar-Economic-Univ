@@ -61,7 +61,7 @@ class Image(TranslatableModel):
 
     #region           -----Information-----
     large_image=ImageField(blank=False, default="",
-    verbose_name=_("Image"), upload_to="images",
+    verbose_name=_("Image"), upload_to="gallery",
     max_length=400)
     medium_image=ImageField(blank=True,
     upload_to="images", default="",
