@@ -2,11 +2,50 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 from library.models import Library, Book
-from university.models import Staff, Faculty
+from university.models import (Staff, Faculty, StaffFaculty, 
+Speciality, Cathedra, StaffCathedra)
 #endregion
 
+class CathedarService(object):
+    def get_cathedra(self, pk: int)->object:
+        try:
+            context = dict()
+
+            cathedra = (Cathedra.objects
+            .prefetch_related('gallery')
+            .get(pk=pk))
+
+            print(cathedra)
+            context['cathedra']=cathedra
+
+            try:
+                teachers = StaffCathedra.objects.select_related("staff")\
+                    .filter(cathedras=cathedra.pk).all()
+                print(teachers)
+                context['teachers'] = teachers
+            except ObjectDoesNotExist:
+                pass
+
+            try:
+                gallery = cathedra.gallery.images.all()
+                print(gallery)
+                context['gallery'] = gallery
+            except ObjectDoesNotExist:
+                pass
+
+            try:
+                matherial_base = cathedra.material_technical_base.all()
+                print(matherial_base)
+                context['matherial_base'] = matherial_base
+            except ObjectDoesNotExist:
+                pass
+
+            return context
+        except Cathedra.DoesNotExist:
+            raise Http404
+
 class FacultyService(object):
-    def  get_faculty(self, pk: int)->object:
+    def get_faculty(self, pk: int)->object:
         try:
             context = dict()
 
@@ -16,10 +55,12 @@ class FacultyService(object):
             .prefetch_related('gallery')
             .get(pk=pk))
 
+            print(faculty)
             context['faculty'] = faculty
 
             try:
-                teachers = faculty.staff.all()
+                teachers = StaffFaculty.objects.select_related("staff")\
+                    .filter(faculties=faculty.pk).all()
                 print(teachers)
                 context['teachers'] = teachers
             except ObjectDoesNotExist:
@@ -43,6 +84,13 @@ class FacultyService(object):
                 gallery = faculty.gallery.images.all()
                 print(gallery)
                 context['gallery'] = gallery
+            except ObjectDoesNotExist:
+                pass
+
+            try:
+                specialities = Speciality.objects.filter(cathedra__faculty__pk=faculty.pk)
+                print(specialities)
+                context['specialities'] = gallery
             except ObjectDoesNotExist:
                 pass
             
