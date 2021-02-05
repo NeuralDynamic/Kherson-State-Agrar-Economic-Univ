@@ -48,4 +48,5 @@ class ImageAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["large_image", "gallery", "description", "alt"]
     list_display=["_title", "_gallery"]
+    list_filter=["gallery__translations__title"]
     #endregion
