@@ -18,7 +18,8 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    path('',include('gallery.urls')),
+
+    path('', include('gallery.urls')),
     
     path('university/',include('university.urls')),
 

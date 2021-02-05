@@ -81,7 +81,6 @@ class StaffService(object):
             context['books'] = Book.objects.\
                     filter(library=teacher.library)
             
-
             return context
         except Staff.DoesNotExist:
             raise Http404

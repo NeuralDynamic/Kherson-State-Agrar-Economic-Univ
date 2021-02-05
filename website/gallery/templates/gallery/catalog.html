@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+
+<section class="gallery-intro">
+    <h1 class="gallery-intro__title">
+        {% trans 'Галерея' %}
+    </h1>
+</section>
+<section>
+    <div class="gallery-container">
+        {% for gallery in galleries %}
+        <div class="card white gallery-card linked-card">
+            <div class="card__link" data-link="{% url 'gallery' gallery_id=gallery.id %}">
+                <div class="card-body">
+                    <div class="gallery-card__image" 
+                        style="background-image: url({{ gallery.images.first.medium_image.url }});"></div>
+                    <div class="gallery-card__data">
+                        <div class="gallery-card__title">
+                            {{ gallery.title }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}
