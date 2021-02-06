@@ -69,19 +69,17 @@ def create_on_save(instance: Image,
     parameters={f"{size}_image": path
     for path, size in zip(model_pathes, SIZES)}
 
-    #*Generates images with three sizes
-
+    #*Generates images with sizes
     for path, size in zip(files_pathes, SIZES):
         f_width, f_height = SIZES[size]
         width, height = image.size
         # if photo in portrait orientation
         if height > width:
             f_width, f_height = f_height, f_width
-        f_height = int(f_height * f_width/width)
+        f_height = int(height * f_width/width)
         f_size = (f_width, f_height)
-
         image.resize(size=f_size).save(path,"webp",
-                    optimize=True, quality=75)
+                    optimize=True, quality=85)
     
     #*Updates model parameters
     (Image.objects.filter(pk=instance.pk)

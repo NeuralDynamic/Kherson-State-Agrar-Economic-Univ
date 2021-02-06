@@ -1,4 +1,4 @@
-import os, pathlib
+import os, pathlib, sys
 
 import django.conf.locale
 from django.conf import global_settings
@@ -177,3 +177,56 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 CMS_ENABLE_UPDATE_CHECK = True
 
 SITE_ID = 1
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'stream': sys.stdout,
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'include_html': True,
+        },
+        "errors_log": {
+            "level": "ERROR",
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": os.path.join(BASE_DIR, "errors.log"),
+            "maxBytes": 1024 * 1024 * 10,
+            "backupCount": 7,
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console','mail_admins','errors_log'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['mail_admins','errors_log','console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    }
+}
