@@ -724,11 +724,12 @@ html.is-animating .transition-fade {
       z-index: 2;
       padding: 0 20px; }
     .menu .menu-section .section-title {
-      font-size: 20px;
       padding: 15px 0;
       text-align: center;
       border-bottom: 2px solid #DADADA;
       margin-bottom: 30px; }
+      .menu .menu-section .section-title a {
+        font-size: 20px; }
     .menu .menu-section .content {
       padding: 0 10px; }
       .menu .menu-section .content ul li {
@@ -1027,15 +1028,13 @@ section.news-slider {
 
 .news-container {
   display: flex;
-  flex-basis: 30%;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   padding: 30px; }
   .news-container .card {
-    flex: 0 0 30%;
-    margin-bottom: 20px;
-    margin-left: 0;
-    margin-right: 0; }
+    flex: 0 1 31.33%;
+    margin: 0 1%;
+    margin-bottom: 40px; }
 
 .article-container {
   padding: 0 100px;
@@ -1093,15 +1092,13 @@ section.news-slider {
 .gallery-container {
   margin-top: 200px;
   display: flex;
-  flex-basis: 30%;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: flex-start;
   padding: 30px; }
   .gallery-container .card {
-    flex: 0 0 30%;
-    margin: 0 0 20px 0; }
-    .gallery-container .card:last-child {
-      margin: 0 auto 20px auto; }
+    flex: 0 1 31.33%;
+    margin: 0 1%;
+    margin-bottom: 40px; }
 
 .gallery-single-header {
   margin-top: 200px;
@@ -1111,18 +1108,16 @@ section.news-slider {
 
 .gallery-list {
   display: flex;
-  flex-basis: 30%;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: flex-start;
   padding: 30px 50px; }
   .gallery-list a {
-    flex: 0 0 30%;
-    margin: 0 auto 20px auto; }
-    .gallery-list a img {
+    flex: 0 1 31.33%;
+    margin: 0 1%;
+    margin-bottom: 40px; }
+    .gallery-list a img, .gallery-list a picture {
       width: 100%;
       height: auto; }
-    .gallery-list a:last-child {
-      margin: 0 auto 20px auto; }
 
 .tns-outer {
   padding: 0 !important;
@@ -1677,7 +1672,10 @@ section.hiding {
   height: 350px;
   position: relative; }
   .gallery-card .card__link {
-    padding: 0 !important; }
+    padding: 0 !important;
+    display: block;
+    height: 100%;
+    width: 100%; }
   .gallery-card .card-body {
     position: relative;
     overflow: hidden; }

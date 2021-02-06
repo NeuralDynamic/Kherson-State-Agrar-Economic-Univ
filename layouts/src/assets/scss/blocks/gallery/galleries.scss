@@ -1,18 +1,15 @@
 .gallery-container{
     margin-top: 200px;
     display: flex;
-    flex-basis: 30%;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: flex-start;
     padding: 30px;
 
     .card{
-        flex: 0 0 30%;
-        margin: 0 0 20px 0;
-
-        &:last-child{
-            margin: 0 auto 20px auto;
-        }
+        flex: 0 1 31.33%;
+        
+        margin: 0 1%;
+        margin-bottom: 40px; 
     }
 }
 
@@ -27,22 +24,18 @@
 
 .gallery-list{
     display: flex;
-    flex-basis: 30%;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: flex-start;
     padding: 30px 50px ;
 
     a{
-        flex: 0 0 30%;
-        margin: 0 auto 20px auto;
+        flex: 0 1 31.33%;
+        margin: 0 1%;
+        margin-bottom: 40px; 
 
-        img{
+        img, picture{
             width: 100%;
             height: auto;
-        }
-
-        &:last-child{
-            margin: 0 auto 20px auto;
         }
     }
 }

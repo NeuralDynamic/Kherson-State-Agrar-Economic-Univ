@@ -724,11 +724,12 @@ html.is-animating .transition-fade {
       z-index: 2;
       padding: 0 20px; }
     .menu .menu-section .section-title {
-      font-size: 20px;
       padding: 15px 0;
       text-align: center;
       border-bottom: 2px solid #DADADA;
       margin-bottom: 30px; }
+      .menu .menu-section .section-title a {
+        font-size: 20px; }
     .menu .menu-section .content {
       padding: 0 10px; }
       .menu .menu-section .content ul li {
