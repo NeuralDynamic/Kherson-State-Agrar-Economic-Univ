@@ -135,4 +135,4 @@ website/project.db
 
 #media
 website/media/
-website/allstaticfiles/CACHE/
+website/allstaticfiles/CACHE/*
