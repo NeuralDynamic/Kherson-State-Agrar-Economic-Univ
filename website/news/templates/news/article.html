@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+
+<section class="news-intro">
+    <h1 class="news-intro__title">
+        {% trans 'Новости ХДАЕУ' %}
+    </h1>
+</section>
+<section>
+    <div class="article-container">
+        <div class="article-header">
+            <h1 class="article-header__title">
+                {{ paper.title }}
+            </h1>
+            <div class="article-header__date">
+                {{ paper.created_at|date:'M d, Y' }}
+            </div>
+        </div>
+        <div class="article-image">
+            <img {% if paper.header %}src="{{ paper.header.url }}"{% endif %} alt="article-image">
+        </div>
+        <div class="article-content">
+            <div class="article-data">
+                {{ paper.story }}
+            </div>
+            {% with gallery as images %}
+                {% include 'utils/gallery-slider.html' %}
+            {% endwith %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
