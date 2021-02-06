@@ -1496,7 +1496,7 @@ section.news-slider .article-description {
 .gallery-container .card {
     -ms-flex: 0 0 30%;
     flex: 0 0 30%;
-    margin: 0 auto 20px auto;
+    margin: 0 0 20px 0;
 }
 
 .gallery-container .card:last-child {
