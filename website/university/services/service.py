@@ -23,21 +23,21 @@ class CathedarService(object):
                     .filter(cathedras=cathedra.pk).all()
                 print(teachers)
                 context['teachers'] = teachers
-            except ObjectDoesNotExist:
+            except Exception:
                 pass
 
             try:
                 gallery = cathedra.gallery.images.all()
                 print(gallery)
                 context['gallery'] = gallery
-            except ObjectDoesNotExist:
+            except Exception:
                 pass
 
             try:
                 matherial_base = cathedra.material_technical_base.all()
                 print(matherial_base)
                 context['matherial_base'] = matherial_base
-            except ObjectDoesNotExist:
+            except Exception:
                 pass
 
             return context
@@ -63,35 +63,35 @@ class FacultyService(object):
                     .filter(faculties=faculty.pk).all()
                 print(teachers)
                 context['teachers'] = teachers
-            except ObjectDoesNotExist:
+            except Exception:
                 pass
 
             try:
                 scientific_society = faculty.scientific_society.staff.all()
                 print(scientific_society)
                 context['scientific_society'] = scientific_society
-            except ObjectDoesNotExist:
+            except Exception:
                 pass
 
             try:
                 cathedras = faculty.cathedras.all()
                 print(cathedras)
                 context['cathedras'] = cathedras
-            except ObjectDoesNotExist:
+            except Exception:
                 pass
 
             try:
                 gallery = faculty.gallery.images.all()
                 print(gallery)
                 context['gallery'] = gallery
-            except ObjectDoesNotExist:
+            except Exception:
                 pass
 
             try:
                 specialities = Speciality.objects.filter(cathedra__faculty__pk=faculty.pk)
                 print(specialities)
-                context['specialities'] = gallery
-            except ObjectDoesNotExist:
+                context['specialities'] = specialities
+            except Exception:
                 pass
             
             return context
