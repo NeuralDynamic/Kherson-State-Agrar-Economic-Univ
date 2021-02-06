@@ -33,7 +33,7 @@
             <div class="prev-slide-button"></div>
         </div>
         <div class="slider__container">
-            {% for teacher in faculty.staff %}
+            {% for teacher in teachers %}
             <div class="slider__slide">
                 {% include 'utils/teacher-card.html' %}
             </div>
@@ -49,7 +49,7 @@
         {% trans 'Кафедри' %}
     </div>
     <div class="faculty-departments-list row f-wrap">
-        {% for cathedra in faculty.cathedras %}
+        {% for cathedra in cathedras %}
             {% include 'utils/cathedra-card.html' %}
         {% endfor %}
     </div>
@@ -69,13 +69,11 @@
                 </th>
             </thead>
             <tbody>
-                {% for cathedra in faculty.cathedras %}
-                    {% for speciality in cathedra.specialities %}
-                    <tr>
-                        <td>{{ speciality.program }}</td>
-                        <td>{{ speciality.number }}. {{ speciality.title }}</td>
-                    </tr>
-                    {% endfor %}
+                {% for speciality in specialities %}
+                <tr>
+                    <td>{{ speciality.program }}</td>
+                    <td>{{ speciality.number }}. {{ speciality.title }}</td>
+                </tr>
                 {% endfor %}
             </tbody>
         </table>
@@ -90,7 +88,7 @@
             <div class="prev-slide-button"></div>
         </div>
         <div class="slider__container">
-            {% for image in faculty.gallery.images %}
+            {% for image in gallery %}
             <div class="slider__slide">
                 <div class="slide__image">
                     <picture>
@@ -126,7 +124,7 @@
     <div class="section-title">
         {% trans 'Наукове товариство студентів, аспірантів, докторантів і молодих вчених' %}
     </div>
-    {% with faculty.scientific_society as scientific_society %}
+    {% with scientific_society as scientific_society %}
     <div class="section-body">
         <div class="content">
             <div class="faculty-scientific-society">
@@ -143,7 +141,7 @@
                             <div class="prev-slide-button"></div>
                         </div>
                         <div class="slider__container">
-                            {% for teacher in scientific_society.staff %}
+                            {% for teacher in scientific_society %}
                                 {% include 'utils/teacher-card.html' %}
                             {% endfor %}
                         </div>
