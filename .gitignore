@@ -134,5 +134,7 @@ layouts/node_modules
 website/project.db
 
 #media
-website/media/
+website/media/*
+!website/media/images/*
+!website/media/fonts/*
 website/allstaticfiles/CACHE/

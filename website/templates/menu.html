@@ -3,7 +3,7 @@
     <div class="menu-section">
         <div class="section-data">
             <div class="section-title">
-                {{ faculty.title }}
+                <a href="{% url 'faculty' faculty_id=faculty.id %}">{{ faculty.title }}</a>
             </div>
             <div class="content">
                 <ul>

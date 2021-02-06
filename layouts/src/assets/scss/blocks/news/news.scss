@@ -1,15 +1,14 @@
 .news-container{
     display: flex;
-    flex-basis: 30%;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
     padding: 30px;
 
     .card{
-        flex: 0 0 30%;
-        margin-bottom: 20px;
-        margin-left: 0;
-        margin-right: 0;
+        flex: 0 1 31.33%;
+        
+        margin: 0 1%;
+        margin-bottom: 40px; 
     }
 }
 
