@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+
+<section class="news-intro">
+    <h1 class="news-intro__title">
+        {% trans 'Новости ХДАЕУ' %}
+    </h1>
+</section>
+<section class="news-slider">
+    <div class="slider slider-radio">
+        <div class="slider__container">
+            {% for article in last_articles %}
+            <div class="slider__slide first" {% if article.header %}style="background-image: url({{ article.header.url }});"{% endif %}>
+                <a class="article-link" href="{% url 'article' paper_id=article.id %}" target="_blank" rel="noopener noreferrer">
+                    <div class="article-banner">
+                        <div class="article-description">
+                            {{ article.story }}
+                        </div>
+                        <div class="article-title">
+                            {{ article.title }}
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<div class="news-container">
+    {% for article in articles %}
+        {% include 'utils/news-card.html' %}
+    {% endfor %}
+</div>
+
+{% endblock %}

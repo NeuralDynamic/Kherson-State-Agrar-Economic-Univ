@@ -19,6 +19,7 @@ class NewsFeedAdmin(TranslatableAdmin):
 @register(Paper)
 class PaperAdmin(TranslatableAdmin):
     #region           ----Configuration-----
+    ordering = ['created_at']
     fields=["header", "title", "story", 
     "news_feed", "gallery"]
     list_display=["__str__", "_news_feed", 

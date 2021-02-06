@@ -1,0 +1,15 @@
+<div class="card white news-card linked-card">
+    <div class="card__link" data-link="{% url 'article' paper_id=article.id %}">
+        <div class="card-body">
+            <div class="news-card__image" {% if article.header %}style="background-image: url({{ article.header.url }});"{% endif %}></div>
+            <div class="news-card__data">
+                <div class="news-card__title">
+                    {{ article.title }}
+                </div>
+                <div class="news-card__description">
+                    {{ article.story|truncatechars:200 }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
