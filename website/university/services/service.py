@@ -15,27 +15,27 @@ class CathedarService(object):
             .prefetch_related('gallery')
             .get(pk=pk))
 
-            print(cathedra)
+            print(f"Cathedra: {cathedra}")
             context['cathedra']=cathedra
 
             try:
                 teachers = StaffCathedra.objects.select_related("staff")\
                     .filter(cathedras=cathedra.pk).all()
-                print(teachers)
+                print(f"Teachers: {teachers}")
                 context['teachers'] = teachers
             except Exception:
                 pass
 
             try:
                 gallery = cathedra.gallery.images.all()
-                print(gallery)
+                print(f"Gallery: {gallery}")
                 context['gallery'] = gallery
             except Exception:
                 pass
 
             try:
                 matherial_base = cathedra.material_technical_base.all()
-                print(matherial_base)
+                print(f"Base: {matherial_base}")
                 context['matherial_base'] = matherial_base
             except Exception:
                 pass
@@ -55,41 +55,41 @@ class FacultyService(object):
             .prefetch_related('gallery')
             .get(pk=pk))
 
-            print(faculty)
+            print(f"Faculty: {faculty}")
             context['faculty'] = faculty
 
             try:
                 teachers = StaffFaculty.objects.select_related("staff")\
                     .filter(faculties=faculty.pk).all()
-                print(teachers)
+                print(f"Teachers: {teachers}")
                 context['teachers'] = teachers
             except Exception:
                 pass
 
             try:
                 scientific_society = faculty.scientific_society.staff.all()
-                print(scientific_society)
+                print(f"Society: {scientific_society}")
                 context['scientific_society'] = scientific_society
             except Exception:
                 pass
 
             try:
                 cathedras = faculty.cathedras.all()
-                print(cathedras)
+                print(f"Cathedras: {cathedras}")
                 context['cathedras'] = cathedras
             except Exception:
                 pass
 
             try:
                 gallery = faculty.gallery.images.all()
-                print(gallery)
+                print(f"Gallery: {gallery}")
                 context['gallery'] = gallery
             except Exception:
                 pass
 
             try:
                 specialities = Speciality.objects.filter(cathedra__faculty__pk=faculty.pk)
-                print(specialities)
+                print(f"Specialities: {specialities}")
                 context['specialities'] = specialities
             except Exception:
                 pass
