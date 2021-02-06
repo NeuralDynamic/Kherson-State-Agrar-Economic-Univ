@@ -60,6 +60,7 @@ class Paper(TranslatableModel):
     header=ImageField(verbose_name=_("Header"), 
     upload_to="headers", blank=False, 
     default="")
+    
     #endregion
 
     #region           -----Translation-----
