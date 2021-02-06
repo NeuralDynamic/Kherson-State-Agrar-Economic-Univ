@@ -3,6 +3,7 @@ from django.shortcuts import render
 #endregion
 
 #region				-----Internal Imports-----
+from .services.service import GalleryService
 from .models import Gallery, Image 
 #endregion
 
@@ -13,15 +14,11 @@ from .models import Gallery, Image
 #region				   -----Gallery views-----
 
 def gallery_catalog_view(request):
-    galleries = Gallery.objects.all()
-    return render(request,'gallery/catalog.html',
-                        context={'galleries':galleries})
+    context = GalleryService().gallery_catalog()
+    return render(request,'gallery/catalog.html', context=context)
 
 def gallery_view(request, gallery_id):
-    gallery = Gallery.objects.get(pk=gallery_id)
-    images = Image.objects.filter(gallery_id=gallery_id).all()
-    return render(request,'gallery/gallery.html',
-                        context={'gallery':gallery,
-                                'images':images})
+    context = GalleryService().get_gallery(pk=gallery_id)
+    return render(request,'gallery/gallery.html', context=context)
 
 #endregion

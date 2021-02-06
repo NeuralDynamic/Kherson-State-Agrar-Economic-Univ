@@ -26,7 +26,7 @@
             <div class="article-data">
                 {{ paper.story }}
             </div>
-            {% with paper.gallery.images.all as images %}
+            {% with gallery as images %}
                 {% include 'utils/gallery-slider.html' %}
             {% endwith %}
         </div>

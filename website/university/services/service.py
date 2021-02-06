@@ -2,11 +2,46 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 from library.models import Library, Book
-from university.models import Staff, Faculty
+from university.models import (Staff, Faculty, StaffFaculty, 
+Speciality, Cathedra, StaffCathedra)
 #endregion
 
+class CathedarService(object):
+    def get_cathedra(self, pk: int)->object:
+        try:
+            context = dict()
+
+            cathedra = (Cathedra.objects
+            .prefetch_related('gallery')
+            .get(pk=pk))
+
+            context['cathedra']=cathedra
+
+            try:
+                teachers = StaffCathedra.objects.select_related("staff")\
+                    .filter(cathedras=cathedra.pk).all()
+                context['teachers'] = teachers
+            except Exception:
+                pass
+
+            try:
+                gallery = cathedra.gallery.images.all()
+                context['gallery'] = gallery
+            except Exception:
+                pass
+
+            try:
+                matherial_base = cathedra.material_technical_base.all()
+                context['matherial_base'] = matherial_base
+            except Exception:
+                pass
+
+            return context
+        except Cathedra.DoesNotExist:
+            raise Http404
+
 class FacultyService(object):
-    def  get_faculty(self, pk: int)->object:
+    def get_faculty(self, pk: int)->object:
         try:
             context = dict()
 
@@ -19,31 +54,34 @@ class FacultyService(object):
             context['faculty'] = faculty
 
             try:
-                teachers = faculty.staff.all()
-                print(teachers)
+                teachers = StaffFaculty.objects.select_related("staff")\
+                    .filter(faculties=faculty.pk).all()
                 context['teachers'] = teachers
-            except ObjectDoesNotExist:
+            except Exception:
                 pass
 
             try:
                 scientific_society = faculty.scientific_society.staff.all()
-                print(scientific_society)
                 context['scientific_society'] = scientific_society
-            except ObjectDoesNotExist:
+            except Exception:
                 pass
 
             try:
                 cathedras = faculty.cathedras.all()
-                print(cathedras)
                 context['cathedras'] = cathedras
-            except ObjectDoesNotExist:
+            except Exception:
                 pass
 
             try:
                 gallery = faculty.gallery.images.all()
-                print(gallery)
                 context['gallery'] = gallery
-            except ObjectDoesNotExist:
+            except Exception:
+                pass
+
+            try:
+                specialities = Speciality.objects.filter(cathedra__faculty__pk=faculty.pk)
+                context['specialities'] = specialities
+            except Exception:
                 pass
             
             return context
@@ -61,7 +99,6 @@ class StaffService(object):
 
             try:
                 rewards = teacher.rewards.all()
-                print(rewards)
                 context['rewards'] = rewards
             except ObjectDoesNotExist:
                 pass
