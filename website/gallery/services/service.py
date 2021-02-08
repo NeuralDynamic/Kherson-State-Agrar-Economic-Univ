@@ -2,13 +2,20 @@ from ..models import Gallery, Image
 from django.http import Http404
 
 class GalleryService(object):
-    def gallery_catalog(self)->object:
+    def paginator(self, page_num: int)->object:
         try:
             context = dict()
 
             galleries=Gallery.objects.all()
+            
+            paginator = Paginator(galleries, 9)
 
-            context['galleries'] = galleries
+            try:
+                page = paginator.page(page_num)
+            except EmptyPage:
+                page = paginator.page(1)
+
+            context['galleries'] = page
 
             return context
         except Gallery.DoesNotExist:
