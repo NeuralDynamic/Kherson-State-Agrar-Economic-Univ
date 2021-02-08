@@ -6,7 +6,7 @@ CASCADE, CharField, ForeignKey, SET_NULL, ImageField,
 TextField, DateField, ManyToManyField, IntegerField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
-from library.models import Library
+from library.models import Book
 from parler.models import (TranslatableModel, TranslatedFields)
 from typing import (TypeVar, List)
 from multi_email_field.fields import MultiEmailField
@@ -94,10 +94,7 @@ class Staff(TranslatableModel):
 
     #region            -----Relation-----
     disciplines=ManyToManyField(Discipline, blank=False)
-    library=ForeignKey(Library, blank=True,
-    null=True, on_delete=SET_NULL,
-    verbose_name=_("Library"),
-    related_name="staff")
+    books=ManyToManyField(Book, blank=True)
     #endregion
 
     #region            -----Metadata-----
