@@ -137,4 +137,4 @@ website/project.db
 website/media/*
 !website/media/images/*
 !website/media/fonts/*
-website/allstaticfiles/CACHE/
+website/allstaticfiles/CACHE/*

@@ -12,6 +12,10 @@ from typing import (TypeVar, List)
 from multi_email_field.fields import MultiEmailField
 #endregion
 
+#region				-----Internal Imports-----
+from .university import Discipline
+#endregion
+
 class Reward(TranslatableModel):
     YEAR_CHOICES = [(r,r) for r in reversed(
     range(1950, date.today().year+1))]
@@ -71,6 +75,16 @@ class Staff(TranslatableModel):
     #endregion
 
     #region           -----Information-----
+    google_scholar=URLField(blank=True,
+    verbose_name=_("Google Scholar"), null=True)
+    web_of_science=URLField(blank=True,
+    verbose_name=_("Web Of Science"), null=True)
+    researchgate=URLField(blank=True,
+    verbose_name=_("Researchgate"), null=True)
+    scopus=URLField(verbose_name=_("Scopus"),
+    blank=True, null=True)
+    orcid=URLField(verbose_name=_("ORCID"),
+    blank=True, null=True)
     photo=ImageField(verbose_name=_("Photo"),
     upload_to="photos", blank=False)
     phone=CharField(max_length=20, blank=False,
@@ -79,6 +93,7 @@ class Staff(TranslatableModel):
     #endregion
 
     #region            -----Relation-----
+    disciplines=ManyToManyField(Discipline, blank=False)
     library=ForeignKey(Library, blank=True,
     null=True, on_delete=SET_NULL,
     verbose_name=_("Library"),
@@ -105,38 +120,4 @@ class Staff(TranslatableModel):
         return (self.second_name+
         " "+self.first_name+
         " "+self.third_name)
-    #endregion
-
-class Links(Model):
-    #region           -----Information-----
-    google_scholar=URLField(blank=True,
-    verbose_name=_("Google Scholar"), null=True)
-    web_of_science=URLField(blank=True,
-    verbose_name=_("Web Of Science"), null=True)
-    researchgate=URLField(blank=True,
-    verbose_name=_("Researchgate"), null=True)
-    scopus=URLField(verbose_name=_("Scopus"),
-    blank=True, null=True)
-    orcid=URLField(verbose_name=_("ORCID"),
-    blank=True, null=True)
-    #endregion
-
-    #region            -----Relation-----
-    staff=OneToOneField("Staff", blank=False,
-    null=False, on_delete=CASCADE, default=1,
-    verbose_name=_("Staff"), related_name="links")
-    #endregion    
-
-    #region            -----Metadata-----
-    class Meta(object):
-        verbose_name_plural=_("Links")
-        verbose_name=_("Links")
-    #endregion
-
-    #region         -----Internal Methods-----
-    def __str__(self)->str:
-        """@return staff information"""
-        return (self.staff.second_name+
-        " "+self.staff.first_name+
-        " "+self.staff.third_name)
     #endregion
