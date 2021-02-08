@@ -43,7 +43,7 @@ class CathedraAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["emblem", "title", "year", "faculty",
     "educational_programs","catalog_of_disciplines",
-    "created_at", "goal", "description", "history",
+    "goal", "description", "history",
     "gallery","material_technical_base","phone","emails"]
     list_display=["__str__"]
     #endregion
