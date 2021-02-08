@@ -35,7 +35,7 @@ class DisciplineAdmin(TranslatableAdmin):
 class SpecialityAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["number", "title", "cathedra",
-    "educational_level",
+    "educational_level", "form_of_studying",
     "description"]
     list_display=["__str__", "number", "cathedra"]
     list_filter=["cathedra"]

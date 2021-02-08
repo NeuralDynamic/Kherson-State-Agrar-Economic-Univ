@@ -32,6 +32,12 @@ class ScientificSociety(TranslatableModel):
     emails=MultiEmailField()
     #endregion
 
+    #region            -----Relations-----
+    staff=ManyToManyField("Staff",
+    verbose_name=_("Staffs"),
+    related_name="staff")
+    #endregion
+
     #region            -----Metadata-----
     class Meta(object):
         verbose_name_plural=_("Scientific Societies")
@@ -42,7 +48,8 @@ class Discipline(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default=""))
+    max_length=100, blank=False, default="",
+    unique=True))
     #endregion
 
     #region            -----Metadata-----
@@ -61,6 +68,9 @@ class Speciality(TranslatableModel):
     EDUCATIONAL_RANKS=[(l, l) for l in [_("Junior bachelor"), 
     _("Bachelor"), _("Master"), _("PHD"),
     _("Doctor of Philosophy")]]
+
+    FORM_OF_STUDING=[(f, f) for f in [_("Day"), _("Extramural"), 
+    _("Day, Extramural")]]
     #region           -----Translation-----
     translations=TranslatedFields(
     description=HTMLField(verbose_name=_("Description"),
@@ -70,13 +80,16 @@ class Speciality(TranslatableModel):
     blank=False, null=True, max_length=200,
     verbose_name=_("Educational Level")),
 
+    form_of_studying=CharField(choices=FORM_OF_STUDING,
+    blank=False, null=True, max_length=200),
+
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default=""))
+    max_length=100, blank=False, default="", unique=True))
     #endregion
 
     #region           -----Information-----
     number=CharField(verbose_name=_("Number"),
-    max_length=10, blank=False, default="")
+    max_length=10, blank=False, default="", unique=True)
     #endregion
 
     #region            -----Relation-----
@@ -116,7 +129,7 @@ class Cathedra(TranslatableModel):
     verbose_name=_("Goal"), default=""),
 
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default=""),
+    max_length=100, blank=False, default="", unique=True),
     
     history=HTMLField(verbose_name=_("History of cathedra"),
     blank=True, default=""),)
@@ -178,7 +191,7 @@ class Faculty(TranslatableModel):
     blank=True, default=""),
 
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default=""),
+    max_length=100, blank=False, default="", unique=True),
     
     council_of_employers=HTMLField(verbose_name=_("Council of employers"),
     blank=False, default=""))

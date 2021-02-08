@@ -41,7 +41,6 @@ class StaffCathedra(TranslatableModel):
         return f"{self.staff} {self.cathedras}"
     #endregion
 
-
 class StaffFaculty(TranslatableModel):
     #region           -----Information-----
     translations=TranslatedFields(
@@ -71,7 +70,6 @@ class StaffFaculty(TranslatableModel):
         """@return name of staff and its rank"""
         return f"{self.staff} {self.faculties}"
     #endregion
-
 
 class MaterialBaseNode(TranslatableModel):
     #region           -----Information-----
