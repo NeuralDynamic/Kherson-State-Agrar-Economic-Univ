@@ -64,7 +64,7 @@ class Speciality(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
     description=HTMLField(verbose_name=_("Description"),
-    blank=False, default=""),
+    blank=True, default=""),
 
     educational_level=CharField(choices=EDUCATIONAL_RANKS,
     blank=False, null=True, max_length=200,
@@ -110,7 +110,7 @@ class Cathedra(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
     description=HTMLField(verbose_name=_("Description"),
-    blank=False, default=""),
+    blank=True, default=""),
 
     goal=TextField(blank=False,
     verbose_name=_("Goal"), default=""),
@@ -175,7 +175,7 @@ class Faculty(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
     description=HTMLField(verbose_name=_("Description"),
-    blank=False, default=""),
+    blank=True, default=""),
 
     title=CharField(verbose_name=_("Title"),
     max_length=100, blank=False, default=""),
