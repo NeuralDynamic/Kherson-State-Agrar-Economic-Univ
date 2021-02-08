@@ -9,12 +9,16 @@
                     {{ teacher.rank }}
                 </div>
                 <div class="teacher-contacts">
-                    <a href="tel:{{ teacher.phone }}" class="phone-link">
+                    {% if teacher.staff.phone %}
+                    <a href="tel:{{ teacher.staff.phone }}" class="phone-link">
                         {{ teacher.staff.phone }}
                     </a>
-                    <a href="mailto:{{ teacher.emails }}" class="email-link">
+                    {% endif %}
+                    {% if teacher.staff.emails %}
+                    <a href="mailto:{{ teacher.staff.emails.0 }}" class="email-link">
                         {{ teacher.staff.emails.0 }}
                     </a>
+                    {% endif %}
                 </div>
             </div>
             <div class="teacher-image">
