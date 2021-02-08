@@ -104,12 +104,6 @@ class StaffService(object):
                 pass
 
             try:
-                links = teacher.links
-                context['links'] = links
-            except ObjectDoesNotExist:
-                pass
-
-            try:
                 disciplines = teacher.disciplines.all()
                 context['disciplines'] = disciplines
             except ObjectDoesNotExist:
