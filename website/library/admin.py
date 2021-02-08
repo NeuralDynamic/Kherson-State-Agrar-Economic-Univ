@@ -11,7 +11,7 @@ from .models import Book
 @register(Book)
 class BookAdmin(TranslatableAdmin):
     #region           ----Configuration-----
-    fields=["cover", "title", "description", 
+    fields=["cover", "title", "link", "description", 
     "authors"]
     list_display=["__str__"]
     #endregion
