@@ -5,21 +5,13 @@ from parler.admin import TranslatableAdmin
 #endregion
 
 #region				-----Internal Imports-----
-from .models import Library, Book
+from .models import Book
 #endregion
-
-@register(Library)
-class LibraryAdmin(TranslatableAdmin):
-    #region           ----Configuration-----
-    fields=["title", "description", "_books"]
-    readonly_fields=["_books"]
-    list_display=["__str__"]
-    #endregion
 
 @register(Book)
 class BookAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["cover", "title", "description", 
-    "authors", "library"]
+    "authors"]
     list_display=["__str__"]
     #endregion

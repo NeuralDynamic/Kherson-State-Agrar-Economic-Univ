@@ -7,14 +7,14 @@ from typing import List
 
 #region				-----Internal Imports-----
 from gallery.models import (Gallery, Image)
-from library.models import (Library, Book)
+from library.models import Book
 from news.models import (NewsFeed, Paper)
 from university.models import (Cathedra,
 Speciality, Faculty, Staff)
 #endregion
 
 class SearchService(object):
-    models=[Gallery, Image, Library, Book, NewsFeed,
+    models=[Gallery, Image, Book, NewsFeed,
     Paper, Cathedra, Speciality, Faculty, Staff]
 
     def search(self, phrase: str)->List[object]:

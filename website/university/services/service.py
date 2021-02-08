@@ -1,7 +1,7 @@
 #region				-----External Imports-----
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
-from library.models import Library, Book
+from library.models import Book
 from university.models import (Staff, Faculty, StaffFaculty, 
 Speciality, Cathedra, StaffCathedra)
 #endregion
@@ -93,7 +93,7 @@ class StaffService(object):
         try:
             context = dict()
 
-            teacher = Staff.objects.select_related('library').get(pk=pk)
+            teacher = Staff.objects.get(pk=pk)
             context['teacher'] = teacher
 
             try:
@@ -108,8 +108,8 @@ class StaffService(object):
             except ObjectDoesNotExist:
                 pass
 
-            context['books'] = Book.objects.\
-                    filter(library=teacher.library)
+            context['books'] = teacher.books.all()
+            print(context['books'])
             
             return context
         except Staff.DoesNotExist:

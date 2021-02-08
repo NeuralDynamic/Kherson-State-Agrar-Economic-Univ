@@ -69,7 +69,7 @@ class StaffAdmin(TranslatableAdmin):
     list_display=["__str__", "phone"]
     fields=["photo", "first_name", 
     "second_name", "third_name", "rank",
-    "phone", "emails", "ndr_theme", "library", 
+    "phone", "emails", "ndr_theme", "books", 
     "methodical_works","description", "disciplines",
     "google_scholar", "web_of_science", "researchgate",
     "scopus", "orcid"]
