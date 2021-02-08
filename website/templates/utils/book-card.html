@@ -3,7 +3,7 @@
         <div class="card-body">
             <div class="book-card__photo" {% if book.cover %}style="background-image: url({{ book.cover.url }});" {% endif %}></div>
             <div class="book-card__title">
-                {{ book.title }}
+                <span>{{ book.title }}</span>
             </div>
             <div class="book-card__author">
                 {{ book.authors }}
