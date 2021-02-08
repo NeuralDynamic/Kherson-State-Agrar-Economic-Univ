@@ -30,6 +30,7 @@ CACHES = {
     }
 }
 
+
 # MIDDLEWARE = ['django.middleware.cache.UpdateCacheMiddleware'] + \
 #              MIDDLEWARE + \
 #              ['django.middleware.cache.FetchFromCacheMiddleware']

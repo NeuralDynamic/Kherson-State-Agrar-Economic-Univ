@@ -1,5 +1,6 @@
 {% load i18n %}
 <div class="teacher-univ-data">
+    {% if rewards %}
     <div class="">
         <div class="title">{% trans 'Професiйнi досягнення та нагороди' %}</div>
         <div class="teacher-univ-data__achievements">
@@ -10,6 +11,8 @@
             {% endfor %}
         </div>
     </div>
+    {% endif %}
+    {% if teacher.ndr_theme %}
     <div class="teacher-univ-data__info">
         <div class="row">
             <p>
@@ -17,20 +20,19 @@
             </p>
         </div>
     </div>
+    {% endif %}
     <div class="teacher-univ-data__links">
-        {% with links as links %}
-            {% if links.web_of_science %}
-            <a href="{{ links.web_of_science }}" class="univ-link web-science" target="_blank" rel="noopener noreferrer" aria-label="web-science"></a>
-            {% endif %}
-            {% if links.researchgate %}
-            <a href="{{ links.researchgate }}" class="univ-link researchgate" target="_blank" rel="noopener noreferrer" aria-label="researchgate"></a>
-            {% endif %}
-            {% if links.google_scholar %}
-            <a href="{{ links.google_scholar }}" class="univ-link google-scholar" target="_blank" rel="noopener noreferrer" aria-label="google-scholar"></a>
-            {% endif %}
-            {% if links.orcid %}
-            <a href="{{ links.orcid }}" class="univ-link orcid" target="_blank" rel="noopener noreferrer" aria-label="orcid"></a>
-            {% endif %}
-        {% endwith %}
+        {% if teacher.web_of_science %}
+        <a href="{{ teacher.web_of_science }}" class="univ-link web-science" target="_blank" rel="noopener noreferrer" aria-label="web-science"></a>
+        {% endif %}
+        {% if teacher.researchgate %}
+        <a href="{{ teacher.researchgate }}" class="univ-link researchgate" target="_blank" rel="noopener noreferrer" aria-label="researchgate"></a>
+        {% endif %}
+        {% if teacher.google_scholar %}
+        <a href="{{ teacher.google_scholar }}" class="univ-link google-scholar" target="_blank" rel="noopener noreferrer" aria-label="google-scholar"></a>
+        {% endif %}
+        {% if teacher.orcid %}
+        <a href="{{ teacher.orcid }}" class="univ-link orcid" target="_blank" rel="noopener noreferrer" aria-label="orcid"></a>
+        {% endif %}
     </div>
 </div>

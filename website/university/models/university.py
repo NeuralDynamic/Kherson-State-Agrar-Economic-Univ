@@ -32,12 +32,6 @@ class ScientificSociety(TranslatableModel):
     emails=MultiEmailField()
     #endregion
 
-    #region            -----Relation-----
-    staff=ManyToManyField("Staff",
-    verbose_name=_("Staffs"),
-    related_name="staff")
-    #endregion
-
     #region            -----Metadata-----
     class Meta(object):
         verbose_name_plural=_("Scientific Societies")
@@ -49,12 +43,6 @@ class Discipline(TranslatableModel):
     translations=TranslatedFields(
     title=CharField(verbose_name=_("Title"),
     max_length=100, blank=False, default=""))
-    #endregion
-
-    #region            -----Relation-----
-    staff=ManyToManyField("Staff", blank=False,
-    null=True, verbose_name=_("Staff"),
-    related_name="disciplines")
     #endregion
 
     #region            -----Metadata-----
@@ -76,7 +64,7 @@ class Speciality(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
     description=HTMLField(verbose_name=_("Description"),
-    blank=False, default=""),
+    blank=True, default=""),
 
     educational_level=CharField(choices=EDUCATIONAL_RANKS,
     blank=False, null=True, max_length=200,
@@ -117,12 +105,12 @@ class Speciality(TranslatableModel):
 
 class Cathedra(TranslatableModel):
     YEAR_CHOICES = [(r,r) for r in reversed(
-    range(1950, date.today().year+1))]
+    range(1800, date.today().year+1))]
 
     #region           -----Translation-----
     translations=TranslatedFields(
     description=HTMLField(verbose_name=_("Description"),
-    blank=False, default=""),
+    blank=True, default=""),
 
     goal=TextField(blank=False,
     verbose_name=_("Goal"), default=""),
@@ -147,11 +135,6 @@ class Cathedra(TranslatableModel):
     verbose_name=_("Educational programs link"), null=True)
     catalog_of_disciplines=URLField(blank=True,
     verbose_name=_("Catalog of disciplines link"), null=True)
-    #endregion
-
-    #region            -----Database-----
-    created_at=DateField(default=timezone.now,
-    verbose_name=_("Created at"))
     #endregion
 
     #region            -----Relation-----
@@ -192,7 +175,7 @@ class Faculty(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
     description=HTMLField(verbose_name=_("Description"),
-    blank=False, default=""),
+    blank=True, default=""),
 
     title=CharField(verbose_name=_("Title"),
     max_length=100, blank=False, default=""),

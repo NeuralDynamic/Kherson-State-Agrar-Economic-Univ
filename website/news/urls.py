@@ -9,6 +9,5 @@ from .views import paper_view
 
 urlpatterns = [
     path('', news_view, name="news"),
-
     path('article/<int:paper_id>', paper_view, name="article")
 ]

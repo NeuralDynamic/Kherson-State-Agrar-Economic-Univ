@@ -5,7 +5,7 @@ from parler.admin import TranslatableAdmin
 #endregion
 
 #region				-----Internal Imports-----
-from .models import (Links, Staff, Speciality,
+from .models import (Staff, Speciality,
 Cathedra, Faculty, StaffCathedra, StaffFaculty,
 Discipline, Reward, ScientificSociety, MaterialBaseNode)
 #endregion
@@ -25,7 +25,7 @@ class StaffFacultyAdmin(TranslatableAdmin):
 @register(Discipline)
 class DisciplineAdmin(TranslatableAdmin):
     #region           ----Configuration-----
-    fields=["title", "staff"]
+    fields=["title"]
     list_display=["__str__"]
     #endregion
 
@@ -43,7 +43,7 @@ class CathedraAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["emblem", "title", "year", "faculty",
     "educational_programs","catalog_of_disciplines",
-    "created_at", "goal", "description", "history",
+    "goal", "description", "history",
     "gallery","material_technical_base","phone","emails"]
     list_display=["__str__"]
     #endregion
@@ -70,7 +70,9 @@ class StaffAdmin(TranslatableAdmin):
     fields=["photo", "first_name", 
     "second_name", "third_name", "rank",
     "phone", "emails", "ndr_theme", "library", 
-    "methodical_works","description"]
+    "methodical_works","description", "disciplines",
+    "google_scholar", "web_of_science", "researchgate",
+    "scopus", "orcid"]
     #endregion
 
 @register(ScientificSociety)
@@ -87,6 +89,3 @@ class MaterialBaseNodeAdmin(TranslatableAdmin):
     fields=["title","local_title",
             "content"]
     #endregion
-
-@register(Links)
-class LinksAdmin(ModelAdmin): pass
