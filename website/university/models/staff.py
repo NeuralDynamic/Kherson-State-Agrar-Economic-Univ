@@ -32,8 +32,8 @@ class Reward(TranslatableModel):
     #endregion
 
     #region            -----Relation-----
-    staff=ManyToManyField("Staff", blank=False,
-    null=True, verbose_name=_("Staff"),
+    staff=ManyToManyField("Staff", blank=False, 
+    verbose_name=_("Staff"),
     related_name="rewards")
     #endregion
 
