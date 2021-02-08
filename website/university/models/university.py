@@ -32,12 +32,6 @@ class ScientificSociety(TranslatableModel):
     emails=MultiEmailField()
     #endregion
 
-    #region            -----Relation-----
-    staff=ManyToManyField("Staff",
-    verbose_name=_("Staffs"),
-    related_name="staff")
-    #endregion
-
     #region            -----Metadata-----
     class Meta(object):
         verbose_name_plural=_("Scientific Societies")
@@ -49,12 +43,6 @@ class Discipline(TranslatableModel):
     translations=TranslatedFields(
     title=CharField(verbose_name=_("Title"),
     max_length=100, blank=False, default=""))
-    #endregion
-
-    #region            -----Relation-----
-    staff=ManyToManyField("Staff", blank=False,
-    null=True, verbose_name=_("Staff"),
-    related_name="disciplines")
     #endregion
 
     #region            -----Metadata-----
