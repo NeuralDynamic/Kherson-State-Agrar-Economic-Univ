@@ -93,19 +93,12 @@ class StaffService(object):
         try:
             context = dict()
 
-            teacher = Staff.objects.select_related('links')\
-                                    .select_related('library').get(pk=pk)
+            teacher = Staff.objects.select_related('library').get(pk=pk)
             context['teacher'] = teacher
 
             try:
                 rewards = teacher.rewards.all()
                 context['rewards'] = rewards
-            except ObjectDoesNotExist:
-                pass
-
-            try:
-                links = teacher.links
-                context['links'] = links
             except ObjectDoesNotExist:
                 pass
 
