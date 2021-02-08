@@ -14,12 +14,14 @@ Discipline, Reward, ScientificSociety, MaterialBaseNode)
 class StaffCathedraAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     list_display=["staff", "rank", "cathedras"]
+    list_filter=["translations__rank", "cathedras"]
     #endregion
 
 @register(StaffFaculty)
 class StaffFacultyAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     list_display=["staff", "position", "faculties"]
+    list_filter=["translations__position", "faculties"]
     #endregion
 
 @register(Discipline)
@@ -35,7 +37,8 @@ class SpecialityAdmin(TranslatableAdmin):
     fields=["number", "title", "cathedra",
     "educational_level",
     "description"]
-    list_display=["__str__", "number"]
+    list_display=["__str__", "number", "cathedra"]
+    list_filter=["cathedra"]
     #endregion
 
 @register(Cathedra)
@@ -45,7 +48,8 @@ class CathedraAdmin(TranslatableAdmin):
     "educational_programs","catalog_of_disciplines",
     "goal", "description", "history",
     "gallery","material_technical_base","phone","emails"]
-    list_display=["__str__"]
+    list_display=["__str__", "faculty"]
+    list_filter=["faculty"]
     #endregion
 
 @register(Faculty)

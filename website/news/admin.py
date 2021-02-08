@@ -24,4 +24,6 @@ class PaperAdmin(TranslatableAdmin):
     "news_feed", "gallery"]
     list_display=["__str__", "_news_feed", 
     "_gallery"]
+    list_filter=["news_feed__translations__title",
+    "gallery__translations__title"]
     #endregion
