@@ -6,7 +6,11 @@
         <div class="teacher-card__body">
             <div class="teacher-data">
                 <div class="teacher-rank">
-                    {{ teacher.rank }}
+                    {% if teacher.position %}
+                        {{ teacher.position }}
+                    {% else %}
+                        {{ teacher.rank }}
+                    {% endif %}
                 </div>
                 <div class="teacher-contacts">
                     {% if teacher.staff.phone %}

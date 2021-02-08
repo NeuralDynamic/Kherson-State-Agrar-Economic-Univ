@@ -109,6 +109,7 @@ input, textarea, button, h5, h4, h3, h2, h1{
 @import "blocks/main.scss";
 @import "blocks/footer.scss";
 @import "blocks/menu.scss";
+@import "blocks/bread-crumbs.scss";
 
 // FACULTY IMPORTS
 
@@ -162,3 +163,4 @@ input, textarea, button, h5, h4, h3, h2, h1{
 @import "components/slider.scss";
 @import "components/news_card.scss";
 @import "components/gallery_card.scss";
+@import "components/pagination.scss";
