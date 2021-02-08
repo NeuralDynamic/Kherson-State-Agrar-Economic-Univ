@@ -9,7 +9,7 @@
         <div class="row faculty-header__main">
             <div class="faculty-header__icon">
                 <img height="{{ emblem_height }}" width="{{ emblem_width }}" 
-                        src="{{ faculty.emblem.url }}" alt="faculty-logo">
+                     src="{{ faculty.emblem.url }}" alt="faculty-logo">
             </div>
             <h1 class="faculty-header__title">
                 {{ faculty.title }}
@@ -79,6 +79,7 @@
         </table>
     </div>
 </section>   
+{% if gallery %}
 <section>
     <div class="section-title">
         {% trans 'Життя факультету' %}
@@ -109,6 +110,8 @@
         </div>
     </div>
 </section> 
+{% endif %}
+{% if faculty.employers %}
 <section class="hiding">
     <div class="section-title">
         {% trans 'Рада роботодавців агрономічного факультету' %}
@@ -119,12 +122,12 @@
         </div>
     </div>
 </section>
-
+{% endif %}
+{% if scientific_society %}
 <section class="hiding">
     <div class="section-title">
         {% trans 'Наукове товариство студентів, аспірантів, докторантів і молодих вчених' %}
     </div>
-    {% with scientific_society as scientific_society %}
     <div class="section-body">
         <div class="content">
             <div class="faculty-scientific-society">
@@ -164,7 +167,7 @@
             </div>
         </div>
     </div>
-    {% endwith %}
 </section>
+{% endif %}
 
 {% endblock %}

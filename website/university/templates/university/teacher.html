@@ -29,9 +29,11 @@
                 </div>
                 <div class="column">
                     <div class="row">
+                        {% if teacher.phone %}
                         <a href="tel:{{ teacher.phone|default_if_none:'' }}" class="phone-link">
                             {{ teacher.phone|default_if_none:'' }}
                         </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -39,16 +41,19 @@
         {% include 'university/teacher/univ-data.html' %}
     </div>
 </section>
+{% if disciplines %}
 <section>
     <div class="section-title">{% trans 'Дисципліни' %}</div>
     <div class="teacher-disciplines">
         <ul>
-            {% for discipline in teacher.disciplines.all %}
+            {% for discipline in disciplines %}
             <li>{{ discipline.title }}</li>
             {% endfor %}
         </ul>
     </div>
 </section>
+{% endif %}
+{% if teacher.methodical_works %}
 <section class="hiding">
     <div class="section-title">
         {% trans 'Основнi науковi та методичi працi' %}
@@ -59,13 +64,14 @@
         </div>
     </div>
 </section>
-{% if teacher.library %}
+{% endif %}
+{% if books %}
 <section>
     <div class="section-title">
         {% trans 'Видання' %}
     </div>
     <div class="teacher-library">
-        {% for book in teacher.library.books.all %}
+        {% for book in books %}
             {% include 'utils/book-card.html' %}
         {% endfor %}
     </div>

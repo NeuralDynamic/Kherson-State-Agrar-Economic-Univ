@@ -11,12 +11,16 @@
                     {{ cathedra.title }}
                 </div>
                 <div class="department-contacts">
+                    {% if cathedra.phone %}
                     <a href="tel:+380552416216" class="phone-link">
                         {{ cathedra.phone }}
                     </a>
-                    <a href="mailto:{{ cathedra.email }}" class="email-link">
-                        {{ cathedra.email }}
+                    {% endif %}
+                    {% if cathedra.emails %}
+                    <a href="mailto:{{ cathedra.emails.0 }}" class="email-link">
+                        {{ cathedra.emails.0 }}
                     </a>
+                    {% endif %}
                 </div>
             </div>
             
