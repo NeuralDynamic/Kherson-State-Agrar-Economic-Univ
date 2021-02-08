@@ -54,12 +54,15 @@
         </div>
     </div>
 </section>
+{% if cathedra.educational_programs and cathedra.catalog_of_disciplines %}
 <section>
     <div class="department-links__container">
         <a href="{{ cathedra.educational_programs }}">{% trans 'Освітні програми' %}</a>
         <a href="{{ cathedra.catalog_of_disciplines }}">{% trans 'Kаталог дисциплін' %}</a>
     </div>
 </section>
+{% endif %}
+{% if matherial_base %}
 <section class="hiding active">
     <div class="section-title">
         {% trans 'Матерiально технiчна база' %}
@@ -79,6 +82,8 @@
         </div>
     </div>
 </section>
+{% endif %}
+{% if gallery %}
 <section>
     <div class="section-title">
         {% trans 'Соцiальна активнiсть профорiєнтація' %}
@@ -109,6 +114,8 @@
         </div>
     </div>
 </section>
+{% endif %}
+{% if cathedra.history %}
 <section class="hiding">
     <div class="section-title">
         {% trans 'Iсторiя кафедри' %}
@@ -119,17 +126,22 @@
         </div>
     </div>
 </section>
+{% endif %}
 <section>
     <div class="section-title">
         {% trans 'Контакти кафедри' %}
     </div>
     <div class="row department-contacts">
+        {% if cathedra.phone %}
         <a href="tel:{{ cathedra.phone }}" class="phone-link">
             {{ cathedra.phone }}
         </a>
-        <a href="mailto:{{ cathedra.emails.first }}" class="email-link">
-            {{ cathedra.emails.first }}
+        {% endif %}
+        {% if cathedra.emails %}
+        <a href="mailto:{{ cathedra.emails.0 }}" class="email-link">
+            {{ cathedra.emails.0 }}
         </a>
+        {% endif %}
     </div>
 </section>
 
