@@ -105,7 +105,7 @@ class Speciality(TranslatableModel):
 
 class Cathedra(TranslatableModel):
     YEAR_CHOICES = [(r,r) for r in reversed(
-    range(1950, date.today().year+1))]
+    range(1800, date.today().year+1))]
 
     #region           -----Translation-----
     translations=TranslatedFields(
@@ -135,11 +135,6 @@ class Cathedra(TranslatableModel):
     verbose_name=_("Educational programs link"), null=True)
     catalog_of_disciplines=URLField(blank=True,
     verbose_name=_("Catalog of disciplines link"), null=True)
-    #endregion
-
-    #region            -----Database-----
-    created_at=DateField(default=timezone.now,
-    verbose_name=_("Created at"))
     #endregion
 
     #region            -----Relation-----
