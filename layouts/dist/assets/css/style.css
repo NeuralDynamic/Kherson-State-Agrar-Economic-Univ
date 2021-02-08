@@ -1489,10 +1489,20 @@ section.news-slider .article-description {
 }
 
 .gallery-container .card {
+<<<<<<< HEAD
     -ms-flex: 0 1 31.33%;
     flex: 0 1 31.33%;
     margin: 0 1%;
     margin-bottom: 40px;
+=======
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    margin: 0 0 20px 0;
+}
+
+.gallery-container .card:last-child {
+    margin: 0 auto 20px auto;
+>>>>>>> origin/devops
 }
 
 .gallery-single-header {
