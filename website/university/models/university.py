@@ -44,6 +44,9 @@ class ScientificSociety(TranslatableModel):
         verbose_name=_("Scientific Society")
     #endregion
 
+    def __str__(self)->str:
+        return self.sub_title
+
 class Discipline(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
