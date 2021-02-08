@@ -15,7 +15,7 @@ class StaffCathedra(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
     rank=CharField(verbose_name=_("Rank"),
-    max_length=100, blank=True, null=True))
+    max_length=300, blank=True, null=True))
     #endregion
 
     #region            -----Relation-----
@@ -46,7 +46,7 @@ class StaffFaculty(TranslatableModel):
     #region           -----Information-----
     translations=TranslatedFields(
     position=CharField(verbose_name=_("Position"),
-    max_length=100, blank=True, null=True))
+    max_length=300, blank=True, null=True))
     #endregion
 
     #region            -----Relation-----

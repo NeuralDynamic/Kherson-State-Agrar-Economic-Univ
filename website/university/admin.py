@@ -47,7 +47,7 @@ class CathedraAdmin(TranslatableAdmin):
     fields=["emblem", "title", "year", "faculty",
     "educational_programs","catalog_of_disciplines",
     "goal", "description", "history",
-    "gallery","material_technical_base","phone","emails"]
+    "gallery","material_technical_base", "phone", "emails"]
     list_display=["__str__", "faculty"]
     list_filter=["faculty"]
     #endregion

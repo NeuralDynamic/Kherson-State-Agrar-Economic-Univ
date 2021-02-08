@@ -54,14 +54,14 @@ class Staff(TranslatableModel):
     translations=TranslatedFields(
     second_name=CharField(max_length=40, blank=False,
     verbose_name=_("Second name")),
-
+    
     first_name=CharField(max_length=40, blank=False,
     verbose_name=_("First name")),
 
     third_name=CharField(max_length=40, blank=False,
     verbose_name=_("Third name")),
     
-    rank=CharField(max_length=100, blank=True,
+    rank=CharField(max_length=300, blank=True,
     verbose_name=_("Rank")),
 
     methodical_works=HTMLField(blank=True,

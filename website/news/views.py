@@ -11,11 +11,9 @@ from .models import Paper
 #region				   -----News views-----
 
 def news_view(request):
-    articles = Paper.objects.all()
-    last_articles = articles[:5]
-    return render(request,'news/news.html',
-                        context={'articles':articles,
-                                'last_articles':last_articles})
+    page_num=request.GET.get('page', 1)
+    context = PaperService().paginator(page_num)
+    return render(request,'news/news.html', context=context)
 
 def paper_view(request, paper_id):
     context = PaperService().get_paper(pk=paper_id)
