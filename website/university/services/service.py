@@ -93,8 +93,7 @@ class StaffService(object):
         try:
             context = dict()
 
-            teacher = Staff.objects.select_related('links')\
-                                    .select_related('library').get(pk=pk)
+            teacher = Staff.objects.select_related('library').get(pk=pk)
             context['teacher'] = teacher
 
             try:
