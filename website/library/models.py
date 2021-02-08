@@ -21,7 +21,7 @@ class Book(TranslatableModel):
     max_length=500, blank=False),
     
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False))
+    max_length=300, blank=False))
     #endregion
 
     #region           -----Information-----
