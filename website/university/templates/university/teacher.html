@@ -2,13 +2,15 @@
 
 {% load i18n %}
 
+{% block title %}{{ teacher.second_name }} {{ teacher.first_name }} {{ teacher.third_name }}{% endblock title %}
+
 {% block content %}
 
 <section>
     <div class="teacher-intro-block">
         <div class="teacher-profile">
             <h3 class="teacher-profile__name">
-                {{ teacher.first_name }} {{ teacher.second_name }} {{ teacher.third_name }}
+                {{ teacher.second_name }} {{ teacher.first_name }} {{ teacher.third_name }}
             </h3>
             <div class="teacher-profile__photo">
                 <img src="{% if teacher.photo %}{{ teacher.photo.url }}{% endif %}" 
