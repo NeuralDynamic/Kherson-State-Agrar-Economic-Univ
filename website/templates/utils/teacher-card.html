@@ -1,7 +1,7 @@
 <div class="card glassed teacher-card linked-card">
     <div class="card__link" data-link="{% url 'teacher' teacher_id=teacher.staff.id %}">
         <div class="teacher-name">
-            {{ teacher.staff.first_name }} {{ teacher.staff.second_name }} {{ teacher.staff.third_name }}
+            {{ teacher.staff.second_name }} {{ teacher.staff.first_name }} {{ teacher.staff.third_name }}
         </div>
         <div class="teacher-card__body">
             <div class="teacher-data">
