@@ -6,6 +6,8 @@
 
     {% include 'head.html' %}
 
+    <title>{% block title %}Main{% endblock title %} | {% trans 'KSAEU' %}</title>
+
     {% compress css %}
         <link rel="stylesheet" href="{% static '/css/style.min.css' %}" type="text/css" media="all">
     {% endcompress %}
