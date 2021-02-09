@@ -113,6 +113,9 @@ class Speciality(TranslatableModel):
         """@return translated fields"""
         return ["translations__title",
         "translations__description"]
+    
+    def faculty(self)->object:
+        return Faculty.objects.get(cathedras__specialities__pk=self.pk)
 
     def __str__(self)->str:
         """@return title of speciality"""

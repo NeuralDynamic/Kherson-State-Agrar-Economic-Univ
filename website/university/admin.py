@@ -37,8 +37,8 @@ class SpecialityAdmin(TranslatableAdmin):
     fields=["number", "title", "cathedra",
     "educational_level", "form_of_studying",
     "description"]
-    list_display=["__str__", "number", "cathedra"]
-    list_filter=["cathedra"]
+    list_display=["__str__", "number", "faculty"]
+    list_filter=["number", "cathedra__faculty"]
     #endregion
 
 @register(Cathedra)
