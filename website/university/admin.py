@@ -2,6 +2,8 @@
 from django.contrib.admin import register, ModelAdmin
 from django.contrib import admin
 from parler.admin import TranslatableAdmin
+from django.http import HttpResponse, HttpResponseRedirect
+from django.utils.html import format_html
 #endregion
 
 #region				-----Internal Imports-----
@@ -43,21 +45,49 @@ class SpecialityAdmin(TranslatableAdmin):
 
 @register(Cathedra)
 class CathedraAdmin(TranslatableAdmin):
+    change_form_template="admin/university/change_form.html"
+
     #region           ----Configuration-----
     fields=["emblem", "title", "year", "faculty",
     "educational_programs","catalog_of_disciplines",
     "goal", "description", "history",
     "gallery","material_technical_base", "phone", "emails"]
-    list_display=["__str__", "faculty"]
+    list_display=["__str__", "faculty", "preview"]
     list_filter=["faculty"]
+    #endregion
+
+    #region         -----Internal Methods-----
+    def response_change(self, request, obj):
+        if "_preview" in request.POST:
+            return HttpResponseRedirect(obj.get_absolute_url())
+        return super().response_change(request, obj)
+    def preview(self, obj)->str:
+        return format_html(
+            f"""<a class="button" target=_blank
+            href={obj.get_absolute_url()}>Preview</a>"""
+        )
     #endregion
 
 @register(Faculty)
 class FacultyAdmin(TranslatableAdmin):
+    change_form_template="admin/university/change_form.html"
+
     #region           ----Configuration-----
     fields=["emblem", "title", "description", 
     "gallery", "scientific_society"]
-    list_display=["__str__"]
+    list_display=["__str__", "preview"]
+    #endregion
+
+    #region         -----Internal Methods-----
+    def response_change(self, request, obj):
+        if "_preview" in request.POST:
+            return HttpResponseRedirect(obj.get_absolute_url())
+        return super().response_change(request, obj)
+    def preview(self, obj)->str:
+        return format_html(
+            f"""<a class="button" target=_blank
+            href={obj.get_absolute_url()}>Preview</a>"""
+        )
     #endregion
 
 @register(Reward)
@@ -69,14 +99,28 @@ class RewardAdmin(TranslatableAdmin):
 
 @register(Staff)
 class StaffAdmin(TranslatableAdmin):
+    change_form_template="admin/university/change_form.html"
+    
     #region           ----Configuration-----
-    list_display=["__str__", "phone"]
+    list_display=["__str__", "phone", "preview"]
     fields=["photo", "first_name", 
     "second_name", "third_name", "rank",
     "phone", "emails", "ndr_theme", "books", 
     "methodical_works","description", "disciplines",
     "google_scholar", "web_of_science", "researchgate",
     "scopus", "orcid"]
+    #endregion
+
+    #region         -----Internal Methods-----
+    def response_change(self, request, obj):
+        if "_preview" in request.POST:
+            return HttpResponseRedirect(obj.get_absolute_url())
+        return super().response_change(request, obj)
+    def preview(self, obj)->str:
+        return format_html(
+            f"""<a class="button" target=_blank
+            href={obj.get_absolute_url()}>Preview</a>"""
+        )
     #endregion
 
 @register(ScientificSociety)
