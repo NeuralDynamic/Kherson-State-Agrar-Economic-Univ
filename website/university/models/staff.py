@@ -32,7 +32,7 @@ class Reward(TranslatableModel):
     #endregion
 
     #region            -----Relation-----
-    staff=ManyToManyField("Staff", blank=False, 
+    staff=ManyToManyField("Staff", blank=False,
     verbose_name=_("Staff"),
     related_name="rewards")
     #endregion
@@ -104,6 +104,9 @@ class Staff(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def get_absolute_url(self)->str:
+        """@return link to model"""
+        return f"/university/teacher/{self.pk}"
     def searching_fields(self)->List[str]:
         """@return translated fields"""
         return ["translations__first_name",

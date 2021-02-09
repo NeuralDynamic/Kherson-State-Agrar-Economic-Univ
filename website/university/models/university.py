@@ -113,6 +113,11 @@ class Speciality(TranslatableModel):
         """@return translated fields"""
         return ["translations__title",
         "translations__description"]
+    
+    def faculty(self)->object:
+        """@return faculty object"""
+        return Faculty.objects.get(
+        cathedras__specialities__pk=self.pk)
 
     def __str__(self)->str:
         """@return title of speciality"""
@@ -175,6 +180,9 @@ class Cathedra(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def get_absolute_url(self)->str:
+        """@return link to model"""
+        return f"/university/cathedra/{self.pk}"
     def searching_fields(self)->List[str]:
         """@return translated fields"""
         return ["translations__title",
@@ -226,6 +234,9 @@ class Faculty(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def get_absolute_url(self)->str:
+        """@return link to model"""
+        return f"/university/faculty/{self.pk}"
     def searching_fields(self)->List[str]:
         """@return translated fields"""
         return ["translations__title",

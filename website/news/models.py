@@ -94,6 +94,8 @@ class Paper(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def get_absolute_url(self)->str:
+        return f"/news/article/{self.pk}"
     def searching_fields(self)->List[str]:
         """@return translated fields"""
         return ["translations__title",
