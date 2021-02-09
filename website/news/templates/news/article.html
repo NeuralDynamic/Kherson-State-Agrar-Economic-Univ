@@ -42,8 +42,10 @@
             <div class="article-data">
                 {{ paper.story }}
             </div>
-            {% with gallery as images %}
-                {% include 'utils/gallery-slider.html' %}
+            {% if gallery %}
+                {% with gallery as images %}
+                    {% include 'utils/gallery-slider.html' %}
+                {% endwith %}
             {% endwith %}
         </div>
     </div>
