@@ -10,7 +10,6 @@ from .models import Gallery, Image
 #region				   -----Type Hints-----
 #endregion
 
-
 #region				   -----Gallery views-----
 
 def gallery_catalog_view(request):

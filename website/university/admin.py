@@ -82,7 +82,7 @@ class StaffAdmin(TranslatableAdmin):
 @register(ScientificSociety)
 class ScientificSocietyAdmin(TranslatableAdmin):
     #region           ----Configuration-----
-    fields=["staff", "phone", 
+    fields=["staff", "phone", "sub_title",
     "emails","description"]
     #endregion
 
