@@ -1,5 +1,12 @@
-from ..models import Gallery, Image
+#region				-----External Imports-----
+from django.core.paginator import Paginator, EmptyPage
 from django.http import Http404
+#endregion
+
+#region				-----Internal Imports-----
+from ..models import Gallery, Image
+#endregion
+
 
 class GalleryService(object):
     def paginator(self, page_num: int)->object:

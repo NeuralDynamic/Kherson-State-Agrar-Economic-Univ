@@ -28,5 +28,60 @@
         {% endfor %}
     </div>
 </section>
+<section>
+    <div class="d-flex jc-center">
+        <div class="pagination">
+            <ul>
+                <li class="prev-page {% if not galleries.has_previous %}not-active{% endif %}">
+                    <a href="?page={% if galleries.has_previous %}{{ galleries.previous_page_number }}{% endif %}">Prev</a>
+                </li>
+
+                {% if galleries.has_previous %}
+                <li>
+                    <a href="?page=1">1</a>
+                </li>
+                    {% if galleries.previous_page_number > 1 %}
+                    <li class="non-clickable">
+                        ...
+                    </li>
+                    {% endif %}
+
+                    {% if galleries.previous_page_number != 1 %}
+                    <li>
+                        <a href="?page={{ galleries.previous_page_number }}">{{ galleries.previous_page_number }}</a>
+                    </li>
+                    {% endif %}
+                {% endif %}
+
+                <li class="active">
+                    <a href="?page={{ galleries.number }}">{{ galleries.number }}</a>
+                </li>
+
+                {% if galleries.has_next %}
+                <li>
+                    <a href="?page={{ galleries.next_page_number }}">{{ galleries.next_page_number }}</a>
+                </li>
+
+                    {% if galleries.paginator.num_pages > galleries.next_page_number %}
+                    <li class="non-clickable">
+                        ...
+                    </li>
+                    {% endif %}
+                
+                    {% if galleries.paginator.num_pages != galleries.next_page_number %}
+                        <li>
+                            <a href="?page={{ galleries.paginator.num_pages }}">{{ galleries.paginator.num_pages }}</a>
+                        </li>
+                    {% endif %}
+
+                {% endif %}
+
+                <li class="next-page {% if not galleries.has_next %}not-active{% endif %}">
+                    <a href="?page={% if galleries.has_next %}{{ galleries.next_page_number }}{% endif %}">Next</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
