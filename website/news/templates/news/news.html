@@ -29,10 +29,67 @@
         </div>
     </div>
 </section>
-<div class="news-container">
-    {% for article in articles %}
-        {% include 'utils/news-card.html' %}
-    {% endfor %}
-</div>
+<section>
+    <div class="news-container">
+        {% for article in articles %}
+            {% include 'utils/news-card.html' %}
+        {% endfor %}
+    </div>
+</section>
+<section>
+    <div class="d-flex jc-center">
+        <div class="pagination">
+            <ul>
+                <li class="prev-page {% if not articles.has_previous %}not-active{% endif %}">
+                    <a href="?page={% if articles.has_previous %}{{ articles.previous_page_number }}{% endif %}">Prev</a>
+                </li>
+
+                {% if articles.has_previous %}
+                <li>
+                    <a href="?page=1">1</a>
+                </li>
+                    {% if articles.previous_page_number > 1 %}
+                    <li class="non-clickable">
+                        ...
+                    </li>
+                    {% endif %}
+
+                    {% if articles.previous_page_number != 1 %}
+                    <li>
+                        <a href="?page={{ articles.previous_page_number }}">{{ articles.previous_page_number }}</a>
+                    </li>
+                    {% endif %}
+                {% endif %}
+
+                <li class="active">
+                    <a href="?page={{ articles.number }}">{{ articles.number }}</a>
+                </li>
+
+                {% if articles.has_next %}
+                <li>
+                    <a href="?page={{ articles.next_page_number }}">{{ articles.next_page_number }}</a>
+                </li>
+
+                    {% if articles.paginator.num_pages > articles.next_page_number %}
+                    <li class="non-clickable">
+                        ...
+                    </li>
+                    {% endif %}
+                
+                    {% if articles.paginator.num_pages != articles.next_page_number %}
+                        <li>
+                            <a href="?page={{ articles.paginator.num_pages }}">{{ articles.paginator.num_pages }}</a>
+                        </li>
+                    {% endif %}
+
+                {% endif %}
+
+                <li class="next-page {% if not articles.has_next %}not-active{% endif %}">
+                    <a href="?page={% if articles.has_next %}{{ articles.next_page_number }}{% endif %}">Next</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
