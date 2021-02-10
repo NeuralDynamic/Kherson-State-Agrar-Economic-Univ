@@ -2,7 +2,7 @@
 from django.contrib.admin import register
 from django.contrib import admin
 from parler.admin import TranslatableAdmin
-from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import redirect
 from django.utils.html import format_html
 #endregion
 
@@ -35,7 +35,7 @@ class PaperAdmin(TranslatableAdmin):
     #region         -----Internal Methods-----
     def response_change(self, request, obj):
         if "_preview" in request.POST:
-            return HttpResponseRedirect(obj.get_absolute_url())
+            return redirect(obj.get_absolute_url())
         return super().response_change(request, obj)
     def preview(self, obj)->str:
         return format_html(
