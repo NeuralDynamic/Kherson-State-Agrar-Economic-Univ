@@ -8,12 +8,23 @@ from django.views.generic import RedirectView
 from django.urls import include, path
 from django.template.defaulttags import register
 
+from university.sitemaps import (StaffSitemap, FacultySitemap, CathedraSitemap)
+from news.sitemaps import (PaperSitemap, NewsSitemap)
+
 admin.autodiscover()
+
+sitemaps = {
+    "cmspages": CMSSitemap,
+    "teacher": StaffSitemap,
+    "faculty": FacultySitemap,
+    "cathedra": CathedraSitemap,
+    "articles": PaperSitemap,
+    "news": NewsSitemap
+}
 
 urlpatterns = [
     path('favicon.ico/', RedirectView.as_view(url='/assets/images/favicon.png'), name='favicon'),
-
-    path("sitemap.xml", sitemap, {"sitemaps": {"cmspages": CMSSitemap}}),
+    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}),
     path("", include("searcher.urls"))
 ]
 
