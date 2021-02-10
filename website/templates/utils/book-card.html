@@ -1,5 +1,5 @@
 <div class="card book-card">
-    <a href="{{ book.url }}" target="_blank" rel="noopener noreferrer">
+    {% if book.url %}<a href="{{ book.url }}" target="_blank" rel="noopener noreferrer">{% endif %}
         <div class="card-body">
             <div class="book-card__photo" {% if book.cover %}style="background-image: url({{ book.cover.url }});" {% endif %}></div>
             <div class="book-card__title">
@@ -9,5 +9,5 @@
                 {{ book.authors }}
             </div>
         </div>  
-    </a> 
+    {% if book.url %}</a>{% endif %}
 </div>
