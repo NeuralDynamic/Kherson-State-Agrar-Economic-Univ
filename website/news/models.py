@@ -6,11 +6,11 @@ ForeignKey, ImageField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from parler.models import (TranslatableModel, TranslatedFields)
+from gallery.models import Gallery
 from typing import (TypeVar, List)
 #endregion
 
 #region				-----Internal Imports-----
-from gallery.models import Gallery
 from .utils import (render_related_papers, 
 reverse_related_url)
 #endregion

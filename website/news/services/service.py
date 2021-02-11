@@ -33,7 +33,9 @@ class PaperService(object):
         try:
             context = dict()
 
-            paper = Paper.objects.prefetch_related("gallery__images").get(pk=pk)
+            paper = (Paper.objects
+            .prefetch_related("gallery__images")
+            .get(pk=pk))
 
             context['paper']=paper
 

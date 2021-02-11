@@ -68,26 +68,31 @@ class Discipline(TranslatableModel):
     #endregion
 
 class Speciality(TranslatableModel):
-    EDUCATIONAL_RANKS=[(l, l) for l in [_("Junior bachelor"), 
-    _("Bachelor"), _("Master"), _("PHD"),
-    _("Doctor of Philosophy")]]
+    EDUCATIONAL_RANKS=[(l, l) for l in 
+    [_("Junior bachelor"), _("Bachelor"), 
+    _("Doctor of Philosophy"),
+    _("Master"), _("PHD")]]
 
-    FORM_OF_STUDING=[(f, f) for f in [_("Day"), _("Extramural"), 
+    FORM_OF_STUDING=[(f, f) for f in 
+    [_("Day"), _("Extramural"), 
     _("Day, Extramural")]]
+
     #region           -----Translation-----
     translations=TranslatedFields(
     description=HTMLField(verbose_name=_("Description"),
     blank=True, default=""),
 
-    educational_level=CharField(choices=EDUCATIONAL_RANKS,
-    blank=False, null=True, max_length=200,
+    educational_level=CharField(null=True, max_length=200,
+    choices=EDUCATIONAL_RANKS, blank=False,
     verbose_name=_("Educational Level")),
 
-    form_of_studying=CharField(choices=FORM_OF_STUDING,
-    blank=False, null=True, max_length=200),
+    form_of_studying=CharField(null=True, max_length=200,
+    verbose_name=_("Form of studying"),
+    choices=FORM_OF_STUDING),
 
-    title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default="", unique=True))
+    title=CharField(max_length=100, blank=False,
+    verbose_name=_("Title"), default="", 
+    unique=True))
     #endregion
 
     #region           -----Information-----
@@ -133,44 +138,47 @@ class Cathedra(TranslatableModel):
     description=HTMLField(verbose_name=_("Description"),
     blank=True, default=""),
 
-    goal=TextField(blank=False,
-    verbose_name=_("Goal"), default=""),
-
-    title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default="", unique=True),
+    title=CharField(default="", unique=True,
+    verbose_name=_("Title"), blank=False,
+    max_length=100),
     
-    history=HTMLField(verbose_name=_("History of cathedra"),
-    blank=True, default=""),)
+    history=HTMLField(blank=True, default="",
+    verbose_name=_("History of cathedra")),
+    
+    goal=TextField(blank=False, default="",
+    verbose_name=_("Goal")))
     #endregion
 
     #region           -----Information-----
+    catalog_of_disciplines=URLField(blank=True, null=True,
+    verbose_name=_("Catalog of disciplines link"))
+    educational_programs=URLField(blank=True, null=True,
+    verbose_name=_("Educational programs link"))
     emblem=ImageField(upload_to="cathedras/emblems", 
     blank=False, verbose_name=_("Emblem"), 
     default="")
+    emails=MultiEmailField(blank=True, null=True)
     phone=CharField(max_length=20, blank=True,
     verbose_name=_("Phone number"))
-    emails=MultiEmailField(blank=True, null=True)
     year=IntegerField(verbose_name=_("Year"), 
     choices=YEAR_CHOICES, null=True)
-    educational_programs=URLField(blank=True,
-    verbose_name=_("Educational programs link"), null=True)
-    catalog_of_disciplines=URLField(blank=True,
-    verbose_name=_("Catalog of disciplines link"), null=True)
     #endregion
 
     #region            -----Relation-----
+    material_technical_base=ManyToManyField(MaterialBaseNode,
+    verbose_name=_("Material-technical base"), blank=True)
     faculty=ForeignKey("Faculty", blank=False,
     null=False, on_delete=CASCADE, default=1,
     verbose_name=_("Faculty"),
     related_name="cathedras")
+
     gallery=ForeignKey(Gallery, blank=True,
     null=True, on_delete=SET_NULL,
     verbose_name=_("Career guidance"),
     related_name="cathedras")
+
     staff=ManyToManyField("StaffCathedra",
     verbose_name=_("Staff"))
-    material_technical_base=ManyToManyField(MaterialBaseNode,
-    verbose_name=_("Material-technical base"), blank=True)
     #endregion
 
     #region            -----Metadata-----
@@ -198,14 +206,15 @@ class Cathedra(TranslatableModel):
 class Faculty(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
-    description=HTMLField(verbose_name=_("Description"),
-    blank=True, default=""),
+    description=HTMLField(blank=True, default="",
+    verbose_name=_("Description")),
 
-    title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default="", unique=True),
+    title=CharField(max_length=100, blank=False, 
+    default="", unique=True,
+    verbose_name=_("Title")),
     
-    council_of_employers=HTMLField(verbose_name=_("Council of employers"),
-    blank=False, default=""))
+    council_of_employers=HTMLField(blank=False,
+    verbose_name=_("Council of employers")))
     #endregion
 
     #region           -----Information-----
@@ -215,16 +224,16 @@ class Faculty(TranslatableModel):
     #endregion
 
     #region            -----Relation-----
+    scientific_society=ForeignKey(ScientificSociety, 
+    blank=True,null=True, on_delete=SET_NULL,
+    verbose_name=_("Scientific Societies"),
+    related_name="scientific_society")
     gallery=ForeignKey(Gallery, blank=True,
     null=True, on_delete=SET_NULL,
     verbose_name=_("Gallery"),
     related_name="faculties")
     staff=ManyToManyField("StaffFaculty",
     verbose_name=_("Staff"))
-    scientific_society=ForeignKey(ScientificSociety, blank=True,
-    null=True, on_delete=SET_NULL,
-    verbose_name=_("Scientific Societies"),
-    related_name="scientific_society")
     #endregion
 
     #region            -----Metadata-----

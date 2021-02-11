@@ -8,6 +8,6 @@ from .views import paper_view
 #endregion
 
 urlpatterns = [
+    path('article/<int:paper_id>', paper_view, name="article"),
     path('', news_view, name="news"),
-    path('article/<int:paper_id>', paper_view, name="article")
 ]
