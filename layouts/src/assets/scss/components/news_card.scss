@@ -1,82 +1,113 @@
 .news-card{
     height: 350px;
     position: relative;
+    border-radius: 20px;
+    box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: .2s transform;
 
-    .card__link{
-        padding: 0 !important;
+    &:hover{
+        transform: scale(1.05);
     }
 
-    .card-body{
-        position: relative;
-        overflow: hidden;
-        padding: 15px;
-    }
-    
-    .news-card__image{
-        width: 100%;
-        height: 250px;
+    .article__preview{
+        height: 55%;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        // border-top-left-radius: 20px;
-        // border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
     }
 
-    .news-card__data{
+    .article__tag{
+        user-select: none;
+        width: 120px;
+        font-size: 12px;
+        padding: 4px 0;
         position: absolute;
-        top: 250px;
-        left: 0;
-        padding-top: 20px;
-        padding-left: 15px;
-        padding-right: 15px;
-        height: 100%;
-        width: 100%;
-        z-index: 2;
-        transition: height 0s linear 0.33s, opacity 0.33s linear, top 0.33s linear;
+        top: 55%;
+        transform: translateY(-50%);
+        left: 20px;
+        border-radius: 5px;
+        background-color: $hover-green;
+        font-weight: 700;
+        color: $white;
+        text-align: center;
     }
 
-    .news-card__title{
+    .card-body{
+        padding: 25px 20px;
+    }
+
+    .card-footer{
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        height: 50px;
+        border-top: 1px solid $grey;
+    }
+
+    .article__author{
         position: relative;
-        padding: 0 15px;
-        font-size: 24px;
-        z-index: 2;
-        transition: height 0s linear 0.33s, opacity 0.33s linear;
-    }
+        font-size: 10px;
+        margin-right: 5px;
+        height: fit-content;
+        padding-left: 19px;
 
-    .news-card__description{
-        position: relative;
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s linear 0.33s, opacity 0.33s linear;
-        transition-delay: 0s;
-    }
-
-    &:hover{
-        .news-card__data{
-            top: 0;
-        }
-
-        .news-card__data::before{
+        &::before{
             content: '';
             position: absolute;
-            z-index: 1;
-            bottom: 0;
+            height: 12px;
+            width: 12px;
             left: 0;
-            height: 100%;
-            width: 100%;
-            background: linear-gradient(107.48deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
-            backdrop-filter: blur(5px);
-            border-radius: 20px;
-            transition: height 0s linear 0.33s, opacity 0.33s linear, backdrop-filter .33s linear, background .33s ease-out;
-            transition-delay: .2s;
-        }
-
-        .news-card__description{
-            z-index: 2;
-            padding: 15px 0;
-            padding-left: 20px;
-            visibility: visible;
-            opacity: 1;
+            top: 50%;
+            transform: translateY(-50%);
+            background-image: url(/assets/images/svg/news-author-icon.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     }
+
+    .article__date{
+        font-size: 10px;
+        height: fit-content;
+    }
+
+    &.bigger{ 
+        .article__tag{
+            font-size: 14px;
+            padding: 8px 0;
+            left: 40px;
+            width: 140px;
+        }
+
+        .card-body{
+            padding: 50px 40px;
+        }
+
+        .article__title{
+            font-size: 24px;
+        }
+
+        .card-footer{
+            padding: 0 40px;
+            margin-top: auto;
+            display: flex;
+            height: 75px;
+        }
+
+        .article__author{
+            font-size: 14px;
+        }
+    
+        .article__date{
+            font-size: 14px;
+        }
+    }
+
+
+
 }

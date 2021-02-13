@@ -29,11 +29,20 @@ section{
     width: 100%;
     position: relative;
     display: block;
-    padding: 0 30px;
+    padding: 0 120px;
     margin-bottom: 30px;
 
     .section-title{
         font-size: 20px;
         color: #197326;
+    }
+
+    &:nth-child(2n+1){
+        background-color: $grey;
+    }
+
+    &.main-section{
+        padding: 80px 120px;
+        margin-bottom: 0;
     }
 }

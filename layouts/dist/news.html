@@ -30,11 +30,39 @@
 
     <div class="page">
         <header class="header">
-            <a href="/faculty.html">Факультет</a>
-            <a href="/department.html">Кафедра</a>
-            <a href="/teacher.html">Преподаватель</a>
-            <a href="/news.html">Новости</a>
-            <a href="/gallery.html">Галерея</a>
+            <div class="header__icon" style="background-image: url(/assets/images/apple-icon.png);"></div>
+        
+            <div class="header__links">
+                <a href="/faculty.html">Факультет</a>
+                <a href="/department.html">Кафедра</a>
+                <a href="/teacher.html">Преподаватель</a>
+                <a href="/news.html">Новости</a>
+                <a href="/gallery.html">Галерея</a>
+            </div>
+        
+            <div class="header__language_select">
+                <div class="dropdown">
+                    <div class="dropdown__preview">
+                        ua
+                    </div>
+                    <div class="dropdown__select">
+                        <ul>
+                            <li>
+                                <a href="/en">en</a>
+                            </li>
+                            <li>
+                                <a href="/ua">ua</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="header__search">
+                <form action="/search">
+                    <input autocomplete="off" type="text" name="q" aria-label="search">
+                </form>
+            </div>
         
             <div class="header__burger">
                 <span></span>
@@ -293,119 +321,101 @@
                 </div>
             </section>
             <div class="news-container">
-                <div class="card white news-card linked-card">
-                    <div class="card__link" data-link="/article.html">
-                        <div class="card-body">
-                            <div class="news-card__image" style="background-image: url(/assets/images/article-preview.png);"></div>
-                            <div class="news-card__data">
-                                <div class="news-card__title">
-                                    Новость 1
-                                </div>
-                                <div class="news-card__description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                    Lorem fames malesuada neque, eros, amet, in consequat eget est. 
-                                    Diam facilisi nullam quis nunc, sit. Odio ultricies volutpat convallis ante 
-                                    eros pretium morbi in. Ut ipsum ornare vitae odio vitae. Tortor posuere 
-                                    velit et duis duis ridiculus metus. Tortor integer in magna ac praesent. 
-                                    Elementum fermentum vel proin eu nulla nunc ipsum sed
-                                </div>
-                            </div>
+                <div class="card news-card">
+                    <div class="article__preview" style="background-image: url(/assets/images/news-card-image.png);"></div>
+                    <div class="article__tag">абітурієнтам</div>
+                    <div class="card-body">
+                        <a class="article__title" href="/news">
+                            Профорієнтаційна робота здобувачів вищої освіти біолого-технологічного факультету
+                        </a>
+                    </div>
+                    <div class="card-footer">
+                        <div class="article-author">
+                            <span>Володимир Кривий</span> , 
+                        </div>
+                        <div class="article-date">
+                            11 лютого 2021
                         </div>
                     </div>
-                </div>                <!-- <div class="card white news-card linked-card">
-    <div class="card__link" data-link="/article.html">
-        <div class="card-body">
-            <div class="news-card__image" style="background-image: url(/assets/images/article-preview.png);"></div>
-            <div class="news-card__data">
-                <div class="news-card__title">
-                    Новость 1
-                </div>
-                <div class="news-card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Lorem fames malesuada neque, eros, amet, in consequat eget est. 
-                    Diam facilisi nullam quis nunc, sit. Odio ultricies volutpat convallis ante 
-                    eros pretium morbi in. Ut ipsum ornare vitae odio vitae. Tortor posuere 
-                    velit et duis duis ridiculus metus. Tortor integer in magna ac praesent. 
-                    Elementum fermentum vel proin eu nulla nunc ipsum sed
-                </div>
-            </div>
+                </div>                <!-- <div class="card news-card">
+    <div class="article__preview" style="background-image: url(/assets/images/news-card-image.png);"></div>
+    <div class="article__tag">абітурієнтам</div>
+    <div class="card-body">
+        <a class="article__title" href="/news">
+            Профорієнтаційна робота здобувачів вищої освіти біолого-технологічного факультету
+        </a>
+    </div>
+    <div class="card-footer">
+        <div class="article-author">
+            <span>Володимир Кривий</span> , 
+        </div>
+        <div class="article-date">
+            11 лютого 2021
         </div>
     </div>
 </div>
-                <div class="card white news-card linked-card">
-                    <div class="card__link" data-link="/article.html">
-                        <div class="card-body">
-                            <div class="news-card__image" style="background-image: url(/assets/images/article-preview.png);"></div>
-                            <div class="news-card__data">
-                                <div class="news-card__title">
-                                    Новость 1
-                                </div>
-                                <div class="news-card__description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                    Lorem fames malesuada neque, eros, amet, in consequat eget est. 
-                                    Diam facilisi nullam quis nunc, sit. Odio ultricies volutpat convallis ante 
-                                    eros pretium morbi in. Ut ipsum ornare vitae odio vitae. Tortor posuere 
-                                    velit et duis duis ridiculus metus. Tortor integer in magna ac praesent. 
-                                    Elementum fermentum vel proin eu nulla nunc ipsum sed
-                                </div>
-                            </div>
+                <div class="card news-card">
+                    <div class="article__preview" style="background-image: url(/assets/images/news-card-image.png);"></div>
+                    <div class="article__tag">абітурієнтам</div>
+                    <div class="card-body">
+                        <a class="article__title" href="/news">
+                            Профорієнтаційна робота здобувачів вищої освіти біолого-технологічного факультету
+                        </a>
+                    </div>
+                    <div class="card-footer">
+                        <div class="article-author">
+                            <span>Володимир Кривий</span> , 
+                        </div>
+                        <div class="article-date">
+                            11 лютого 2021
                         </div>
                     </div>
-                </div>                <div class="card white news-card linked-card">
-                    <div class="card__link" data-link="/article.html">
-                        <div class="card-body">
-                            <div class="news-card__image" style="background-image: url(/assets/images/article-preview.png);"></div>
-                            <div class="news-card__data">
-                                <div class="news-card__title">
-                                    Новость 1
-                                </div>
-                                <div class="news-card__description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                    Lorem fames malesuada neque, eros, amet, in consequat eget est. 
-                                    Diam facilisi nullam quis nunc, sit. Odio ultricies volutpat convallis ante 
-                                    eros pretium morbi in. Ut ipsum ornare vitae odio vitae. Tortor posuere 
-                                    velit et duis duis ridiculus metus. Tortor integer in magna ac praesent. 
-                                    Elementum fermentum vel proin eu nulla nunc ipsum sed
-                                </div>
-                            </div>
+                </div>                <div class="card news-card">
+                    <div class="article__preview" style="background-image: url(/assets/images/news-card-image.png);"></div>
+                    <div class="article__tag">абітурієнтам</div>
+                    <div class="card-body">
+                        <a class="article__title" href="/news">
+                            Профорієнтаційна робота здобувачів вищої освіти біолого-технологічного факультету
+                        </a>
+                    </div>
+                    <div class="card-footer">
+                        <div class="article-author">
+                            <span>Володимир Кривий</span> , 
+                        </div>
+                        <div class="article-date">
+                            11 лютого 2021
                         </div>
                     </div>
-                </div>                <div class="card white news-card linked-card">
-                    <div class="card__link" data-link="/article.html">
-                        <div class="card-body">
-                            <div class="news-card__image" style="background-image: url(/assets/images/article-preview.png);"></div>
-                            <div class="news-card__data">
-                                <div class="news-card__title">
-                                    Новость 1
-                                </div>
-                                <div class="news-card__description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                    Lorem fames malesuada neque, eros, amet, in consequat eget est. 
-                                    Diam facilisi nullam quis nunc, sit. Odio ultricies volutpat convallis ante 
-                                    eros pretium morbi in. Ut ipsum ornare vitae odio vitae. Tortor posuere 
-                                    velit et duis duis ridiculus metus. Tortor integer in magna ac praesent. 
-                                    Elementum fermentum vel proin eu nulla nunc ipsum sed
-                                </div>
-                            </div>
+                </div>                <div class="card news-card">
+                    <div class="article__preview" style="background-image: url(/assets/images/news-card-image.png);"></div>
+                    <div class="article__tag">абітурієнтам</div>
+                    <div class="card-body">
+                        <a class="article__title" href="/news">
+                            Профорієнтаційна робота здобувачів вищої освіти біолого-технологічного факультету
+                        </a>
+                    </div>
+                    <div class="card-footer">
+                        <div class="article-author">
+                            <span>Володимир Кривий</span> , 
+                        </div>
+                        <div class="article-date">
+                            11 лютого 2021
                         </div>
                     </div>
-                </div>                <div class="card white news-card linked-card">
-    <div class="card__link" data-link="/article.html">
-        <div class="card-body">
-            <div class="news-card__image" style="background-image: url(/assets/images/article-preview.png);"></div>
-            <div class="news-card__data">
-                <div class="news-card__title">
-                    Новость 1
-                </div>
-                <div class="news-card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Lorem fames malesuada neque, eros, amet, in consequat eget est. 
-                    Diam facilisi nullam quis nunc, sit. Odio ultricies volutpat convallis ante 
-                    eros pretium morbi in. Ut ipsum ornare vitae odio vitae. Tortor posuere 
-                    velit et duis duis ridiculus metus. Tortor integer in magna ac praesent. 
-                    Elementum fermentum vel proin eu nulla nunc ipsum sed
-                </div>
-            </div>
+                </div>                <div class="card news-card">
+    <div class="article__preview" style="background-image: url(/assets/images/news-card-image.png);"></div>
+    <div class="article__tag">абітурієнтам</div>
+    <div class="card-body">
+        <a class="article__title" href="/news">
+            Профорієнтаційна робота здобувачів вищої освіти біолого-технологічного факультету
+        </a>
+    </div>
+    <div class="card-footer">
+        <div class="article-author">
+            <span>Володимир Кривий</span> , 
+        </div>
+        <div class="article-date">
+            11 лютого 2021
         </div>
     </div>
 </div> -->

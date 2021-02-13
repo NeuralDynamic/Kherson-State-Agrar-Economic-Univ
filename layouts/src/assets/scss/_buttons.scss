@@ -1,0 +1,89 @@
+button.button{
+    border: none;
+    font-weight: 700;
+    color: $dark-green;
+    padding: 15px 35px 15px 22px;
+    background: transparent;
+    transition: .3s ease all;
+
+    &.bigger{
+        padding: 22px 45px 22px 32px;
+    }
+
+    &.outlined{
+        border: 1px solid $dark-green;
+        border-radius: 5px;
+        position: relative;
+
+        &::before{
+            content: '';
+            position: absolute;
+            right: 23px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 6px;
+            width: 4px;
+            background-image: url(/assets/images/svg/button-arrow-outlined.svg);
+            background-position: center;
+        }
+
+        &:not(:disabled):hover{
+            background-color: $dark-green;
+            color: #fff;
+
+            &::before{
+                background-image: url(/assets/images/svg/button-arrow-fulled.svg);
+            }
+        }
+
+        &:disabled{
+            border-color: $disabled-green;
+            color: $disabled-green;
+            cursor: not-allowed;
+
+            &::before{
+                background-image: url(/assets/images/svg/button-arrow-disabled.svg);
+            }
+        }
+    }
+
+    &.filled{
+        border: 1px solid $dark-green;
+        background-color: $dark-green;
+        border-radius: 5px;
+        color: #fff;
+        position: relative;
+
+        &::before{
+            content: '';
+            position: absolute;
+            right: 23px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 6px;
+            width: 4px;
+            background-image: url(/assets/images/svg/button-arrow-fulled.svg);
+            background-position: center;
+        }
+
+        &:not(:disabled):hover{
+            border-color: $hover-green;
+            background-color: $hover-green;
+            color: #fff;
+
+            &::before{
+                background-image: url(/assets/images/svg/button-arrow-fulled.svg);
+            }
+        }
+
+        &:disabled{
+            border-color: $disabled-green;
+            background-color: $disabled-green;
+            cursor: not-allowed;
+
+            &::before{
+                background-image: url(/assets/images/svg/button-arrow-fulled.svg);
+            }
+        }
+    }
+}

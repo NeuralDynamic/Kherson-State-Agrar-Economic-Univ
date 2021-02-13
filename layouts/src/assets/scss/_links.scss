@@ -1,7 +1,13 @@
 a{
-    color: $black;
+    color: #222222;
     text-decoration: none;
     font-size: 16px;
+    font-weight: 700;
+}
+
+a:hover{
+    color: $dark-green;
+    text-decoration: underline;
 }
 
 a.phone-link,

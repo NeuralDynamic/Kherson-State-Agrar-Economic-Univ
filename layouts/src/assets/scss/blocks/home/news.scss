@@ -1,0 +1,20 @@
+.home-news-container{
+    height: 650px;
+    display: grid;
+    /* Выставляем имена строк и треки */
+    grid-template-rows: [row1-start] 1fr [row2-start] 1fr;
+    grid-template-columns: [col1-start] 1fr [col2-start] .5fr [col3-start] .5fr;
+
+    grid-gap: 30px 15px;
+
+    .news-card:first-child{
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .news-card{
+        height: 100%;
+    }
+}
