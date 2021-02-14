@@ -32,4 +32,4 @@ class SearchService(object):
             #*Sets result of searching to structure
             setattr(result, model.__name__.lower(),
             (model.objects.filter(reduce(or_, queries))))
-        return result
+        return result.staff
