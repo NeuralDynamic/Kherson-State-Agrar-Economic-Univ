@@ -709,7 +709,8 @@ html.is-animating .transition-fade {
     .header__burger.active span:last-child {
       position: absolute;
       top: 45%;
-      left: 0; }
+      left: 0;
+      background-color: #009846; }
     .header__burger.active span:first-child {
       width: 30px;
       transform: rotate(45deg); }
