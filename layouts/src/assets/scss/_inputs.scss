@@ -24,6 +24,11 @@ textarea{
     }
 }
 
+input:focus,
+textarea:focus{
+    border-color: $hover-green;
+}
+
 textarea::-webkit-scrollbar {
     width: 8px;
     cursor: pointer;

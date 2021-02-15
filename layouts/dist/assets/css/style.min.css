@@ -664,6 +664,10 @@ textarea {
   textarea::placeholder {
     font-size: 14px; }
 
+input:focus,
+textarea:focus {
+  border-color: #78CE9F; }
+
 textarea::-webkit-scrollbar {
   width: 8px;
   cursor: pointer; }
