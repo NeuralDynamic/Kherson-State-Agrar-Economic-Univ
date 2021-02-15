@@ -2,15 +2,31 @@
     position: fixed;
     width: 100%;
     height: 80px;
-    top: 0;
+    top: 0px;
     left: 0;
     background: transparent;
     text-align: center;
     display: flex;
     align-items: center;
-    z-index: 10;
-    padding: 2px 60px;
+    z-index: 100;
+    padding: 0 60px;
     transition: 1s background, 1s backdrop-filter;
+
+
+    @include breakpoint($desktop-small) {
+        padding: 0 40px;
+    }
+
+    @include breakpoint($mobile-bp) {
+        padding: 0 20px;
+        height: 60px;
+
+        &:focus-within input{
+            &.scrolled::before{
+                content: '';
+            }
+        }
+    }
 
     &::before{
         position: absolute;
@@ -28,24 +44,39 @@
     }
 
     .header__icon{
-        height: 80px;
-        width: 80px;
+        height: 70px;
+        width: 70px;
         background-size: cover;
         margin-right: 40px;
+
+        @include breakpoint($desktop-small) {
+            margin-right: auto;
+        }
+
+        @include breakpoint($mobile-bp) {
+            height: 50px;
+            width: 50px;
+        }
     }
 
     .header__links{
         margin-right: auto;
+        display: flex;
+        align-items: center;
 
         a{
             color: #fff;
             margin-right: 40px;
             font-size: 16px;
         }
+
+        @include breakpoint($desktop-small) {
+            display: none;
+        }
     }
 
     .header__language_select{
-        margin-right: 30px;
+        margin-right: 20px;
         transition: .3s all;
 
         .dropdown__preview{
@@ -71,7 +102,7 @@
                 line-height: 24px;
                 padding: 5px 0 5px 30px;
                 background: url(/assets/images/svg/search.svg) no-repeat;
-                background-position: 7px 7px;
+                background-position: 5px 7px;
                 background-size: 20px 20px;
                 color: $white;
                 width: 0;
@@ -84,6 +115,10 @@
                     backdrop-filter: blur(10px);
                     border-radius: 12px;
                     border: 1px solid #fff;
+
+                    @include breakpoint($mobile-bp) {
+                        width: calc(100vw - 110px);
+                    }
                 }
             }
         }
@@ -103,6 +138,8 @@
     flex-direction: column;
     justify-content: space-around;
     padding: 3px 0;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 
     span{
         display: block;

@@ -6,6 +6,11 @@ button.button{
     background: transparent;
     transition: .3s ease all;
 
+    @include breakpoint($mobile-bp) {
+        padding: 10px 35px 10px 15px;
+        height: fit-content;
+    }
+
     &.bigger{
         padding: 22px 45px 22px 32px;
     }

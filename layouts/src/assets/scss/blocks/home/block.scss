@@ -36,6 +36,14 @@
             width: 10px;
             left: 36px;
         }
+
+        @include breakpoint($mobile-bp) {
+            display: block;
+            
+            h1,h2,h3{
+                margin-bottom: 10px;
+            }
+        }
     }
 
     p{

@@ -42,7 +42,23 @@ section{
     }
 
     &.main-section{
-        padding: 80px 120px;
+        padding: 80px 150px;
         margin-bottom: 0;
+
+        @include breakpoint($desktop-small) {
+            padding: 60px 80px;
+        }
+        
+        @include breakpoint($mobile-bp) {
+            padding: 40px 20px;
+        }
+    }
+
+    @include breakpoint($desktop-small) {
+        padding: 0 80px;
+    }
+
+    @include breakpoint($mobile-bp) {
+        padding: 0 20px;
     }
 }

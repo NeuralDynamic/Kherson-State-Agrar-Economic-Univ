@@ -29,6 +29,8 @@
 
     .dropdown__select{
         position: absolute;
+        bottom: 0;
+        transform: translateY(99%);
         max-height: 100px;
         visibility: hidden;
         opacity: 0;
