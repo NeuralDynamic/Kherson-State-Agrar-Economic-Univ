@@ -47,6 +47,16 @@
     .header__language_select{
         margin-right: 30px;
         transition: .3s all;
+
+        .dropdown__preview{
+            text-transform: uppercase;
+        }
+
+        .dropdown__select{
+            a{
+                text-transform: uppercase;
+            }
+        }
     }
 
     .header__search{

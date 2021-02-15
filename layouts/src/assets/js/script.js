@@ -28,3 +28,10 @@ window.addEventListener('scroll',(event) => {
         header.classList.remove('scrolled');
     }
 });
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+    if (window.scrollY > 100 && !header.classList.contains('scrolled')) {
+        header.classList.add('scrolled');
+        return;
+    }
+});

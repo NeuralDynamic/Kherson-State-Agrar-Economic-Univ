@@ -1,3 +1,17 @@
+.home-block-wrapper{
+    display: flex;
+    align-items: center;
+
+    .home-block{
+        width: 50%;
+        margin-right: 0;
+    }
+
+    .home-block-image{
+        margin: 0 auto;
+    }
+}
+
 .home-block{
     .block__header{
         padding-bottom: 28px;
