@@ -1,5 +1,6 @@
 p{
     font-size: 16px;
+    line-height: 28px;
     margin-bottom: 15px;
     font-weight: normal;
 }
@@ -11,5 +12,12 @@ b{
 @include breakpoint($mobile-bp) {
     input, select, textarea {
         font-size: 100%;
+    }
+
+    p{
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 15px;
+        font-weight: normal;
     }
 }

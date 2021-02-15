@@ -543,6 +543,7 @@ a.orcid {
 
 p {
   font-size: 16px;
+  line-height: 28px;
   margin-bottom: 15px;
   font-weight: normal; }
 
@@ -551,7 +552,12 @@ b {
 
 @media (max-width: 640px) {
   input, select, textarea {
-    font-size: 100%; } }
+    font-size: 100%; }
+  p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 15px;
+    font-weight: normal; } }
 
 button.button {
   border: none;
@@ -699,6 +705,8 @@ html.is-animating .transition-fade {
       color: #fff;
       margin-right: 40px;
       font-size: 16px; }
+      .header .header__links a:hover {
+        color: #009846; }
     @media (max-width: 1200px) {
       .header .header__links {
         display: none; } }
@@ -2234,15 +2242,15 @@ section.hiding {
     .dropdown .dropdown__preview::before {
       content: '';
       position: absolute;
-      height: 5px;
-      width: 5px;
+      height: 10px;
+      width: 10px;
       top: 50%;
-      right: 5px;
+      right: 2px;
       transform: translateY(-50%);
       background-image: url(/assets/images/svg/arrow-dropdown.svg);
       background-position: center;
       background-repeat: no-repeat;
-      background-size: auto 100%; }
+      background-size: 100% auto; }
   .dropdown .dropdown__select {
     position: absolute;
     bottom: 0;
