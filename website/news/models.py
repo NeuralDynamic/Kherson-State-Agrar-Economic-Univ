@@ -19,6 +19,26 @@ reverse_related_url)
 Html=TypeVar("Html", str, bytes)
 #endregion
 
+class Categories(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
+    title=CharField(verbose_name=_("Title"),
+    blank=False, null=True, max_length=100,
+    unique=True))
+    #endregion
+
+    #region            -----Metadata-----
+    class Meta(object):
+        verbose_name_plural=_("Categories")
+        verbose_name=_("Category")
+    #endregion
+
+    #region         -----Internal Methods-----
+    def __str__(self)->str:
+        """@return category title"""
+        return self.title
+    #endregion
+
 class NewsFeed(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
@@ -88,6 +108,10 @@ class Paper(TranslatableModel):
     null=True, on_delete=SET_NULL, 
     verbose_name=_("Gallery"),
     related_name="paper")
+    category=ForeignKey(Categories, blank=True,
+    null=True, on_delete=SET_NULL,
+    verbose_name=_("Category"),
+    related_name="papers")
     #endregion
 
     #region            -----Metadata----- 

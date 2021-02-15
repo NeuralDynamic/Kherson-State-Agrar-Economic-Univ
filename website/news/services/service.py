@@ -28,7 +28,6 @@ class PaperService(object):
         except Paper.DoesNotExist:
             raise Http404
 
-
     def get_paper(self, pk: int)->object:
         try:
             context = dict()

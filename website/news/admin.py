@@ -8,12 +8,15 @@ from typing import (Dict, TypeVar)
 #endregion
 
 #region				-----Internal Imports-----
-from .models import NewsFeed, Paper
+from .models import NewsFeed, Paper, Categories
 #endregion
 
 #region				   -----Type Hints-----
 Html=TypeVar("Html", str, bytes)
 #endregion
+
+@register(Categories)
+class CategoriesAdmin(TranslatableAdmin): pass
 
 @register(NewsFeed)
 class NewsFeedAdmin(TranslatableAdmin):
@@ -30,11 +33,11 @@ class PaperAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     ordering = ['created_at']
     fields=["header", "title", "story", 
-    "news_feed", "gallery"]
+    "news_feed", "gallery", "category"]
     list_display=["__str__", "_news_feed", 
-    "_gallery", "preview"]
+    "_gallery", "preview", "category"]
     list_filter=["news_feed__translations__title",
-    "gallery__translations__title"]
+    "gallery__translations__title", "category"]
     #endregion
 
     #region         -----Internal Methods-----
