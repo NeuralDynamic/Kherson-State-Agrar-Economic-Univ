@@ -835,6 +835,29 @@ html.is-animating .transition-fade {
       font-weight: 600;
       font-size: 14px;
       line-height: 20px; }
+  .footer .footer__contacts .social-links p {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    color: #ffffff;
+    margin-bottom: 25px; }
+  .footer .footer__contacts .social-links .social-link {
+    height: 35px;
+    width: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 15px; }
+    .footer .footer__contacts .social-links .social-link.social-links__facebook {
+      background-image: url(/assets/images/svg/facebook.svg); }
+    .footer .footer__contacts .social-links .social-link.social-links__youtube {
+      background-image: url(/assets/images/svg/youtube.svg); }
+    .footer .footer__contacts .social-links .social-link.social-links__linkedin {
+      background-image: url(/assets/images/svg/linkedin.svg); }
+    .footer .footer__contacts .social-links .social-link.social-links__instagram {
+      background-image: url(/assets/images/svg/instagram.svg); }
+    .footer .footer__contacts .social-links .social-link.social-links__telegram {
+      background-image: url(/assets/images/svg/telegram.svg); }
 
 .menu {
   position: fixed;

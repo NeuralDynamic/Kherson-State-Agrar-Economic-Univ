@@ -5,6 +5,10 @@
     padding: 60px 120px;
     background-color: #282828;
 
+    @include breakpoint($mobile-bp) {
+        
+    }
+
     .footer__content{
         display: -webkit-flex;
         display: flex;
@@ -76,6 +80,45 @@
                 font-weight: 600;
                 font-size: 14px;
                 line-height: 20px;
+            }
+        }
+
+        .social-links{
+            p{
+                font-weight: 800;
+                font-size: 20px;
+                line-height: 24px;
+                color: $white;
+                margin-bottom: 25px;
+            }
+
+            .social-link{
+                height: 35px;
+                width: 35px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin-right: 15px;
+
+                &.social-links__facebook{
+                    background-image: url(/assets/images/svg/facebook.svg);
+                }
+
+                &.social-links__youtube{
+                    background-image: url(/assets/images/svg/youtube.svg);
+                }
+
+                &.social-links__linkedin{
+                    background-image: url(/assets/images/svg/linkedin.svg);
+                }
+
+                &.social-links__instagram{
+                    background-image: url(/assets/images/svg/instagram.svg);
+                }
+
+                &.social-links__telegram{
+                    background-image: url(/assets/images/svg/telegram.svg);
+                }
             }
         }
     }
