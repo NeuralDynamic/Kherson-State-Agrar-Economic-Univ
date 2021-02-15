@@ -111,6 +111,7 @@
                 color: $white;
                 width: 0;
                 transition: .3s width, .3s padding;
+                border: none;
 
                 &:focus{
                     width: 100%;

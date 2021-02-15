@@ -9,6 +9,12 @@ b{
     font-weight: 600;
 }
 
+small{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+}
+
 @include breakpoint($mobile-bp) {
     input, select, textarea {
         font-size: 100%;

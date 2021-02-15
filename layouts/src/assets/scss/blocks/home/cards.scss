@@ -61,12 +61,13 @@
 
         @include breakpoint(1350px) {
             width: 300px;
-            margin: 0;
+            margin-bottom: 25px;
         }
 
         @include breakpoint($mobile-bp) {
             width: 100%;
             transform: translateY(0);
+            margin: 0;
 
             &:not(:last-child){
                 margin-bottom: 40px;
