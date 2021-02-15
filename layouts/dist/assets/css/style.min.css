@@ -549,6 +549,10 @@ p {
 b {
   font-weight: 600; }
 
+@media (max-width: 640px) {
+  input, select, textarea {
+    font-size: 100%; } }
+
 button.button {
   border: none;
   font-weight: 700;
@@ -622,20 +626,18 @@ button.button {
   flex-direction: column;
   min-height: 100vh; }
 
-::-webkit-scrollbar {
+html::-webkit-scrollbar {
   width: 8px; }
 
-::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
   background: transparent; }
 
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 3px; }
 
-::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover {
   background: #666; }
-  ::-webkit-scrollbar-thumb:hover ::-webkit-scrollbar {
-    width: 12px; }
 
 .transition-fade {
   transition: 0.4s;

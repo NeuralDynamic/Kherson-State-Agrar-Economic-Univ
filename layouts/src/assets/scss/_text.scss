@@ -7,3 +7,9 @@ p{
 b{
     font-weight: 600;
 }
+
+@include breakpoint($mobile-bp) {
+    input, select, textarea {
+        font-size: 100%;
+    }
+}

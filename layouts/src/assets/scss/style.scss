@@ -120,25 +120,21 @@ h6{
     min-height: 100vh;
 }
 
-::-webkit-scrollbar {
+html::-webkit-scrollbar {
     width: 8px;
 }
 
-::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
     background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 3px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover {
     background: #666;
-
-    ::-webkit-scrollbar{
-        width: 12px;
-    }
 }
 
 @import "swup";
