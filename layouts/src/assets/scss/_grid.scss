@@ -18,7 +18,7 @@
 }
 
 .column{
-    height: 100%;
+    height: auto;
     width: 100%;
     position: relative;
     display: block;
@@ -29,11 +29,36 @@ section{
     width: 100%;
     position: relative;
     display: block;
-    padding: 0 30px;
+    padding: 0 120px;
     margin-bottom: 30px;
 
     .section-title{
         font-size: 20px;
         color: #197326;
+    }
+
+    &:nth-child(2n+1){
+        background-color: $grey;
+    }
+
+    &.main-section{
+        padding: 80px 150px;
+        margin-bottom: 0;
+
+        @include breakpoint($desktop-small) {
+            padding: 60px 80px;
+        }
+        
+        @include breakpoint($mobile-bp) {
+            padding: 40px 20px;
+        }
+    }
+
+    @include breakpoint($desktop-small) {
+        padding: 0 80px;
+    }
+
+    @include breakpoint($mobile-bp) {
+        padding: 0 20px;
     }
 }

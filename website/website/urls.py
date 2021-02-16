@@ -1,3 +1,4 @@
+from content.views import manifest_view
 from cms.sitemaps import CMSSitemap
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
@@ -23,7 +24,10 @@ sitemaps = {
 }
 
 urlpatterns = [
-    path('favicon.ico/', RedirectView.as_view(url='/assets/images/favicon.png'), name='favicon'),
+    path('favicon.ico/', RedirectView.as_view(
+    url='/assets/images/favicon.png'), 
+    name='favicon'),
+    path('manifest.json/', manifest_view, name='manifest'),
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}),
     path("", include("searcher.urls"))
 ]

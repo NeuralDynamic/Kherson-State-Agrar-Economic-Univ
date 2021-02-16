@@ -109,7 +109,6 @@ class StaffService(object):
                 pass
 
             context['books'] = teacher.books.all()
-            print(context['books'])
             
             return context
         except Staff.DoesNotExist:

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {{> head }}
+</head>
+<body>
+
+    <div class="page">
+        {{> header }}
+        <!-- {{> menu }} -->
+
+        <section class="home-intro-section">
+            <div class="home-intro" style="background-image: url(/assets/images/IMG_0340.webp);">
+                <div class="home-intro__text">
+                    <h1 class="home-intro__header">
+                        Херсонський державний<br>
+                        <span>аграрно-економічний</span><br> 
+                        університет
+                    </h1>
+                    <h2 class="home-intro__subheader">
+                        Готуємо фахівців для агропромислового комплексу, екології, водного господарства, будівництва та інших галузей економіки, 
+                        здійснюємо фундаментальні та прикладні наукові дослідження
+                    </h2>
+                </div>
+            </div>
+        </section>
+        <main class="main" id="swup" class="transition-fade">
+            {{> home__cards }}
+            {{> home__info }}
+            {{> home__news }}
+            {{> home__info }}
+            {{> home_research }}
+            
+        </main>
+    
+        {{> footer }}
+    </div>
+
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

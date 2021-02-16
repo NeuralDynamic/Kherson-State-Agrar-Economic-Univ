@@ -1,14 +1,15 @@
 @import "vars";
+@import "mixins";
 @import "reset";
+@import "fonts";
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
-                Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
-                'Helvetica Neue', sans-serif;
+    font-family: 'Gilroy';
     font-size: 16px;
     color: $font-color;
     overflow-y: auto;
     overflow-x: hidden;
+    width: 100vw;
 }
 
 body.no-scroll {
@@ -19,11 +20,78 @@ div{
     display: block;
 }
 
-input, textarea, button, h5, h4, h3, h2, h1{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
-                Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
-                'Helvetica Neue', sans-serif;
+input, textarea, button, h6, h5, h4, h3, h2, h1{
+    font-family: 'Gilroy';
 }
+
+h1{
+    font-weight: 800;
+    font-size: 55px;
+    line-height: 65px;
+}
+
+h2{
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 46px;
+}
+
+h3{
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 40px;
+}
+
+h4{
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 34px;
+}
+
+h5{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+h6{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+@include breakpoint($mobile-bp) {
+    h1{
+        font-size: 36px;
+        line-height: 46px;
+    }
+
+    h2{
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    h3{
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    h4{
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    h5{
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    h6{
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
+
 
 .d-flex{
     display: flex;
@@ -61,46 +129,38 @@ input, textarea, button, h5, h4, h3, h2, h1{
     font-weight: 700
 }
 
+.m-0{
+    margin: 0!important;
+}
+
 @import "grid";
 @import "links";
 @import "text";
+@import "buttons";
+@import "inputs";
 
 .page{
     position: relative;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: calc(#{$header_height} + 10px);
 }
 
-.page::before{
-    content: '';
-    position: fixed;
-    top:0; 
-    left:0;
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient(180deg, 
-                rgba(161, 255, 206, 0.69) 0%, 
-                rgba(250, 255, 209, 0.5) 100%);
-    z-index:-1;
+html::-webkit-scrollbar {
+    width: 8px;
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
     background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 3px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
+html::-webkit-scrollbar-thumb:hover {
+    background: #666;
 }
 
 @import "swup";
@@ -109,6 +169,14 @@ input, textarea, button, h5, h4, h3, h2, h1{
 @import "blocks/main.scss";
 @import "blocks/footer.scss";
 @import "blocks/menu.scss";
+@import "blocks/bread-crumbs.scss";
+
+// HOME IMPORTS
+
+@import "blocks/home/intro.scss";
+@import "blocks/home/cards.scss";
+@import "blocks/home/block.scss";
+@import "blocks/home/news.scss";
 
 // FACULTY IMPORTS
 
@@ -162,3 +230,6 @@ input, textarea, button, h5, h4, h3, h2, h1{
 @import "components/slider.scss";
 @import "components/news_card.scss";
 @import "components/gallery_card.scss";
+@import "components/pagination.scss";
+@import "components/dropdown.scss";
+@import "components/contact_form.scss";
