@@ -1,8 +1,4 @@
 @charset "UTF-8";
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0-modified | 20110126
-   License: none (public domain)
-*/
 html {
   min-width: fit-content; }
 
@@ -360,13 +356,15 @@ textarea {
   font-style: normal;
   font-display: swap; }
 
-body {
+html, body {
   font-family: 'Gilroy';
   font-size: 16px;
   color: #222222;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100vw; }
+  width: 100vw;
+  height: 100%; }
+
+body {
+  overflow-x: hidden; }
 
 body.no-scroll {
   overflow-y: hidden; }
@@ -486,10 +484,27 @@ section {
   padding: 0 120px;
   margin-bottom: 30px; }
   section .section-title {
-    font-size: 20px;
-    color: #197326; }
-  section:nth-child(2n+1) {
-    background-color: #ECECEC; }
+    width: 100%;
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    position: relative; }
+    section .section-title:not(h2) {
+      font-size: 24px; }
+  section:not(.hiding) .section-title::before,
+  section:not(.hiding) .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 3px;
+    width: 30px;
+    border-radius: 1.5px;
+    background: #009846;
+    transform: translateX(-50%); }
+  section:not(.hiding) .section-title::after {
+    width: 10px;
+    left: calc(50% + 30px); }
   section.main-section {
     padding: 80px 150px;
     margin-bottom: 0; }
@@ -499,12 +514,75 @@ section {
     @media (max-width: 640px) {
       section.main-section {
         padding: 40px 20px; } }
+    section.main-section:nth-child(2n+1) {
+      background-color: #ECECEC; }
   @media (max-width: 1250px) {
     section {
-      padding: 0 80px; } }
+      padding: 0 60px; } }
+  @media (max-width: 991px) {
+    section {
+      padding: 0 40px; } }
   @media (max-width: 640px) {
     section {
       padding: 0 20px; } }
+
+section.hiding {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  background: transparent !important; }
+  section.hiding .section-title {
+    width: 100%;
+    padding: 20px 50px 20px 30px;
+    cursor: pointer;
+    line-height: 26px;
+    position: relative;
+    transition: border-bottom .3s;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    background-color: #ffffff;
+    -webkit-tap-highlight-color: transparent; }
+    section.hiding .section-title .section-title__button {
+      position: absolute;
+      height: 24px;
+      width: 24px;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 1px solid #009846;
+      border-radius: 50%;
+      transition: transform .3s; }
+      section.hiding .section-title .section-title__button::before, section.hiding .section-title .section-title__button::after {
+        content: '';
+        width: 10px;
+        height: 2px;
+        position: absolute;
+        top: calc(50% - 1px);
+        left: calc(50% - 5px);
+        background-color: #009846;
+        transition: transform .5s, background .5s; }
+      section.hiding .section-title .section-title__button::after {
+        transform: rotate(90deg); }
+  section.hiding .section-body {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all .5s ease; }
+    section.hiding .section-body .content {
+      position: relative; }
+  section.hiding.active .section-title .section-title__button {
+    background-color: #009846; }
+    section.hiding.active .section-title .section-title__button::before, section.hiding.active .section-title .section-title__button::after {
+      background-color: #ffffff; }
+    section.hiding.active .section-title .section-title__button::after {
+      transform: rotate(0); }
+  section.hiding.active .section-body {
+    padding: 20px 10px;
+    opacity: 1;
+    height: fit-content;
+    overflow: visible; }
+    section.hiding.active .section-body .content {
+      height: fit-content; }
 
 a {
   color: #222222;
@@ -526,7 +604,7 @@ a.location-link {
 
 a.phone-link {
   padding: 5px 0 5px 25px;
-  background-image: url(/assets/images/svg/phone2.svg); }
+  background-image: url(/assets/images/svg/phone.svg); }
 
 a.email-link {
   padding: 5px 0 5px 30px;
@@ -686,7 +764,8 @@ textarea::-webkit-scrollbar-thumb:hover {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; }
+  min-height: 100vh;
+  overflow-x: hidden; }
 
 html::-webkit-scrollbar {
   width: 8px; }
@@ -1248,19 +1327,39 @@ html.is-animating .transition-fade {
   mix-blend-mode: normal; }
 
 .faculty-header__description {
-  font-size: 16px;
   border-top: 3px solid #ffffff;
   border-bottom: 3px solid #ffffff;
-  padding: 40px 10px; }
+  padding: 40px 50px; }
   .faculty-header__description h2 {
-    text-align: center; }
+    font-size: 20px;
+    text-align: left;
+    padding: 0 20px;
+    position: relative; }
+    .faculty-header__description h2::before {
+      content: '';
+      position: absolute;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 8px;
+      height: 100%;
+      background-color: #009846;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px; }
 
 .faculty-departments-list {
   padding-top: 15px;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  justify-content: space-around; }
+  .faculty-departments-list .department-card {
+    flex: 0 1 45%; }
+    @media (max-width: 640px) {
+      .faculty-departments-list .department-card {
+        flex: 0 1 95%; } }
 
 .faculty-specialities {
-  padding: 15px; }
+  padding: 15px 80px; }
 
 .faculty-specialities-table {
   width: 100%;
@@ -1772,139 +1871,106 @@ section.news-slider {
     cursor: pointer;
     padding-bottom: 30px; }
 
-.teacher-card .teacher-name {
-  font-size: 20px;
-  color: #197326;
-  font-weight: 600;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 10px; }
-
-.teacher-card .teacher-card__body {
-  display: flex;
-  width: 100%; }
-
-.teacher-card .teacher-data {
-  width: calc(100% - 120px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 250px; }
-
-.teacher-card .teacher-rank {
-  font-size: 14px; }
-
-.teacher-card .teacher-image {
-  width: fit-content; }
-  .teacher-card .teacher-image .teacher-image__container {
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; }
-
-.teacher-card .teacher-contacts {
-  display: flex;
-  flex-direction: column; }
-  .teacher-card .teacher-contacts .phone-link,
-  .teacher-card .teacher-contacts .email-link {
-    font-size: 14px;
-    background-size: 14px 14px;
-    padding-left: 20px;
-    line-height: 15px;
-    background-position: 2px 7px; }
+.teacher-card {
+  background-color: transparent; }
+  .teacher-card .teacher-card__preview {
+    position: relative; }
+    .teacher-card .teacher-card__preview .teacher-card__contacts {
+      position: absolute;
+      left: 0;
+      bottom: 20px; }
+      .teacher-card .teacher-card__preview .teacher-card__contacts .teacher-card__phone-link,
+      .teacher-card .teacher-card__preview .teacher-card__contacts .teacher-card__email-link {
+        display: block;
+        background-position: 10px 8px;
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        height: 35px;
+        border-radius: 0px 5px 5px 0px;
+        background-color: #009846;
+        padding: 10px 0 10px 40px;
+        line-height: 100%;
+        width: 0;
+        color: transparent;
+        transition: .5s width, .5s color, .5s background-color; }
+        .teacher-card .teacher-card__preview .teacher-card__contacts .teacher-card__phone-link:hover,
+        .teacher-card .teacher-card__preview .teacher-card__contacts .teacher-card__email-link:hover {
+          color: #ffffff;
+          padding: 10px 10px 10px 40px;
+          width: fit-content; }
+      .teacher-card .teacher-card__preview .teacher-card__contacts .teacher-card__phone-link {
+        background-image: url(/assets/images/svg/phone.svg);
+        margin-bottom: 5px; }
+      .teacher-card .teacher-card__preview .teacher-card__contacts .teacher-card__email-link {
+        background-image: url(/assets/images/svg/email.svg); }
+  .teacher-card .teacher-card__body {
+    padding-top: 25px; }
+    .teacher-card .teacher-card__body .teacher-name {
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      margin-bottom: 18px; }
+    .teacher-card .teacher-card__body .teacher-rank {
+      font-size: 12px;
+      line-height: 18px;
+      text-align: center; }
 
 .department-card {
-  width: calc(50% - 30px);
-  margin-bottom: 15px; }
-  .department-card .department-card__body {
-    display: flex;
-    width: 100%; }
-  .department-card .department-data {
-    width: calc(100% - 120px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 0 20px; }
-    .department-card .department-data .department-title {
-      text-align: center; }
-  .department-card .department-image {
-    width: fit-content; }
-    .department-card .department-image .department-image__container {
-      height: 120px;
-      width: 120px;
-      border-radius: 50%;
-      overflow: hidden;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover; }
-  .department-card .department-contacts {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    align-items: flex-end; }
-    .department-card .department-contacts .phone-link,
-    .department-card .department-contacts .email-link {
-      width: fit-content;
-      font-size: 14px;
-      background-size: 14px 14px;
-      padding-left: 20px;
-      line-height: 15px;
-      background-position: 2px 7px; }
-
-section.hiding {
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 3px solid #FFFFFF;
+  margin-bottom: 25px;
+  background: #FFFFFF;
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.07);
   border-radius: 10px;
-  padding: 0 30px;
-  margin: 0 30px;
-  margin-bottom: 30px;
-  width: calc(100% - 60px);
-  -webkit-box-shadow: 7px 7px 20px -9px rgba(0, 0, 0, 0.2), -7px -7px 20px -9px rgba(255, 255, 255, 0.5);
-  -moz-box-shadow: 7px 7px 20px -9px rgba(0, 0, 0, 0.2), -7px -7px 20px -9px rgba(255, 255, 255, 0.2);
-  box-shadow: 7px 7px 20px -9px rgba(0, 0, 0, 0.2), -7px -7px 20px -9px rgba(51, 51, 51, 0.01); }
-  section.hiding .section-title {
-    cursor: pointer;
-    line-height: 26px;
-    padding: 10px 0 10px 0;
-    position: relative;
-    transition: border-bottom .3s; }
-  section.hiding .section-title::before {
+  position: relative;
+  overflow: hidden;
+  transition: .3s transform; }
+  .department-card::before {
     content: '';
     position: absolute;
-    height: 20px;
-    width: 20px;
-    right: 0;
-    top: 12px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url(/assets/images/svg/arrow-right.svg);
-    transition: transform .3s; }
-  section.hiding .section-body {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s linear 0.33s, opacity 0.33s linear;
-    transition-delay: 0s; }
-    section.hiding .section-body .content {
-      height: 0;
-      transition: height .1s linear;
-      transition-delay: .3s;
-      position: relative; }
-  section.hiding.active .section-title {
-    border-bottom: 2px solid #FFFFFF; }
-  section.hiding.active .section-title::before {
-    transform: rotate(90deg); }
-  section.hiding.active .section-body {
-    padding: 15px;
-    visibility: visible;
-    opacity: 1; }
-    section.hiding.active .section-body .content {
-      height: fit-content; }
+    left: 0;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background-color: #009846; }
+  .department-card:hover {
+    transform: scale(1.05); }
+  .department-card .department-card__body {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; }
+    .department-card .department-card__body .department-card__data {
+      display: flex;
+      align-items: center; }
+    .department-card .department-card__body .department-card__image {
+      height: 80px;
+      width: 80px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-right: 25px; }
+    .department-card .department-card__body .department-card__title {
+      width: calc(100% - 105px); }
+    .department-card .department-card__body .department-card__contacts {
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      justify-content: flex-start;
+      align-items: flex-start; }
+      .department-card .department-card__body .department-card__contacts .department__phone-link,
+      .department-card .department-card__body .department-card__contacts .department__email-link {
+        width: fit-content;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 22px;
+        padding: 0 0 0 30px;
+        display: block;
+        background-position: 5px 5px;
+        background-repeat: no-repeat;
+        background-size: 13px 13px; }
+      .department-card .department-card__body .department-card__contacts .department__phone-link {
+        background-image: url(/assets/images/svg/phone-green.svg); }
+      .department-card .department-card__body .department-card__contacts .department__email-link {
+        background-image: url(/assets/images/svg/email-green.svg); }
 
 .hiding-list {
   margin-bottom: 15px; }
@@ -2032,8 +2098,7 @@ section.hiding {
 
 .slider {
   height: 500px;
-  width: 100%;
-  overflow: hidden; }
+  width: 100%; }
   .slider .slider__container {
     position: relative;
     height: 100%;
@@ -2060,7 +2125,12 @@ section.hiding {
       cursor: pointer;
       height: 100%;
       margin: auto;
-      padding: 10px; }
+      padding: 10px;
+      background: #FFFFFF;
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      z-index: 50;
+      -webkit-tap-highlight-color: transparent; }
       .slider.slider-scroller .slider__prevSlideButton .prev-slide-button,
       .slider.slider-scroller .slider__prevSlideButton .next-slide-button,
       .slider.slider-scroller .slider__nextSlideButton .prev-slide-button,
@@ -2068,8 +2138,7 @@ section.hiding {
         width: 20px;
         height: 20px;
         background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover; }
+        background-repeat: no-repeat; }
       .slider.slider-scroller .slider__prevSlideButton .prev-slide-button,
       .slider.slider-scroller .slider__nextSlideButton .prev-slide-button {
         background-image: url(/assets/images/svg/arrow-left.svg); }
@@ -2088,6 +2157,50 @@ section.hiding {
           display: inline-block;
           vertical-align: top;
           white-space: normal; }
+  .slider.gallery-scroller {
+    position: relative;
+    margin-bottom: 50px; }
+    .slider.gallery-scroller .slider__container,
+    .slider.gallery-scroller .tns-ovh {
+      overflow: visible; }
+    .slider.gallery-scroller .slider__slide {
+      padding: 0 15px; }
+    .slider.gallery-scroller img {
+      width: auto;
+      height: 400px; }
+      @media (max-width: 991px) {
+        .slider.gallery-scroller img {
+          width: 80vw;
+          height: auto; } }
+    .slider.gallery-scroller .slider__prevSlideButton,
+    .slider.gallery-scroller .slider__nextSlideButton {
+      height: fit-content;
+      margin: 0;
+      position: absolute;
+      bottom: 0;
+      left: 35%; }
+    .slider.gallery-scroller .slider__prevSlideButton {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      box-shadow: -5px 2.5px 10px rgba(0, 0, 0, 0.1);
+      padding-right: 15px;
+      transform: translateY(50%); }
+      .slider.gallery-scroller .slider__prevSlideButton::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 13px;
+        background: #222222;
+        opacity: 0.15; }
+    .slider.gallery-scroller .slider__nextSlideButton {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      box-shadow: 5px 2.5px 10px rgba(0, 0, 0, 0.1);
+      padding-left: 15px;
+      transform: translateX(100%) translateY(50%); }
   .slider.slider-radio input[type="radio"] {
     display: none; }
   .slider.slider-radio input[type="radio"]:checked + label {

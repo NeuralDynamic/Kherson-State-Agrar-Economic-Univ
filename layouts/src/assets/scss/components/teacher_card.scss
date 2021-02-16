@@ -1,58 +1,62 @@
 .teacher-card{
+    background-color: transparent;
+    
+    .teacher-card__preview{
+        position: relative;
 
-    .teacher-name{
-        font-size: 20px;
-        color: #197326;
-        font-weight: 600;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
+        .teacher-card__contacts{
+            position: absolute;
+            left: 0;
+            bottom: 20px;
+
+            .teacher-card__phone-link,
+            .teacher-card__email-link{
+                display: block;
+                background-position: 10px 8px;
+                background-repeat: no-repeat;
+                background-size: 20px 20px;
+                height: 35px;
+                border-radius: 0px 5px 5px 0px;
+                background-color: $dark-green;
+                padding: 10px 0 10px 40px;
+                line-height: 100%;
+                width: 0;
+                color: transparent;
+                transition: .5s width, .5s color, .5s background-color;
+
+                &:hover{
+                    color: $white;
+                    padding: 10px 10px 10px 40px;
+                    width: fit-content;
+                }
+            }
+
+            .teacher-card__phone-link{
+                background-image: url(#{$url-redirrect}/images/svg/phone.svg);
+                margin-bottom: 5px;
+            }
+            
+            .teacher-card__email-link{
+                background-image: url(#{$url-redirrect}/images/svg/email.svg);
+            }
+        }
     }
 
     .teacher-card__body{
-        display: flex;
-        width: 100%;
-    }
+        padding-top: 25px;
 
-    .teacher-data{
-        width: calc(100% - #{$card-photo-size});
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        max-width: 250px;
-    }
+        .teacher-name{
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            margin-bottom: 18px;
+        }
 
-    .teacher-rank{
-        font-size: 14px;
-    }
-
-    .teacher-image{
-        width: fit-content;
-
-        .teacher-image__container{
-            height: $card-photo-size;
-            width: $card-photo-size;
-            border-radius: 50%;
-            overflow: hidden;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        .teacher-rank{
+            font-size: 12px;
+            line-height: 18px;
+            text-align: center;
         }
     }
-
-    .teacher-contacts{
-        display: flex;
-        flex-direction: column;
-
-        .phone-link,
-        .email-link{
-            font-size: 14px;
-            background-size: 14px 14px;
-            padding-left: 20px;
-            line-height: 15px;
-            background-position: 2px 7px;
-        }
-    }
-
 }
 

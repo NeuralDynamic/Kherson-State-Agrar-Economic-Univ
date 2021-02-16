@@ -33,12 +33,35 @@ section{
     margin-bottom: 30px;
 
     .section-title{
-        font-size: 20px;
-        color: #197326;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        position: relative;
+
+        &:not(h2){
+            font-size: 24px;
+        }
     }
 
-    &:nth-child(2n+1){
-        background-color: $grey;
+    &:not(.hiding){
+        .section-title::before,
+        .section-title::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            height: 3px;
+            width: 30px;
+            border-radius: 1.5px;
+            background: $dark-green;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after{
+            width: 10px;
+            left: calc(50% + 30px);
+        }
     }
 
     &.main-section{
@@ -52,13 +75,110 @@ section{
         @include breakpoint($mobile-bp) {
             padding: 40px 20px;
         }
+
+        &:nth-child(2n+1){
+            background-color: $grey;
+        }
     }
 
     @include breakpoint($desktop-small) {
-        padding: 0 80px;
+        padding: 0 60px;
+    }
+
+    @include breakpoint($table-bp) {
+        padding: 0 40px;
     }
 
     @include breakpoint($mobile-bp) {
         padding: 0 20px;
+    }
+}
+
+section.hiding{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    background: transparent !important;
+
+    .section-title{
+        width: 100%;
+        padding: 20px 50px 20px 30px;
+        cursor: pointer;
+        line-height: 26px;
+        position: relative;
+        transition: border-bottom .3s;
+        box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.07);
+        border-radius: 10px;
+        background-color: $white;
+        -webkit-tap-highlight-color: transparent;
+
+        .section-title__button{
+            position: absolute;
+            height: 24px;
+            width: 24px;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 1px solid $dark-green;
+            border-radius: 50%;
+            transition: transform .3s;
+
+            &::before,
+            &::after{
+                content: '';
+                width: 10px;
+                height: 2px;
+                position: absolute;
+                top: calc(50% - 1px);
+                left: calc(50% - 5px);
+                background-color: $dark-green;
+                transition: transform .5s, background .5s;
+            }
+
+            &::after{
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    .section-body{
+        opacity:0;
+        height: 0;
+        overflow: hidden;
+        transition: all .5s ease;
+
+        .content{
+            position: relative;
+        }
+    }
+
+    &.active{
+
+        .section-title{
+    
+            .section-title__button{
+                background-color: $dark-green;
+    
+                &::before,
+                &::after{
+                    background-color: $white;
+                }
+    
+                &::after{
+                    transform: rotate(0);
+                }
+            }
+        }
+
+        .section-body{
+            padding: 20px 10px;
+            opacity: 1;
+            height: fit-content;
+            overflow: visible;
+            
+            .content{
+                height: fit-content;
+            }
+        }
     }
 }

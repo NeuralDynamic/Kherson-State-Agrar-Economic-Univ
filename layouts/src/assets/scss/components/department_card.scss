@@ -1,53 +1,77 @@
 .department-card{
-    width: calc(50% - 30px);
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    background: #FFFFFF;
+    box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: .3s transform;
+
+    &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 8px;
+        height: 100%;
+        background-color: $dark-green;
+    }
+
+    &:hover{
+        transform: scale(1.05);
+    }
 
     .department-card__body{
-        display: flex;
-        width: 100%;
-    }
-
-    .department-data{
-        width: calc(100% - #{$card-photo-size});
+        padding: 30px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         align-items: flex-end;
-        padding: 0 20px;
 
-        .department-title{
-            text-align: center;
+        .department-card__data{
+            display: flex;
+            align-items: center;
         }
-    }
 
-    .department-image{
-        width: fit-content;
-
-        .department-image__container{
-            height: $card-photo-size;
-            width: $card-photo-size;
-            border-radius: 50%;
-            overflow: hidden;
-            background-position: center;
+        .department-card__image{
+            height: 80px;
+            width: 80px;
+            background-size: cover;
             background-repeat: no-repeat;
-            background-size: cover
+            background-position: center;
+            margin-right: 25px;
         }
-    }
 
-    .department-contacts{
-        display: flex;
-        flex-direction: column;
-        width: fit-content;
-        align-items: flex-end;
+        .department-card__title{
+            width: calc(100% - 105px);
+        }
 
-        .phone-link,
-        .email-link{
+        .department-card__contacts{
+            display: flex;
+            flex-direction: column;
             width: fit-content;
-            font-size: 14px;
-            background-size: 14px 14px;
-            padding-left: 20px;
-            line-height: 15px;
-            background-position: 2px 7px;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            .department__phone-link,
+            .department__email-link{
+                width: fit-content;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 22px;
+                padding: 0 0 0 30px;
+                display: block;
+                background-position: 5px 5px;
+                background-repeat: no-repeat;
+                background-size: 13px 13px;
+            }
+
+            .department__phone-link{
+                background-image: url(#{$url-redirrect}/images/svg/phone-green.svg);
+            }
+            
+            .department__email-link{
+                background-image: url(#{$url-redirrect}/images/svg/email-green.svg);
+            }
         }
     }
 
