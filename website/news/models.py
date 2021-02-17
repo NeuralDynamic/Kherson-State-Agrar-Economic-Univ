@@ -36,6 +36,9 @@ class NewsFeed(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def get_absolute_url(self)->str:
+        return f"/news"
+
     def searching_fields(self)->List[str]:
         """@return translated fields"""
         return ["translations__title",
