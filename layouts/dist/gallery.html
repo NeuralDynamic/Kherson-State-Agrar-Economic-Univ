@@ -2,14 +2,16 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <!-- <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="preload" as="style">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet"> -->
+    <link rel="preload" href="/assets/fonts/Gilroy-Regular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="/assets/fonts/Gilroy-Medium.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="/assets/fonts/Gilroy-Bold.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="/assets/fonts/Gilroy-ExtraBold.woff" as="font" type="font/woff" crossorigin>
+    
     <link rel="stylesheet" href="assets/css/style.min.css">
     
     <!-- Useful meta tags -->
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"/>
     <meta name="robots" content="index, follow">
     <meta name="google" content="notranslate">
     <meta name="format-detection" content="telephone=no">
@@ -30,12 +32,37 @@
 
     <div class="page">
         <header class="header">
-            <a href="/faculty.html">Факультет</a>
-            <a href="/department.html">Кафедра</a>
-            <a href="/teacher.html">Преподаватель</a>
-            <a href="/news.html">Новости</a>
-            <a href="/gallery.html">Галерея</a>
-        
+            <div class="header__icon" style="background-image: url(/assets/images/apple-icon.png);"></div>
+            <div class="header__links">
+                <a href="/">Про університет</a>
+                <a href="/">Новини</a>
+                <a href="/">Освітній процес</a>
+                <a href="/">Наука</a>
+                <a href="/">Абітурієнту</a>
+                <a href="/">Якість освіти</a>
+            </div>
+            <div class="header__language_select">
+                <div class="dropdown">
+                    <div class="dropdown__preview">
+                        ua
+                    </div>
+                    <div class="dropdown__select">
+                        <ul>
+                            <li>
+                                <a href="/en">en</a>
+                            </li>
+                            <li>
+                                <a href="/ua">ua</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header__search">
+                <form action="/search">
+                    <input autocomplete="off" type="text" name="q" aria-label="search">
+                </form>
+            </div>
             <div class="header__burger">
                 <span></span>
                 <span></span>
@@ -274,130 +301,114 @@
             </section>        </main>
     
         <footer class="footer">
-            <div class="footer__block">
+            <div class="footer__content">
                 <div class="column">
-                    <div class="footer__block">
+                    <div class="footer__icon" style="background-image: url(/assets/images/apple-icon.png);"></div>
+                    <div class="footer__copyright">
+                        Херсонський державний аграрно-економічний університет © 2006 - 2020
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer__column-title">Факультети</div>
+                    <div class="footer__links">
+                        <ul>
+                            <li>
+                                <a href="/faculty.html">Агрономічний</a>
+                            </li>
+                            <li>
+                                <a href="/faculty.html">Біолого-технологічний</a>
+                            </li>
+                            <li>
+                                <a href="/faculty.html">Рибного господарства та природокориствування</a>
+                            </li>
+                            <li>
+                                <a href="/faculty.html">Архітектури та будівництва</a>
+                            </li>
+                            <li>
+                                <a href="/faculty.html">Економічний</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer__column-title">Факультети</div>
+                    <div class="footer__links">
+                        <ul>
+                            <li>
+                                <a href="/faculty.html">Агрономічний</a>
+                            </li>
+                            <li>
+                                <a href="/faculty.html">Біолого-технологічний</a>
+                            </li>
+                            <li>
+                                <a href="/faculty.html">Рибного господарства та природокориствування</a>
+                            </li>
+                            <li>
+                                <a href="/faculty.html">Архітектури та будівництва</a>
+                            </li>
+                            <li>
+                                <a href="/faculty.html">Економічний</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer__column-title">Факультети</div>
+                    <div class="footer__links">
+                        <ul>
+                            <li>
+                                <a href="/faculty.html">Агрономічний</a>
+                            </li>
+                            <li>
+                                <a href="/faculty.html">Біолого-технологічний</a>
+                            </li>
+                            <li>
+                                <a href="/faculty.html">Рибного господарства та природокориствування</a>
+                            </li>
+                            <li>
+                                <a href="/faculty.html">Архітектури та будівництва</a>
+                            </li>
+                            <li>
+                                <a href="/faculty.html">Економічний</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer__column-title">Контакти</div>
+                    <div class="footer__contacts">
+                        <div class="address">
+                            <p>Адреса:</p>
+                            <a href="https://goo.gl/maps/gfMW9BYgLwjTVcSk7" target="_blank" rel="noopener noreferrer">
+                                м. Херсон, вул. Стрітенська, 23, ХДАЕУ
+                            </a>
+                        </div>
+                        <div class="email">
+                            <p>E-mail:</p>
+                            <a href="mailto:office@ksau.kherson.ua">office@ksau.kherson.ua</a>
+                        </div>
                         <div class="social-links">
-                            <ul>
-                                <li class="social-links__link">
-                                    <a href="https://www.facebook.com/ksau.kherson" title="ksau-facebook" target="_blank" rel="noreferrer">
-                                        <img width="40" height="40" src="/assets/images/svg/facebook.svg" alt="ksau-facebook">
-                                    </a>
-                                </li>
-                                <li class="social-links__link">
-                                    <a href="https://www.linkedin.com/" title="ksau-linkedin" target="_blank" rel="noreferrer">
-                                        <img width="40" height="40" src="/assets/images/svg/linkedin.svg" alt="ksau-linkedin">
-                                    </a>
-                                </li>
-                                <li class="social-links__link">
-                                    <a href="https://www.youtube.com/channel/UCSWLJiK-K0g_1kfyfDHpkpQ" title="ksau-youtube" target="_blank" rel="noreferrer">
-                                        <img width="40" height="40" src="/assets/images/svg/youtube.svg" alt="ksau-youtube">
-                                    </a>
-                                </li>
-                                <li class="social-links__link">
-                                    <a href="https://tg.me" title="ksau-telegram" target="_blank" rel="noreferrer">
-                                        <img width="40" height="40" src="/assets/images/svg/telegram.svg" alt="ksau-telegram">
-                                    </a>
-                                </li>
-                                <li class="social-links__link">
-                                    <a href="https://instagram.com" title="ksau-instagram" target="_blank" rel="noreferrer">
-                                        <img width="40" height="40" src="/assets/images/svg/instagram.svg" alt="ksau-instagram">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="contact-data">
-                        <p>
-                            <a class="location-link" href="https://goo.gl/maps/gfMW9BYgLwjTVcSk7" target="_blank" rel="noopener noreferrer">Україна, м. Херсон, вул. Стрітенська, 23, ХДАЕУ, 73006</a>
-                        </p>
-                        <div class="contact-data__contacts">
-                            <a href="tel:+380552416216" class="phone-link">
-                                +380552416216
-                            </a>
-                            <a href="mailto:office@ksau.kherson.ua" class="email-link">
-                                office@ksau.kherson.ua
-                            </a>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="contact-me-form">
-                        <label for="contact-form-email">Ваша пошта</label>
-                        <input type="text" name="person-email" placeholder="example@mail.com" id="contact-form-email">
-                        <label for="contact-form-message">Ваше питання</label>
-                        <textarea name="person-request" placeholder="Дякую за гарний сайт!" id="contact-form-message"></textarea>
-                        <button type="button">Надіслати</button>
-                    </div>
-                </div>
-            </div>
-            <div class="footer__block">
-                <div class="column">
-                    <div class="internal-links">
-                        <div class="internal-links__header">
-                            Часто шукають
-                        </div>
-                        <div class="internal-links__body">
-                            <a href="/">Університет</a>
-                            <a href="/">Абітурієнту</a>
-                            <a href="/">Освітній процес</a>
-                            <a href="/">Здобувачу</a>
-                            <a href="/">Освітні програми</a>
-                            <a href="/">Академічна доброчесність</a>
+                            <p>Соцсети</p>
+                            <div class="row">
+                                <a href="http://" target="_blank" rel="noopener noreferrer" aria-label="ksau-facebook">
+                                    <div class="social-link social-links__facebook"></div>
+                                </a>
+                                <a href="http://" target="_blank" rel="noopener noreferrer" aria-label="ksau-youtube">
+                                    <div class="social-link social-links__youtube"></div>
+                                </a>
+                                <a href="http://" target="_blank" rel="noopener noreferrer" aria-label="ksau-linkedin">
+                                    <div class="social-link social-links__linkedin"></div>
+                                </a>
+                                <a href="http://" target="_blank" rel="noopener noreferrer" aria-label="ksau-instagram">
+                                    <div class="social-link social-links__instagram"></div>
+                                </a>
+                                <a href="http://" target="_blank" rel="noopener noreferrer" aria-label="ksau-telegram">
+                                    <div class="social-link social-links__telegram"></div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="column">
-                    <div class="internal-links">
-                        <div class="internal-links__header">
-                            Партнери
-                        </div>
-                        <div class="internal-links__body">
-                            <a target="_blank" rel="noreferrer" href="http://eeas.europa.eu/delegations/ukraine/projects/youth/erasmus_mundus_uk.htm">ERASMUS MUNDUS</a>
-                            <a target="_blank" rel="noreferrer" href="http://ec.europa.eu/programmes/erasmus-plus/index_en.htm">ERASMUS+</a>
-                            <a target="_blank" rel="noreferrer" href="http://www.erasmusplus.org.ua/">ERASMUS+ UKRAINE</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="internal-links">
-                        <div class="internal-links__header">
-                            Інтернет джерела
-                        </div>
-                        <div class="internal-links__body">
-                            <a target="_blank" rel="noreferrer" href="http://rada.gov.ua/">Верховна Рада України</a>
-                            <a target="_blank" rel="noreferrer" href="http://www.me.gov.ua/">Міністерство розвитку економіки, торгівлі та сільського господарства</a>
-                            <a target="_blank" rel="noreferrer" href="http://www.minfin.gov.ua/">Міністерство фінансів України</a>
-                            <a target="_blank" rel="noreferrer" href="http://www.kmu.gov.ua/control">Урядовий портал</a>
-                            <a target="_blank" rel="noreferrer" href="http://www.president.gov.ua/">Сайт Президента України</a>
-                            <a target="_blank" rel="noreferrer" href="http://finance.ua/">Фінанси України</a>
-                            <a target="_blank" rel="noreferrer" href="http://www.treasury.gov.ua/">Державна казначейська служба України</a>
-                            <a target="_blank" rel="noreferrer" href="http://sfs.gov.ua/">Державна фіскальна служба України</a>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="column">
-                    <div class="internal-links">
-                        <div class="internal-links__header">
-                            Міжнародні звязки
-                        </div>
-                        <div class="internal-links__body">
-                            <a target="_blank" rel="noreferrer" href="http://rada.gov.ua/">Верховна Рада України</a>
-                            <a target="_blank" rel="noreferrer" href="http://www.me.gov.ua/">Міністерство розвитку економіки, торгівлі та сільського господарства</a>
-                            <a target="_blank" rel="noreferrer" href="http://www.minfin.gov.ua/">Міністерство фінансів України</a>
-                            <a target="_blank" rel="noreferrer" href="http://www.kmu.gov.ua/control">Урядовий портал</a>
-                            <a target="_blank" rel="noreferrer" href="http://www.president.gov.ua/">Сайт Президента України</a>
-                            <a target="_blank" rel="noreferrer" href="http://finance.ua/">Фінанси України</a>
-                            <a target="_blank" rel="noreferrer" href="http://www.treasury.gov.ua/">Державна казначейська служба України</a>
-                            <a target="_blank" rel="noreferrer" href="http://sfs.gov.ua/">Державна фіскальна служба України</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer__copyright">
-                Херсонський державний аграрно-економічний університет © 2006 - 2021
             </div>
         </footer>    </div>
 

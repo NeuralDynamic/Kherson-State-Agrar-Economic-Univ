@@ -4,12 +4,17 @@ from django.contrib import admin
 from parler.admin import TranslatableAdmin
 from django.shortcuts import redirect
 from django.utils.html import format_html
+from typing import (Dict, TypeVar)
 #endregion
 
 #region				-----Internal Imports-----
 from .models import (Staff, Speciality,
 Cathedra, Faculty, StaffCathedra, StaffFaculty,
 Discipline, Reward, ScientificSociety, MaterialBaseNode)
+#endregion
+
+#region				   -----Type Hints-----
+Html=TypeVar("Html", str, bytes)
 #endregion
 
 @register(StaffCathedra)
@@ -57,15 +62,27 @@ class CathedraAdmin(TranslatableAdmin):
     #endregion
 
     #region         -----Internal Methods-----
-    def response_change(self, request, obj):
+    def response_change(self, request: Dict, 
+    obj: object)->Html:
+        """
+        Creates preview button in CRUD admin form\n
+        :param request: Http request\n
+        @return generated button
+        """
         if "_preview" in request.POST:
             return redirect(obj.get_absolute_url())
-        return super().response_change(request, obj)
-    def preview(self, obj)->str:
-        return format_html(
-            f"""<a class="button" target=_blank
-            href={obj.get_absolute_url()}>Preview</a>"""
-        )
+        return super().response_change(
+        request=request, obj=obj)
+
+    def preview(self, obj: object)->Html:
+        """
+        Creates preview button on list page\n
+        :param obj: model instance\n
+        @return generated button
+        """
+        return format_html(f"""<a class="button"
+        href={obj.get_absolute_url()}
+        target=_blank>Preview</a>""")
     #endregion
 
 @register(Faculty)
@@ -79,15 +96,27 @@ class FacultyAdmin(TranslatableAdmin):
     #endregion
 
     #region         -----Internal Methods-----
-    def response_change(self, request, obj):
+    def response_change(self, request: Dict, 
+    obj: object)->Html:
+        """
+        Creates preview button in CRUD admin form\n
+        :param request: Http request\n
+        @return generated button
+        """
         if "_preview" in request.POST:
             return redirect(obj.get_absolute_url())
-        return super().response_change(request, obj)
-    def preview(self, obj)->str:
-        return format_html(
-            f"""<a class="button" target=_blank
-            href={obj.get_absolute_url()}>Preview</a>"""
-        )
+        return super().response_change(
+        request=request, obj=obj)
+
+    def preview(self, obj: object)->Html:
+        """
+        Creates preview button on list page\n
+        :param obj: model instance\n
+        @return generated button
+        """
+        return format_html(f"""<a class="button"
+        href={obj.get_absolute_url()}
+        target=_blank>Preview</a>""")
     #endregion
 
 @register(Reward)
@@ -112,15 +141,27 @@ class StaffAdmin(TranslatableAdmin):
     #endregion
 
     #region         -----Internal Methods-----
-    def response_change(self, request, obj):
+    def response_change(self, request: Dict, 
+    obj: object)->Html:
+        """
+        Creates preview button in CRUD admin form\n
+        :param request: Http request\n
+        @return generated button
+        """
         if "_preview" in request.POST:
             return redirect(obj.get_absolute_url())
-        return super().response_change(request, obj)
-    def preview(self, obj)->str:
-        return format_html(
-            f"""<a class="button" target=_blank
-            href={obj.get_absolute_url()}>Preview</a>"""
-        )
+        return super().response_change(
+        request=request, obj=obj)
+
+    def preview(self, obj: object)->Html:
+        """
+        Creates preview button on list page\n
+        :param obj: model instance\n
+        @return generated button
+        """
+        return format_html(f"""<a class="button"
+        href={obj.get_absolute_url()}
+        target=_blank>Preview</a>""")
     #endregion
 
 @register(ScientificSociety)

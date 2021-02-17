@@ -4,8 +4,6 @@ from django.core.files import File
 from django.db.models.signals import (post_delete, 
 pre_save, post_save)
 from django.dispatch import receiver
-
-from .models import Image as ImageModel
 from os import remove
 from PIL import Image as Editor
 #endregion
@@ -51,19 +49,20 @@ def create_on_save(instance: Image,
     :param instance: image instance\n
     @return None
     """
+    upload_to=Image.large_image.field.upload_to
     image=Editor.open(instance.large_image.path)
     filename=image.filename
     name=filename.split("/")[-1].split(".")[0]
     image=image.convert("RGB")
 
     #*Generates pathes the images save to
-    images_folder = f"{settings.MEDIA_ROOT}/{ImageModel.large_image.field.upload_to}"
+    images_folder=f"{settings.MEDIA_ROOT}/{upload_to}"
     files_pathes=[
-            f"{images_folder}/{name}_{size}.{FORMAT.lower()}" 
-            for size in SIZES]
+    f"{images_folder}/{name}_{size}.{FORMAT.lower()}" 
+    for size in SIZES]
     model_pathes=[
-            f"{ImageModel.large_image.field.upload_to}/{name}_{size}.{FORMAT.lower()}" 
-            for size in SIZES]
+    f"{upload_to}/{name}_{size}.{FORMAT.lower()}" 
+    for size in SIZES]
 
     #*Associates images with model fields
     parameters={f"{size}_image": path
@@ -71,15 +70,16 @@ def create_on_save(instance: Image,
 
     #*Generates images with sizes
     for path, size in zip(files_pathes, SIZES):
-        f_width, f_height = SIZES[size]
-        width, height = image.size
-        # if photo in portrait orientation
+        f_width, f_height=SIZES[size]
+        width, height=image.size
+
+        #*If photo in portrait orientation
         if height > width:
-            f_width, f_height = f_height, f_width
+            f_width, f_height=f_height, f_width
         f_height = int(height * f_width/width)
         f_size = (f_width, f_height)
         image.resize(size=f_size).save(path,"webp",
-                    optimize=True, quality=85)
+        optimize=True, quality=85)
     
     #*Updates model parameters
     (Image.objects.filter(pk=instance.pk)

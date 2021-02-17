@@ -35,8 +35,8 @@ class Gallery(TranslatableModel):
     #region         -----Internal Methods-----
     def searching_fields(self)->List[str]:
         """@return translated fields"""
-        return ["translations__title",
-        "translations__description"]
+        return ["translations__description",
+        "translations__title"]
 
     def _images(self)->Html:
         """@return related images"""

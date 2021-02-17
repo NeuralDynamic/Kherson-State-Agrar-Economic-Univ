@@ -4,11 +4,19 @@ from django.contrib import admin
 from parler.admin import TranslatableAdmin
 from django.shortcuts import redirect
 from django.utils.html import format_html
+from typing import (Dict, TypeVar)
 #endregion
 
 #region				-----Internal Imports-----
-from .models import NewsFeed, Paper
+from .models import NewsFeed, Paper, Categories
 #endregion
+
+#region				   -----Type Hints-----
+Html=TypeVar("Html", str, bytes)
+#endregion
+
+@register(Categories)
+class CategoriesAdmin(TranslatableAdmin): pass
 
 @register(NewsFeed)
 class NewsFeedAdmin(TranslatableAdmin):
@@ -25,21 +33,33 @@ class PaperAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     ordering = ['created_at']
     fields=["header", "title", "story", 
-    "news_feed", "gallery"]
+    "news_feed", "gallery", "category"]
     list_display=["__str__", "_news_feed", 
-    "_gallery", "preview"]
+    "_gallery", "preview", "category"]
     list_filter=["news_feed__translations__title",
-    "gallery__translations__title"]
+    "gallery__translations__title", "category"]
     #endregion
 
     #region         -----Internal Methods-----
-    def response_change(self, request, obj):
+    def response_change(self, request: Dict, 
+    obj: object)->Html:
+        """
+        Creates preview button in CRUD admin form\n
+        :param request: Http request\n
+        @return generated button
+        """
         if "_preview" in request.POST:
             return redirect(obj.get_absolute_url())
-        return super().response_change(request, obj)
-    def preview(self, obj)->str:
-        return format_html(
-            f"""<a class="button" target=_blank
-            href={obj.get_absolute_url()}>Preview</a>"""
-        )
+        return super().response_change(
+        request=request, obj=obj)
+
+    def preview(self, obj: object)->Html:
+        """
+        Creates preview button on list page\n
+        :param obj: model instance\n
+        @return generated button
+        """
+        return format_html(f"""<a class="button"
+        href={obj.get_absolute_url()}
+        target=_blank>Preview</a>""")
     #endregion

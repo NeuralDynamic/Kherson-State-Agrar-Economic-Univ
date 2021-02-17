@@ -1,30 +1,24 @@
 #region				-----External Imports-----
-from django.core.paginator import Paginator, EmptyPage
 from django.http import Http404
 #endregion
 
 #region				-----Internal Imports-----
 from ..models import Gallery, Image
 #endregion
-
-
+ 
 class GalleryService(object):
     def paginator(self, page_num: int)->object:
+        """
+        Paginates all content into pages
+        """
         try:
-            context = dict()
-
             galleries=Gallery.objects.all()
-            
-            paginator = Paginator(galleries, 9)
+            paginator=Paginator(galleries, 9)
 
-            try:
-                page = paginator.page(page_num)
-            except EmptyPage:
-                page = paginator.page(1)
+            try: page=paginator.page(page_num)
+            except EmptyPage: page=paginator.page(1)
 
-            context['galleries'] = page
-
-            return context
+            return {"galleries": page}
         except Gallery.DoesNotExist:
             raise Http404
     
@@ -32,13 +26,15 @@ class GalleryService(object):
         try:
             context = dict()
 
-            gallery=Gallery.objects.prefetch_related('images').get(pk=pk)
+            gallery=(Gallery.objects
+            .prefetch_related('images')
+            .get(pk=pk))
 
-            context['gallery'] = gallery
+            context['gallery']=gallery
 
             try:
                 images=gallery.images.all()
-                context['images'] = images
+                context['images']=images
             except Exception:
                 pass
             return context

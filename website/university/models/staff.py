@@ -32,7 +32,11 @@ class Reward(TranslatableModel):
     #endregion
 
     #region            -----Relation-----
+<<<<<<< HEAD
     staff=ManyToManyField("Staff", blank=False,
+=======
+    staff=ManyToManyField("Staff", blank=False, 
+>>>>>>> origin/cms_constructor
     verbose_name=_("Staff"),
     related_name="rewards")
     #endregion
@@ -110,7 +114,7 @@ class Staff(TranslatableModel):
     def searching_fields(self)->List[str]:
         """@return translated fields"""
         return ["translations__first_name",
-        "translations_methodical_works",
+        "translations__methodical_works",
         "translations__second_name",
         "translations__description",
         "translations__third_name"]

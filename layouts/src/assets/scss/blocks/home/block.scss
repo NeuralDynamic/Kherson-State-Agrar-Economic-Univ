@@ -1,0 +1,52 @@
+.home-block-wrapper{
+    display: flex;
+    align-items: center;
+
+    .home-block{
+        width: 50%;
+        margin-right: 0;
+    }
+
+    .home-block-image{
+        margin: 0 auto;
+    }
+}
+
+.home-block{
+    .block__header{
+        padding-bottom: 28px;
+        position: relative;
+        margin-bottom: 28px;
+        display: flex;
+        justify-content: space-between;
+
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 30px;
+            border-radius: 1.5px;
+            background: $dark-green;
+        }
+
+        &::after{
+            width: 10px;
+            left: 36px;
+        }
+
+        @include breakpoint($mobile-bp) {
+            display: block;
+            
+            h1,h2,h3{
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    p{
+        margin-bottom: 28px;
+    }
+}
