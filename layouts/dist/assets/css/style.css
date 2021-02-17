@@ -583,6 +583,10 @@ section .section-title:not(h2) {
     font-size: 24px;
 }
 
+section:first-child {
+    margin-top: 80px;
+}
+
 section:not(.hiding) .section-title::before,
   section:not(.hiding) .section-title::after {
     content: '';
@@ -621,6 +625,10 @@ section.main-section {
 
 section.main-section:nth-child(2n+1) {
     background-color: #ECECEC;
+}
+
+section.main-section:first-child {
+    margin-top: 0;
 }
 
 @media (max-width: 1250px) {
@@ -1079,12 +1087,13 @@ html.is-animating .transition-fade {
 }
 
 .header::before {
+    content: '';
     position: absolute;
     height: 100%;
     width: 100%;
     left: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     z-index: -1;
@@ -1885,12 +1894,16 @@ html.is-animating .transition-fade {
 .faculty-header__main {
     -ms-flex-align: center;
     align-items: center;
+    position: relative;
+    padding: 40px 150px 10px 150px;
+    margin-bottom: 0;
 }
 
 .faculty-header__icon {
-    margin-right: 15px;
-    height: 90px;
-    width: 90px;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    right: 50px;
 }
 
 .faculty-header__icon img {
@@ -1899,16 +1912,13 @@ html.is-animating .transition-fade {
 }
 
 .faculty-header__title {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    max-width: calc(100% - 150px);
+    width: 100%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    font-size: 28px;
     color: #197326;
     mix-blend-mode: normal;
+    text-align: center;
 }
 
 .faculty-header__description {
@@ -1920,7 +1930,7 @@ html.is-animating .transition-fade {
 .faculty-header__description h2 {
     font-size: 20px;
     text-align: left;
-    padding: 0 20px;
+    padding: 0 50px;
     position: relative;
 }
 
