@@ -44,6 +44,10 @@ section{
         }
     }
 
+    &:first-child{
+        margin-top: 80px;
+    }
+
     &:not(.hiding){
         .section-title::before,
         .section-title::after{
@@ -78,6 +82,10 @@ section{
 
         &:nth-child(2n+1){
             background-color: $grey;
+        }
+
+        &:first-child{
+            margin-top: 0;
         }
     }
 

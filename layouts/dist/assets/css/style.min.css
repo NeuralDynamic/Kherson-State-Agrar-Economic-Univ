@@ -491,6 +491,8 @@ section {
     position: relative; }
     section .section-title:not(h2) {
       font-size: 24px; }
+  section:first-child {
+    margin-top: 80px; }
   section:not(.hiding) .section-title::before,
   section:not(.hiding) .section-title::after {
     content: '';
@@ -516,6 +518,8 @@ section {
         padding: 40px 20px; } }
     section.main-section:nth-child(2n+1) {
       background-color: #ECECEC; }
+    section.main-section:first-child {
+      margin-top: 0; }
   @media (max-width: 1250px) {
     section {
       padding: 0 60px; } }
@@ -810,12 +814,13 @@ html.is-animating .transition-fade {
       .header:focus-within input.scrolled::before {
         content: ''; } }
   .header::before {
+    content: '';
     position: absolute;
     height: 100%;
     width: 100%;
     left: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(15px);
     z-index: -1; }
   .header.scrolled::before {
@@ -1308,23 +1313,26 @@ html.is-animating .transition-fade {
         padding: 4px 0; } }
 
 .faculty-header__main {
-  align-items: center; }
+  align-items: center;
+  position: relative;
+  padding: 40px 150px 10px 150px;
+  margin-bottom: 0; }
 
 .faculty-header__icon {
-  margin-right: 15px;
-  height: 90px;
-  width: 90px; }
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  right: 50px; }
   .faculty-header__icon img {
     width: 100%;
     height: 100%; }
 
 .faculty-header__title {
-  width: fit-content;
-  max-width: calc(100% - 150px);
+  width: 100%;
   height: fit-content;
-  font-size: 28px;
   color: #197326;
-  mix-blend-mode: normal; }
+  mix-blend-mode: normal;
+  text-align: center; }
 
 .faculty-header__description {
   border-top: 3px solid #ffffff;
@@ -1333,7 +1341,7 @@ html.is-animating .transition-fade {
   .faculty-header__description h2 {
     font-size: 20px;
     text-align: left;
-    padding: 0 20px;
+    padding: 0 50px;
     position: relative; }
     .faculty-header__description h2::before {
       content: '';
@@ -1940,7 +1948,8 @@ section.news-slider {
     align-items: flex-end; }
     .department-card .department-card__body .department-card__data {
       display: flex;
-      align-items: center; }
+      align-items: center;
+      width: 100%; }
     .department-card .department-card__body .department-card__image {
       height: 80px;
       width: 80px;

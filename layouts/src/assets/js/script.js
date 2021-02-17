@@ -18,20 +18,20 @@ burger.addEventListener('click', event=>{
 });
 
 
-window.addEventListener('scroll',(event) => {
-    if (window.scrollY > 100 && !header.classList.contains('scrolled')) {
-        header.classList.add('scrolled');
-        return;
-    }
+// window.addEventListener('scroll',(event) => {
+//     if (window.scrollY > 100 && !header.classList.contains('scrolled')) {
+//         header.classList.add('scrolled');
+//         return;
+//     }
 
-    if (window.scrollY < 100 && header.classList.contains('scrolled')) {
-        header.classList.remove('scrolled');
-    }
-});
+//     if (window.scrollY < 100 && header.classList.contains('scrolled')) {
+//         header.classList.remove('scrolled');
+//     }
+// });
 
-document.addEventListener("DOMContentLoaded", function(event) { 
-    if (window.scrollY > 100 && !header.classList.contains('scrolled')) {
-        header.classList.add('scrolled');
-        return;
-    }
-});
+// document.addEventListener("DOMContentLoaded", function(event) { 
+//     if (window.scrollY > 100 && !header.classList.contains('scrolled')) {
+//         header.classList.add('scrolled');
+//         return;
+//     }
+// });
