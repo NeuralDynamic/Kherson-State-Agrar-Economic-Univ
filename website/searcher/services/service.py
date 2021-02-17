@@ -23,13 +23,17 @@ class SearchService(object):
         :param phrase: phrase to search\n
         @return filled structure
         """
+        words=phrase.split()
         result=type("", (), {})
         for model in self.models:
             #*Generates all necessary database queries
-            queries=[Q(**{f"{field}__icontains": phrase})
-            for field in model().searching_fields()]
+            query=Q()
+            for word in words:
+                for field in model().searching_fields():
+                    query|=Q(**{f"{field}__icontains": word})
 
             #*Sets result of searching to structure
             setattr(result, model.__name__.lower(),
-            (model.objects.filter(reduce(or_, queries))))
-        return result
+            (model.objects.filter(query)))
+        print(result.staff)
+        return result.staff

@@ -104,10 +104,13 @@ class Staff(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def get_absolute_url(self)->str:
+        """@return link to model"""
+        return f"/university/teacher/{self.pk}"
     def searching_fields(self)->List[str]:
         """@return translated fields"""
         return ["translations__first_name",
-        "translations_methodical_works",
+        "translations__methodical_works",
         "translations__second_name",
         "translations__description",
         "translations__third_name"]

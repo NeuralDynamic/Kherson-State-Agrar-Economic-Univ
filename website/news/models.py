@@ -6,11 +6,11 @@ ForeignKey, ImageField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from parler.models import (TranslatableModel, TranslatedFields)
+from gallery.models import Gallery
 from typing import (TypeVar, List)
 #endregion
 
 #region				-----Internal Imports-----
-from gallery.models import Gallery
 from .utils import (render_related_papers, 
 reverse_related_url)
 #endregion
@@ -18,6 +18,26 @@ reverse_related_url)
 #region				   -----Type Hints-----
 Html=TypeVar("Html", str, bytes)
 #endregion
+
+class Categories(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
+    title=CharField(verbose_name=_("Title"),
+    blank=False, null=True, max_length=100,
+    unique=True))
+    #endregion
+
+    #region            -----Metadata-----
+    class Meta(object):
+        verbose_name_plural=_("Categories")
+        verbose_name=_("Category")
+    #endregion
+
+    #region         -----Internal Methods-----
+    def __str__(self)->str:
+        """@return category title"""
+        return self.title
+    #endregion
 
 class NewsFeed(TranslatableModel):
     #region           -----Translation-----
@@ -36,6 +56,9 @@ class NewsFeed(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def get_absolute_url(self)->str:
+        return f"/news"
+
     def searching_fields(self)->List[str]:
         """@return translated fields"""
         return ["translations__title",
@@ -85,6 +108,10 @@ class Paper(TranslatableModel):
     null=True, on_delete=SET_NULL, 
     verbose_name=_("Gallery"),
     related_name="paper")
+    category=ForeignKey(Categories, blank=True,
+    null=True, on_delete=SET_NULL,
+    verbose_name=_("Category"),
+    related_name="papers")
     #endregion
 
     #region            -----Metadata----- 
@@ -94,6 +121,8 @@ class Paper(TranslatableModel):
     #endregion
 
     #region         -----Internal Methods-----
+    def get_absolute_url(self)->str:
+        return f"/news/article/{self.pk}"
     def searching_fields(self)->List[str]:
         """@return translated fields"""
         return ["translations__title",
