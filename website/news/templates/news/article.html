@@ -2,19 +2,37 @@
 
 {% load i18n %}
 
+{% block title %}{{ paper.title }}{% endblock title %}
+
 {% block content %}
 
 <section class="news-intro">
     <h1 class="news-intro__title">
-        {% trans 'Новости ХДАЕУ' %}
+        {{ paper.title }}
     </h1>
 </section>
 <section>
     <div class="article-container">
         <div class="article-header">
-            <h1 class="article-header__title">
-                {{ paper.title }}
-            </h1>
+            <div class="bread-crumbs">
+                <ul>
+                    <li>
+                        <a href="/">Головна</a>
+                    </li>
+                    <li>
+                        /
+                    </li>
+                    <li>
+                        <a href="/gallery.html">Галерея</a>
+                    </li>
+                    <li>
+                        /
+                    </li>
+                    <li>
+                        <p>{{ paper.title }}</p>
+                    </li>
+                </ul>
+            </div>
             <div class="article-header__date">
                 {{ paper.created_at|date:'M d, Y' }}
             </div>
@@ -26,9 +44,11 @@
             <div class="article-data">
                 {{ paper.story }}
             </div>
-            {% with gallery as images %}
-                {% include 'utils/gallery-slider.html' %}
-            {% endwith %}
+            {% if gallery %}
+                {% with gallery as images %}
+                    {% include 'utils/gallery-slider.html' %}
+                {% endwith %}
+            {% endif %}
         </div>
     </div>
 </section>

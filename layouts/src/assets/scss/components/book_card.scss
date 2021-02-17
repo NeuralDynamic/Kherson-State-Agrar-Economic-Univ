@@ -1,13 +1,11 @@
 .book-card{
     height: 350px;
+    min-height: 350px;
     width: 250px;
     margin: 0;
     background: #ffffff;
     border: 1px solid #DADADA;
-
-    &:hover{
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
+    transition: height .3s;
 
     .card-body{
         height: 100%;
@@ -28,11 +26,21 @@
     }
 
     .book-card__title{
+        transition: height .3s;
         font-size: 18px;
         text-align: center;
         max-height: 50px;
         overflow: hidden; 
-        text-overflow: ellipsis; 
+
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+
+        span{
+            width: 100%;
+        }
     }
 
     .book-card__author{
@@ -41,4 +49,16 @@
         color: #979797;
         margin-top: auto;
     }
+
+    &:hover{
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        height: fit-content;
+
+        .book-card__title{
+            max-height: fit-content;
+            display: block;
+            margin-bottom: 15px;
+        }
+    }
+
 }

@@ -5,7 +5,7 @@ from parler.admin import TranslatableAdmin
 #endregion
 
 #region				-----Internal Imports-----
-from .models import (Links, Staff, Speciality,
+from .models import (Staff, Speciality,
 Cathedra, Faculty, StaffCathedra, StaffFaculty,
 Discipline, Reward, ScientificSociety, MaterialBaseNode)
 #endregion
@@ -14,18 +14,20 @@ Discipline, Reward, ScientificSociety, MaterialBaseNode)
 class StaffCathedraAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     list_display=["staff", "rank", "cathedras"]
+    list_filter=["translations__rank", "cathedras"]
     #endregion
 
 @register(StaffFaculty)
 class StaffFacultyAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     list_display=["staff", "position", "faculties"]
+    list_filter=["translations__position", "faculties"]
     #endregion
 
 @register(Discipline)
 class DisciplineAdmin(TranslatableAdmin):
     #region           ----Configuration-----
-    fields=["title", "staff"]
+    fields=["title"]
     list_display=["__str__"]
     #endregion
 
@@ -33,9 +35,10 @@ class DisciplineAdmin(TranslatableAdmin):
 class SpecialityAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["number", "title", "cathedra",
-    "educational_level",
+    "educational_level", "form_of_studying",
     "description"]
-    list_display=["__str__", "number"]
+    list_display=["__str__", "number", "cathedra"]
+    list_filter=["cathedra"]
     #endregion
 
 @register(Cathedra)
@@ -43,9 +46,10 @@ class CathedraAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["emblem", "title", "year", "faculty",
     "educational_programs","catalog_of_disciplines",
-    "created_at", "goal", "description", "history",
-    "gallery","material_technical_base","phone","emails"]
-    list_display=["__str__"]
+    "goal", "description", "history",
+    "gallery","material_technical_base", "phone", "emails"]
+    list_display=["__str__", "faculty"]
+    list_filter=["faculty"]
     #endregion
 
 @register(Faculty)
@@ -69,8 +73,10 @@ class StaffAdmin(TranslatableAdmin):
     list_display=["__str__", "phone"]
     fields=["photo", "first_name", 
     "second_name", "third_name", "rank",
-    "phone", "emails", "ndr_theme", "library", 
-    "methodical_works","description"]
+    "phone", "emails", "ndr_theme", "books", 
+    "methodical_works","description", "disciplines",
+    "google_scholar", "web_of_science", "researchgate",
+    "scopus", "orcid"]
     #endregion
 
 @register(ScientificSociety)
@@ -87,6 +93,3 @@ class MaterialBaseNodeAdmin(TranslatableAdmin):
     fields=["title","local_title",
             "content"]
     #endregion
-
-@register(Links)
-class LinksAdmin(ModelAdmin): pass

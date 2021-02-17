@@ -14,7 +14,8 @@ from .models import Gallery, Image
 #region				   -----Gallery views-----
 
 def gallery_catalog_view(request):
-    context = GalleryService().gallery_catalog()
+    page_num=request.GET.get('page', 1)
+    context = GalleryService().paginator(page_num)
     return render(request,'gallery/catalog.html', context=context)
 
 def gallery_view(request, gallery_id):

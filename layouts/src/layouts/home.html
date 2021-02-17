@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {{> head }}
+</head>
+<body>
+
+    <div class="page">
+        {{> header }}
+        <!-- {{> menu }} -->
+
+        {{> home__banner }}
+        <main class="main" id="swup" class="transition-fade">
+            {{> home__cards }}
+            {{> home__info }}
+            {{> home__news }}
+            {{> home__info }}
+            <!-- {{> home_research }} -->
+            <section class="main-section">
+                {{> contact_form }}
+            </section>
+            
+        </main>
+    
+        {{> footer }}
+    </div>
+
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

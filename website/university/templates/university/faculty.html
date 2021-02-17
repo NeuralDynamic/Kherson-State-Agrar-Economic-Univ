@@ -2,6 +2,8 @@
 
 {% load i18n %}
 
+{% block title %}{{ faculty.title }}{% endblock title %}
+
 {% block content %}
 
 <section>
@@ -9,7 +11,7 @@
         <div class="row faculty-header__main">
             <div class="faculty-header__icon">
                 <img height="{{ emblem_height }}" width="{{ emblem_width }}" 
-                        src="{{ faculty.emblem.url }}" alt="faculty-logo">
+                     src="{{ faculty.emblem.url }}" alt="faculty-logo">
             </div>
             <h1 class="faculty-header__title">
                 {{ faculty.title }}
@@ -56,7 +58,7 @@
 </section>
 <section>
     <div class="section-title">
-        {% trans 'Oсвітні програмами' %}
+        {% trans 'Oсвітні програми' %}
     </div>
     <div class="faculty-specialities">
         <table class="faculty-specialities-table">
@@ -71,7 +73,7 @@
             <tbody>
                 {% for speciality in specialities %}
                 <tr>
-                    <td>{{ speciality.program }}</td>
+                    <td>{{ speciality.educational_level }}</td>
                     <td>{{ speciality.number }}. {{ speciality.title }}</td>
                 </tr>
                 {% endfor %}
@@ -79,36 +81,17 @@
         </table>
     </div>
 </section>   
+{% if gallery %}
 <section>
     <div class="section-title">
         {% trans 'Життя факультету' %}
     </div>
-    <div class="slider slider-scroller">
-        <div class="slider__prevSlideButton">
-            <div class="prev-slide-button"></div>
-        </div>
-        <div class="slider__container">
-            {% for image in gallery %}
-            <div class="slider__slide">
-                <div class="slide__image">
-                    <picture>
-                        <source srcset="{{ image.large_image.url }}" media="(max-height: 1440px) and (orientation: landscape)">
-                        <source srcset="{{ image.large_image.url }}" media="(max-width: 1440px) and (orientation: portrait)">
-                        <source srcset="{{ image.medium_image.url }}" media="(max-height: 1000px) and (orientation: landscape)">
-                        <source srcset="{{ image.medium_image.url }}" media="(max-width: 1000px) and (orientation: portrait)">
-                        <source srcset="{{ image.small_image.url }}" media="(max-height: 700px) and (orientation: landscape)">
-                        <source srcset="{{ image.small_image.url }}" media="(max-width: 700px) and (orientation: portrait)">
-                        <img srcset="{{ image.large_image.url }}" alt="{{ image.alt }}">
-                    </picture>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="slider__nextSlideButton">
-            <div class="next-slide-button"></div>
-        </div>
-    </div>
+    {% with gallery as images %}
+        {% include 'utils/gallery-slider.html' %}
+    {% endwith %}
 </section> 
+{% endif %}
+{% if faculty.employers %}
 <section class="hiding">
     <div class="section-title">
         {% trans 'Рада роботодавців агрономічного факультету' %}
@@ -119,12 +102,12 @@
         </div>
     </div>
 </section>
-
+{% endif %}
+{% if scientific_society %}
 <section class="hiding">
     <div class="section-title">
         {% trans 'Наукове товариство студентів, аспірантів, докторантів і молодих вчених' %}
     </div>
-    {% with scientific_society as scientific_society %}
     <div class="section-body">
         <div class="content">
             <div class="faculty-scientific-society">
@@ -164,7 +147,7 @@
             </div>
         </div>
     </div>
-    {% endwith %}
 </section>
+{% endif %}
 
 {% endblock %}

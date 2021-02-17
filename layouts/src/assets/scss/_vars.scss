@@ -3,10 +3,22 @@ $url-redirrect: '/assets';
 $black: #000000;
 $white: #ffffff;
 
-$font-color: $black;
+$font-color: #222222;
 
 $header_height: 60px;
 
 $buttons-color: linear-gradient(45.33deg, rgba(33, 221, 202, 0.5) 0%, #4CEB80 100%);
 
 
+$grey: #F5F5F5;
+$dark-green: #009846;
+$disabled-green: #B5D1C2;
+$hover-green: #78CE9F;
+$grey: #ECECEC;
+
+
+// breakpoints
+
+$desktop-small: 1250px;
+$table-bp: 991px;
+$mobile-bp: 640px;

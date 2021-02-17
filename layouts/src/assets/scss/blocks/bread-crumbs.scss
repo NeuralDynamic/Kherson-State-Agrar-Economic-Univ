@@ -1,0 +1,14 @@
+.bread-crumbs{
+    ul{
+        display: flex;
+        
+        a,p{
+            font-size: 14px;
+        }
+        
+        li{
+            margin-right: 10px;
+            font-size: 14px;
+        }
+    }
+}

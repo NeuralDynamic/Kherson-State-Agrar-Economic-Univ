@@ -6,10 +6,14 @@ CASCADE, CharField, ForeignKey, SET_NULL, ImageField,
 TextField, DateField, ManyToManyField, IntegerField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
-from library.models import Library
+from library.models import Book
 from parler.models import (TranslatableModel, TranslatedFields)
 from typing import (TypeVar, List)
 from multi_email_field.fields import MultiEmailField
+#endregion
+
+#region				-----Internal Imports-----
+from .university import Discipline
 #endregion
 
 class Reward(TranslatableModel):
@@ -28,8 +32,8 @@ class Reward(TranslatableModel):
     #endregion
 
     #region            -----Relation-----
-    staff=ManyToManyField("Staff", blank=False,
-    null=True, verbose_name=_("Staff"),
+    staff=ManyToManyField("Staff", blank=False, 
+    verbose_name=_("Staff"),
     related_name="rewards")
     #endregion
 
@@ -50,14 +54,14 @@ class Staff(TranslatableModel):
     translations=TranslatedFields(
     second_name=CharField(max_length=40, blank=False,
     verbose_name=_("Second name")),
-
+    
     first_name=CharField(max_length=40, blank=False,
     verbose_name=_("First name")),
 
     third_name=CharField(max_length=40, blank=False,
     verbose_name=_("Third name")),
     
-    rank=CharField(max_length=100, blank=True,
+    rank=CharField(max_length=300, blank=True,
     verbose_name=_("Rank")),
 
     methodical_works=HTMLField(blank=True,
@@ -71,6 +75,16 @@ class Staff(TranslatableModel):
     #endregion
 
     #region           -----Information-----
+    google_scholar=URLField(blank=True,
+    verbose_name=_("Google Scholar"), null=True)
+    web_of_science=URLField(blank=True,
+    verbose_name=_("Web Of Science"), null=True)
+    researchgate=URLField(blank=True,
+    verbose_name=_("Researchgate"), null=True)
+    scopus=URLField(verbose_name=_("Scopus"),
+    blank=True, null=True)
+    orcid=URLField(verbose_name=_("ORCID"),
+    blank=True, null=True)
     photo=ImageField(verbose_name=_("Photo"),
     upload_to="photos", blank=False)
     phone=CharField(max_length=20, blank=False,
@@ -79,10 +93,8 @@ class Staff(TranslatableModel):
     #endregion
 
     #region            -----Relation-----
-    library=ForeignKey(Library, blank=True,
-    null=True, on_delete=SET_NULL,
-    verbose_name=_("Library"),
-    related_name="staff")
+    disciplines=ManyToManyField(Discipline, blank=False)
+    books=ManyToManyField(Book, blank=True)
     #endregion
 
     #region            -----Metadata-----
@@ -105,38 +117,4 @@ class Staff(TranslatableModel):
         return (self.second_name+
         " "+self.first_name+
         " "+self.third_name)
-    #endregion
-
-class Links(Model):
-    #region           -----Information-----
-    google_scholar=URLField(blank=True,
-    verbose_name=_("Google Scholar"), null=True)
-    web_of_science=URLField(blank=True,
-    verbose_name=_("Web Of Science"), null=True)
-    researchgate=URLField(blank=True,
-    verbose_name=_("Researchgate"), null=True)
-    scopus=URLField(verbose_name=_("Scopus"),
-    blank=True, null=True)
-    orcid=URLField(verbose_name=_("ORCID"),
-    blank=True, null=True)
-    #endregion
-
-    #region            -----Relation-----
-    staff=OneToOneField("Staff", blank=False,
-    null=False, on_delete=CASCADE, default=1,
-    verbose_name=_("Staff"), related_name="links")
-    #endregion    
-
-    #region            -----Metadata-----
-    class Meta(object):
-        verbose_name_plural=_("Links")
-        verbose_name=_("Links")
-    #endregion
-
-    #region         -----Internal Methods-----
-    def __str__(self)->str:
-        """@return staff information"""
-        return (self.staff.second_name+
-        " "+self.staff.first_name+
-        " "+self.staff.third_name)
     #endregion

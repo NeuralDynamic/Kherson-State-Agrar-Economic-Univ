@@ -32,7 +32,7 @@ class ScientificSociety(TranslatableModel):
     emails=MultiEmailField()
     #endregion
 
-    #region            -----Relation-----
+    #region            -----Relations-----
     staff=ManyToManyField("Staff",
     verbose_name=_("Staffs"),
     related_name="staff")
@@ -48,13 +48,8 @@ class Discipline(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default=""))
-    #endregion
-
-    #region            -----Relation-----
-    staff=ManyToManyField("Staff", blank=False,
-    null=True, verbose_name=_("Staff"),
-    related_name="disciplines")
+    max_length=100, blank=False, default="",
+    unique=True))
     #endregion
 
     #region            -----Metadata-----
@@ -73,22 +68,28 @@ class Speciality(TranslatableModel):
     EDUCATIONAL_RANKS=[(l, l) for l in [_("Junior bachelor"), 
     _("Bachelor"), _("Master"), _("PHD"),
     _("Doctor of Philosophy")]]
+
+    FORM_OF_STUDING=[(f, f) for f in [_("Day"), _("Extramural"), 
+    _("Day, Extramural")]]
     #region           -----Translation-----
     translations=TranslatedFields(
     description=HTMLField(verbose_name=_("Description"),
-    blank=False, default=""),
+    blank=True, default=""),
 
     educational_level=CharField(choices=EDUCATIONAL_RANKS,
     blank=False, null=True, max_length=200,
     verbose_name=_("Educational Level")),
 
+    form_of_studying=CharField(choices=FORM_OF_STUDING,
+    blank=False, null=True, max_length=200),
+
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default=""))
+    max_length=100, blank=False, default="", unique=True))
     #endregion
 
     #region           -----Information-----
     number=CharField(verbose_name=_("Number"),
-    max_length=10, blank=False, default="")
+    max_length=10, blank=False, default="", unique=True)
     #endregion
 
     #region            -----Relation-----
@@ -117,18 +118,18 @@ class Speciality(TranslatableModel):
 
 class Cathedra(TranslatableModel):
     YEAR_CHOICES = [(r,r) for r in reversed(
-    range(1950, date.today().year+1))]
+    range(1800, date.today().year+1))]
 
     #region           -----Translation-----
     translations=TranslatedFields(
     description=HTMLField(verbose_name=_("Description"),
-    blank=False, default=""),
+    blank=True, default=""),
 
     goal=TextField(blank=False,
     verbose_name=_("Goal"), default=""),
 
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default=""),
+    max_length=100, blank=False, default="", unique=True),
     
     history=HTMLField(verbose_name=_("History of cathedra"),
     blank=True, default=""),)
@@ -147,11 +148,6 @@ class Cathedra(TranslatableModel):
     verbose_name=_("Educational programs link"), null=True)
     catalog_of_disciplines=URLField(blank=True,
     verbose_name=_("Catalog of disciplines link"), null=True)
-    #endregion
-
-    #region            -----Database-----
-    created_at=DateField(default=timezone.now,
-    verbose_name=_("Created at"))
     #endregion
 
     #region            -----Relation-----
@@ -192,10 +188,10 @@ class Faculty(TranslatableModel):
     #region           -----Translation-----
     translations=TranslatedFields(
     description=HTMLField(verbose_name=_("Description"),
-    blank=False, default=""),
+    blank=True, default=""),
 
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False, default=""),
+    max_length=100, blank=False, default="", unique=True),
     
     council_of_employers=HTMLField(verbose_name=_("Council of employers"),
     blank=False, default=""))

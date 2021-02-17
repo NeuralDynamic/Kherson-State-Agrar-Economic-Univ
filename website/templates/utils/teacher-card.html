@@ -1,20 +1,28 @@
 <div class="card glassed teacher-card linked-card">
     <div class="card__link" data-link="{% url 'teacher' teacher_id=teacher.staff.id %}">
         <div class="teacher-name">
-            {{ teacher.staff.first_name }} {{ teacher.staff.second_name }} {{ teacher.staff.third_name }}
+            {{ teacher.staff.second_name }} {{ teacher.staff.first_name }} {{ teacher.staff.third_name }}
         </div>
         <div class="teacher-card__body">
             <div class="teacher-data">
                 <div class="teacher-rank">
-                    {{ teacher.rank }}
+                    {% if teacher.position %}
+                        {{ teacher.position }}
+                    {% else %}
+                        {{ teacher.rank }}
+                    {% endif %}
                 </div>
                 <div class="teacher-contacts">
-                    <a href="tel:{{ teacher.phone }}" class="phone-link">
+                    {% if teacher.staff.phone %}
+                    <a href="tel:{{ teacher.staff.phone }}" class="phone-link">
                         {{ teacher.staff.phone }}
                     </a>
-                    <a href="mailto:{{ teacher.emails }}" class="email-link">
+                    {% endif %}
+                    {% if teacher.staff.emails %}
+                    <a href="mailto:{{ teacher.staff.emails.0 }}" class="email-link">
                         {{ teacher.staff.emails.0 }}
                     </a>
+                    {% endif %}
                 </div>
             </div>
             <div class="teacher-image">
