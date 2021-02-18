@@ -15,6 +15,12 @@ class IntroPlugin(CMSPluginBase):
     module=_("Banner plugins")
     model=cms_models.Banner
     name=_("Banner")
+
+    #region            -----Rendering-----
+    def render(self, context, instance, placeholder):
+        context.update({"instance": instance})
+        return context
+    #endregion
 #endregion
 
 #region				-----Cards plugins-----
@@ -23,6 +29,12 @@ class CardsPlugin(CMSPluginBase):
     module=_("Cards plugins")
     model=cms_models.Cards
     name=_("Cards")
+
+    #region            -----Rendering-----
+    def render(self, context, instance, placeholder):
+        context.update({"instance": instance})
+        return context
+    #endregion
 #endregion
 
 #region				-----Infos plugins-----
@@ -31,6 +43,12 @@ class InfoPlugin(CMSPluginBase):
     module=_("Info plugins")
     model=cms_models.Info
     name=_("Info")
+
+    #region            -----Rendering-----
+    def render(self, context, instance, placeholder):
+        context.update({"instance": instance})
+        return context
+    #endregion
 #endregion
 
 #region				-----News plugins-----
@@ -39,6 +57,12 @@ class NewsPlugin(CMSPluginBase):
     module=_("News plugins")
     model=cms_models.News
     name=_("News")
+
+    #region            -----Rendering-----
+    def render(self, context, instance, placeholder):
+        context.update({"instance": instance})
+        return context
+    #endregion
 #endregion
 
 #region				-----Utils plugins-----
