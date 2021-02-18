@@ -119,14 +119,12 @@ class Footer(CMSPlugin):
                         verbose_name=_('Telegram link'))
     linkedin_link = models.URLField(blank=True, null=True, 
                         verbose_name=_('Linkedin link'))
+    tiktok_link = models.URLField(blank=True, null=True, 
+                        verbose_name=_('Tiktok link'))
 
-    phone1 = models.CharField(max_length=100, blank=True, null=True, 
+    phone = models.CharField(max_length=100, blank=True, null=True, 
                         default='', verbose_name=_('Phone'))
-    phone2 = models.CharField(max_length=100, blank=True, null=True, 
-                        default='', verbose_name=_('Phone'))
-    email1 = models.CharField(max_length=100, blank=True, null=True, 
-                        default='', verbose_name=_('Email'))
-    email2 = models.CharField(max_length=100, blank=True, null=True, 
+    email = models.CharField(max_length=100, blank=True, null=True, 
                         default='', verbose_name=_('Email'))
     # endregion
 #endregion

@@ -1,10 +1,39 @@
-<header class="header">
-    <a href="/faculty.html">Факультет</a>
-    <a href="/department.html">Кафедра</a>
-    <a href="/teacher.html">Преподаватель</a>
-    <a href="/news.html">Новости</a>
-    <a href="/gallery.html">Галерея</a>
+{% load i18n %}
 
+<header class="header">
+    <div class="header__icon" style="background-image: url(/assets/images/apple-icon.png);"></div>
+    <div class="header__links">
+        <a href="/">{% trans 'Про університет' %}</a>
+        <a href="/">{% trans 'Новини' %}</a>
+        <a href="/">{% trans 'Освітній процес' %}</a>
+        <a href="/">{% trans 'Наука' %}</a>
+        <a href="/">{% trans 'Абітурієнту' %}</a>
+        <a href="/">{% trans 'Якість освіти' %}</a>
+    </div>
+    <div class="header__language_select">
+        <div class="dropdown">
+            {% get_current_language as LANGUAGE_CODE %}
+            <div class="dropdown__preview">
+                {{ LANGUAGE_CODE }}
+            </div>
+            <div class="dropdown__select">
+                <ul>
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                    <li>
+                        <a href="/{{ language.code }}{{ request.get_full_path|slice:'3:' }}">{{ language.code }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header__search">
+        <form action="/search">
+            <input autocomplete="off" type="text" name="q" aria-label="search">
+        </form>
+    </div>
     <div class="header__burger">
         <span></span>
         <span></span>

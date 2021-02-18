@@ -1,88 +1,56 @@
 {% load i18n cms_tags %}
 
-<div class="footer__block">
-    <div class="column">
-        <div class="footer__block">
-            <div class="social-links">
-                <ul>
-                    {% if instance.facebook_link %}
-                    <li class="social-links__link">
-                        <a href="{{ instance.facebook_link }}" title="ksau-facebook" target="_blank" rel="noreferrer">
-                            <img width="40" height="40" src="/assets/images/svg/facebook.svg" alt="ksau-facebook-social">
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if instance.linkedin_link %}
-                    <li class="social-links__link">
-                        <a href="{{ instance.linkedin_link }}" title="ksau-linkedin" target="_blank" rel="noreferrer">
-                            <img width="40" height="40" src="/assets/images/svg/linkedin.svg" alt="ksau-linkedin">
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if instance.youtube_link %}
-                    <li class="social-links__link">
-                        <a href="{{ instance.youtube_link }}" title="ksau-youtube" target="_blank" rel="noreferrer">
-                            <img width="40" height="40" src="/assets/images/svg/youtube.svg" alt="ksau-youtube">
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if instance.telegram_link %}
-                    <li class="social-links__link">
-                        <a href="{{ instance.telegram_link }}" title="ksau-telegram" target="_blank" rel="noreferrer">
-                            <img width="40" height="40" src="/assets/images/svg/telegram.svg" alt="ksau-telegram">
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if instance.instagram_link %}
-                    <li class="social-links__link">
-                        <a href="{{ instance.instagram_link }}" title="ksau-instagram" target="_blank" rel="noreferrer">
-                            <img width="40" height="40" src="/assets/images/svg/instagram.svg" alt="ksau-instagram">
-                        </a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </div>
-        <div class="contact-data">
-            <p>
-                <a class="location-link" href="{{ instance.location_link|default_if_none:'' }}" target="_blank" rel="noopener noreferrer">
-                    {{ instance.location_country|default_if_none:'' }}, 
-                    {{ instance.location_city|default_if_none:'' }},
-                    {{ instance.location_street|default_if_none:'' }},
-                    {{ instance.location_street|default_if_none:'' }}
-                </a>
-            </p>
-            <div class="contact-data__contacts">
-                {% if instance.phone1 %}
-                <a href="tel:{{ instance.phone1 }}" class="phone-link">
-                    {{ instance.phone1 }}
-                </a>
-                {% endif %}
-                {% if instance.phone2 %}
-                <a href="tel:{{ instance.phone2 }}" class="phone-link">
-                    {{ instance.phone2 }}
-                </a>
-                {% endif %}
-                {% if instance.email1 %}
-                <a href="mailto:{{ instance.email1 }}" class="email-link">
-                    {{ instance.email1 }}
-                </a>
-                {% endif %}
-                {% if instance.email2 %}
-                <a href="mailto:{{ instance.email2 }}" class="email-link">
-                    {{ instance.email2 }}
-                </a>
-                {% endif %}
-            </div>
-        </div>
+<div class="footer__column-title">{% trans 'Контакти' %}</div>
+<div class="footer__contacts">
+    <div class="address">
+        <p>{% trans 'Адреса' %}:</p>
+        <a href="{{ instance.location_link|default_if_none:'' }}" target="_blank" rel="noopener noreferrer">
+            {{ instance.location_country|default_if_none:'' }}, 
+            {{ instance.location_city|default_if_none:'' }},
+            {{ instance.location_street|default_if_none:'' }},
+            {{ instance.location_zip|default_if_none:'' }}, 
+            {% trans 'ХДАЕУ' %}
+        </a>
     </div>
-    <div class="column">
-        <div class="contact-me-form">
-            <label for="contact-form-email">{% trans 'Ваша пошта' %}</label>
-            <input type="text" name="person-email" placeholder="example@mail.com" id="contact-form-email">
-            <label for="contact-form-message">{% trans 'Ваше питання' %}</label>
-            <textarea name="person-request" placeholder="Дякую за гарний сайт!" id="contact-form-message"></textarea>
-            <button type="button">{% trans 'Надіслати' %}</button>
+    {% if instance.email %}
+    <div class="email">
+        <p>E-mail:</p>
+        <a href="{{ instance.email }}">{{ instance.email }}</a>
+    </div>
+    {% endif %}
+    <div class="social-links">
+        <p>{% trans 'Соцiальнi мережi' %}</p>
+        <div class="row">
+            {% if instance.facebook_link %}
+            <a href="{{ instance.facebook_link }}" target="_blank" rel="noopener noreferrer" aria-label="ksau-facebook">
+                <div class="social-link social-links__facebook"></div>
+            </a>
+            {% endif %}
+            {% if instance.youtube_link %}
+            <a href="{{ instance.youtube_link }}" target="_blank" rel="noopener noreferrer" aria-label="ksau-youtube">
+                <div class="social-link social-links__youtube"></div>
+            </a>
+            {% endif %}
+            {% if instance.linkedin_link %}
+            <a href="{{ instance.linkedin_link }}" target="_blank" rel="noopener noreferrer" aria-label="ksau-linkedin">
+                <div class="social-link social-links__linkedin"></div>
+            </a>
+            {% endif %}
+            {% if instance.instagram_link %}
+            <a href="{{ instance.instagram_link }}" target="_blank" rel="noopener noreferrer" aria-label="ksau-instagram">
+                <div class="social-link social-links__instagram"></div>
+            </a>
+            {% endif %}
+            {% if instance.telegram_link %}
+            <a href="{{ instance.telegram_link }}" target="_blank" rel="noopener noreferrer" aria-label="ksau-telegram">
+                <div class="social-link social-links__telegram"></div>
+            </a>
+            {% endif %}
+            {% if instance.tiktok_link %}
+            <a href="{{ instance.tiktok_link }}" target="_blank" rel="noopener noreferrer" aria-label="ksau-tiktok">
+                <div class="social-link social-links__tiktok"></div>
+            </a>
+            {% endif %}
         </div>
     </div>
 </div>

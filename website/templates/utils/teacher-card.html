@@ -1,35 +1,34 @@
-<div class="card glassed teacher-card linked-card">
-    <div class="card__link" data-link="{% url 'teacher' teacher_id=teacher.staff.id %}">
-        <div class="teacher-name">
-            {{ teacher.staff.second_name }} {{ teacher.staff.first_name }} {{ teacher.staff.third_name }}
+<div class="card teacher-card linked-card">
+    <div class="teacher-card__preview">
+        <img class="teacher-card__image" {% if teacher.staff.photo %}src="{{ teacher.staff.photo.url}}"{% endif %} 
+            alt="{{ teacher.staff.second_name }} {{ teacher.staff.first_name }} {{ teacher.staff.third_name }}" />
+        <div class="teacher-card__contacts">
+            {% if teacher.staff.phone %}
+            <a href="tel:{{ teacher.staff.phone }}" class="teacher-card__phone-link">
+                {{ teacher.staff.phone }}
+            </a>
+            {% endif %}
+            {% if teacher.staff.emails %}
+            <a href="mail:{{ teacher.staff.emails.0 }}" class="teacher-card__email-link">
+                {{ teacher.staff.emails.0 }}
+            </a>
+            {% endif %}
         </div>
-        <div class="teacher-card__body">
-            <div class="teacher-data">
-                <div class="teacher-rank">
-                    {% if teacher.position %}
-                        {{ teacher.position }}
-                    {% else %}
-                        {{ teacher.rank }}
-                    {% endif %}
-                </div>
-                <div class="teacher-contacts">
-                    {% if teacher.staff.phone %}
-                    <a href="tel:{{ teacher.staff.phone }}" class="phone-link">
-                        {{ teacher.staff.phone }}
-                    </a>
-                    {% endif %}
-                    {% if teacher.staff.emails %}
-                    <a href="mailto:{{ teacher.staff.emails.0 }}" class="email-link">
-                        {{ teacher.staff.emails.0 }}
-                    </a>
-                    {% endif %}
-                </div>
-            </div>
-            <div class="teacher-image">
-                <div class="teacher-image__container" 
-                    {% if teacher.staff.photo %}style="background-image: url({{ teacher.staff.photo.url}});"{% endif %}>
-                </div>
-            </div>
+    </div>
+    <div class="teacher-card__body">
+        <a href="{% url 'teacher' teacher_id=teacher.staff.id %}" target="_blank" rel="noopener noreferrer">
+            <h3 class="teacher-name">
+                {{ teacher.staff.second_name }} {{ teacher.staff.first_name }} {{ teacher.staff.third_name }}
+            </h3>
+        </a>
+        <div class="teacher-rank">
+            {% if teacher.position %}
+                {{ teacher.position }}
+            {% else %}
+                {{ teacher.rank }}
+            {% endif %}, 
+            
+            {{ teacher.staff.rank }}
         </div>
     </div>
 </div>

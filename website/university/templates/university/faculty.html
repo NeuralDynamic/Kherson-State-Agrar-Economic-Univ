@@ -9,13 +9,13 @@
 <section>
     <div class="faculty-header">
         <div class="row faculty-header__main">
-            <div class="faculty-header__icon">
-                <img height="{{ emblem_height }}" width="{{ emblem_width }}" 
-                     src="{{ faculty.emblem.url }}" alt="faculty-logo">
-            </div>
             <h1 class="faculty-header__title">
                 {{ faculty.title }}
             </h1>
+            <div class="faculty-header__icon">
+                <img height="{{ emblem_height }}" width="{{ emblem_width }}" 
+                     src="{{ faculty.emblem.url }}" alt="{{ faculty.title }}-KSAU-faculty-logo">
+            </div>
         </div>
         <div class="row">
             <div class="faculty-header__description">
@@ -26,11 +26,12 @@
         </div>
     </div>
 </section>
+
 <section>
     <div class="section-title">
-        {% trans 'Викладачi' %}
+        <h2>{% trans 'Викладачi' %}</h2> 
     </div>
-    <div class="slider slider-scroller">
+    <div class="slider slider-scroller teachers-scroller">
         <div class="slider__prevSlideButton">
             <div class="prev-slide-button"></div>
         </div>
@@ -46,9 +47,10 @@
         </div>
     </div>
 </section>
+
 <section>
     <div class="section-title">
-        {% trans 'Кафедри' %}
+        <h2>{% trans 'Кафедри' %}</h2>
     </div>
     <div class="faculty-departments-list row f-wrap">
         {% for cathedra in cathedras %}
@@ -56,9 +58,10 @@
         {% endfor %}
     </div>
 </section>
+
 <section>
     <div class="section-title">
-        {% trans 'Oсвітні програми' %}
+        <h2>{% trans 'Oсвітні програми' %}</h2>
     </div>
     <div class="faculty-specialities">
         <table class="faculty-specialities-table">
@@ -81,6 +84,7 @@
         </table>
     </div>
 </section>   
+
 {% if gallery %}
 <section>
     <div class="section-title">
@@ -91,10 +95,12 @@
     {% endwith %}
 </section> 
 {% endif %}
+
 {% if faculty.employers %}
 <section class="hiding">
     <div class="section-title">
         {% trans 'Рада роботодавців агрономічного факультету' %}
+        <span class="section-title__button"></span>
     </div>
     <div class="section-body">
         <div class="content">
@@ -103,10 +109,12 @@
     </div>
 </section>
 {% endif %}
+
 {% if scientific_society %}
 <section class="hiding">
     <div class="section-title">
         {% trans 'Наукове товариство студентів, аспірантів, докторантів і молодих вчених' %}
+        <span class="section-title__button"></span>
     </div>
     <div class="section-body">
         <div class="content">
