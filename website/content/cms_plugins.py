@@ -45,6 +45,12 @@ class InfoPlugin(CMSPluginBase):
     module=_("Info plugins")
     model=cms_models.Info
     name=_("Info")
+
+    #region            -----Rendering-----
+    def render(self, context, instance, placeholder):
+        context.update({"instance": instance})
+        return context
+    #endregion
 #endregion
 
 #region				-----News plugins-----
@@ -56,7 +62,6 @@ class NewsPlugin(CMSPluginBase):
 
     #region            -----Rendering-----
     def render(self, context, instance, placeholder):
-        context.update({"articles": Paper.objects.all()[:5]})
         context.update({"instance": instance})
         return context
     #endregion

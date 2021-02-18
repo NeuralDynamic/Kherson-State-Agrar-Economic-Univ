@@ -30,29 +30,6 @@ class Migration(migrations.Migration):
             model_name='info2',
             name='cmsplugin_ptr',
         ),
-        migrations.RenameField(
-            model_name='footer',
-            old_name='email1',
-            new_name='email',
-        ),
-        migrations.RenameField(
-            model_name='footer',
-            old_name='phone1',
-            new_name='phone',
-        ),
-        migrations.RemoveField(
-            model_name='footer',
-            name='email2',
-        ),
-        migrations.RemoveField(
-            model_name='footer',
-            name='phone2',
-        ),
-        migrations.AddField(
-            model_name='footer',
-            name='tiktok_link',
-            field=models.URLField(blank=True, null=True, verbose_name='Tiktok link'),
-        ),
         migrations.DeleteModel(
             name='Info1',
         ),
