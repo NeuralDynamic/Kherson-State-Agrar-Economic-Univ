@@ -24,17 +24,10 @@ sitemaps = {
 }
 
 urlpatterns = [
-<<<<<<< HEAD
-    path('favicon.ico/', RedirectView.as_view(url='/assets/images/favicon.png'), name='favicon'),
-
-    path('manifest.json/', manifest_view, name='manifest'),
-
-=======
     path('favicon.ico/', RedirectView.as_view(
     url='/assets/images/favicon.png'), 
     name='favicon'),
     path('manifest.json/', manifest_view, name='manifest'),
->>>>>>> origin/cms_constructor
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}),
     path("", include("searcher.urls"))
 ]

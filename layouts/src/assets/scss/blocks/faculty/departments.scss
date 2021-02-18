@@ -1,4 +1,14 @@
 .faculty-departments-list{
     padding-top: 15px;
     margin-bottom: 0;
+    justify-content: space-around;
+    
+    .department-card{
+        flex: 0 1 45%;
+
+        @include breakpoint($mobile-bp){
+            flex: 0 1 95%;
+        }
+    }
+
 }

@@ -3,13 +3,16 @@
 @import "reset";
 @import "fonts";
 
-body {
+html,body {
     font-family: 'Gilroy';
     font-size: 16px;
     color: $font-color;
-    overflow-y: auto;
-    overflow-x: hidden;
     width: 100vw;
+    height: 100%;
+}
+
+body{
+    overflow-x: hidden;
 }
 
 body.no-scroll {
@@ -144,6 +147,7 @@ h6{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 html::-webkit-scrollbar {
@@ -223,7 +227,6 @@ html::-webkit-scrollbar-thumb:hover {
 @import "components/card.scss";
 @import "components/teacher_card.scss";
 @import "components/department_card.scss";
-@import "components/sections.scss";
 @import "components/hiding_list.scss";
 @import "components/linked_list.scss";
 @import "components/book_card.scss";

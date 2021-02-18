@@ -87,10 +87,12 @@ scroller_sliders.forEach(item => {
     const container = item.querySelector('.slider__container');
     const prev_button = item.querySelector('.slider__prevSlideButton');
     const next_button = item.querySelector('.slider__nextSlideButton');
+    let items = 3;
+    let autoWidth = false;
+    let autoplay = true;
 
-    const slider = tns({
+    const params = {
         container: container,
-        items: 3,
         autoplay: true,
         // mouseDrag: true,
         autoplayButton:false,
@@ -98,7 +100,45 @@ scroller_sliders.forEach(item => {
         nav:false,
         prevButton: prev_button,
         nextButton: next_button,
-    });
+        autoWidth: false,
+        loop:true
+    };
+
+    if (item.classList.contains('teachers-scroller')) {
+        const responsive = {
+            640:{
+                items: 2
+            },
+            900:{
+                items: 3
+            },
+            1200: {
+                items: 4
+            },
+            1500: {
+                items: 5
+            }
+        }
+        params.responsive = responsive;
+    }
+
+    if (item.classList.contains('gallery-scroller')) {
+        params.autoWidth = true;
+        const responsive = {
+            640:{
+                items: 1
+            },
+            1200: {
+                items: 2
+            },
+            1440: {
+                items: 3
+            }
+        }
+        params.responsive = responsive;
+    }
+
+    const slider = tns(params);
 
     // item.querySelector('[data-action="stop"]').style.display = 'none';
 }); 
