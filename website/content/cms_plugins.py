@@ -10,7 +10,7 @@ from django.utils.translation import ugettext as _
 #endregion
 
 #region				-----Banner plugins-----
-class Info1Plugin(CMSPluginBase):
+class IntroPlugin(CMSPluginBase):
     render_template=settings.TEMPLATE_DIR+"/cms-plugins/home__banner.html"
     module=_("Banner plugins")
     model=cms_models.Banner
@@ -18,7 +18,7 @@ class Info1Plugin(CMSPluginBase):
 #endregion
 
 #region				-----Cards plugins-----
-class Info1Plugin(CMSPluginBase):
+class CardsPlugin(CMSPluginBase):
     render_template=settings.TEMPLATE_DIR+"/cms-plugins/home__cards.html"
     module=_("Cards plugins")
     model=cms_models.Cards
@@ -26,17 +26,11 @@ class Info1Plugin(CMSPluginBase):
 #endregion
 
 #region				-----Infos plugins-----
-class Info1Plugin(CMSPluginBase):
+class InfoPlugin(CMSPluginBase):
     render_template=settings.TEMPLATE_DIR+"/cms-plugins/home__info.html"
-    module=_("Info1 plugins")
-    model=cms_models.Info1
-    name=_("Info1")
-
-class Info2Plugin(CMSPluginBase):
-    render_template=settings.TEMPLATE_DIR+"/cms-plugins/home__info.html"
-    module=_("Info2 plugins")
-    model=cms_models.Info2
-    name=_("Info2")
+    module=_("Info plugins")
+    model=cms_models.Info
+    name=_("Info")
 #endregion
 
 #region				-----News plugins-----

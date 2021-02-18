@@ -8,11 +8,19 @@ from parler.admin import TranslatableAdmin
 #region				-----Internal Imports-----
 from .cms_plugins import ExternalLinkPlugin
 from .cms_plugins import FooterBlock
+from .cms_plugins import IntroPlugin
+from .cms_plugins import CardsPlugin
+from .cms_plugins import InfoPlugin
+from .cms_plugins import NewsPlugin
 from .seo import UniversitySite
 #endregion
 
 plugin_pool.register_plugin(ExternalLinkPlugin)
 plugin_pool.register_plugin(FooterBlock)
+plugin_pool.register_plugin(IntroPlugin)
+plugin_pool.register_plugin(CardsPlugin)
+plugin_pool.register_plugin(InfoPlugin)
+plugin_pool.register_plugin(NewsPlugin)
 
 
 @register(UniversitySite)

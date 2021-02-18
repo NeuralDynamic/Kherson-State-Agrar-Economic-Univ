@@ -43,22 +43,7 @@ class Cards(CMSPlugin):
 #endregion
 
 #region				-----Infos plugins-----
-class Info1(CMSPlugin):
-    #region           -----Information-----
-    title=models.CharField(max_length=100, blank=True,
-    null=True, verbose_name=_("Title"))
-
-    description=models.TextField(max_length=500, blank=True,
-    null=True, verbose_name=_("Description"))
-
-    button_title=models.CharField(max_length=100,
-    blank=True, null=True, verbose_name=_("Button title"))
-
-    button_url=models.URLField(blank=True, null=True,
-    verbose_name=_("Button url"))
-    #endregion
-
-class Info2(CMSPlugin):
+class Info(CMSPlugin):
     #region           -----Information-----
     title=models.CharField(max_length=100, blank=True,
     null=True, verbose_name=_("Title"))
