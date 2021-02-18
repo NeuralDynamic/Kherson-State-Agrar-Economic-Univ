@@ -12,7 +12,7 @@ from news.models import Paper
 #endregion
 
 #region				-----Banner plugins-----
-class BannerPlugin(CMSPluginBase):
+class IntroPlugin(CMSPluginBase):
     render_template=settings.TEMPLATE_DIR+"/cms-plugins/home__banner.html"
     module=_("Banner plugins")
     model=cms_models.Banner
@@ -40,29 +40,11 @@ class CardsPlugin(CMSPluginBase):
 #endregion
 
 #region				-----Infos plugins-----
-class Info1Plugin(CMSPluginBase):
+class InfoPlugin(CMSPluginBase):
     render_template=settings.TEMPLATE_DIR+"/cms-plugins/home__info.html"
-    module=_("Info1 plugins")
-    model=cms_models.Info1
-    name=_("Info1")
-
-    #region            -----Rendering-----
-    def render(self, context, instance, placeholder):
-        context.update({"instance": instance})
-        return context
-    #endregion
-
-class Info2Plugin(CMSPluginBase):
-    render_template=settings.TEMPLATE_DIR+"/cms-plugins/home__info.html"
-    module=_("Info2 plugins")
-    model=cms_models.Info2
-    name=_("Info2")
-
-    #region            -----Rendering-----
-    def render(self, context, instance, placeholder):
-        context.update({"instance": instance})
-        return context
-    #endregion
+    module=_("Info plugins")
+    model=cms_models.Info
+    name=_("Info")
 #endregion
 
 #region				-----News plugins-----
