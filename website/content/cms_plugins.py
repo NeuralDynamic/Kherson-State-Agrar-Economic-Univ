@@ -7,6 +7,8 @@ from cms.plugin_base import CMSPluginBase
 from django.conf import settings
 from django.core.files.images import get_image_dimensions
 from django.utils.translation import ugettext as _
+
+from news.models import Paper
 #endregion
 
 #region				-----Banner plugins-----
