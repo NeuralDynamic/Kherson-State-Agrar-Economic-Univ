@@ -1,14 +1,17 @@
+{% load i18n %}
+
 <section class="home-intro-section">
-    <div class="home-intro" style="background-image: url(/assets/images/main-page-banner.png);">
+    <div class="home-intro" {% if instance.intro_image %}
+                            style="background-image: url({{ instance.intro_image.url }});"
+                            {% endif %}>
         <div class="home-intro__text">
             <h1 class="home-intro__header">
-                Херсонський державний<br>
+                {% trans 'Херсонський державний<br>
                 <span>аграрно-економічний</span><br> 
-                університет
+                університет' %}
             </h1>
             <h2 class="home-intro__subheader">
-                Готуємо фахівців для агропромислового комплексу, екології, водного господарства, будівництва та інших галузей економіки, 
-                здійснюємо фундаментальні та прикладні наукові дослідження
+                {{ instance.subheader }}
             </h2>
         </div>
     </div>

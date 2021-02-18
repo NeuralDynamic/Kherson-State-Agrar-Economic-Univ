@@ -8,32 +8,32 @@ from django.utils.translation import ugettext_lazy as _
 #region				-----Banner plugins-----
 class Banner(CMSPlugin):
     #region           -----Information-----
-    header=models.CharField(max_length=100, blank=True,
-    null=True, verbose_name=_('Header'))
-
     subheader=models.CharField(max_length=400, blank=True,
     null=True, verbose_name=_('Subheader'))
+
+    intro_image=models.ImageField(upload_to="cms", blank=True,
+    null=True, verbose_name=_("Banner image"))
     #endregion
 #endregion
 
 #region				-----Cards plugins-----
 class Cards(CMSPlugin):
     #region           -----Information-----
-    left_card_image=models.ImageField(upload_to="cms", 
+    left_card_image=models.FileField(upload_to="cms", 
     verbose_name=_("Left card image"))
     left_card_title=models.CharField(max_length=100, blank=True,
     null=True, verbose_name=_('Left card title'))
     left_card_text=models.TextField(max_length=400,
     blank=True, null=True, verbose_name=_("Left card text"))
 
-    middle_card_image=models.ImageField(upload_to="cms", 
+    middle_card_image=models.FileField(upload_to="cms", 
     verbose_name=_("Middle card image"))
     middle_card_title=models.CharField(max_length=100, blank=True,
     null=True, verbose_name=_('Middle card title'))
     middle_card_text=models.TextField(max_length=400,
     blank=True, null=True, verbose_name=_("Middle card text"))
 
-    right_card_image=models.ImageField(upload_to="cms", 
+    right_card_image=models.FileField(upload_to="cms", 
     verbose_name=_("Right card image"))
     right_card_title=models.CharField(max_length=100, blank=True,
     null=True, verbose_name=_('Right card title'))
