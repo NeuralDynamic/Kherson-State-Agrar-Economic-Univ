@@ -142,7 +142,6 @@ EXTRA_LANG_INFO = {
 
 LANGUAGES = (
     ## Customize this
-    ('ru', gettext('ru')),
     ('en', gettext('en')),
 )
 

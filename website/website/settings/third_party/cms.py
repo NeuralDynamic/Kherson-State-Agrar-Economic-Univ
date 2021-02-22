@@ -11,13 +11,6 @@ CMS_LANGUAGES = {
             'hide_untranslated': False,
         },
         {
-            'code': 'ru',
-            'name': gettext('ru'),
-            'redirect_on_fallback': True,
-            'public': True,
-            'hide_untranslated': False,
-        },
-        {
             'code': 'en',
             'name': gettext('en'),
             'redirect_on_fallback': True,
@@ -26,7 +19,7 @@ CMS_LANGUAGES = {
         },
     ],
     'default': {
-        'fallbacks': ['uk', 'ru', 'en',],
+        'fallbacks': ['uk', 'en',],
         'redirect_on_fallback': False,
         'public': True,
         'hide_untranslated': False,

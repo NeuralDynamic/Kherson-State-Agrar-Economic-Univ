@@ -28,7 +28,7 @@ class NewsFeedAdmin(TranslatableAdmin):
 
 @register(Paper)
 class PaperAdmin(TranslatableAdmin):
-    change_form_template="admin/news/change_form.html"
+    change_form_template="admin/parler/change_form.html"
 
     #region           ----Configuration-----
     ordering = ['created_at']
