@@ -17,6 +17,7 @@ from multi_email_field.fields import MultiEmailField
 from .university import Discipline
 #endregion
 
+
 class Reward(TranslatableModel):
     YEAR_CHOICES = [(r,r) for r in reversed(
     range(1950, date.today().year+1))]
@@ -30,12 +31,6 @@ class Reward(TranslatableModel):
     #region           -----Information-----
     year=IntegerField(verbose_name=_("Year"), 
     choices=YEAR_CHOICES, null=True)
-    #endregion
-
-    #region            -----Relation-----
-    staff=ManyToManyField("Staff", blank=False, 
-    verbose_name=_("Staff"),
-    related_name="rewards")
     #endregion
 
     #region            -----Metadata-----
@@ -96,6 +91,9 @@ class Staff(TranslatableModel):
     #region            -----Relation-----
     disciplines=ManyToManyField(Discipline, blank=True, null=True)
     books=ManyToManyField(Book, blank=True)
+    rewards=ManyToManyField("Reward", blank=True,
+                        verbose_name=_("Rewards"),
+                        related_name="staff_rewards")
     #endregion
 
     #region            -----Metadata-----

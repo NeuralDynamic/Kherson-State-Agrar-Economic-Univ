@@ -135,7 +135,7 @@ class StaffAdmin(TranslatableAdmin):
     fields=["photo", "first_name", 
     "second_name", "third_name", "rank",
     "phone", "emails", "ndr_theme", "books", 
-    "methodical_works","description", "disciplines",
+    "methodical_works","description", "disciplines","rewards",
     "google_scholar", "web_of_science", "researchgate",
     "scopus", "orcid"]
     #endregion
