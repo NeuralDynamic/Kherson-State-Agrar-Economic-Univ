@@ -122,7 +122,7 @@ class FacultyAdmin(TranslatableAdmin):
 @register(Reward)
 class RewardAdmin(TranslatableAdmin):
     #region           ----Configuration-----
-    fields=["title", "year", "staff"]
+    fields=["title", "year"]
     list_display=["__str__"]
     #endregion
 
