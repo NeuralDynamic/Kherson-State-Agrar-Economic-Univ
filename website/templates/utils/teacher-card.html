@@ -23,11 +23,10 @@
         </a>
         <div class="teacher-rank">
             {% if teacher.position %}
-                {{ teacher.position }}
-            {% else %}
-                {{ teacher.rank }}
-            {% endif %}, 
-            
+                {{ teacher.position }}, 
+            {% elif teacher.rank %}
+                {{ teacher.rank }}, 
+            {% endif %}
             {{ teacher.staff.rank }}
         </div>
     </div>
