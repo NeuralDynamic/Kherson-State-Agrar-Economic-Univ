@@ -50,7 +50,7 @@ class SpecialityAdmin(TranslatableAdmin):
 
 @register(Cathedra)
 class CathedraAdmin(TranslatableAdmin):
-    change_form_template="admin/university/change_form.html"
+    change_form_template="admin/parler/change_form.html"
 
     #region           ----Configuration-----
     fields=["emblem", "title", "year", "faculty",
@@ -87,11 +87,11 @@ class CathedraAdmin(TranslatableAdmin):
 
 @register(Faculty)
 class FacultyAdmin(TranslatableAdmin):
-    change_form_template="admin/university/change_form.html"
+    change_form_template="admin/parler/change_form.html"
 
     #region           ----Configuration-----
     fields=["emblem", "title", "description", 
-    "gallery", "scientific_society"]
+    "gallery", "council_of_employers", "scientific_society"]
     list_display=["__str__", "preview"]
     #endregion
 
@@ -128,10 +128,10 @@ class RewardAdmin(TranslatableAdmin):
 
 @register(Staff)
 class StaffAdmin(TranslatableAdmin):
-    change_form_template="admin/university/change_form.html"
+    change_form_template="admin/parler/change_form.html"
     
     #region           ----Configuration-----
-    list_display=["__str__", "phone", "preview"]
+    list_display=["__str__", "phone","preview"]
     fields=["photo", "first_name", 
     "second_name", "third_name", "rank",
     "phone", "emails", "ndr_theme", "books", 
