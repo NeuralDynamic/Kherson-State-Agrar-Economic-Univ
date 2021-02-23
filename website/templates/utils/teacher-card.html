@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="teacher-card__body">
-        <a href="" target="_blank" rel="noopener noreferrer">
+        <a href="{% url 'teacher' teacher_id=teacher.staff.pk %}" target="_blank" rel="noopener noreferrer">
             <h3 class="teacher-name">
                 {{ teacher.staff.second_name }} {{ teacher.staff.first_name }} {{ teacher.staff.third_name }}
             </h3>
