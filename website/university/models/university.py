@@ -6,6 +6,7 @@ CASCADE, CharField, ForeignKey, SET_NULL, ImageField,
 TextField, DateField, ManyToManyField, IntegerField, Choices)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
+from django.urls import reverse
 from gallery.models import Gallery
 from parler.models import (TranslatableModel, TranslatedFields)
 from typing import (TypeVar, List)
@@ -190,7 +191,8 @@ class Cathedra(TranslatableModel):
     #region         -----Internal Methods-----
     def get_absolute_url(self)->str:
         """@return link to model"""
-        return f"/university/cathedra/{self.pk}"
+        return reverse('cathedra', kwargs={'cathedra_id':self.pk})
+
     def searching_fields(self)->List[str]:
         """@return translated fields"""
         return ["translations__title",
@@ -245,7 +247,8 @@ class Faculty(TranslatableModel):
     #region         -----Internal Methods-----
     def get_absolute_url(self)->str:
         """@return link to model"""
-        return f"/university/faculty/{self.pk}"
+        return reverse('faculty', kwargs={'faculty_id':self.pk})
+
     def searching_fields(self)->List[str]:
         """@return translated fields"""
         return ["translations__title",
