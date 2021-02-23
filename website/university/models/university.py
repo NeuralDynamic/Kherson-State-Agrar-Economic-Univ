@@ -69,10 +69,10 @@ class Discipline(TranslatableModel):
     #endregion
 
 class Speciality(TranslatableModel):
-    EDUCATIONAL_RANKS=[(l, l) for l in 
-    [_("Junior bachelor"), _("Bachelor"), 
+    EDUCATIONAL_RANKS=[(index, l) for index, l in 
+    enumerate([_("Junior bachelor"), _("Bachelor"), 
     _("Doctor of Philosophy"),
-    _("Master"), _("PHD")]]
+    _("Master"), _("PHD")])]
 
     FORM_OF_STUDING=[(f, f) for f in 
     [_("Day"), _("Extramural"), 
@@ -82,10 +82,6 @@ class Speciality(TranslatableModel):
     translations=TranslatedFields(
     description=HTMLField(verbose_name=_("Description"),
     blank=True, default=""),
-
-    educational_level=CharField(null=True, max_length=200,
-    choices=EDUCATIONAL_RANKS, blank=False,
-    verbose_name=_("Educational Level")),
 
     form_of_studying=CharField(null=True, max_length=200,
     verbose_name=_("Form of studying"),
@@ -97,6 +93,10 @@ class Speciality(TranslatableModel):
     #endregion
 
     #region           -----Information-----
+    educational_level=IntegerField(null=True,
+    choices=EDUCATIONAL_RANKS, blank=False,
+    verbose_name=_("Educational Level"))
+
     number=CharField(verbose_name=_("Number"),
     max_length=10, blank=False, default="", unique=True)
     #endregion
