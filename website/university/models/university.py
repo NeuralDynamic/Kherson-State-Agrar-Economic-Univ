@@ -88,8 +88,7 @@ class Speciality(TranslatableModel):
     choices=FORM_OF_STUDING),
 
     title=CharField(max_length=100, blank=False,
-    verbose_name=_("Title"), default="", 
-    unique=True))
+    verbose_name=_("Title"), default=""))
     #endregion
 
     #region           -----Information-----
@@ -98,7 +97,7 @@ class Speciality(TranslatableModel):
     verbose_name=_("Educational Level"))
 
     number=CharField(verbose_name=_("Number"),
-    max_length=10, blank=False, default="", unique=True)
+    max_length=10, blank=False, default="")
     #endregion
 
     #region            -----Relation-----
