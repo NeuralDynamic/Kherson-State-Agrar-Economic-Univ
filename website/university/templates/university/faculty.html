@@ -127,7 +127,7 @@
                             <div class="prev-slide-button"></div>
                         </div>
                         <div class="slider__container">
-                            {% for teacher in faculty.scientific_society.staff %}
+                            {% for teacher in faculty.scientific_society.staff.all %}
                                 {% include 'utils/teacher-card.html' %}
                             {% endfor %}
                         </div>
