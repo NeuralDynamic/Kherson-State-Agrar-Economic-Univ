@@ -58,32 +58,27 @@
         {% endfor %}
     </div>
 </section>
-
+ 
 <section>
     <div class="section-title">
-        <h2>{% trans 'Oсвітні програми' %}</h2>
+        <h2>{% trans 'Oсвітні програми' %}</h2> 
     </div>
     <div class="faculty-specialities">
-        <table class="faculty-specialities-table">
-            <thead>
-                <th>
-                    {% trans 'Освітня програма' %}
-                </th>
-                <th>
-                    {% trans 'Спецiальнiсть' %}
-                </th>
-            </thead>
-            <tbody>
-                {% for speciality in specialities %}
-                <tr>
-                    <td>{{ speciality.educational_level }}</td>
-                    <td>{{ speciality.number }}. {{ speciality.title }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</section>   
+        <div class="faculty-specialities__container">
+            {% for education_level, specialities in specialities_dict.items %}
+                <h3>{{ education_level }}</h3>
+                <div class="faculty-specialities__list">
+                    <ul>
+                        {% for speciality in specialities %}
+                        <li>
+                            {{ speciality.number }}. {{ speciality.title }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+</section>
 
 {% if gallery %}
 <section>
