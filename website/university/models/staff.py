@@ -105,8 +105,7 @@ class Staff(TranslatableModel):
     #region         -----Internal Methods-----
     def get_absolute_url(self)->str:
         """@return link to model"""
-        # return reverse('teacher', kwargs={'teacher_id':self.pk})
-        return f'/university/teacher/{self.pk}'
+        return reverse('teacher', kwargs={'teacher_id':self.pk})
 
     def searching_fields(self)->List[str]:
         """@return translated fields"""
