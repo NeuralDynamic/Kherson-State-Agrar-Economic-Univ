@@ -1,7 +1,7 @@
 #region				-----External Imports-----
 from djangocms_text_ckeditor.fields import HTMLField
 from django.db.models import (CharField, TextField, 
-OneToOneField, DateTimeField, CASCADE, SET_NULL, 
+OneToOneField, DateTimeField, DateField, CASCADE, SET_NULL, 
 ForeignKey, ImageField, BooleanField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
@@ -101,7 +101,7 @@ class Paper(TranslatableModel):
     #endregion
 
     #region            -----Database-----
-    created_at=DateTimeField(verbose_name=_("Article date"),
+    created_at=DateField(verbose_name=_("Article date"),
     default=timezone.now)
     #endregion
 
