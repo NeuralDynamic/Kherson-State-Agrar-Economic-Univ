@@ -12,6 +12,7 @@ from .cms_plugins import IntroPlugin
 from .cms_plugins import CardsPlugin
 from .cms_plugins import InfoPlugin
 from .cms_plugins import NewsPlugin
+from .cms_plugins import ContactFormPlugin
 from .seo import UniversitySite
 #endregion
 
@@ -21,6 +22,7 @@ plugin_pool.register_plugin(IntroPlugin)
 plugin_pool.register_plugin(CardsPlugin)
 plugin_pool.register_plugin(InfoPlugin)
 plugin_pool.register_plugin(NewsPlugin)
+plugin_pool.register_plugin(ContactFormPlugin)
 
 
 @register(UniversitySite)

@@ -14,7 +14,7 @@ from news.models import Paper
 #region				-----Banner plugins-----
 class IntroPlugin(CMSPluginBase):
     render_template=settings.TEMPLATE_DIR+"/cms-plugins/home__banner.html"
-    module=_("Banner plugins")
+    module=_("Main page")
     model=cms_models.Banner
     name=_("Banner")
 
@@ -28,7 +28,7 @@ class IntroPlugin(CMSPluginBase):
 #region				-----Cards plugins-----
 class CardsPlugin(CMSPluginBase):
     render_template=settings.TEMPLATE_DIR+"/cms-plugins/home__cards.html"
-    module=_("Cards plugins")
+    module=_("Main page")
     model=cms_models.Cards
     name=_("Cards")
 
@@ -42,7 +42,7 @@ class CardsPlugin(CMSPluginBase):
 #region				-----Infos plugins-----
 class InfoPlugin(CMSPluginBase):
     render_template=settings.TEMPLATE_DIR+"/cms-plugins/home__info.html"
-    module=_("Info plugins")
+    module=_("Main page")
     model=cms_models.Info
     name=_("Info")
 
@@ -56,7 +56,7 @@ class InfoPlugin(CMSPluginBase):
 #region				-----News plugins-----
 class NewsPlugin(CMSPluginBase):
     render_template=settings.TEMPLATE_DIR+"/cms-plugins/home__news.html"
-    module=_("News plugins")
+    module=_("Main page")
     model=cms_models.News
     name=_("News")
 
@@ -69,6 +69,14 @@ class NewsPlugin(CMSPluginBase):
         return context
     #endregion
 #endregion
+
+#region				-----Contact form plugin-----
+class ContactFormPlugin(CMSPluginBase):
+    render_template=settings.TEMPLATE_DIR+"/cms-plugins/home_contact-form.html"
+    module=_("Main page")
+    name=_("Contact Form")
+#endregion
+
 
 #region				-----Utils plugins-----
 class ExternalLinkPlugin(CMSPluginBase):
