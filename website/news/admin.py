@@ -33,11 +33,11 @@ class PaperAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     ordering = ['created_at']
     fields=["header", "title", "primary", "story", 
-    "news_feed", "gallery", "category"]
+    "news_feed", "gallery", "category", "created_at"]
     list_display=["__str__", "_news_feed", 
-    "_gallery", "preview", "category", "primary"]
+    "_gallery", "preview", "category", "primary","created_at"]
     list_filter=["news_feed__translations__title",
-    "gallery__translations__title", "category", "primary"]
+    "gallery__translations__title", "category", "primary","created_at"]
     #endregion
 
     #region         -----Internal Methods-----
