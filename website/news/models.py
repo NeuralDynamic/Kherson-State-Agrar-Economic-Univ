@@ -2,9 +2,10 @@
 from djangocms_text_ckeditor.fields import HTMLField
 from django.db.models import (CharField, TextField, 
 OneToOneField, DateTimeField, CASCADE, SET_NULL, 
-ForeignKey, ImageField)
+ForeignKey, ImageField, BooleanField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
+from django.urls import reverse
 from parler.models import (TranslatableModel, TranslatedFields)
 from gallery.models import Gallery
 from typing import (TypeVar, List)
@@ -83,7 +84,8 @@ class Paper(TranslatableModel):
     header=ImageField(verbose_name=_("Header"), 
     upload_to="headers", blank=False, 
     default="")
-    
+    primary=BooleanField(verbose_name=_("Primary article"),
+    default=False)
     #endregion
 
     #region           -----Translation-----
@@ -92,7 +94,10 @@ class Paper(TranslatableModel):
     blank=False),
     
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False))
+    max_length=100, blank=False),
+    
+    authors=CharField(verbose_name=_("Authors"),
+    max_length=200, blank=False))
     #endregion
 
     #region            -----Database-----
@@ -122,7 +127,8 @@ class Paper(TranslatableModel):
 
     #region         -----Internal Methods-----
     def get_absolute_url(self)->str:
-        return f"/news/article/{self.pk}"
+        return reverse('article', kwargs={'paper_id':self.pk})
+
     def searching_fields(self)->List[str]:
         """@return translated fields"""
         return ["translations__title",

@@ -62,7 +62,10 @@ class NewsPlugin(CMSPluginBase):
 
     #region            -----Rendering-----
     def render(self, context, instance, placeholder):
-        context.update({"instance": instance})
+        articles = Paper.objects\
+            .prefetch_related('category')\
+            .filter(primary=True).all()
+        context.update({"articles": articles})
         return context
     #endregion
 #endregion
