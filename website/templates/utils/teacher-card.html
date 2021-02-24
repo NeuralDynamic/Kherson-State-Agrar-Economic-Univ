@@ -1,6 +1,6 @@
 <div class="card teacher-card linked-card">
     <div class="teacher-card__preview">
-        <img class="teacher-card__image" {% if teacher.staff.photo %}src="{{ teacher.staff.photo.url}}"{% endif %} 
+        <img class="teacher-card__image" {% if teacher.staff.photo %}src="{{ teacher.staff.photo.url }}"{% endif %} 
             alt="{{ teacher.staff.second_name }} {{ teacher.staff.first_name }} {{ teacher.staff.third_name }}" />
         <div class="teacher-card__contacts">
             {% if teacher.staff.phone %}
