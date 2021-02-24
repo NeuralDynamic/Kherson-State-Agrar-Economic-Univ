@@ -101,7 +101,8 @@ class Paper(TranslatableModel):
     #endregion
 
     #region            -----Database-----
-    created_at=DateTimeField(default=timezone.now)
+    created_at=DateTimeField(verbose_name=_("Article date"),
+    default=timezone.now)
     #endregion
 
     #region            -----Relation-----
