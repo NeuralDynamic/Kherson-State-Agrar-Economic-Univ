@@ -1,0 +1,37 @@
+{% load i18n %}
+
+<section class="main-section">
+    <div class="contact-form">
+        <div class="info-block">
+            <div class="contact-form__image" style="background-image: url(/assets/images/svg/letter.svg);"></div>
+            <h2 class="contact-form__title">{% trans 'Write to us' %}!</h2>
+            <p>{% trans 'If you have any questions, fill out the form on the right and we will be happy to answer them shortly.' %}</p>
+            <small class="contact-form__tip">* - {% trans 'required fields' %}</small>
+        </div>
+        <div class="form">
+            <div class="row">
+                <div class="column">
+                    <label for="contact-form-name">{% trans 'Yours name' %}*</label>
+                    <input type="text" placeholder="Николай" id="contact-form-name">
+                </div>
+                <div class="column">
+                    <label for="contact-form-email">{% trans 'Yours E-mail' %}*</label>
+                    <input type="text" placeholder="example@gmail.com" id="contact-form-email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="contact-form-message">{% trans 'Message text*</label>
+                    <textarea name="message" id="contact-form-message" rows="10" placeholder="{% trans 'Message text' %}"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <button class="button filled">
+                        {% trans 'Send' %}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
