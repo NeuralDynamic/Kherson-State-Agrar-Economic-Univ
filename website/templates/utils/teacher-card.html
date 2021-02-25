@@ -1,33 +1,62 @@
 <div class="card teacher-card linked-card">
-    <div class="teacher-card__preview">
-        <img class="teacher-card__image" {% if teacher.staff.photo %}src="{{ teacher.staff.photo.url }}"{% endif %} 
-            alt="{{ teacher.staff.second_name }} {{ teacher.staff.first_name }} {{ teacher.staff.third_name }}" />
-        <div class="teacher-card__contacts">
-            {% if teacher.staff.phone %}
-            <a href="tel:{{ teacher.staff.phone }}" class="teacher-card__phone-link">
-                {{ teacher.staff.phone }}
-            </a>
-            {% endif %}
-            {% if teacher.staff.emails %}
-            <a href="mail:{{ teacher.staff.emails.0 }}" class="teacher-card__email-link">
-                {{ teacher.staff.emails.0 }}
-            </a>
-            {% endif %}
+    {% if teacher.staff %}
+        <div class="teacher-card__preview">
+            <img class="teacher-card__image" {% if teacher.staff.photo %}src="{{ teacher.staff.photo.url }}"{% endif %} 
+                alt="{{ teacher.staff.second_name }} {{ teacher.staff.first_name }} {{ teacher.staff.third_name }}" />
+            <div class="teacher-card__contacts">
+                {% if teacher.staff.phone %}
+                <a href="tel:{{ teacher.staff.phone }}" class="teacher-card__phone-link">
+                    {{ teacher.staff.phone }}
+                </a>
+                {% endif %}
+                {% if teacher.staff.emails %}
+                <a href="mail:{{ teacher.staff.emails.0 }}" class="teacher-card__email-link">
+                    {{ teacher.staff.emails.0 }}
+                </a>
+                {% endif %}
+            </div>
         </div>
-    </div>
-    <div class="teacher-card__body">
-        <a href="{{ teacher.staff.get_absolute_url }}" target="_blank" rel="noopener noreferrer">
-            <h3 class="teacher-name">
-                {{ teacher.staff.second_name }} {{ teacher.staff.first_name }} {{ teacher.staff.third_name }}
-            </h3>
-        </a>
-        <div class="teacher-rank">
-            {% if teacher.position %}
-                {{ teacher.position }}, 
-            {% elif teacher.rank %}
-                {{ teacher.rank }}, 
-            {% endif %}
-            {{ teacher.staff.rank }}
+        <div class="teacher-card__body">
+            <a href="{{ teacher.staff.get_absolute_url }}" target="_blank" rel="noopener noreferrer">
+                <h3 class="teacher-name">
+                    {{ teacher.staff.second_name }} {{ teacher.staff.first_name }} {{ teacher.staff.third_name }}
+                </h3>
+            </a>
+            <div class="teacher-rank">
+                {% if teacher.position %}
+                    {{ teacher.position }}, 
+                {% elif teacher.rank %}
+                    {{ teacher.rank }}, 
+                {% endif %}
+                {{ teacher.staff.rank }}
+            </div>
         </div>
-    </div>
+    {% else %}
+        <div class="teacher-card__preview">
+            <img class="teacher-card__image" {% if teacher.photo %}src="{{ teacher.photo.url }}"{% endif %} 
+                alt="{{ teacher.second_name }} {{ teacher.first_name }} {{ teacher.third_name }}" />
+            <div class="teacher-card__contacts">
+                {% if teacher.phone %}
+                <a href="tel:{{ teacher.phone }}" class="teacher-card__phone-link">
+                    {{ teacher.phone }}
+                </a>
+                {% endif %}
+                {% if teacher.emails %}
+                <a href="mail:{{ teacher.emails.0 }}" class="teacher-card__email-link">
+                    {{ teacher.emails.0 }}
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="teacher-card__body">
+            <a href="{{ teacher.get_absolute_url }}" target="_blank" rel="noopener noreferrer">
+                <h3 class="teacher-name">
+                    {{ teacher.second_name }} {{ teacher.first_name }} {{ teacher.third_name }}
+                </h3>
+            </a>
+            <div class="teacher-rank">
+                {{ teacher.rank }}
+            </div>
+        </div>
+    {% endif %}
 </div>
