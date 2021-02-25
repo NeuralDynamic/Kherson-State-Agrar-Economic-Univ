@@ -140,12 +140,14 @@
                     {{ faculty.scientific_society.description }}
                 </div>
                 <div class="faculty-scientific-society__contacts">
-                    <a href="tel:{{ scientific_society.phone }}" class="phone-link">
+                    <a href="tel:{{ faculty.scientific_society.phone }}" class="phone-link">
                         {{ faculty.scientific_society.phone }}
                     </a>
-                    <a href="mailto:{{ scientific_society.emails.first }}" class="email-link">
-                        {{ faculty.scientific_society.emails.first }}
+                    {% if faculty.scientific_society.emails %}
+                    <a href="mailto:{{ faculty.scientific_society.emails.0 }}" class="email-link">
+                        {{ faculty.scientific_society.emails.0 }}
                     </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
