@@ -331,7 +331,7 @@ msgstr ""
 
 #: templates/cms-plugins/home_contact-form.html:7
 msgid "Write to us"
-msgstr "Напишить нам"
+msgstr "Напишіть нам"
 
 #: templates/cms-plugins/home_contact-form.html:8
 msgid ""
