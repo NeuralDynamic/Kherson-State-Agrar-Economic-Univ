@@ -33,7 +33,7 @@
             </div>
         </div>
     {% else %}
-        <!-- faculty/cathedra staff card -->
+        <!-- staff card -->
         <div class="teacher-card__preview">
             <img class="teacher-card__image" {% if teacher.photo %}src="{{ teacher.photo.url }}"{% endif %} 
                 alt="{{ teacher.second_name }} {{ teacher.first_name }} {{ teacher.third_name }}" />
