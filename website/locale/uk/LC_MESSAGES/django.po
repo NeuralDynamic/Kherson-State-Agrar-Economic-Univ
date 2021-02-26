@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-26 16:26+0200\n"
+"POT-Creation-Date: 2021-02-26 19:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -231,11 +231,11 @@ msgstr "Зображення"
 
 #: gallery/templates/gallery/catalog.html:5
 #: gallery/templates/gallery/catalog.html:11
-#: gallery/templates/gallery/gallery.html:28
+#: gallery/templates/gallery/gallery.html:24
 msgid "Галерея"
 msgstr ""
 
-#: gallery/templates/gallery/gallery.html:22
+#: gallery/templates/gallery/gallery.html:18
 msgid "Головна"
 msgstr ""
 
