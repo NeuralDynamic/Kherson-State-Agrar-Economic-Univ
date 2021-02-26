@@ -124,6 +124,7 @@ class Paper(TranslatableModel):
     class Meta(object):
         verbose_name_plural=_("Papers")
         verbose_name=_("Paper")
+        ordering = ['-created_at']
     #endregion
 
     #region         -----Internal Methods-----
