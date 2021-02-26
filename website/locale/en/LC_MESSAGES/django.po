@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-26 16:23+0200\n"
+"POT-Creation-Date: 2021-02-26 16:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -177,7 +177,7 @@ msgstr ""
 msgid "Contact Form"
 msgstr ""
 
-#: content/cms_plugins.py:83
+#: content/cms_plugins.py:83 news/models.py:181
 msgid "Announcements"
 msgstr ""
 
@@ -302,6 +302,10 @@ msgstr ""
 
 #: news/models.py:175
 msgid "Announcement date"
+msgstr ""
+
+#: news/models.py:182
+msgid "Announcement"
 msgstr ""
 
 #: news/templates/news/news.html:5
