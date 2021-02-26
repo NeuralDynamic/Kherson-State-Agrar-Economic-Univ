@@ -169,8 +169,7 @@ class Announcement(TranslatableModel):
 
     #region            -----Database-----
     image=ImageField(verbose_name=_("Image"), 
-    upload_to="", blank=True,
-    default="announcements")
+    upload_to="announcements", blank=True)
     attach=URLField(verbose_name=_("Attach"),
     blank=True, null=True)
     date=DateField(verbose_name=_("Announcement date"),
