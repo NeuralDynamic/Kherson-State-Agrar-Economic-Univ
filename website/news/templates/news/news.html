@@ -7,11 +7,11 @@
 {% block content %}
 
 <section class="news-intro">
-    <h1 class="news-intro__title">
-        {% trans 'Новости ХДАЕУ' %}
-    </h1>
-</section>
-<section class="news-slider">
+    <div class="section-title">
+        <h1>
+            {% trans 'Новини' %} {% trans 'ХДАЕУ' %}
+        </h1>
+    </div>
     <div class="slider slider-radio">
         <div class="slider__container">
             {% for article in last_articles %}
