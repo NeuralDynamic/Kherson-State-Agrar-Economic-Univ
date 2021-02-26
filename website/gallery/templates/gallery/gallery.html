@@ -10,47 +10,44 @@
 
 {% block content %}
 
-<section class="gallery-intro">
-    <h1 class="gallery-intro__title">
-        {{ gallery.title }}
-    </h1>
-</section>
-<div class="gallery-single-header">
-    <div class="bread-crumbs">
-        <ul>
-            <li>
-                <a href="/">{% trans 'Головна' %}</a>
-            </li>
-            <li>
-                /
-            </li>
-            <li>
-                <a href="{% url 'galleries' %}">{% trans 'Галерея' %}</a>
-            </li>
-            <li>
-                /
-            </li>
-            <li>
-                <p>{{ gallery.title }}</p>
-            </li>
-        </ul>
+<section>
+    <div class="gallery-single-header">
+        <div class="bread-crumbs">
+            <ul>
+                <li>
+                    <a href="/">{% trans 'Головна' %}</a>
+                </li>
+                <li>
+                    /
+                </li>
+                <li>
+                    <a href="{% url 'galleries' %}">{% trans 'Галерея' %}</a>
+                </li>
+                <li>
+                    /
+                </li>
+                <li>
+                    <p>{{ gallery.title }}</p>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
-<div id="gallery-list" class="gallery-list">
-    {% for image in images %}
-    <a href="{{ image.large_image.url }}" aria-label="ksau-gallery-image">
-        <picture>
-            <source srcset="{{ image.large_image.url }}" media="(max-height: 1440px) and (orientation: landscape)">
-            <source srcset="{{ image.large_image.url }}" media="(max-width: 1440px) and (orientation: portrait)">
-            <source srcset="{{ image.medium_image.url }}" media="(max-height: 1000px) and (orientation: landscape)">
-            <source srcset="{{ image.medium_image.url }}" media="(max-width: 1000px) and (orientation: portrait)">
-            <source srcset="{{ image.small_image.url }}" media="(max-height: 700px) and (orientation: landscape)">
-            <source srcset="{{ image.small_image.url }}" media="(max-width: 700px) and (orientation: portrait)">
-            <img width="1280" height="720" srcset="{{ image.large_image.url }}" alt="{{ image.alt }}" aria-label="{{ image.alt }}">
-        </picture>
-    </a>
-    {% endfor %}
-</div>
+    <div id="gallery-list" class="gallery-list">
+        {% for image in images %}
+        <a href="{{ image.large_image.url }}" aria-label="ksau-gallery-image">
+            <picture>
+                <source srcset="{{ image.large_image.url }}" media="(max-height: 1440px) and (orientation: landscape)">
+                <source srcset="{{ image.large_image.url }}" media="(max-width: 1440px) and (orientation: portrait)">
+                <source srcset="{{ image.medium_image.url }}" media="(max-height: 1000px) and (orientation: landscape)">
+                <source srcset="{{ image.medium_image.url }}" media="(max-width: 1000px) and (orientation: portrait)">
+                <source srcset="{{ image.small_image.url }}" media="(max-height: 700px) and (orientation: landscape)">
+                <source srcset="{{ image.small_image.url }}" media="(max-width: 700px) and (orientation: portrait)">
+                <img width="1280" height="720" srcset="{{ image.large_image.url }}" alt="{{ image.alt }}" aria-label="{{ image.alt }}">
+            </picture>
+        </a>
+        {% endfor %}
+    </div>    
+</section>
 
 
 {% endblock %}
