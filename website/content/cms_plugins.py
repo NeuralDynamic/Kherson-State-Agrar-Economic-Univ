@@ -8,7 +8,7 @@ from django.conf import settings
 from django.core.files.images import get_image_dimensions
 from django.utils.translation import ugettext as _
 
-from news.models import Paper
+from news.models import Paper, Announcement
 #endregion
 
 #region				-----Banner plugins-----
@@ -81,6 +81,13 @@ class AnnouncementsPlugin(CMSPluginBase):
     render_template=settings.TEMPLATE_DIR+"/cms-plugins/home__announcements.html"
     module=_("Main page")
     name=_("Announcements")
+
+    #region            -----Rendering-----
+    def render(self, context, instance, placeholder):
+        announcements = Announcement.objects.all()
+        context.update({"announcements": announcements})
+        return context
+    #endregion
 
 #region				-----Utils plugins-----
 class ExternalLinkPlugin(CMSPluginBase):
