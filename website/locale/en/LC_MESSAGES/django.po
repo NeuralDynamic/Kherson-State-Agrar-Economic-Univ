@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-25 14:36+0200\n"
+"POT-Creation-Date: 2021-02-26 16:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,16 +68,18 @@ msgstr ""
 
 #: content/cms_models.py:49 content/cms_models.py:66 gallery/models.py:25
 #: library/models.py:23 news/models.py:26 news/models.py:49 news/models.py:96
-#: university/models/staff.py:28 university/models/university.py:54
-#: university/models/university.py:91 university/models/university.py:142
-#: university/models/university.py:215 university/models/utils.py:86
+#: news/models.py:163 university/models/staff.py:28
+#: university/models/university.py:54 university/models/university.py:91
+#: university/models/university.py:142 university/models/university.py:215
+#: university/models/utils.py:86
 msgid "Title"
 msgstr ""
 
 #: content/cms_models.py:52 gallery/models.py:22 gallery/models.py:58
-#: library/models.py:17 news/models.py:46 university/models/staff.py:67
-#: university/models/university.py:23 university/models/university.py:83
-#: university/models/university.py:138 university/models/university.py:211
+#: library/models.py:17 news/models.py:46 news/models.py:165
+#: university/models/staff.py:67 university/models/university.py:23
+#: university/models/university.py:83 university/models/university.py:138
+#: university/models/university.py:211
 msgid "Description"
 msgstr ""
 
@@ -151,7 +153,7 @@ msgstr ""
 
 #: content/cms_plugins.py:17 content/cms_plugins.py:31
 #: content/cms_plugins.py:45 content/cms_plugins.py:59
-#: content/cms_plugins.py:76
+#: content/cms_plugins.py:76 content/cms_plugins.py:82
 msgid "Main page"
 msgstr ""
 
@@ -175,19 +177,23 @@ msgstr ""
 msgid "Contact Form"
 msgstr ""
 
-#: content/cms_plugins.py:85
+#: content/cms_plugins.py:83
+msgid "Announcements"
+msgstr ""
+
+#: content/cms_plugins.py:96
 msgid "Utils plugins"
 msgstr ""
 
-#: content/cms_plugins.py:87
+#: content/cms_plugins.py:98
 msgid "External Link"
 msgstr ""
 
-#: content/cms_plugins.py:101
+#: content/cms_plugins.py:112
 msgid "Base blocks"
 msgstr ""
 
-#: content/cms_plugins.py:103
+#: content/cms_plugins.py:114
 msgid "Footer Block"
 msgstr ""
 
@@ -216,7 +222,7 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: gallery/models.py:64 gallery/models.py:86
+#: gallery/models.py:64 gallery/models.py:86 news/models.py:171
 msgid "Image"
 msgstr ""
 
@@ -288,6 +294,14 @@ msgstr ""
 
 #: news/models.py:126
 msgid "Paper"
+msgstr ""
+
+#: news/models.py:173
+msgid "Attach"
+msgstr ""
+
+#: news/models.py:175
+msgid "Announcement date"
 msgstr ""
 
 #: news/templates/news/news.html:5
@@ -669,15 +683,15 @@ msgstr "Catalog of disciplines"
 msgid "Матерiально технiчна база"
 msgstr "Material and technical base"
 
-#: university/templates/university/cathedra.html:92
+#: university/templates/university/cathedra.html:93
 msgid "Соцiальна активнiсть і профорiєнтація"
 msgstr "Social activity and career guidance"
 
-#: university/templates/university/cathedra.html:102
+#: university/templates/university/cathedra.html:104
 msgid "Iсторiя кафедри"
 msgstr "Cathedra history"
 
-#: university/templates/university/cathedra.html:114
+#: university/templates/university/cathedra.html:117
 msgid "Контакти кафедри"
 msgstr "Cathedra contacts"
 
@@ -703,7 +717,9 @@ msgstr "Faculty Employers' Council"
 
 #: university/templates/university/faculty.html:111
 msgid "Наукове товариство студентів, аспірантів, докторантів і молодих вчених"
-msgstr "Scientific society of students, graduate students, doctoral students and young scientists"
+msgstr ""
+"Scientific society of students, graduate students, doctoral students and "
+"young scientists"
 
 #: university/templates/university/teacher.html:48
 msgid "Дисципліни"

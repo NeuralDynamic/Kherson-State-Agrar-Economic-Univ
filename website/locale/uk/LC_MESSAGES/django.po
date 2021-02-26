@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-25 13:36+0200\n"
+"POT-Creation-Date: 2021-02-26 16:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,16 +71,18 @@ msgstr ""
 
 #: content/cms_models.py:49 content/cms_models.py:66 gallery/models.py:25
 #: library/models.py:23 news/models.py:26 news/models.py:49 news/models.py:96
-#: university/models/staff.py:28 university/models/university.py:54
-#: university/models/university.py:91 university/models/university.py:142
-#: university/models/university.py:215 university/models/utils.py:86
+#: news/models.py:163 university/models/staff.py:28
+#: university/models/university.py:54 university/models/university.py:91
+#: university/models/university.py:142 university/models/university.py:215
+#: university/models/utils.py:86
 msgid "Title"
 msgstr "Назва"
 
 #: content/cms_models.py:52 gallery/models.py:22 gallery/models.py:58
-#: library/models.py:17 news/models.py:46 university/models/staff.py:67
-#: university/models/university.py:23 university/models/university.py:83
-#: university/models/university.py:138 university/models/university.py:211
+#: library/models.py:17 news/models.py:46 news/models.py:165
+#: university/models/staff.py:67 university/models/university.py:23
+#: university/models/university.py:83 university/models/university.py:138
+#: university/models/university.py:211
 msgid "Description"
 msgstr "Опис"
 
@@ -154,7 +156,7 @@ msgstr ""
 
 #: content/cms_plugins.py:17 content/cms_plugins.py:31
 #: content/cms_plugins.py:45 content/cms_plugins.py:59
-#: content/cms_plugins.py:76
+#: content/cms_plugins.py:76 content/cms_plugins.py:82
 msgid "Main page"
 msgstr "Головна"
 
@@ -178,19 +180,23 @@ msgstr "Новини"
 msgid "Contact Form"
 msgstr "контактна форма"
 
-#: content/cms_plugins.py:85
+#: content/cms_plugins.py:83
+msgid "Announcements"
+msgstr "Оголошення"
+
+#: content/cms_plugins.py:96
 msgid "Utils plugins"
 msgstr "Додаткові плагіни"
 
-#: content/cms_plugins.py:87
+#: content/cms_plugins.py:98
 msgid "External Link"
 msgstr "Зовнішнє посилання"
 
-#: content/cms_plugins.py:101
+#: content/cms_plugins.py:112
 msgid "Base blocks"
 msgstr "Головні блоки"
 
-#: content/cms_plugins.py:103
+#: content/cms_plugins.py:114
 msgid "Footer Block"
 msgstr "Блок Footer"
 
@@ -219,7 +225,7 @@ msgstr "Галерея"
 msgid "Images"
 msgstr "Зображення"
 
-#: gallery/models.py:64 gallery/models.py:86
+#: gallery/models.py:64 gallery/models.py:86 news/models.py:171
 msgid "Image"
 msgstr "Зображення"
 
@@ -293,6 +299,14 @@ msgstr "Дата статті"
 msgid "Paper"
 msgstr "Стаття"
 
+#: news/models.py:173
+msgid "Attach"
+msgstr "Додаток"
+
+#: news/models.py:175
+msgid "Announcement date"
+msgstr "Дата оголошення"
+
 #: news/templates/news/news.html:5
 msgid "Новости"
 msgstr "Новини"
@@ -337,7 +351,9 @@ msgstr "Напишіть нам"
 msgid ""
 "If you have any questions, fill out the form on the right and we will be "
 "happy to answer them shortly."
-msgstr "Якщо у вас виникли запитання, заповніть форму праворуч, і ми із задоволенням відповімо на них найближчим часом."
+msgstr ""
+"Якщо у вас виникли запитання, заповніть форму праворуч, і ми із задоволенням "
+"відповімо на них найближчим часом."
 
 #: templates/cms-plugins/home_contact-form.html:9
 msgid "required fields"
@@ -634,7 +650,9 @@ msgid ""
 "Additional field with local name \n"
 "    for best admin usage experience. Will be filled \n"
 "    from title field, if  field empty."
-msgstr "Додаткове поле, яке буде видно лишо в адмін панелі для більш зручної навігації"
+msgstr ""
+"Додаткове поле, яке буде видно лишо в адмін панелі для більш зручної "
+"навігації"
 
 #: university/models/utils.py:83
 msgid "Content"
@@ -672,15 +690,15 @@ msgstr ""
 msgid "Матерiально технiчна база"
 msgstr ""
 
-#: university/templates/university/cathedra.html:92
-msgid "Соцiальна активнiсть профорiєнтація"
+#: university/templates/university/cathedra.html:93
+msgid "Соцiальна активнiсть і профорiєнтація"
 msgstr ""
 
-#: university/templates/university/cathedra.html:102
+#: university/templates/university/cathedra.html:104
 msgid "Iсторiя кафедри"
 msgstr ""
 
-#: university/templates/university/cathedra.html:114
+#: university/templates/university/cathedra.html:117
 msgid "Контакти кафедри"
 msgstr ""
 
@@ -701,7 +719,7 @@ msgid "Життя факультету"
 msgstr ""
 
 #: university/templates/university/faculty.html:97
-msgid "Рада роботодавців агрономічного факультету"
+msgid "Рада роботодавців факультету"
 msgstr ""
 
 #: university/templates/university/faculty.html:111
