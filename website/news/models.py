@@ -2,7 +2,7 @@
 from djangocms_text_ckeditor.fields import HTMLField
 from django.db.models import (CharField, TextField, 
 OneToOneField, DateTimeField, DateField, CASCADE, SET_NULL, 
-ForeignKey, ImageField, BooleanField)
+ForeignKey, ImageField, BooleanField,URLField)
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from django.urls import reverse
@@ -156,3 +156,26 @@ class Paper(TranslatableModel):
         """@return image url"""
         return self.title
     #endregion
+
+class Announcement(TranslatableModel):
+    #region           -----Translation-----
+    translations=TranslatedFields(
+        title=CharField(verbose_name=_("Title"),
+            max_length=100, blank=False),
+        description=HTMLField(verbose_name=_("Description"),
+            blank=True, default=""),
+    )
+    #endregion
+
+    #region            -----Database-----
+    image=ImageField(verbose_name=_("Image"), 
+    upload_to="", blank=True,
+    default="announcements")
+    attach=URLField(verbose_name=_("Attach"),
+    blank=True, null=True)
+    date=DateField(verbose_name=_("Announcement date"),
+    default=timezone.now)
+    #endregion
+
+    def __str__(self)->str:
+        return self.title

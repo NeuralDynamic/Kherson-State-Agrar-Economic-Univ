@@ -8,7 +8,7 @@ from typing import (Dict, TypeVar)
 #endregion
 
 #region				-----Internal Imports-----
-from .models import NewsFeed, Paper, Categories
+from .models import NewsFeed, Paper, Categories, Announcement
 #endregion
 
 #region				   -----Type Hints-----
@@ -25,6 +25,14 @@ class NewsFeedAdmin(TranslatableAdmin):
     readonly_fields=["_papers"]
     list_display=["__str__"]
     #endregion
+
+@register(Announcement)
+class AnnouncementAdmin(TranslatableAdmin):
+    ordering = ['date']
+    fields = ["__all__"]
+    list_display=["__str__", "date"]
+    list_filter = ['title','date']
+
 
 @register(Paper)
 class PaperAdmin(TranslatableAdmin):

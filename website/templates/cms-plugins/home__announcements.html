@@ -4,24 +4,24 @@
             <div class="prev-slide-button"></div>
         </div>
         <div class="slider__container">
-            {% for new in news %}
+            {% for announcement in announcements %}
                 <div class="card popup-card">
                     <div class="card-body">
-                        {% if new.image %}
+                        {% if announcement.image %}
                         <a href="{{ new.image.url }}" target="_blank" rel="noopener noreferrer">
-                            <h3 class="title">{{ new.title }}</h3>
+                            <h3 class="title">{{ announcement.title }}</h3>
                         </a>
-                        {% elif new.attach %}
-                        <a href="{{ new.attach }}" target="_blank" rel="noopener noreferrer">
-                            <h3 class="title">{{ new.title }}</h3>
+                        {% elif announcement.attach %}
+                        <a href="{{ announcement.attach }}" target="_blank" rel="noopener noreferrer">
+                            <h3 class="title">{{ announcement.title }}</h3>
                         </a>
                         {% else %}
-                        <h3 class="title">{{ new.title }}</h3>
+                        <h3 class="title">{{ announcement.title }}</h3>
                         {% endif %}
                         <p class="description">
-                            {{ new.description }}
+                            {{ announcement.description }}
                         </p>
-                        <p class="date">{{ new.date|date:'d M Y' }}</p>
+                        <p class="date">{{ announcement.date|date:'d M Y' }}</p>
                     </div>
                 </div>
             {% endfor %}

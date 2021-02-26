@@ -13,9 +13,14 @@
 
 .faculty-header__icon{
     position: absolute;
-    height: 100px;
-    width: 100px;
+    height: 140px;
+    width: 140px;
     right: 50px;
+
+    @include breakpoint($desktop-small){
+        height: 100px;
+        width: 100px;
+    }
 
     @include breakpoint($mobile-bp){
         position: relative;

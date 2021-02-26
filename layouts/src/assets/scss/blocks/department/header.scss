@@ -7,11 +7,18 @@
 
 .department-header__icon{
     margin-right: 15px;
-    height: 90px;
-    width: 90px;
+    height: 140px;
+    width: 140px;
+
+    @include breakpoint($desktop-small){
+        height: 100px;
+        width: 100px;
+    }
     
     @include breakpoint($mobile-bp){
         margin: auto 10px auto 0;
+        height: 70px;
+        width: 70px;
     }
 
     img{
