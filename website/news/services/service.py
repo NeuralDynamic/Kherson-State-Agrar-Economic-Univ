@@ -10,10 +10,9 @@ from ..models import Paper, NewsFeed
 class PaperService(object):
     def paginator(self, page_num: int)-> object:
         try:
-            context= dict()
 
             articles = Paper.objects.all()
-            last_articles = articles[:5]
+            last_articles = articles.filter(primary=True).all()
 
             paginator = Paginator(articles, 9)
 
