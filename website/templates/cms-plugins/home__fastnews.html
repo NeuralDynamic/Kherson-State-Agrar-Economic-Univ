@@ -1,0 +1,33 @@
+<section class="main-section">
+    <div class="slider slider-scroller popups-scroller">
+        <div class="slider__prevSlideButton">
+            <div class="prev-slide-button"></div>
+        </div>
+        <div class="slider__container">
+            {% for new in news %}
+                <div class="card popup-card">
+                    <div class="card-body">
+                        {% if new.image %}
+                        <a href="{{ new.image.url }}" target="_blank" rel="noopener noreferrer">
+                            <h3 class="title">{{ new.title }}</h3>
+                        </a>
+                        {% elif new.attach %}
+                        <a href="{{ new.attach }}" target="_blank" rel="noopener noreferrer">
+                            <h3 class="title">{{ new.title }}</h3>
+                        </a>
+                        {% else %}
+                        <h3 class="title">{{ new.title }}</h3>
+                        {% endif %}
+                        <p class="description">
+                            {{ new.description }}
+                        </p>
+                        <p class="date">{{ new.date|date:'d M Y' }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="slider__nextSlideButton">
+            <div class="next-slide-button"></div>
+        </div>
+    </div>
+</section>

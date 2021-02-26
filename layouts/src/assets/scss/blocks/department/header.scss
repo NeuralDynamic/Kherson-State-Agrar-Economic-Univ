@@ -1,12 +1,18 @@
 .department-header{
     display: flex;
     align-items: center;
+    padding-top: 40px;
+    position: relative;
 }
 
 .department-header__icon{
     margin-right: 15px;
     height: 90px;
     width: 90px;
+    
+    @include breakpoint($mobile-bp){
+        margin: auto 10px auto 0;
+    }
 
     img{
         width: 100%;
@@ -15,7 +21,7 @@
 }
 
 .department-header__content{
-    width: calc(100% - 120px);
+    width: calc(100% - 100px);
 
     .department-header__faculty-link{
         display: flex;
@@ -25,11 +31,23 @@
         a{
             font-size: 20px;
         }
+
+        @include breakpoint($mobile-bp){
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: fit-content;
+        }
     }
 
     .department-data__title{
         font-size: 28px;
         text-align: end;
         color: #197326;
+
+        @include breakpoint($mobile-bp){
+            font-size: 24px;
+        }
     }
 }

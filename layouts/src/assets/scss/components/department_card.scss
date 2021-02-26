@@ -21,16 +21,34 @@
         transform: scale(1.05);
     }
 
+    @include breakpoint($mobile-bp){
+        &::before{
+            width: 6px;
+        }
+
+        &:hover{
+            transform: none;
+        }
+    }
+
     .department-card__body{
         padding: 30px;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
 
+        @include breakpoint($mobile-bp){
+            padding: 15px;
+        }
+
         .department-card__data{
             display: flex;
             align-items: center;
             width: 100%;
+
+            @include breakpoint($mobile-bp){
+                margin-bottom: 15px;
+            }
         }
 
         .department-card__image{

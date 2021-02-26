@@ -50,6 +50,12 @@
         background-size: cover;
         margin-right: 40px;
 
+        a{
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+
         @include breakpoint($desktop-small) {
             margin-right: auto;
         }

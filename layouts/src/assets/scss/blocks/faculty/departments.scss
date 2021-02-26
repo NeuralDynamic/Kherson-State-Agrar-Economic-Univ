@@ -7,7 +7,9 @@
         flex: 0 1 45%;
 
         @include breakpoint($mobile-bp){
-            flex: 0 1 95%;
+            flex: 0 1 100%;
+            margin: 0;
+            margin-bottom: 15px;
         }
     }
 

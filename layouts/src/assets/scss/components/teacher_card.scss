@@ -3,6 +3,23 @@
     
     .teacher-card__preview{
         position: relative;
+        height: 320px;
+        width: 250px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include breakpoint($mobile-bp) {
+            height: 270px;
+            width: 200px;
+        }
+
+        img, picture{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
 
         .teacher-card__contacts{
             position: absolute;
@@ -29,21 +46,51 @@
                     padding: 10px 10px 10px 40px;
                     width: fit-content;
                 }
+
+                @include breakpoint($table-bp) {
+                    &{
+                        font-size: 14px;
+                        color: $white;
+                        padding: 10px 10px 10px 40px;
+                        width: fit-content;
+                    }
+
+                    &:hover{
+                        pointer-events: none;
+                    }
+                }
+
+                @media (hover: none) and (pointer: coarse) {
+                    &{
+                        font-size: 14px;
+                        color: $white;
+                        padding: 10px 10px 10px 40px;
+                        width: fit-content;
+                    }
+
+                    &:hover{
+                        pointer-events: none;
+                    }
+                }
             }
 
             .teacher-card__phone-link{
-                background-image: url(#{$url-redirrect}/images/svg/phone.svg);
+                background-image: url(#{$url-redirrect}/images/svg/phone-white.svg);
                 margin-bottom: 5px;
             }
             
             .teacher-card__email-link{
-                background-image: url(#{$url-redirrect}/images/svg/email.svg);
+                background-image: url(#{$url-redirrect}/images/svg/email-white.svg);
             }
         }
     }
 
     .teacher-card__body{
         padding-top: 25px;
+
+        @include breakpoint($mobile-bp) {
+            padding-top: 10px;
+        }
 
         .teacher-name{
             font-size: 16px;

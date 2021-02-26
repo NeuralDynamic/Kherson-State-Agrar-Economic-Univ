@@ -84,15 +84,13 @@
 
     .footer__links{
 
-        li:not(:last-child){
-            margin-bottom: 20px;
-        }
-
         a{
+            display: block;
             color: $white;
             opacity: .7;
             font-weight: 400;
             font-size: 14px;
+            margin-bottom: 20px;
         }
     }
 
@@ -140,6 +138,11 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 margin-right: 15px;
+                transition: .3s transform;
+
+                &:hover{
+                    transform: translateY(-5px);
+                }
 
                 &.social-links__facebook{
                     background-image: url(/assets/images/svg/facebook.svg);
@@ -159,6 +162,10 @@
 
                 &.social-links__telegram{
                     background-image: url(/assets/images/svg/telegram.svg);
+                }
+
+                &.social-links__tiktok{
+                    background-image: url(/assets/images/svg/tiktok.svg);
                 }
             }
         }

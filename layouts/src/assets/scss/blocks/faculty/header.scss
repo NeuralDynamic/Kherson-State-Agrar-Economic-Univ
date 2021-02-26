@@ -3,6 +3,12 @@
     position: relative;
     padding: 40px 150px 10px 150px;
     margin-bottom: 0;
+
+    @include breakpoint($mobile-bp){
+        padding: 0;
+        align-items: center;
+        margin-bottom: 40px;
+    }
 }
 
 .faculty-header__icon{
@@ -10,6 +16,13 @@
     height: 100px;
     width: 100px;
     right: 50px;
+
+    @include breakpoint($mobile-bp){
+        position: relative;
+        height: 70px;
+        width: 70px;
+        right: 0;
+    }
 
     img{
         width: 100%;
@@ -20,10 +33,14 @@
 .faculty-header__title{
     width: 100%;
     height: fit-content;
-    // font-size: 28px;
     color: #197326;
     mix-blend-mode: normal;
     text-align: center;
+
+    @include breakpoint($mobile-bp){
+        width: calc(100% - 80px);
+        text-align: start;
+    }
 }
 
 .faculty-header__description{
@@ -31,6 +48,9 @@
     border-bottom: 3px solid #ffffff;
     padding: 40px 50px;
     
+    @include breakpoint($mobile-bp){
+        padding: 0;
+    }
 
     h2{
         font-size: 20px;
@@ -52,5 +72,14 @@
             border-bottom-left-radius: 10px;
         }
 
+        @include breakpoint($mobile-bp){
+            padding: 0 20px;
+            line-height: 30px;
+            font-size: 16px;
+
+            &::before{
+                width: 6px;
+            }
+        }
     }
 }
