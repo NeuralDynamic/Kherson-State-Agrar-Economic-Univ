@@ -29,7 +29,6 @@ class NewsFeedAdmin(TranslatableAdmin):
 @register(Announcement)
 class AnnouncementAdmin(TranslatableAdmin):
     ordering = ['date']
-    fields = ["__all__"]
     list_display=["__str__", "date"]
     list_filter = ['translations__title','date']
 
