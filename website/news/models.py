@@ -176,5 +176,11 @@ class Announcement(TranslatableModel):
     default=timezone.now)
     #endregion
 
+    #region            -----Metadata----- 
+    class Meta(object):
+        verbose_name_plural=_("Announcements")
+        verbose_name=_("Announcement")
+    #endregion
+
     def __str__(self)->str:
         return self.title
