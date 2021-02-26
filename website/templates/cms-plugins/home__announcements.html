@@ -8,7 +8,7 @@
                 <div class="card popup-card">
                     <div class="card-body">
                         {% if announcement.image %}
-                        <a href="{{ new.image.url }}" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ announcement.image.url }}" target="_blank" rel="noopener noreferrer">
                             <h3 class="title">{{ announcement.title }}</h3>
                         </a>
                         {% elif announcement.attach %}
