@@ -6,26 +6,21 @@
 
 {% block content %}
 
-<section class="gallery-intro">
-    <h1 class="gallery-intro__title">
-        {% trans 'Галерея' %}
-    </h1>
-</section>
 <section>
+    <div class="section-title pt-20">
+        <h1>Галерея</h1>
+    </div>
     <div class="gallery-container">
         {% for gallery in galleries %}
-        <div class="card white gallery-card">
-            <a class="card__link" href="{% url 'gallery' gallery_id=gallery.id %}">
-                <div class="card-body">
-                    <div class="gallery-card__image" 
-                        style="background-image: url({{ gallery.images.first.medium_image.url }});"></div>
-                    <div class="gallery-card__data">
-                        <div class="gallery-card__title">
-                            {{ gallery.title }}
-                        </div>
-                    </div>
+        <div class="card gallery-card">
+            <div class="card-body">
+                <img class="gallery-card__image" src="{{ gallery.images.first.medium_image.url }}" alt="">
+                <div class="gallery-card__data">
+                    <a class="card__link" href="{% url 'gallery' gallery_id=gallery.id %}">
+                        {{ gallery.title }}
+                    </a>
                 </div>
-            </a>
+            </div>
         </div>
         {% endfor %}
     </div>
