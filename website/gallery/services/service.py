@@ -1,4 +1,5 @@
 #region				-----External Imports-----
+from django.core.paginator import Paginator, EmptyPage
 from django.http import Http404
 #endregion
 
