@@ -77,6 +77,10 @@ class ContactFormPlugin(CMSPluginBase):
     name=_("Contact Form")
 #endregion
 
+class AnnouncementsPlugin(CMSPluginBase):
+    render_template=settings.TEMPLATE_DIR+"/cms-plugins/home__announcements.html"
+    module=_("Main page")
+    name=_("Announcements")
 
 #region				-----Utils plugins-----
 class ExternalLinkPlugin(CMSPluginBase):
