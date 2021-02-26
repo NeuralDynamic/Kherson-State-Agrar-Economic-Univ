@@ -8,30 +8,34 @@
             <p>{% trans 'If you have any questions, fill out the form on the right and we will be happy to answer them shortly.' %}</p>
             <small class="contact-form__tip">* - {% trans 'required fields' %}</small>
         </div>
-        <div class="form">
+        <form id="contact-form" class="form" action="{% url 'contact_form_request' %}" method="POST">
+            {% csrf_token %}
             <div class="row">
-                <div class="column">
-                    <label for="contact-form-name">{% trans 'Your name' %}*</label>
-                    <input type="text" placeholder="{% trans 'John' %}" id="contact-form-name">
+                <div class="column form-cell">
+                    <label for="contact-form-name">Ваше имя*</label>
+                    <input type="text" placeholder="Николай" id="contact-form-name" name="name">
+                    <small class="error">Это поле является обязательным</small>
                 </div>
-                <div class="column">
-                    <label for="contact-form-email">{% trans 'Your E-mail' %}*</label>
-                    <input type="text" placeholder="example@gmail.com" id="contact-form-email">
+                <div class="column form-cell">
+                    <label for="contact-form-email">Ваш E-mail*</label>
+                    <input type="text" placeholder="Mykola@gmail.com" id="contact-form-email" name="email">
+                    <small class="error">Ваш имейл недействительный</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column form-cell">
+                    <label for="contact-form-message">Текст сообщения*</label>
+                    <textarea name="message" id="contact-form-message" rows="10" placeholder="Текст сообщения"></textarea>
+                    <small class="error">Это поле является обязательным</small>
                 </div>
             </div>
             <div class="row">
                 <div class="column">
-                    <label for="contact-form-message">{% trans 'Message text' %}*</label>
-                    <textarea name="message" id="contact-form-message" rows="10" placeholder="{% trans 'Message text' %}"></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <button class="button filled">
-                        {% trans 'Send' %}
+                    <button class="button filled" type="submit" data-success="Спасибо, мы ответим как только сможем!">
+                        Отправить
                     </button>
                 </div>
             </div>
-        </div>
+        </form>    
     </div>
 </section>

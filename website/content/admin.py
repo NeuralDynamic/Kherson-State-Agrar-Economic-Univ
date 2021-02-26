@@ -14,6 +14,7 @@ from .cms_plugins import InfoPlugin
 from .cms_plugins import NewsPlugin
 from .cms_plugins import ContactFormPlugin
 from .cms_plugins import AnnouncementsPlugin
+from .models import ContactRequest
 from .seo import UniversitySite
 #endregion
 
@@ -34,4 +35,10 @@ class UniversitySiteAdmin(TranslatableAdmin):
     fields=["name","primary","description","keywords","author",
             "og_url","og_title","og_image","og_image_alt",
             "twitter_image","twitter_image_alt","twitter_card","twitter_site"]
+    #endregion
+
+@register(ContactRequest)
+class ContactRequestAdmin(admin.ModelAdmin):
+    #region           ----Configuration-----
+    list_display=["name","email","message"]
     #endregion

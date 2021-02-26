@@ -40,6 +40,8 @@ urlpatterns += i18n_patterns(
     
     path('university/',include('university.urls')),
 
+    path('content/',include('content.urls')),
+
     #region				-----Service Imports-----
     path('jet/', include('jet.urls', 'jet')),
     path("admin/", admin.site.urls),
