@@ -5,8 +5,22 @@
         border-top: 3px solid #ffffff;
         border-bottom: 3px solid #ffffff;
 
+        @include breakpoint($mobile-bp){
+            padding: 25px 0 0 0;
+            text-align: center;
+        }
+
+        span{
+            display: block;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 5px;
+        }
+
         p{
             font-size: 20px;
+            line-height: 30px;
             margin-bottom: 0;
         }
     }
@@ -15,7 +29,21 @@
         padding: 25px 30px;
         border-bottom: 3px solid #ffffff;
 
+        @include breakpoint($mobile-bp){
+            padding: 25px 0 0 0;
+            text-align: center;
+        }
+
+        span{
+            display: block;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 5px;
+        }
+
         p{
+            line-height: 30px;
             font-size: 20px;
             margin-bottom: 0;
         }

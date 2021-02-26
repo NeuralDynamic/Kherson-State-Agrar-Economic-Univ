@@ -5,16 +5,18 @@
         position: relative;
         padding-left: 15px;
         cursor: pointer;
+        font-size: 20px;
+        -webkit-tap-highlight-color: transparent;
 
         &::before{
             content: '';
             position: absolute;
-            background-color: #000000c0;
+            background-color: $dark-green;
             height: 10px;
             width: 10px;
-            border-radius: 50%;
             left: 0;
             top: 6px;
+            transition: transform .5s, height .5s, width .5s;
         }
 
         &::after{
@@ -23,11 +25,12 @@
             height: 20px;
             width: 20px;
             right: 0;
-            top: 12px;
+            top: 50%;
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover;
             background-image: url(/assets/images/svg/arrow-right.svg);
+            transform: translateY(-50%);
+
             transition: transform .3s;
         }
     }
@@ -60,7 +63,15 @@
 
         .hiding-list__title{
             &::after{
-                transform: rotate(90deg);
+                transform: translateY(-50%) rotate(90deg);
+            }
+
+            &::before{
+                transform: rotate(360deg);
+                top: 3.5px;
+                left: -2.5px;
+                height: 15px;
+                width: 15px;
             }
         }
     }

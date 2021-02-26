@@ -1,7 +1,8 @@
-button.button{
+.button{
+    --buttons-green-color: #{$dark-green};
     border: none;
     font-weight: 700;
-    color: $dark-green;
+    color: var(--buttons-green-color);
     padding: 15px 35px 15px 22px;
     background: transparent;
     transition: .3s ease all;
@@ -16,7 +17,7 @@ button.button{
     }
 
     &.outlined{
-        border: 1px solid $dark-green;
+        border: 1px solid var(--buttons-green-color);
         border-radius: 5px;
         position: relative;
 
@@ -33,7 +34,7 @@ button.button{
         }
 
         &:not(:disabled):hover{
-            background-color: $dark-green;
+            background-color: var(--buttons-green-color);
             color: #fff;
 
             &::before{
@@ -53,8 +54,8 @@ button.button{
     }
 
     &.filled{
-        border: 1px solid $dark-green;
-        background-color: $dark-green;
+        border: 1px solid var(--buttons-green-color);
+        background-color: var(--buttons-green-color);
         border-radius: 5px;
         color: #fff;
         position: relative;

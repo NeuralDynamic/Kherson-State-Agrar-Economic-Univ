@@ -63,10 +63,10 @@ h6{
     line-height: 26px;
 }
 
-@include breakpoint($mobile-bp) {
+@include breakpoint($table-bp) {
     h1{
-        font-size: 36px;
-        line-height: 46px;
+        font-size: 40px;
+        line-height: 45px;
     }
 
     h2{
@@ -92,6 +92,13 @@ h6{
     h6{
         font-size: 14px;
         line-height: 24px;
+    }
+}
+
+@include breakpoint($mobile-bp) {
+    h1{
+        font-size: 36px;
+        line-height: 46px;
     }
 }
 
@@ -181,6 +188,7 @@ html::-webkit-scrollbar-thumb:hover {
 @import "blocks/home/cards.scss";
 @import "blocks/home/block.scss";
 @import "blocks/home/news.scss";
+@import "blocks/home/popup.scss";
 
 // FACULTY IMPORTS
 

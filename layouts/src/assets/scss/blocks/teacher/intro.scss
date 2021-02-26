@@ -3,8 +3,20 @@
     display: flex;
     padding: 15px 30px;
 
+    @include breakpoint($table-bp){
+        padding: 15px 0;
+    }
+
+    @include breakpoint(750px){
+        flex-direction: column;
+    }
+
     .teacher-profile{
         width: 40%;
+
+        @include breakpoint(750px){
+            width: 100%;
+        }
     }    
 
     .teacher-profile__name{
@@ -17,16 +29,18 @@
     .teacher-profile__photo{
         margin-bottom: 20px;
         max-height: 300px;
+        border-radius: 10px;
         
 
         img{
+            border-radius: 10px;
             max-height: 300px;
             width: auto;
             display:block;
             margin:auto;
-            -webkit-box-shadow: 10px 10px 27px -17px rgba(0,0,0,0.75);
-            -moz-box-shadow: 10px 10px 27px -17px rgba(0,0,0,0.75);
-            box-shadow: 10px 10px 27px -17px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.1);
             transition: transform .5s;
 
             &:hover{
@@ -43,6 +57,31 @@
         margin-bottom: 50px;
     }
 
+    .teacher-profile__contacts{
+
+        .row{
+            justify-content: center;
+        }
+
+        @include breakpoint($desktop-small){
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @include breakpoint(800px){
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 0 30px;
+        }
+
+        @include breakpoint($mobile-bp){
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
     .teacher-univ-data{
         width: 60%;
         padding: 30px;
@@ -50,16 +89,37 @@
         flex-direction: column;
         justify-content: space-around;
 
+        @include breakpoint(800px){
+            width: 100%;
+        }
+
+        @include breakpoint($mobile-bp){
+            padding: 30px 0;
+        }
+
         .title{
             color: #197326;
-            font-size: 20px;
+            font-size: 24px;
             text-align: center;
             margin-bottom: 30px;
+        }
+
+        p{
+            font-size: 18px;
+
+            @include breakpoint($mobile-bp){
+                line-height: 28px;
+                font-size: 16px;
+            }
         }
     }
 
     .teacher-univ-data__info{
         padding: 0 30px;
+
+        @include breakpoint($mobile-bp){
+            padding: 0;
+        }
 
         p{
             width: 100%;
@@ -69,6 +129,10 @@
 
     .teacher-univ-data__achievements{
         padding: 0 30px;
+
+        @include breakpoint($mobile-bp){
+            padding: 0;
+        }
     }
 
     .teacher-univ-data__workplaces{
@@ -76,6 +140,10 @@
         margin-bottom: 40px;
         display: flex;
         justify-content: center;
+
+        @include breakpoint($mobile-bp){
+            padding: 0;
+        }
 
         a{
             text-decoration: underline;
@@ -92,6 +160,10 @@
         padding: 0 30px;
         display: flex;
         justify-content: space-around;
+
+        @include breakpoint($mobile-bp){
+            padding: 0;
+        }
 
         .univ-link{
             height: 40px;

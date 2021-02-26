@@ -1,0 +1,33 @@
+<section class="main-section">
+    <div class="slider slider-scroller popups-scroller">
+        <div class="slider__prevSlideButton">
+            <div class="prev-slide-button"></div>
+        </div>
+        <div class="slider__container">
+            {% for announcement in announcements %}
+                <div class="card popup-card">
+                    <div class="card-body">
+                        {% if announcement.image %}
+                        <a href="{{ new.image.url }}" target="_blank" rel="noopener noreferrer">
+                            <h3 class="title">{{ announcement.title }}</h3>
+                        </a>
+                        {% elif announcement.attach %}
+                        <a href="{{ announcement.attach }}" target="_blank" rel="noopener noreferrer">
+                            <h3 class="title">{{ announcement.title }}</h3>
+                        </a>
+                        {% else %}
+                        <h3 class="title">{{ announcement.title }}</h3>
+                        {% endif %}
+                        <p class="description">
+                            {{ announcement.description }}
+                        </p>
+                        <p class="date">{{ announcement.date|date:'d M Y' }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="slider__nextSlideButton">
+            <div class="next-slide-button"></div>
+        </div>
+    </div>
+</section>

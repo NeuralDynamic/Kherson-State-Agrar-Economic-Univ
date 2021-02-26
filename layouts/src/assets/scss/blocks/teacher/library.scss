@@ -2,4 +2,10 @@
     display: flex;
     justify-content: left;
     padding: 30px;
+
+    @include breakpoint($table-bp){
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px 0;
+    }
 }

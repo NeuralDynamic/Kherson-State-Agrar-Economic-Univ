@@ -112,7 +112,7 @@ scroller_sliders.forEach(item => {
             900:{
                 items: 3
             },
-            1200: {
+            1300: {
                 items: 4
             },
             1500: {
@@ -124,6 +124,21 @@ scroller_sliders.forEach(item => {
 
     if (item.classList.contains('gallery-scroller')) {
         params.autoWidth = true;
+        const responsive = {
+            640:{
+                items: 1
+            },
+            1200: {
+                items: 2
+            },
+            1440: {
+                items: 3
+            }
+        }
+        params.responsive = responsive;
+    }
+
+    if(item.classList.contains('popups-scroller')){
         const responsive = {
             640:{
                 items: 1
