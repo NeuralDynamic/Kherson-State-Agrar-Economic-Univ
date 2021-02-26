@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-26 19:03+0200\n"
+"POT-Creation-Date: 2021-02-27 00:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,7 +71,7 @@ msgstr ""
 
 #: content/cms_models.py:49 content/cms_models.py:66 gallery/models.py:25
 #: library/models.py:23 news/models.py:26 news/models.py:49 news/models.py:96
-#: news/models.py:163 university/models/staff.py:28
+#: news/models.py:164 university/models/staff.py:28
 #: university/models/university.py:54 university/models/university.py:91
 #: university/models/university.py:142 university/models/university.py:215
 #: university/models/utils.py:86
@@ -79,7 +79,7 @@ msgid "Title"
 msgstr "Назва"
 
 #: content/cms_models.py:52 gallery/models.py:22 gallery/models.py:58
-#: library/models.py:17 news/models.py:46 news/models.py:165
+#: library/models.py:17 news/models.py:46 news/models.py:166
 #: university/models/staff.py:67 university/models/university.py:23
 #: university/models/university.py:83 university/models/university.py:138
 #: university/models/university.py:211
@@ -150,7 +150,7 @@ msgstr ""
 msgid "Phone"
 msgstr "Телефон"
 
-#: content/cms_models.py:113
+#: content/cms_models.py:113 content/models.py:9
 msgid "Email"
 msgstr ""
 
@@ -180,7 +180,7 @@ msgstr "Новини"
 msgid "Contact Form"
 msgstr "контактна форма"
 
-#: content/cms_plugins.py:83 news/models.py:181
+#: content/cms_plugins.py:83 news/models.py:182
 msgid "Announcements"
 msgstr "Оголошення"
 
@@ -200,9 +200,33 @@ msgstr "Головні блоки"
 msgid "Footer Block"
 msgstr "Блок Footer"
 
+#: content/models.py:7
+msgid "Ім'я"
+msgstr ""
+
+#: content/models.py:11
+msgid "Питання"
+msgstr ""
+
+#: content/models.py:13
+msgid "Дата"
+msgstr ""
+
+#: content/models.py:17
+msgid "Запити на контакт"
+msgstr ""
+
+#: content/models.py:18
+msgid "Запит на контакт"
+msgstr ""
+
 #: content/seo.py:39
 msgid "University Site"
 msgstr "Університет"
+
+#: content/views.py:22
+msgid "Спасибо, мы ответим как только сможем!"
+msgstr "Спасибі, ми відповімо як тільки зможемо!"
 
 #: gallery/apps.py:7
 msgid "Gallery App"
@@ -225,7 +249,7 @@ msgstr "Галерея"
 msgid "Images"
 msgstr "Зображення"
 
-#: gallery/models.py:64 gallery/models.py:86 news/models.py:171
+#: gallery/models.py:64 gallery/models.py:86 news/models.py:172
 msgid "Image"
 msgstr "Зображення"
 
@@ -236,6 +260,7 @@ msgid "Галерея"
 msgstr ""
 
 #: gallery/templates/gallery/gallery.html:18
+#: news/templates/news/article.html:14
 msgid "Головна"
 msgstr ""
 
@@ -299,25 +324,30 @@ msgstr "Дата статті"
 msgid "Paper"
 msgstr "Стаття"
 
-#: news/models.py:173
+#: news/models.py:174
 msgid "Attach"
 msgstr "Додаток"
 
-#: news/models.py:175
+#: news/models.py:176
 msgid "Announcement date"
 msgstr "Дата оголошення"
 
-#: news/models.py:182
+#: news/models.py:183
 msgid "Announcement"
 msgstr "Оголошення"
+
+#: news/templates/news/article.html:20 news/templates/news/news.html:12
+#: templates/header.html:9
+msgid "Новини"
+msgstr ""
 
 #: news/templates/news/news.html:5
 msgid "Новости"
 msgstr "Новини"
 
-#: news/templates/news/news.html:11
-msgid "Новости ХДАЕУ"
-msgstr "Новини ХДАЕУ"
+#: news/templates/news/news.html:12 templates/cms-plugins/footer.html:12
+msgid "ХДАЕУ"
+msgstr ""
 
 #: templates/base.html:9
 msgid "KSAEU"
@@ -329,10 +359,6 @@ msgstr ""
 
 #: templates/cms-plugins/footer.html:6
 msgid "Адреса"
-msgstr ""
-
-#: templates/cms-plugins/footer.html:12
-msgid "ХДАЕУ"
 msgstr ""
 
 #: templates/cms-plugins/footer.html:22
@@ -363,27 +389,6 @@ msgstr ""
 msgid "required fields"
 msgstr "обов'язкові поля"
 
-#: templates/cms-plugins/home_contact-form.html:14
-msgid "Your name"
-msgstr "Ваше Ім'я"
-
-#: templates/cms-plugins/home_contact-form.html:15
-msgid "John"
-msgstr "Джон"
-
-#: templates/cms-plugins/home_contact-form.html:18
-msgid "Your E-mail"
-msgstr "Ваш E-mail"
-
-#: templates/cms-plugins/home_contact-form.html:24
-#: templates/cms-plugins/home_contact-form.html:25
-msgid "Message text"
-msgstr "Ваше питання"
-
-#: templates/cms-plugins/home_contact-form.html:31
-msgid "Send"
-msgstr "Відправити"
-
 #: templates/footer.html:8
 msgid "Херсонський державний аграрно-економічний університет"
 msgstr ""
@@ -402,10 +407,6 @@ msgstr ""
 
 #: templates/header.html:8
 msgid "Про університет"
-msgstr ""
-
-#: templates/header.html:9
-msgid "Новини"
 msgstr ""
 
 #: templates/header.html:10
@@ -761,6 +762,24 @@ msgstr ""
 #: website/settings/django.py:151 website/settings/third_party/cms.py:8
 msgid "uk"
 msgstr ""
+
+#~ msgid "Новости ХДАЕУ"
+#~ msgstr "Новини ХДАЕУ"
+
+#~ msgid "Your name"
+#~ msgstr "Ваше Ім'я"
+
+#~ msgid "John"
+#~ msgstr "Джон"
+
+#~ msgid "Your E-mail"
+#~ msgstr "Ваш E-mail"
+
+#~ msgid "Message text"
+#~ msgstr "Ваше питання"
+
+#~ msgid "Send"
+#~ msgstr "Відправити"
 
 #~ msgid "Libraries"
 #~ msgstr "Бібліотеки"
