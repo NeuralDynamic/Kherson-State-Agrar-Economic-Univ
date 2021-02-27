@@ -135,9 +135,6 @@ class TeacherSliderPlugin(CMSPluginBase):
     name = _("Teacher Slider")
     render_template = settings.TEMPLATE_DIR+"/cms-plugins/teacher-slider.html"
 
-    def copy_relations(self, oldinstance):
-        self.sections = oldinstance.sections.all()
-
     #region            -----Rendering-----
     def render(self, context, instance, placeholder):
         context.update({"instance": instance})
