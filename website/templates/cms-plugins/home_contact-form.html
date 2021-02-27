@@ -12,27 +12,27 @@
             {% csrf_token %}
             <div class="row">
                 <div class="column form-cell">
-                    <label for="contact-form-name">Ваше имя*</label>
-                    <input type="text" placeholder="Николай" id="contact-form-name" name="name">
-                    <small class="error">Это поле является обязательным</small>
+                    <label for="contact-form-name">{% trans "Ваше ім'я" %}*</label>
+                    <input type="text" placeholder="{% trans 'John' %}" id="contact-form-name" name="name">
+                    <small class="error">{% trans "Це поле є обов'язковим" %}</small>
                 </div>
                 <div class="column form-cell">
-                    <label for="contact-form-email">Ваш E-mail*</label>
-                    <input type="text" placeholder="Mykola@gmail.com" id="contact-form-email" name="email">
-                    <small class="error">Ваш имейл недействительный</small>
+                    <label for="contact-form-email">{% trans 'Ваш' %} E-mail*</label>
+                    <input type="text" placeholder="example@gmail.com" id="contact-form-email" name="email">
+                    <small class="error">{% trans 'Ваш емейл недійсний' %}</small>
                 </div>
             </div>
             <div class="row">
                 <div class="column form-cell">
-                    <label for="contact-form-message">Текст сообщения*</label>
-                    <textarea name="message" id="contact-form-message" rows="10" placeholder="Текст сообщения"></textarea>
-                    <small class="error">Это поле является обязательным</small>
+                    <label for="contact-form-message">{% trans 'Текст повідомлення' %}*</label>
+                    <textarea name="message" id="contact-form-message" rows="10" placeholder="{% trans 'Текст повідомлення' %}"></textarea>
+                    <small class="error">{% trans "Це поле є обов'язковим" %}</small>
                 </div>
             </div>
             <div class="row">
                 <div class="column">
                     <button class="button filled" type="submit">
-                        Отправить
+                        {% trans 'Надіслати' %}
                     </button>
                 </div>
             </div>
