@@ -77,6 +77,12 @@ class News(CMSPlugin):
 class Section(CMSPlugin):
     content=HTMLField(verbose_name=_("Content"))
 
+
+class HidingSection(CMSPlugin):
+    title=models.CharField(max_length=150, verbose_name=_("Section title"))
+    content=HTMLField(verbose_name=_("Content"))
+
+
 #region				-----Utils plugins-----
 class ExternalLink(CMSPlugin):
     #region           -----Information-----
