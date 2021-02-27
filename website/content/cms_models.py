@@ -91,7 +91,7 @@ class TeacherSlider(CMSPlugin):
         help_text=_('You can choose staff from cathedra staff'))
 
     def copy_relations(self, oldinstance):
-        self.staff = oldinstance.staff.all()
+        self.staff.set(oldinstance.staff.all())
 
 #region				-----Utils plugins-----
 class ExternalLink(CMSPlugin):
