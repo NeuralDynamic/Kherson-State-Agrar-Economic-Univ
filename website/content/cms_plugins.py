@@ -108,7 +108,7 @@ class ExternalLinkPlugin(CMSPluginBase):
 class SectionBlock(CMSPluginBase):
     render_template=settings.TEMPLATE_DIR+"/cms-plugins/section.html"
     module=_("Base blocks")
-    model=cms_models.Footer
+    model=cms_models.Section
     name=_("Section Block")
 
     #region            -----Rendering-----
