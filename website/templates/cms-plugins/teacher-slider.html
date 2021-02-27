@@ -1,0 +1,20 @@
+<section>
+    <div class="section-title">
+        <h2>{{ instance.title }}</h2> 
+    </div>
+    <div class="slider slider-scroller teachers-scroller">
+        <div class="slider__prevSlideButton">
+            <div class="prev-slide-button"></div>
+        </div>
+        <div class="slider__container">
+            {% for teacher in instance.staff.all %}
+            <div class="slider__slide">
+                {% include 'utils/teacher-card.html' %}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="slider__nextSlideButton">
+            <div class="next-slide-button"></div>
+        </div>
+    </div>
+</section>

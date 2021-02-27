@@ -24,9 +24,9 @@
                 </h3>
             </a>
             <div class="teacher-rank">
-                {% if teacher.position %}
+                {% if teacher.position and teacher.position != '' %}
                     {{ teacher.position }}, 
-                {% elif teacher.rank %}
+                {% elif teacher.rank and teacher.rank != '' %}
                     {{ teacher.rank }}, 
                 {% endif %}
                 {{ teacher.staff.rank }}

@@ -129,6 +129,18 @@ class SectionHidingPlugin(CMSPluginBase):
         return context
     #endregion
 
+class TeacherSliderPlugin(CMSPluginBase):
+    model = cms_models.TeacherSlider
+    module=_("Base blocks")
+    name = _("Teacher Slider")
+    render_template = settings.TEMPLATE_DIR+"/cms-plugins/teacher-slider.html"
+
+    #region            -----Rendering-----
+    def render(self, context, instance, placeholder):
+        context.update({"instance": instance})
+        return context
+    #endregion
+
 #region				-----Pages plugins-----
 class FooterBlock(CMSPluginBase):
     #region           -----Information-----

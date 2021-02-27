@@ -4,6 +4,8 @@ from cms.models.pluginmodel import CMSPlugin
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from djangocms_text_ckeditor.fields import HTMLField
+
+from university.models.staff import Staff
 #endregion
 
 #region				-----Banner plugins-----
@@ -82,6 +84,16 @@ class HidingSection(CMSPlugin):
     title=models.CharField(max_length=150, verbose_name=_("Section title"))
     content=HTMLField(verbose_name=_("Content"))
 
+
+class TeachersSliderStaff(CMSPlugin):
+    staff=models.ForeignKey(Staff, on_delete=models.CASCADE, verbose_name=_("Staff"))
+    rank=models.CharField(verbose_name=_("Rank"),
+        max_length=300, blank=True, null=True)
+
+class TeacherSlider(CMSPlugin):
+    title=models.CharField(max_length=150, verbose_name=_("Section title"))
+    staff=models.ManyToManyField(TeachersSliderStaff,
+        verbose_name=_("Staff"))
 
 #region				-----Utils plugins-----
 class ExternalLink(CMSPlugin):
