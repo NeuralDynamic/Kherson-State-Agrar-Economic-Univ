@@ -105,6 +105,18 @@ class ExternalLinkPlugin(CMSPluginBase):
     #endregion
 #endregion
 
+class SectionBlock(CMSPluginBase):
+    render_template=settings.TEMPLATE_DIR+"/cms-plugins/section.html"
+    module=_("Base blocks")
+    model=cms_models.Footer
+    name=_("Section Block")
+
+    #region            -----Rendering-----
+    def render(self, context, instance, placeholder):
+        context.update({"instance": instance})
+        return context
+    #endregion
+
 #region				-----Pages plugins-----
 class FooterBlock(CMSPluginBase):
     #region           -----Information-----

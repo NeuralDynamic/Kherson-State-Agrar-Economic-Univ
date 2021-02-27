@@ -1,19 +1,19 @@
 <div class="home-cards">
     <div class="card card-home">
-        <div class="card-image" style="background-image: url(/assets/images/svg/main-page-card-1.svg);"></div>
-        <a class="card-title" href="#abiturient">Абітурієнту</a>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+        <div class="card-image" {% if instance.left_card_image %}style="background-image: url({{ instance.left_card_image.url }});"{% endif %}></div>
+        <a class="card-title" href="{{ instance.left_card_url }}">{{ instance.left_card_title }}</a>
+        <p class="card-text">{{ instance.left_card_text }}</p>
     </div>
     
     <div class="card card-home">
-        <div class="card-image" style="background-image: url(/assets/images/svg/main-page-card-2.svg);"></div>
-        <a class="card-title" href="#students">Студенту</a>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+        <div class="card-image" style="background-image: url({{ instance.middle_card_image.url }});"></div>
+        <a class="card-title" href="{{ instance.middle_card_url }}">{{ instance.middle_card_title }}</a>
+        <p class="card-text">{{ instance.middle_card_text }}</p>
     </div>
 
     <div class="card card-home">
-        <div class="card-image" style="background-image: url(/assets/images/svg/main-page-card-3.svg);"></div>
-        <a class="card-title" href="#teacher">Викладачу</a>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore </p>
+        <div class="card-image" style="background-image: url({{ instance.right_card_image.url }});"></div>
+        <a class="card-title" href="{{ instance.right_card_url }}">{{ instance.right_card_title }}</a>
+        <p class="card-text">{{ instance.right_card_text }}</p>
     </div>
 </div>

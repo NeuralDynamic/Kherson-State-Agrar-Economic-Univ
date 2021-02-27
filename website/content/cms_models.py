@@ -3,6 +3,7 @@ from cms.models.pluginmodel import CMSPlugin
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from djangocms_text_ckeditor.fields import HTMLField
 #endregion
 
 #region				-----Banner plugins-----
@@ -25,6 +26,8 @@ class Cards(CMSPlugin):
     null=True, verbose_name=_('Left card title'))
     left_card_text=models.TextField(max_length=400,
     blank=True, null=True, verbose_name=_("Left card text"))
+    left_card_url=models.URLField(blank=True, null=True,
+    verbose_name=_("Left card url"))
 
     middle_card_image=models.FileField(upload_to="cms", 
     verbose_name=_("Middle card image"))
@@ -32,6 +35,8 @@ class Cards(CMSPlugin):
     null=True, verbose_name=_('Middle card title'))
     middle_card_text=models.TextField(max_length=400,
     blank=True, null=True, verbose_name=_("Middle card text"))
+    middle_card_url=models.URLField(blank=True, null=True,
+    verbose_name=_("Middle card url"))
 
     right_card_image=models.FileField(upload_to="cms", 
     verbose_name=_("Right card image"))
@@ -39,6 +44,8 @@ class Cards(CMSPlugin):
     null=True, verbose_name=_('Right card title'))
     right_card_text=models.TextField(max_length=400,
     blank=True, null=True, verbose_name=_("Right card text"))
+    right_card_url=models.URLField(blank=True, null=True,
+    verbose_name=_("Right card url"))
     #endregion
 #endregion
 
@@ -66,6 +73,9 @@ class News(CMSPlugin):
     null=True, verbose_name=_("Title"))
     #endregion
 #endregion
+
+class Section(CMSPlugin):
+    content=HTMLField(verbose_name=_("Content"))
 
 #region				-----Utils plugins-----
 class ExternalLink(CMSPlugin):
