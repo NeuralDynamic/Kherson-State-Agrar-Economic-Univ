@@ -117,6 +117,18 @@ class SectionBlock(CMSPluginBase):
         return context
     #endregion
 
+class SectionHidingPlugin(CMSPluginBase):
+    model = cms_models.HidingSection
+    module=_("Base blocks")
+    name = _("Section Hiding Block")
+    render_template = settings.TEMPLATE_DIR+"/cms-plugins/section-hiding.html"
+
+    #region            -----Rendering-----
+    def render(self, context, instance, placeholder):
+        context.update({"instance": instance})
+        return context
+    #endregion
+
 #region				-----Pages plugins-----
 class FooterBlock(CMSPluginBase):
     #region           -----Information-----

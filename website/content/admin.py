@@ -15,6 +15,7 @@ from .cms_plugins import NewsPlugin
 from .cms_plugins import ContactFormPlugin
 from .cms_plugins import AnnouncementsPlugin
 from .cms_plugins import SectionBlock
+from .cms_plugins import SectionHidingPlugin
 from .models import ContactRequest
 from .seo import UniversitySite
 #endregion
@@ -28,6 +29,8 @@ plugin_pool.register_plugin(NewsPlugin)
 plugin_pool.register_plugin(ContactFormPlugin)
 plugin_pool.register_plugin(AnnouncementsPlugin)
 plugin_pool.register_plugin(SectionBlock)
+plugin_pool.register_plugin(SectionHidingPlugin)
+
 
 @register(UniversitySite)
 class UniversitySiteAdmin(TranslatableAdmin):
