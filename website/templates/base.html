@@ -1,4 +1,4 @@
-{% load cms_tags menu_tags sekizai_tags static compress i18n structure_load %}
+{% load cms_tags menu_tags sekizai_tags static compress i18n %}
 
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
@@ -22,7 +22,6 @@
 
     <div class="page">
         {% include 'header.html' %}
-        {% render_menu %}
         
         <main class="main">
             {% block content %}{% endblock %}
