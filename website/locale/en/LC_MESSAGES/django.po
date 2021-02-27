@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-27 00:12+0200\n"
+"POT-Creation-Date: 2021-02-27 12:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -199,25 +199,23 @@ msgstr ""
 
 #: content/models.py:7
 msgid "Ім'я"
-msgstr ""
+msgstr "Name"
 
 #: content/models.py:11
-#, fuzzy
-#| msgid "Видання"
 msgid "Питання"
-msgstr "Publications"
+msgstr "Question"
 
 #: content/models.py:13
 msgid "Дата"
-msgstr ""
+msgstr "Date"
 
 #: content/models.py:17
 msgid "Запити на контакт"
-msgstr ""
+msgstr "Contact requests"
 
 #: content/models.py:18
 msgid "Запит на контакт"
-msgstr ""
+msgstr "Contact request"
 
 #: content/seo.py:39
 msgid "University Site"
@@ -385,6 +383,36 @@ msgstr ""
 #: templates/cms-plugins/home_contact-form.html:9
 msgid "required fields"
 msgstr ""
+
+#: templates/cms-plugins/home_contact-form.html:15
+msgid "Ваше ім'я"
+msgstr "Your name"
+
+#: templates/cms-plugins/home_contact-form.html:16
+msgid "John"
+msgstr ""
+
+#: templates/cms-plugins/home_contact-form.html:17
+#: templates/cms-plugins/home_contact-form.html:29
+msgid "Це поле є обов'язковим"
+msgstr "This field is required"
+
+#: templates/cms-plugins/home_contact-form.html:20
+msgid "Ваш"
+msgstr "Your"
+
+#: templates/cms-plugins/home_contact-form.html:22
+msgid "Ваш емейл недійсний"
+msgstr "Your email is invalid"
+
+#: templates/cms-plugins/home_contact-form.html:27
+#: templates/cms-plugins/home_contact-form.html:28
+msgid "Текст повідомлення"
+msgstr "Message text"
+
+#: templates/cms-plugins/home_contact-form.html:35
+msgid "Надіслати"
+msgstr "Send"
 
 #: templates/footer.html:8
 msgid "Херсонський державний аграрно-економічний університет"
