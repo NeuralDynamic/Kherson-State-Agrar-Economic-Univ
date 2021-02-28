@@ -11,7 +11,7 @@
         <h1>
             {% trans 'Вибачте, у нас щось зламалося!' %}
         </h1>
-        <a class="button outlined" href="/{{LANGUAGE_CODE}}/">{% trans 'Повернутися на головну' %}</a>
+        <a class="button outlined" href="{% if LANGUAGE_CODE != 'uk' %}/{{LANGUAGE_CODE}}/{% else %}/{% endif %}">{% trans 'Повернутися на головну' %}</a>
     </div>
     
 </section>
