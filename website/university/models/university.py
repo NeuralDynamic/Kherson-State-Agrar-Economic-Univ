@@ -34,9 +34,8 @@ class ScientificSociety(TranslatableModel):
     #endregion
 
     #region            -----Relations-----
-    staff=ManyToManyField("Staff",
-    verbose_name=_("Staffs"),
-    related_name="staff")
+    staff=ManyToManyField("StaffCathedra",
+    verbose_name=_("Staff"))
     #endregion
 
     #region            -----Metadata-----

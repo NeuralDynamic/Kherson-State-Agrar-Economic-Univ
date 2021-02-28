@@ -27,8 +27,8 @@ class StaffCathedra(TranslatableModel):
 
     #region            -----Metadata-----
     class Meta(object):
-        verbose_name_plural=_("Cathedra staffs")
-        verbose_name=_("Cathedra staff")
+        verbose_name_plural=_("Department staffs")
+        verbose_name=_("Department staff")
     #endregion
 
     #region         -----Internal Methods-----

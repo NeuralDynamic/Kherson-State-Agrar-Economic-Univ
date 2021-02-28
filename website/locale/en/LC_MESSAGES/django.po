@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-28 14:22+0200\n"
+"POT-Creation-Date: 2021-02-28 15:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -506,6 +506,10 @@ msgstr "Student"
 msgid "Наука"
 msgstr "Science"
 
+#: templates/menu.html:7
+msgid "Аграрный"
+msgstr ""
+
 #: university/apps.py:7
 msgid "University App"
 msgstr ""
@@ -702,11 +706,11 @@ msgid "Faculties"
 msgstr ""
 
 #: university/models/utils.py:30
-msgid "Cathedra staffs"
+msgid "Department staffs"
 msgstr ""
 
 #: university/models/utils.py:31
-msgid "Cathedra staff"
+msgid "Department staff"
 msgstr ""
 
 #: university/models/utils.py:47
@@ -826,11 +830,11 @@ msgstr ""
 msgid "Тематика НДР"
 msgstr "RW topics"
 
-#: website/settings/django.py:145 website/settings/third_party/cms.py:15
+#: website/settings/django.py:147 website/settings/third_party/cms.py:15
 msgid "en"
 msgstr ""
 
-#: website/settings/django.py:151 website/settings/third_party/cms.py:8
+#: website/settings/django.py:153 website/settings/third_party/cms.py:8
 msgid "uk"
 msgstr ""
 
