@@ -32,15 +32,18 @@ urlpatterns = [
     path('favicon.ico/', RedirectView.as_view(
                         url='/assets/images/favicon.png'), 
                         name='favicon'),
-    path('manifest.json/', manifest_view, name='manifest'),
+    path('manifest.json/', manifest_view, 
+                        name='manifest'),
     path("sitemap.xml/", sitemap, {"sitemaps": sitemaps}),
-    path("robots.txt/",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
-    path("", include("searcher.urls"))
+    path("robots.txt/",TemplateView.as_view(template_name="robots.txt", 
+                        content_type="text/plain")),
 ]
 
 urlpatterns += i18n_patterns(
 
     path('', include('gallery.urls')),
+
+    path('', include("searcher.urls")),
 
     path('news/',include('news.urls')),
     
@@ -51,7 +54,7 @@ urlpatterns += i18n_patterns(
     #region				-----Service Imports-----
     path('jet/', include('jet.urls', 'jet')),
     path("admin/", admin.site.urls),
-    path("", include("cms.urls")),
+    path('', include("cms.urls")),
     #endregion
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
