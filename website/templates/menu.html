@@ -4,23 +4,38 @@
     <div class="menu-section">
         <div class="section-data">
             <div class="section-title">
-                <h2>{% trans 'Аграрный' %}</h2> 
+                <h2>{% trans 'Университет' %}</h2> 
             </div>
             <div class="content">
                 <ul>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/about-us/">
+                            <h3>{% trans 'Про нас' %}</h3>
                         </a>
                     </li>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/publichna-ta-oficijna-informaciya/">
+                            <h3>{% trans 'Публічна і офіційна інформація' %}</h3>
                         </a>
                     </li>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/normativna-baza/">
+                            <h3>{% trans 'Нормативна база' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'news' %}">
+                            <h3>{% trans 'Новини' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'galleries' %}">
+                            <h3>{% trans 'Галерея' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/kontakti/">
+                            <h3>{% trans 'Контакти' %}</h3>
                         </a>
                     </li>
                 </ul>
@@ -30,28 +45,88 @@
     <div class="menu-section">
         <div class="section-data">
             <div class="section-title">
-                    <h2>Аграрный</h2>
+                <h2>{% trans 'Абітурієнту' %}</h2>
             </div>
             <div class="content">
                 <ul>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/spiski-rekomendovanih/">
+                            <h3>{% trans 'Списки рекомендованих' %}</h3>
                         </a>
                     </li>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/spiski-zarahovanih/">
+                            <h3>{% trans 'Списки прийнятих' %}</h3>
                         </a>
                     </li>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/predmeti-zno-2021/">
+                            <h3>{% trans 'Предмети 2021' %}</h3>
                         </a>
                     </li>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/osvitnij-centr-krim-ukrayina/">
+                            <h3>{% trans 'Освітній центр «Крим-Україна»' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/osvitnij-centr-donbas-ukrayina/">
+                            <h3>{% trans 'Освітній центр «Донбас-Україна»' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/vartist-navchannya">
+                            <h3>{% trans 'Вартість навчання' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/programi-vstupnih-viprobuvan">
+                            <h3>{% trans 'Програми вступних випробувань' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/rozklad-vstupnih-viprobuvan/">
+                            <h3>{% trans 'Розклад вступних випробувань' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/zno-dlya-magistriv/">
+                            <h3>{% trans 'ЗНО для магістрів' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/kontakti-prijmalnoyi-komisiyi/">
+                            <h3>{% trans 'Контакти приймальної комісії' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/prijmalna-komisiya/">
+                            <h3>{% trans 'Приймальна комісія' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/dovuzivska-pidgotovka/">
+                            <h3>{% trans 'Довузівська підготовка' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/pravila-prijomu/">
+                            <h3>{% trans 'Правила прийому' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/olimpiada/">
+                            <h3>{% trans 'Олімпіада' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/specialnosti/">
+                            <h3>{% trans 'Спеціальності' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/derzhavne-zamovlennya/">
+                            <h3>{% trans 'Державне замовлення' %}</h3>
                         </a>
                     </li>
                 </ul>
@@ -61,28 +136,33 @@
     <div class="menu-section">
         <div class="section-data">
             <div class="section-title">
-                    <h2>Аграрный</h2>
+                <h2>{% trans 'Освіта' %}</h2>
             </div>
             <div class="content">
                 <ul>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="http://ksau.kherson.ua/files/_osv.progr/">
+                            <h3>{% trans 'Освітні програми' %}</h3>
                         </a>
                     </li>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="http://ksau.kherson.ua/files/_bazi.prakt/">
+                            <h3>{% trans 'Бази практик' %}</h3>
                         </a>
                     </li>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/disciplines-free-choice">
+                            <h3>{% trans 'Дисципліни вільного вибору' %}</h3>
                         </a>
                     </li>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/quality-education/">
+                            <h3>{% trans 'Якість освіти' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/online-survey/">
+                            <h3>{% trans 'Онлайн опитування' %}</h3>
                         </a>
                     </li>
                 </ul>
@@ -92,28 +172,43 @@
     <div class="menu-section">
         <div class="section-data">
             <div class="section-title">
-                    <h2>Аграрный</h2>
+                <h2>{% trans 'Здобувачу' %}</h2>
             </div>
             <div class="content">
                 <ul>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства Кафедра землеробстваКафедра землеробстваКафедра землеробстваКафедра землеробстваКафедра землеробстваКафедра землеробства</h3>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/schedule/">
+                            <h3>{% trans 'Розклад занять' %}</h3>
                         </a>
                     </li>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/student-council/">
+                            <h3>{% trans 'Студентська рада' %}</h3>
                         </a>
                     </li>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/psychological-service/">
+                            <h3>{% trans 'Психологічна служба' %}</h3>
                         </a>
                     </li>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/academic-integrity/">
+                            <h3>{% trans 'Академічна доброчесність' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ksau.neuraldynamics.online/{{ LANGUAGE_CODE }}/job-placement/">
+                            <h3>{% trans 'Влаштування на роботу' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://ksau.kherson.ua/files/_bazi.prakt/">
+                            <h3>{% trans 'Бази практик' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://dspace.ksau.kherson.ua:8888/">
+                            <h3>{% trans 'Система Moodle' %}</h3>
                         </a>
                     </li>
                 </ul>
@@ -123,28 +218,48 @@
     <div class="menu-section">
         <div class="section-data">
             <div class="section-title">
-                    <h2>Аграрный</h2>
+                <h2>{% trans 'Наука' %}</h2>
             </div>
             <div class="content">
                 <ul>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства Кафедра землеробстваКафедра землеробстваКафедра землеробстваКафедра землеробстваКафедра землеробстваКафедра землеробства</h3>
+                        <a href="https://ksau.neuraldynamics.online/en/specialized-academic-council/">
+                            <h3>{% trans 'Спеціалізована вчена рада' %}</h3>
                         </a>
                     </li>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="">
+                            <h3>{% trans 'Наукова бібліотека' %}</h3>
                         </a>
                     </li>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="https://ksau.neuraldynamics.online/en/naukove-tovaristvo/">
+                            <h3>{% trans 'Наукове товариство студентів, аспірантів, докторантів і молодих вчених' %}</h3>
                         </a>
                     </li>
                     <li>
-                        <a href="/department.html">
-                            <h3>Кафедра землеробства</h3>
+                        <a href="http://www.tnv-agro.ksauniv.ks.ua/">
+                            <h3>{% trans 'Вісники' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.scopus.com/home.uri">
+                            <h3>{% trans 'Scopus' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://login.webofknowledge.com/">
+                            <h3>{% trans 'Web Of Science' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3>{% trans 'Наукові школи' %}</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <h3>{% trans 'Наукові гуртки здобувачів вищої освіти' %}</h3>
                         </a>
                     </li>
                 </ul>
