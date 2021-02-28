@@ -22,3 +22,10 @@ def contact_form_request(request):
         return JsonResponse({'status':'OK','message':_('Спасибо, мы ответим как только сможем!')})
     else:
         return JsonResponse({'status':'BAD','message':'Form is not valid'})
+
+
+def custom_template_handler404(request, exception):
+    return render(request, 'errors/404.html')
+
+def custom_template_handler500(request):
+    return render(request, 'errors/500.html')

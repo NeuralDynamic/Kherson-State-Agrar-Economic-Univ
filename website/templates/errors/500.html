@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block title %}500{% endblock title %}
+
+{% block content %}
+<section class="page_500">
+    <img src="/assets/images/500.png" alt="">
+    <div class="content">
+        <h1>
+            {% trans 'Вибачте, у нас щось зламалося!' %}
+        </h1>
+        <a class="button outlined" href="/">{% trans 'Повернутися на головну' %}</a>
+    </div>
+    
+</section>
+{% endblock %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-28 13:00+0200\n"
+"POT-Creation-Date: 2021-02-28 14:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -463,6 +463,18 @@ msgstr ""
 
 #: templates/cms-plugins/home_contact-form.html:35
 msgid "Надіслати"
+msgstr ""
+
+#: templates/errors/404.html:12
+msgid "Вибачте, ми не змогли знайти вашу сторінку!"
+msgstr ""
+
+#: templates/errors/404.html:14 templates/errors/500.html:14
+msgid "Повернутися на головну"
+msgstr ""
+
+#: templates/errors/500.html:12
+msgid "Вибачте, у нас щось зламалося!"
 msgstr ""
 
 #: templates/footer.html:8

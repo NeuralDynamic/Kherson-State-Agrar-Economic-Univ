@@ -1,6 +1,7 @@
 from content.views import manifest_view
 from cms.sitemaps import CMSSitemap
 from django.conf import settings
+from django.conf.urls import handler404, handler500
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -13,6 +14,9 @@ from university.sitemaps import (StaffSitemap, FacultySitemap, CathedraSitemap)
 from news.sitemaps import (PaperSitemap, NewsSitemap)
 
 admin.autodiscover()
+
+handler404 = 'content.views.custom_template_handler404'
+handler500 = 'content.views.custom_template_handler500'
 
 sitemaps = {
     "cmspages": CMSSitemap,
