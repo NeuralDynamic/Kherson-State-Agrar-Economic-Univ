@@ -20,7 +20,7 @@ class StaffCathedra(TranslatableModel):
 
     #region            -----Relation-----
     cathedras=ForeignKey("Cathedra", on_delete=CASCADE, 
-    null=True, verbose_name=_("Cathedra"))
+    null=True, verbose_name=_("Department"))
     staff=ForeignKey("Staff", on_delete=CASCADE, 
     null=True, verbose_name=_("Staff"))
     #endregion

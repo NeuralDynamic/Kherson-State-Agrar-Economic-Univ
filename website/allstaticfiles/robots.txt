@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cyberring.club/sitemap.xml
+Sitemap: https://ksau.neuraldynamics.online/sitemap.xml
