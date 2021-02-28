@@ -81,7 +81,7 @@ class Section(CMSPlugin):
 
 
 class HidingSection(CMSPlugin):
-    title=models.CharField(max_length=150, verbose_name=_("Section title"))
+    title=models.CharField(max_length=300, verbose_name=_("Section title"))
     content=HTMLField(verbose_name=_("Content"))
 
 class TeacherSlider(CMSPlugin):
