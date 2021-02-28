@@ -7,7 +7,7 @@ class LocaleRedirectMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        if request.path.startswith(f'/{settings.LANGUAGE_CODE}'):
-            return redirect( request.path[3:])
+        # if request.path.startswith(f'/{settings.LANGUAGE_CODE}'):
+        #     return redirect( request.path[3:])
         response = self.get_response(request)
         return response

@@ -30,11 +30,11 @@ sitemaps = {
 
 urlpatterns = [
     path('favicon.ico/', RedirectView.as_view(
-    url='/assets/images/favicon.png'), 
-    name='favicon'),
-    path('manifest.json', manifest_view, name='manifest'),
-    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}),
-    path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
+                        url='/assets/images/favicon.png'), 
+                        name='favicon'),
+    path('manifest.json/', manifest_view, name='manifest'),
+    path("sitemap.xml/", sitemap, {"sitemaps": sitemaps}),
+    path("robots.txt/",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
     path("", include("searcher.urls"))
 ]
 
@@ -53,8 +53,6 @@ urlpatterns += i18n_patterns(
     path("admin/", admin.site.urls),
     path("", include("cms.urls")),
     #endregion
-    
-    prefix_default_language =False
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
