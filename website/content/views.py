@@ -25,6 +25,7 @@ def contact_form_request(request):
 
 
 def custom_template_handler404(request, exception):
+    print()
     return render(request, 'errors/404.html')
 
 def custom_template_handler500(request):
