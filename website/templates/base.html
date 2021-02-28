@@ -14,9 +14,8 @@
 
     {% block header %}{% endblock %}
     {% block styles %}{% endblock %}
+    {% static_placeholder "HEAD" %}
     {% render_block "css" %}
-
-    {% static_placeholder "header-links" %}
 
 </head>
 <body>
@@ -41,6 +40,6 @@
     
     {% render_block "js" %}
     {% block scripts %}{% endblock %}
-    {% static_placeholder "footer-links" %}
+    {% static_placeholder 'FOOTER' %}
 </body>
 </html>
