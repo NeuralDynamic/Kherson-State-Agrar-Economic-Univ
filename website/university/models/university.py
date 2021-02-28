@@ -182,8 +182,8 @@ class Cathedra(TranslatableModel):
 
     #region            -----Metadata-----
     class Meta(object):
-        verbose_name_plural=_("Cathedras")
-        verbose_name=_("Cathedra")
+        verbose_name_plural=_("Departments")
+        verbose_name=_("Departments")
     #endregion
 
     #region         -----Internal Methods-----
