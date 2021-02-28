@@ -167,8 +167,8 @@ class Cathedra(TranslatableModel):
     #region            -----Relation-----
     material_technical_base=ManyToManyField(MaterialBaseNode,
     verbose_name=_("Material-technical base"), blank=True)
-    faculty=ForeignKey("Faculty", blank=False,
-    null=False, on_delete=CASCADE, default=1,
+    faculty=ForeignKey("Faculty", blank=True,
+    null=True, on_delete=CASCADE,
     verbose_name=_("Faculty"),
     related_name="cathedras")
 

@@ -138,6 +138,8 @@ class StaffAdmin(TranslatableAdmin):
     "methodical_works","description", "disciplines","rewards",
     "google_scholar", "web_of_science", "researchgate",
     "scopus", "orcid"]
+    list_filter=["first_name","second_name", "third_name", "rank",
+    "phone", "emails"]
     #endregion
 
     #region         -----Internal Methods-----
