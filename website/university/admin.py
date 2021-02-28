@@ -138,7 +138,8 @@ class StaffAdmin(TranslatableAdmin):
     "methodical_works","description", "disciplines","rewards",
     "google_scholar", "web_of_science", "researchgate",
     "scopus", "orcid"]
-    list_filter=["first_name","second_name", "third_name", "rank",
+    list_filter=["translations__first_name","translations__second_name", 
+    "translations__third_name", "translations__rank",
     "phone", "emails"]
     #endregion
 
