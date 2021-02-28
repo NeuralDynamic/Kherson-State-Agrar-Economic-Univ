@@ -16,6 +16,8 @@
     {% block styles %}{% endblock %}
     {% render_block "css" %}
 
+    {% static_placeholder "header-links" %}
+
 </head>
 <body>
     {% cms_toolbar %}
@@ -39,5 +41,6 @@
     
     {% render_block "js" %}
     {% block scripts %}{% endblock %}
+    {% static_placeholder "footer-links" %}
 </body>
 </html>
