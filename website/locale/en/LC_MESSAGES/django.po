@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-27 12:40+0200\n"
+"POT-Creation-Date: 2021-02-28 13:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,51 +22,63 @@ msgstr ""
 msgid "Content App"
 msgstr ""
 
-#: content/cms_models.py:12
+#: content/cms_models.py:15
 msgid "Subheader"
 msgstr ""
 
-#: content/cms_models.py:15
+#: content/cms_models.py:18
 msgid "Banner image"
 msgstr ""
 
-#: content/cms_models.py:23
+#: content/cms_models.py:26
 msgid "Left card image"
 msgstr ""
 
-#: content/cms_models.py:25
+#: content/cms_models.py:28
 msgid "Left card title"
 msgstr ""
 
-#: content/cms_models.py:27
+#: content/cms_models.py:30
 msgid "Left card text"
 msgstr ""
 
-#: content/cms_models.py:30
+#: content/cms_models.py:32
+msgid "Left card url"
+msgstr ""
+
+#: content/cms_models.py:35
 msgid "Middle card image"
 msgstr ""
 
-#: content/cms_models.py:32
+#: content/cms_models.py:37
 msgid "Middle card title"
 msgstr ""
 
-#: content/cms_models.py:34
+#: content/cms_models.py:39
 msgid "Middle card text"
 msgstr ""
 
-#: content/cms_models.py:37
+#: content/cms_models.py:41
+msgid "Middle card url"
+msgstr ""
+
+#: content/cms_models.py:44
 msgid "Right card image"
 msgstr ""
 
-#: content/cms_models.py:39
+#: content/cms_models.py:46
 msgid "Right card title"
 msgstr ""
 
-#: content/cms_models.py:41
+#: content/cms_models.py:48
 msgid "Right card text"
 msgstr ""
 
-#: content/cms_models.py:49 content/cms_models.py:66 gallery/models.py:25
+#: content/cms_models.py:50
+msgid "Right card url"
+msgstr ""
+
+#: content/cms_models.py:58 content/cms_models.py:75 gallery/models.py:25
 #: library/models.py:23 news/models.py:26 news/models.py:49 news/models.py:96
 #: news/models.py:164 university/models/staff.py:28
 #: university/models/university.py:54 university/models/university.py:91
@@ -75,7 +87,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: content/cms_models.py:52 gallery/models.py:22 gallery/models.py:58
+#: content/cms_models.py:61 gallery/models.py:22 gallery/models.py:58
 #: library/models.py:17 news/models.py:46 news/models.py:166
 #: university/models/staff.py:67 university/models/university.py:23
 #: university/models/university.py:83 university/models/university.py:138
@@ -83,71 +95,91 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: content/cms_models.py:55
+#: content/cms_models.py:64
 msgid "Button title"
 msgstr ""
 
-#: content/cms_models.py:58
+#: content/cms_models.py:67
 msgid "Button url"
 msgstr ""
 
-#: content/cms_models.py:74
-msgid "Link title"
+#: content/cms_models.py:80 content/cms_models.py:85
+#: university/models/utils.py:83
+msgid "Content"
 msgstr ""
 
-#: content/cms_models.py:76 library/models.py:28
-msgid "Link"
+#: content/cms_models.py:84 content/cms_models.py:88
+msgid "Section title"
 msgstr ""
 
-#: content/cms_models.py:86
-msgid "Location link"
+#: content/cms_models.py:90 university/models/staff.py:101
+#: university/models/staff.py:102 university/models/university.py:181
+#: university/models/university.py:237 university/models/utils.py:25
+#: university/models/utils.py:55
+msgid "Staff"
 msgstr ""
 
-#: content/cms_models.py:88
-msgid "Location country"
-msgstr ""
-
-#: content/cms_models.py:90
-msgid "Location city"
-msgstr ""
-
-#: content/cms_models.py:93
-msgid "Location street"
-msgstr ""
-
-#: content/cms_models.py:95
-msgid "Location zip"
-msgstr ""
-
-#: content/cms_models.py:98
-msgid "Facebook link"
+#: content/cms_models.py:91
+msgid "You can choose staff from cathedra staff"
 msgstr ""
 
 #: content/cms_models.py:100
+msgid "Link title"
+msgstr ""
+
+#: content/cms_models.py:102 library/models.py:28
+msgid "Link"
+msgstr ""
+
+#: content/cms_models.py:112
+msgid "Location link"
+msgstr ""
+
+#: content/cms_models.py:114
+msgid "Location country"
+msgstr ""
+
+#: content/cms_models.py:116
+msgid "Location city"
+msgstr ""
+
+#: content/cms_models.py:119
+msgid "Location street"
+msgstr ""
+
+#: content/cms_models.py:121
+msgid "Location zip"
+msgstr ""
+
+#: content/cms_models.py:124
+msgid "Facebook link"
+msgstr ""
+
+#: content/cms_models.py:126
 msgid "Instagram link"
 msgstr ""
 
-#: content/cms_models.py:102
+#: content/cms_models.py:128
 msgid "Youtube link"
 msgstr ""
 
-#: content/cms_models.py:104
+#: content/cms_models.py:130
 msgid "Telegram link"
 msgstr ""
 
-#: content/cms_models.py:106
+#: content/cms_models.py:132
 msgid "Linkedin link"
 msgstr ""
 
-#: content/cms_models.py:108
+#: content/cms_models.py:134
 msgid "Tiktok link"
 msgstr ""
 
-#: content/cms_models.py:111
+#: content/cms_models.py:137
 msgid "Phone"
 msgstr ""
 
-#: content/cms_models.py:113 content/models.py:9
+#: content/cms_models.py:139 content/models.py:9
 msgid "Email"
 msgstr ""
 
@@ -189,11 +221,24 @@ msgstr ""
 msgid "External Link"
 msgstr ""
 
-#: content/cms_plugins.py:112
+#: content/cms_plugins.py:110 content/cms_plugins.py:122
+#: content/cms_plugins.py:134 content/cms_plugins.py:148
 msgid "Base blocks"
 msgstr ""
 
-#: content/cms_plugins.py:114
+#: content/cms_plugins.py:112
+msgid "Section Block"
+msgstr ""
+
+#: content/cms_plugins.py:123
+msgid "Section Hiding Block"
+msgstr ""
+
+#: content/cms_plugins.py:135
+msgid "Teacher Slider"
+msgstr ""
+
+#: content/cms_plugins.py:150
 msgid "Footer Block"
 msgstr ""
 
@@ -334,7 +379,6 @@ msgid "Announcement"
 msgstr ""
 
 #: news/templates/news/article.html:20 news/templates/news/news.html:12
-#: templates/header.html:9
 msgid "Новини"
 msgstr "News"
 
@@ -431,24 +475,24 @@ msgid "Інтернет джерела"
 msgstr "Internet sources"
 
 #: templates/header.html:8
-msgid "Про університет"
-msgstr "About the university"
+msgid "Університет"
+msgstr "University"
 
-#: templates/header.html:10
-msgid "Освітній процес"
-msgstr "Educational process"
-
-#: templates/header.html:11
-msgid "Наука"
-msgstr "Science"
-
-#: templates/header.html:12
+#: templates/header.html:9
 msgid "Абітурієнту"
 msgstr "For enrollee"
 
-#: templates/header.html:13
-msgid "Якість освіти"
-msgstr "Quality of education"
+#: templates/header.html:10
+msgid "Освіта"
+msgstr "Education"
+
+#: templates/header.html:11
+msgid "Здобувачу"
+msgstr "Student"
+
+#: templates/header.html:12
+msgid "Наука"
+msgstr "Science"
 
 #: university/apps.py:7
 msgid "University App"
@@ -517,12 +561,6 @@ msgstr ""
 #: university/models/staff.py:87 university/models/university.py:32
 #: university/models/university.py:162
 msgid "Phone number"
-msgstr ""
-
-#: university/models/staff.py:101 university/models/staff.py:102
-#: university/models/university.py:181 university/models/university.py:237
-#: university/models/utils.py:25 university/models/utils.py:55
-msgid "Staff"
 msgstr ""
 
 #: university/models/university.py:26
@@ -682,10 +720,6 @@ msgid ""
 "    from title field, if  field empty."
 msgstr ""
 
-#: university/models/utils.py:83
-msgid "Content"
-msgstr ""
-
 #: university/models/utils.py:92
 msgid "Material-technical bases"
 msgstr ""
@@ -787,6 +821,12 @@ msgstr ""
 #: website/settings/django.py:151 website/settings/third_party/cms.py:8
 msgid "uk"
 msgstr ""
+
+#~ msgid "Освітній процес"
+#~ msgstr "Educational process"
+
+#~ msgid "Якість освіти"
+#~ msgstr "Quality of education"
 
 #~ msgid "Новости ХДАЕУ"
 #~ msgstr "News KSAEU"
