@@ -51,7 +51,8 @@ urlpatterns += i18n_patterns(
     path("admin/", admin.site.urls),
     path("", include("cms.urls")),
     #endregion
-  
+    
+    prefix_default_language =False
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # This is only needed when using runserver.
