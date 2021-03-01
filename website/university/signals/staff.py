@@ -28,5 +28,5 @@ def delete_on_delete(instance: Staff,
     @return None
     """
     instance.photo.delete(save=False)
-    (instance.library.delete() if
-    instance.library else None)
+    (instance.books.clear() if
+    instance.books else None)
