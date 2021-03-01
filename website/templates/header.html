@@ -1,19 +1,20 @@
 {% load i18n %}
 
+{% get_current_language as LANGUAGE_CODE %}
+
 <header class="header">
     <div class="header__icon" style="background-image: url(/assets/images/apple-icon.png);">
         <a href="/" aria-label="ksau-main-page"></a>
     </div>
     <div class="header__links">
-        <a href="/">{% trans 'Університет' %}</a>
-        <a href="/">{% trans 'Абітурієнту' %}</a>
-        <a href="/">{% trans 'Освіта' %}</a>
-        <a href="/">{% trans 'Здобувачу' %}</a>
-        <a href="/">{% trans 'Наука' %}</a>
+        <a href="/{{ LANGUAGE_CODE }}/about-us/">{% trans 'Університет' %}</a>
+        <a href="/{{ LANGUAGE_CODE }}/abituriyentu/">{% trans 'Абітурієнту' %}</a>
+        <a href="/{{ LANGUAGE_CODE }}/disciplines-free-choice/">{% trans 'Освіта' %}</a>
+        <a href="/{{ LANGUAGE_CODE }}/schedule/">{% trans 'Здобувачу' %}</a>
+        <a href="/{{ LANGUAGE_CODE }}/specialized-academic-council/">{% trans 'Наука' %}</a>
     </div>
     <div class="header__language_select">
         <div class="dropdown">
-            {% get_current_language as LANGUAGE_CODE %}
             <div class="dropdown__preview">
                 {{ LANGUAGE_CODE }}
             </div>
@@ -22,9 +23,9 @@
                     {% get_available_languages as LANGUAGES %}
                     {% get_language_info_list for LANGUAGES as languages %}
                     {% for language in languages %}
-                    <li>
-                        <a href="/{{ language.code }}{{ request.get_full_path|slice:'3:' }}">{{ language.code }}</a>
-                    </li>
+                        <li>
+                            <a href="/{{ language.code }}{{ request.get_full_path|slice:'3:' }}">{{ language.code }}</a>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>
