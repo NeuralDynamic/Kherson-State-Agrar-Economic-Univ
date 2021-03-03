@@ -84,7 +84,7 @@ class AnnouncementsPlugin(CMSPluginBase):
 
     #region            -----Rendering-----
     def render(self, context, instance, placeholder):
-        announcements = Announcement.objects.all()
+        announcements = Announcement.objects.filter(active=True).all()
         context.update({"announcements": announcements})
         return context
     #endregion
