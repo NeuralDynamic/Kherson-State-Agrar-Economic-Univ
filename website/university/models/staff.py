@@ -89,7 +89,7 @@ class Staff(TranslatableModel):
     #endregion
 
     #region            -----Relation-----
-    disciplines=ManyToManyField(Discipline, blank=True, null=True)
+    disciplines=ManyToManyField(Discipline, blank=True)
     books=ManyToManyField(Book, blank=True)
     rewards=ManyToManyField("Reward", blank=True,
                         verbose_name=_("Rewards"),

@@ -173,6 +173,8 @@ class Announcement(TranslatableModel):
     upload_to="announcements", blank=True)
     attach=URLField(verbose_name=_("Attach"),
     blank=True, null=True)
+    active=BooleanField(verbose_name=_("Active announcement"),
+    default=True)
     date=DateField(verbose_name=_("Announcement date"),
     default=timezone.now)
     #endregion
