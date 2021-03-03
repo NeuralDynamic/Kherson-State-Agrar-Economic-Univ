@@ -68,7 +68,7 @@ class NewsFeed(TranslatableModel):
     def _papers(self)->Html:
         """@return related papers"""
         return render_related_papers(
-        papers=self.papers.all()[:5])
+        papers=self.papers.all())
 
     def __str__(self)->str:
         """@return feed title"""
@@ -157,6 +157,7 @@ class Paper(TranslatableModel):
         """@return image url"""
         return self.title
     #endregion
+<<<<<<< HEAD
 
 class Announcement(TranslatableModel):
     #region           -----Translation-----
@@ -185,3 +186,5 @@ class Announcement(TranslatableModel):
 
     def __str__(self)->str:
         return self.title
+=======
+>>>>>>> origin/cms_constructor

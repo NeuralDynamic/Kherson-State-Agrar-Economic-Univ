@@ -41,7 +41,7 @@ class Gallery(TranslatableModel):
     def _images(self)->Html:
         """@return related images"""
         return render_related_images(
-        images=self.images.all()[:5])
+        images=self.images.all())
 
     def __str__(self)->str:
         """@return gallery title"""
