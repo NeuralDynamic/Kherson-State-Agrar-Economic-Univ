@@ -25,15 +25,11 @@
             </a>
             <div class="teacher-rank">
                 {% if teacher.position and teacher.position != '' %}
-                    {{ teacher.position }}
-                    {% if teacher.staff.rank %}
-                    , {{ teacher.staff.rank }}
-                    {% endif %}
+                    {{ teacher.position }}{% if teacher.staff.rank %}, {{ teacher.staff.rank }}{% endif %}
                 {% elif teacher.rank and teacher.rank != '' %}
-                    {{ teacher.rank }}
-                    {% if teacher.staff.rank %}
-                    , {{ teacher.staff.rank }}
-                    {% endif %}
+                    {{ teacher.rank }}{% if teacher.staff.rank %}, {{ teacher.staff.rank }}{% endif %}
+                {% else %}
+                    {{ teacher.staff.rank }}
                 {% endif %}
             </div>
         </div>

@@ -132,8 +132,8 @@ class StaffAdmin(TranslatableAdmin):
     
     #region           ----Configuration-----
     list_display=["__str__", "phone","preview"]
-    fields=["photo", "first_name", 
-    "second_name", "third_name", "rank",
+    fields=["photo", "second_name",
+    "first_name", "third_name", "rank",
     "phone", "emails", "ndr_theme", "books", 
     "methodical_works","description", "disciplines","rewards",
     "google_scholar", "web_of_science", "researchgate",
