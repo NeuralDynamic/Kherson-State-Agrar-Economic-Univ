@@ -157,7 +157,6 @@ class Paper(TranslatableModel):
         """@return image url"""
         return self.title
     #endregion
-<<<<<<< HEAD
 
 class Announcement(TranslatableModel):
     #region           -----Translation-----
@@ -186,5 +185,3 @@ class Announcement(TranslatableModel):
 
     def __str__(self)->str:
         return self.title
-=======
->>>>>>> origin/cms_constructor
