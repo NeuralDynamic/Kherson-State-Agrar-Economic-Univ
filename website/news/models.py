@@ -94,10 +94,10 @@ class Paper(TranslatableModel):
     blank=False),
     
     title=CharField(verbose_name=_("Title"),
-    max_length=100, blank=False),
+    max_length=300, blank=False),
     
     authors=CharField(verbose_name=_("Authors"),
-    max_length=200, blank=False))
+    max_length=300, blank=False))
     #endregion
 
     #region            -----Database-----
