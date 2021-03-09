@@ -23,11 +23,11 @@
         <div class="section-title">
             {% trans 'Сторінки' %}
         </div>
-        <div class="news-container">
+        <div class="section-body">
             <ul>
-                {% for slug in search_result.pages_slugs %}
+                {% for page_slug in search_result.pages_slugs %}
                 <li>
-                    <a href="/{{ LANGUAGE_CODE }}/{{ slug }}"></a>
+                    <a href="/{{ LANGUAGE_CODE }}/{{ page_slug.slug }}">{{ page_slug.title }}</a>
                 </li>       
                 {% endfor %}
             </ul>
