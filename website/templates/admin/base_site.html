@@ -23,6 +23,20 @@
     </style>
 {% endblock %}
 
+{# Setup browser tab label #}
+{% block title %}{{ title }} | {% trans "KSAEU" %}{% endblock %}
+
+{# Setup branding #}
+{% block branding %}
+    <h1 id="site-name">
+        <a href="{% url 'admin:index' %}">
+            <img style="background-color: white; border-radius: 50%;" src="{{MEDIA_URL}}/images/apple-icon.png" alt="Your Company Name" height="70px" width="70px">
+            <br><br>
+            </span> {% trans "KSAEU" %}
+        </a>
+    </h1>
+{% endblock %}
+
 {% block userlinks %}
 
 <div class="" style="display: flex;">
