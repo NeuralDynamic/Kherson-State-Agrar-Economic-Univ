@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-28 20:09+0200\n"
+"POT-Creation-Date: 2021-03-09 14:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -209,7 +209,7 @@ msgstr ""
 msgid "Contact Form"
 msgstr ""
 
-#: content/cms_plugins.py:83 news/models.py:182
+#: content/cms_plugins.py:83 news/models.py:184
 msgid "Announcements"
 msgstr ""
 
@@ -371,15 +371,19 @@ msgid "Attach"
 msgstr ""
 
 #: news/models.py:176
+msgid "Active announcement"
+msgstr ""
+
+#: news/models.py:178
 msgid "Announcement date"
 msgstr ""
 
-#: news/models.py:183
+#: news/models.py:185
 msgid "Announcement"
 msgstr ""
 
 #: news/templates/news/article.html:20 news/templates/news/news.html:12
-#: templates/menu.html:28
+#: searcher/templates/searcher/search.html:24 templates/menu.html:28
 msgid "Новини"
 msgstr "News"
 
@@ -390,6 +394,42 @@ msgstr "News"
 #: news/templates/news/news.html:12 templates/cms-plugins/footer.html:12
 msgid "ХДАЕУ"
 msgstr "KSAEU"
+
+#: searcher/templates/searcher/search.html:9
+msgid "Пошук"
+msgstr ""
+
+#: searcher/templates/searcher/search.html:17
+#, fuzzy
+#| msgid "Вибачте, ми не змогли знайти вашу сторінку!"
+msgid "Вибачте, ми не змогли нічого знайти."
+msgstr "Sorry, we could not find your page!"
+
+#: searcher/templates/searcher/search.html:36
+#, fuzzy
+#| msgid "Склад кафедры"
+msgid "Викладачі"
+msgstr "Cathedra staff"
+
+#: searcher/templates/searcher/search.html:58
+#: university/templates/university/faculty.html:53
+msgid "Кафедри"
+msgstr "Units"
+
+#: searcher/templates/searcher/search.html:70
+#, fuzzy
+#| msgid "Галерея"
+msgid "Галереї"
+msgstr "Gallery"
+
+#: searcher/templates/searcher/search.html:91
+msgid "Фотографії"
+msgstr ""
+
+#: searcher/templates/searcher/search.html:115
+#: university/templates/university/teacher.html:74
+msgid "Видання"
+msgstr "Publications"
 
 #: templates/base.html:9
 msgid "KSAEU"
@@ -487,129 +527,117 @@ msgstr "Often sought"
 msgid "Інтернет джерела"
 msgstr "Internet sources"
 
-#: templates/header.html:8
+#: templates/header.html:10
 msgid "Університет"
 msgstr "University"
 
-#: templates/header.html:9 templates/menu.html:48
+#: templates/header.html:11 templates/menu.html:48
 msgid "Абітурієнту"
 msgstr "For enrollee"
 
-#: templates/header.html:10 templates/menu.html:139
+#: templates/header.html:12 templates/menu.html:139
 msgid "Освіта"
 msgstr "Education"
 
-#: templates/header.html:11 templates/menu.html:175
+#: templates/header.html:13 templates/menu.html:175
 msgid "Здобувачу"
 msgstr "Student"
 
-#: templates/header.html:12 templates/menu.html:221
+#: templates/header.html:14 templates/menu.html:221
 msgid "Наука"
 msgstr "Science"
 
 #: templates/menu.html:7
-#, fuzzy
-#| msgid "Університет"
 msgid "Университет"
 msgstr "University"
 
 #: templates/menu.html:13
 msgid "Про нас"
-msgstr ""
+msgstr "About us"
 
 #: templates/menu.html:18
 msgid "Публічна і офіційна інформація"
-msgstr ""
+msgstr "Public and official information"
 
 #: templates/menu.html:23
-#, fuzzy
-#| msgid "Тематика НДР"
 msgid "Нормативна база"
 msgstr "RW topics"
 
 #: templates/menu.html:54
 msgid "Списки рекомендованих"
-msgstr ""
+msgstr "Regulatory framework"
 
 #: templates/menu.html:59
 msgid "Списки прийнятих"
-msgstr ""
+msgstr "Lists accepted"
 
 #: templates/menu.html:64
 msgid "Предмети 2021"
-msgstr ""
+msgstr "Items 2021"
 
 #: templates/menu.html:69
-#, fuzzy
-#| msgid "Освітні програми"
 msgid "Освітній центр «Крим-Україна»"
-msgstr "Educational programs"
+msgstr "Crimea-Ukraine Educational Center"
 
 #: templates/menu.html:74
-#, fuzzy
-#| msgid "Освітні програми"
 msgid "Освітній центр «Донбас-Україна»"
-msgstr "Educational programs"
+msgstr "Donbass-Ukraine Educational Center"
 
 #: templates/menu.html:79
 msgid "Вартість навчання"
-msgstr ""
+msgstr "Cost of education"
 
 #: templates/menu.html:84
 msgid "Програми вступних випробувань"
-msgstr ""
+msgstr "Entrance examination programs"
 
 #: templates/menu.html:89
 msgid "Розклад вступних випробувань"
-msgstr ""
+msgstr "Schedule of entrance examinations"
 
 #: templates/menu.html:94
 msgid "ЗНО для магістрів"
-msgstr ""
+msgstr "External examination for masters"
 
 #: templates/menu.html:99
 msgid "Контакти приймальної комісії"
-msgstr ""
+msgstr "Contacts of the selection committee"
 
 #: templates/menu.html:104
 msgid "Приймальна комісія"
-msgstr ""
+msgstr "Admissions"
 
 #: templates/menu.html:109
 msgid "Довузівська підготовка"
-msgstr ""
+msgstr "Pre-university training"
 
 #: templates/menu.html:114
 msgid "Правила прийому"
-msgstr ""
+msgstr "Admission rules"
 
 #: templates/menu.html:119
 msgid "Олімпіада"
-msgstr ""
+msgstr "Olympiad"
 
 #: templates/menu.html:124
 msgid "Спеціальності"
-msgstr ""
+msgstr "Specialties"
 
 #: templates/menu.html:129
-#, fuzzy
-#| msgid "Текст повідомлення"
 msgid "Державне замовлення"
-msgstr "Message text"
+msgstr "Government order"
 
 #: templates/menu.html:145 university/templates/university/cathedra.html:62
 msgid "Освітні програми"
 msgstr "Educational programs"
 
 #: templates/menu.html:150 templates/menu.html:206
-#, fuzzy
-#| msgid "Контакти"
 msgid "Бази практик"
-msgstr "Contacts"
+msgstr "Bases of practice"
 
 #: templates/menu.html:155
 msgid "Дисципліни вільного вибору"
-msgstr ""
+msgstr "Disciplines of free choice"
 
 #: templates/menu.html:160
 msgid "Якість освіти"
@@ -617,43 +645,39 @@ msgstr "Quality of education"
 
 #: templates/menu.html:165
 msgid "Онлайн опитування"
-msgstr ""
+msgstr "Online survey"
 
 #: templates/menu.html:181
-#, fuzzy
-#| msgid "Склад кафедры"
 msgid "Розклад занять"
-msgstr "Cathedra staff"
+msgstr "Timetable"
 
 #: templates/menu.html:186
 msgid "Студентська рада"
-msgstr ""
+msgstr "Student council"
 
 #: templates/menu.html:191
 msgid "Психологічна служба"
-msgstr ""
+msgstr "Psychological service"
 
 #: templates/menu.html:196
 msgid "Академічна доброчесність"
-msgstr ""
+msgstr "Academic integrity"
 
 #: templates/menu.html:201
-#, fuzzy
-#| msgid "Рік заснування кафедри"
 msgid "Влаштування на роботу"
-msgstr "Year of foundation"
+msgstr "Job placement"
 
 #: templates/menu.html:211
 msgid "Система Moodle"
-msgstr ""
+msgstr "Moodle System"
 
 #: templates/menu.html:227
 msgid "Спеціалізована вчена рада"
-msgstr ""
+msgstr "Specialized Academic Council"
 
 #: templates/menu.html:232
 msgid "Наукова бібліотека"
-msgstr ""
+msgstr "Scientific Library"
 
 #: templates/menu.html:237 university/templates/university/faculty.html:111
 msgid "Наукове товариство студентів, аспірантів, докторантів і молодих вчених"
@@ -663,7 +687,7 @@ msgstr ""
 
 #: templates/menu.html:242
 msgid "Вісники"
-msgstr ""
+msgstr "Bulletins"
 
 #: templates/menu.html:247 university/models/staff.py:80
 msgid "Scopus"
@@ -675,11 +699,11 @@ msgstr ""
 
 #: templates/menu.html:257
 msgid "Наукові школи"
-msgstr ""
+msgstr "Scientific schools"
 
 #: templates/menu.html:262
 msgid "Наукові гуртки здобувачів вищої освіти"
-msgstr ""
+msgstr "Scientific circles of higher education seekers"
 
 #: university/apps.py:7
 msgid "University App"
@@ -915,7 +939,7 @@ msgid "Призначення кафедри"
 msgstr "Appointment of the cathedra"
 
 #: university/templates/university/cathedra.html:41
-msgid "Склад кафедры"
+msgid "Склад кафедри"
 msgstr "Cathedra staff"
 
 #: university/templates/university/cathedra.html:63
@@ -942,10 +966,6 @@ msgstr "Cathedra contacts"
 msgid "Деканат"
 msgstr "Deanery"
 
-#: university/templates/university/faculty.html:53
-msgid "Кафедри"
-msgstr "Units"
-
 #: university/templates/university/faculty.html:64
 msgid "Oсвітні програми"
 msgstr "Educational programs"
@@ -965,10 +985,6 @@ msgstr "Disciplines"
 #: university/templates/university/teacher.html:61
 msgid "Основнi науковi та методичi працi"
 msgstr "Basic scientific and methodical works"
-
-#: university/templates/university/teacher.html:74
-msgid "Видання"
-msgstr "Publications"
 
 #: university/templates/university/teacher/univ-data.html:5
 msgid "Професiйнi досягнення та нагороди"

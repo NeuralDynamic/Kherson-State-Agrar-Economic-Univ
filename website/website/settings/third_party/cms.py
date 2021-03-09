@@ -34,8 +34,6 @@ CMS_TEMPLATES = (
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-CMS_PERMISSION = True
-
 CMS_PLACEHOLDER_CONF = {}
 
 THUMBNAIL_PROCESSORS = (
@@ -44,7 +42,6 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
-
 
 DJANGOCMS_SNIPPET_SEARCH = True
 CMS_PERMISSION = False
