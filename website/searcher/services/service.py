@@ -56,7 +56,8 @@ class SearchService(object):
             page_title_obj=Title.objects.filter(page_id=cms_page.pk, 
                                                 language=language).first()
             if page_title_obj and phrase.lower() in page_title_obj.title.lower():
+                print(phrase.lower(),page_title_obj.title.lower())
                 cms_slugs.append(page_title_obj.slug)
                 if search_result: result.search_result=True
-        if cms_slugs: result.pages_slugs=cms_slugs
+        result.pages_slugs=cms_slugs
         return result
