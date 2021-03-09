@@ -106,7 +106,7 @@ class ExternalLinkPlugin(CMSPluginBase):
 
 class InternalLinkPlugin(CMSPluginBase):
     #region           -----Information-----
-    render_template=settings.TEMPLATE_DIR+"/cms-plugins/external-link.html"
+    render_template=settings.TEMPLATE_DIR+"/cms-plugins/internal-link.html"
     module=_("Utils plugins")
     model=cms_models.InternalLink
     name=_("Internal Link")
