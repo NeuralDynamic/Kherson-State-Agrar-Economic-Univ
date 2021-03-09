@@ -8,5 +8,6 @@ from .services.service import SearchService
 
 def search(request):
     phrase=request.GET.get("q")
-    SearchService().search(phrase)
-    return render(request)
+    result=SearchService().search(phrase)
+    return render(request,'searcher/search.html',
+                context={'search_result':result})

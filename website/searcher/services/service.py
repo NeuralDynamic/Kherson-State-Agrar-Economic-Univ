@@ -14,8 +14,16 @@ Speciality, Faculty, Staff)
 #endregion
 
 class SearchService(object):
-    models=[Gallery, Image, Book, NewsFeed,
-    Paper, Cathedra, Speciality, Faculty, Staff]
+    models=[
+            Gallery, 
+            Image, 
+            Book, 
+            # NewsFeed, 
+            Paper, 
+            Cathedra, 
+            # Faculty, don't have card for faculty
+            Staff
+            ]
 
     def search(self, phrase: str)->List[object]:
         """
@@ -25,6 +33,8 @@ class SearchService(object):
         """
         words=phrase.split()
         result=type("", (), {})
+        result.search_q=phrase
+        result.search_result=False
         for model in self.models:
             #*Generates all necessary database queries
             query=Q()
@@ -33,7 +43,9 @@ class SearchService(object):
                     query|=Q(**{f"{field}__icontains": word})
 
             #*Sets result of searching to structure
-            setattr(result, model.__name__.lower(),
-            (model.objects.filter(query)))
-        print(result.staff)
-        return result.staff
+            search_result=(model.objects.filter(query).all())
+            if search_result:
+                result.search_result=True
+                setattr(result, model.__name__.lower(),search_result)
+        print(result.__dict__)
+        return result

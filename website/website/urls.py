@@ -41,6 +41,7 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
 ]
 
+
 urlpatterns += i18n_patterns(
 
     path('', include('gallery.urls')),
@@ -58,11 +59,11 @@ urlpatterns += i18n_patterns(
     path("admin/", admin.site.urls),
     path('', include("cms.urls")),
     #endregion
+)
 
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # This is only needed when using runserver.
 if settings.DEBUG:
     urlpatterns += [path('silk/', include('silk.urls', namespace='silk'))]
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

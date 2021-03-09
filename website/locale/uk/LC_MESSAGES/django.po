@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-28 20:09+0200\n"
+"POT-Creation-Date: 2021-03-09 14:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -214,7 +214,7 @@ msgstr "Новини"
 msgid "Contact Form"
 msgstr "контактна форма"
 
-#: content/cms_plugins.py:83 news/models.py:182
+#: content/cms_plugins.py:83 news/models.py:184
 msgid "Announcements"
 msgstr "Оголошення"
 
@@ -376,15 +376,21 @@ msgid "Attach"
 msgstr "Додаток"
 
 #: news/models.py:176
+#, fuzzy
+#| msgid "Announcement"
+msgid "Active announcement"
+msgstr "Оголошення"
+
+#: news/models.py:178
 msgid "Announcement date"
 msgstr "Дата оголошення"
 
-#: news/models.py:183
+#: news/models.py:185
 msgid "Announcement"
 msgstr "Оголошення"
 
 #: news/templates/news/article.html:20 news/templates/news/news.html:12
-#: templates/menu.html:28
+#: searcher/templates/searcher/search.html:24 templates/menu.html:28
 msgid "Новини"
 msgstr ""
 
@@ -394,6 +400,36 @@ msgstr "Новини"
 
 #: news/templates/news/news.html:12 templates/cms-plugins/footer.html:12
 msgid "ХДАЕУ"
+msgstr ""
+
+#: searcher/templates/searcher/search.html:9
+msgid "Пошук"
+msgstr ""
+
+#: searcher/templates/searcher/search.html:17
+msgid "Вибачте, ми не змогли нічого знайти."
+msgstr ""
+
+#: searcher/templates/searcher/search.html:36
+msgid "Викладачі"
+msgstr ""
+
+#: searcher/templates/searcher/search.html:58
+#: university/templates/university/faculty.html:53
+msgid "Кафедри"
+msgstr ""
+
+#: searcher/templates/searcher/search.html:70
+msgid "Галереї"
+msgstr ""
+
+#: searcher/templates/searcher/search.html:91
+msgid "Фотографії"
+msgstr ""
+
+#: searcher/templates/searcher/search.html:115
+#: university/templates/university/teacher.html:74
+msgid "Видання"
 msgstr ""
 
 #: templates/base.html:9
@@ -494,23 +530,23 @@ msgstr ""
 msgid "Інтернет джерела"
 msgstr ""
 
-#: templates/header.html:8
+#: templates/header.html:10
 msgid "Університет"
 msgstr ""
 
-#: templates/header.html:9 templates/menu.html:48
+#: templates/header.html:11 templates/menu.html:48
 msgid "Абітурієнту"
 msgstr ""
 
-#: templates/header.html:10 templates/menu.html:139
+#: templates/header.html:12 templates/menu.html:139
 msgid "Освіта"
 msgstr ""
 
-#: templates/header.html:11 templates/menu.html:175
+#: templates/header.html:13 templates/menu.html:175
 msgid "Здобувачу"
 msgstr ""
 
-#: templates/header.html:12 templates/menu.html:221
+#: templates/header.html:14 templates/menu.html:221
 msgid "Наука"
 msgstr ""
 
@@ -906,7 +942,7 @@ msgid "Призначення кафедри"
 msgstr ""
 
 #: university/templates/university/cathedra.html:41
-msgid "Склад кафедры"
+msgid "Склад кафедри"
 msgstr ""
 
 #: university/templates/university/cathedra.html:63
@@ -933,10 +969,6 @@ msgstr ""
 msgid "Деканат"
 msgstr ""
 
-#: university/templates/university/faculty.html:53
-msgid "Кафедри"
-msgstr ""
-
 #: university/templates/university/faculty.html:64
 msgid "Oсвітні програми"
 msgstr ""
@@ -955,10 +987,6 @@ msgstr ""
 
 #: university/templates/university/teacher.html:61
 msgid "Основнi науковi та методичi працi"
-msgstr ""
-
-#: university/templates/university/teacher.html:74
-msgid "Видання"
 msgstr ""
 
 #: university/templates/university/teacher/univ-data.html:5

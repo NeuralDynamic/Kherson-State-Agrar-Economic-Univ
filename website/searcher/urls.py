@@ -7,5 +7,5 @@ from . import views
 #endregion
 
 urlpatterns = [
-    path(route="search", view=views.search)
+    path("search", view=views.search, name="search")
 ]

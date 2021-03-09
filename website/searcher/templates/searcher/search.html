@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% load i18n static filename  %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/lightgallery.min.css' %}">
+{% endblock %}
+
+{% block title %}{% trans 'Пошук' %}: {{ search_result.search_q }}{% endblock title %}
+
+{% block content %}
+
+
+{% if not search_result.search_result %}
+    <section>
+        <div class="row jc-center">
+            <h1>{% trans 'Вибачте, ми не змогли нічого знайти.' %}</h1>
+        </div>
+    </section>
+{% else %}
+    {% if search_result.paper %}
+    <section class="cms-section">
+        <div class="section-title">
+            {% trans 'Новини' %}
+        </div>
+        <div class="news-container">
+            {% for article in search_result.paper %}
+                {% include 'utils/news-card.html' %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+    {% if search_result.staff %}
+    <section>
+        <div class="section-title">
+            {% trans 'Викладачі' %}
+        </div>
+        <div class="slider slider-scroller teachers-scroller">
+            <div class="slider__prevSlideButton">
+                <div class="prev-slide-button"></div>
+            </div>
+            <div class="slider__container">
+                {% for teacher in search_result.staff %}
+                <div class="slider__slide">
+                    {% include 'utils/teacher-card.html' %}
+                </div>
+                {% endfor %}
+            </div>
+            <div class="slider__nextSlideButton">
+                <div class="next-slide-button"></div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+    {% if search_result.cathedra %}
+    <section>
+        <div class="section-title">
+            {% trans 'Кафедри' %}
+        </div>
+        <div class="faculty-departments-list row f-wrap">
+            {% for cathedra in search_result.cathedra %}
+                {% include 'utils/cathedra-card.html' %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+    {% if search_result.gallery %}
+    <section>
+        <div class="section-title pt-20">
+            {% trans 'Галереї' %}
+        </div>
+        <div class="gallery-container">
+            {% for gallery in search_result.gallery %}
+            <div class="card gallery-card">
+                <div class="card-body">
+                    <img class="gallery-card__image" src="{{ gallery.images.first.medium_image.url }}" alt="">
+                    <div class="gallery-card__data">
+                        <a class="card__link" href="{% url 'gallery' gallery_id=gallery.id %}">
+                            {{ gallery.title }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+    {% if search_result.image %}
+    <section>
+        <div class="section-title">
+            {% trans 'Фотографії' %}
+        </div>
+        <div class="section-body">
+            <div id="gallery-list" class="gallery-list">
+                {% for image in search_result.image %}
+                <a href="{{ image.large_image.url }}" aria-label="ksau-gallery-image">
+                    <picture>
+                        <source srcset="{{ image.large_image.url }}" media="(max-height: 1440px) and (orientation: landscape)">
+                        <source srcset="{{ image.large_image.url }}" media="(max-width: 1440px) and (orientation: portrait)">
+                        <source srcset="{{ image.medium_image.url }}" media="(max-height: 1000px) and (orientation: landscape)">
+                        <source srcset="{{ image.medium_image.url }}" media="(max-width: 1000px) and (orientation: portrait)">
+                        <source srcset="{{ image.small_image.url }}" media="(max-height: 700px) and (orientation: landscape)">
+                        <source srcset="{{ image.small_image.url }}" media="(max-width: 700px) and (orientation: portrait)">
+                        <img width="1280" height="720" srcset="{{ image.large_image.url }}" alt="{{ image.alt }}" aria-label="{{ image.alt }}">
+                    </picture>
+                </a>
+                {% endfor %}
+            </div> 
+        </div>
+    </section>
+    {% endif %}
+    {% if search_result.book %}
+    <section>
+        <div class="section-title">
+            {% trans 'Видання' %}
+        </div>
+        <div class="teacher-library">
+            {% for book in search_result.book %}
+                {% include 'utils/book-card.html' %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+{% endif %}
+
+{% endblock %}
