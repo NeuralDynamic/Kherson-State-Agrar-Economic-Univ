@@ -106,7 +106,7 @@ class InternalLink(CMSPlugin):
     #region           -----Information-----
     title = models.CharField(max_length=100, blank=True, null=True, 
                         verbose_name=_('Link title'))
-    link = models.CharField(blank=True, null=True, 
+    link = models.CharField(max_length=100, blank=True, null=True, 
                         verbose_name=_('Link'))
     # endregion
 
