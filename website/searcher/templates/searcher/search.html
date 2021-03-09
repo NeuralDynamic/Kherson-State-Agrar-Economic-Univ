@@ -18,6 +18,22 @@
         </div>
     </section>
 {% else %}
+    {% if search_result.pages_slugs %}
+    <section class="cms-section">
+        <div class="section-title">
+            {% trans 'Сторінки' %}
+        </div>
+        <div class="news-container">
+            <ul>
+                {% for slug in search_result.pages_slugs %}
+                <li>
+                    <a href="/{{ LANGUAGE_CODE }}/{{ slug }}"></a>
+                </li>       
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    {% endif %}
     {% if search_result.paper %}
     <section class="cms-section">
         <div class="section-title">
