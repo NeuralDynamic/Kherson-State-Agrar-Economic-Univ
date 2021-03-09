@@ -12,7 +12,7 @@
 
 
 {% if not search_result.search_result %}
-    <section>
+    <section class="cms-section">
         <div class="row jc-center">
             <h1>{% trans 'Вибачте, ми не змогли нічого знайти.' %}</h1>
         </div>
@@ -31,7 +31,7 @@
     </section>
     {% endif %}
     {% if search_result.staff %}
-    <section>
+    <section class="cms-section">
         <div class="section-title">
             {% trans 'Викладачі' %}
         </div>
@@ -53,7 +53,7 @@
     </section>
     {% endif %}
     {% if search_result.cathedra %}
-    <section>
+    <section class="cms-section">
         <div class="section-title">
             {% trans 'Кафедри' %}
         </div>
@@ -65,7 +65,7 @@
     </section>
     {% endif %}
     {% if search_result.gallery %}
-    <section>
+    <section class="cms-section">
         <div class="section-title pt-20">
             {% trans 'Галереї' %}
         </div>
@@ -86,7 +86,7 @@
     </section>
     {% endif %}
     {% if search_result.image %}
-    <section>
+    <section class="cms-section">
         <div class="section-title">
             {% trans 'Фотографії' %}
         </div>
@@ -110,7 +110,7 @@
     </section>
     {% endif %}
     {% if search_result.book %}
-    <section>
+    <section class="cms-section">
         <div class="section-title">
             {% trans 'Видання' %}
         </div>
