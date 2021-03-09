@@ -27,7 +27,7 @@ class SearchService(object):
             Staff
             ]
 
-    def search(self, phrase: str)->List[object]:
+    def search(self, phrase: str, language: str)->List[object]:
         """
         Searches phrase in all database\n
         :param phrase: phrase to search\n
@@ -51,11 +51,10 @@ class SearchService(object):
                 setattr(result, model.__name__.lower(),search_result)
         # search by cms pages
         cms_slugs=[]
-        current_language=get_language()
         cms_pages = Page.objects.filter(publisher_is_draft=False).all()
         for cms_page in cms_pages:
             page_title_obj=Title.objects.filter(page_id=cms_page.pk, 
-                                            language=current_language).first()
+                                                language=language).first()
             if page_title_obj and phrase.lower() in page_title_obj.title.lower():
                 cms_slugs.append(page_title_obj.slug)
         if cms_slugs: result.pages_slugs=cms_slugs
