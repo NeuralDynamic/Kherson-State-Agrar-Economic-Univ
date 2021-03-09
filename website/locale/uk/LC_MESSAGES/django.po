@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-09 16:58+0200\n"
+"POT-Creation-Date: 2021-03-09 17:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1009,6 +1009,10 @@ msgstr "рік"
 #: university/templates/university/teacher/univ-data.html:17
 msgid "Тематика НДР"
 msgstr ""
+
+#: website/admin.py:7 website/admin.py:8 website/admin.py:9
+msgid "KSAU administration"
+msgstr "ХДАЕУ адміністрація"
 
 #: website/settings/django.py:147 website/settings/third_party/cms.py:15
 msgid "en"
