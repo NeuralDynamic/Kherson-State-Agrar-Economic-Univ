@@ -163,7 +163,7 @@ class Announcement(TranslatableModel):
     translations=TranslatedFields(
         title=CharField(verbose_name=_("Title"),
             max_length=100, blank=False),
-        description=HTMLField(verbose_name=_("Description"),
+        description=TextField(verbose_name=_("Description"),
             blank=True, default=""),
     )
     #endregion
