@@ -103,6 +103,20 @@ class ExternalLinkPlugin(CMSPluginBase):
         context.update({"instance": instance})
         return context
     #endregion
+
+class InternalLinkPlugin(CMSPluginBase):
+    #region           -----Information-----
+    render_template=settings.TEMPLATE_DIR+"/cms-plugins/internal-link.html"
+    module=_("Utils plugins")
+    model=cms_models.InternalLink
+    name=_("Internal Link")
+    #endregion
+
+    #region            -----Rendering-----
+    def render(self, context, instance, placeholder):
+        context.update({"instance": instance})
+        return context
+    #endregion
 #endregion
 
 class SectionBlock(CMSPluginBase):
