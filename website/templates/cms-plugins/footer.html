@@ -15,7 +15,13 @@
     {% if instance.email %}
     <div class="email">
         <p>E-mail:</p>
-        <a href="{{ instance.email }}">{{ instance.email }}</a>
+        <a href="mailto:{{ instance.email }}">{{ instance.email }}</a>
+    </div>
+    {% endif %}
+    {% if instance.phone %}
+    <div class="email">
+        <p>{% trans 'Phone' %}:</p>
+        <a href="tel:{{ instance.phone }}">{{ instance.phone }}</a>
     </div>
     {% endif %}
     <div class="social-links">
