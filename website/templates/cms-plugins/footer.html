@@ -37,11 +37,6 @@
                 <div class="social-link social-links__youtube"></div>
             </a>
             {% endif %}
-            {% if instance.linkedin_link %}
-            <a href="{{ instance.linkedin_link }}" target="_blank" rel="noopener noreferrer" aria-label="ksau-linkedin">
-                <div class="social-link social-links__linkedin"></div>
-            </a>
-            {% endif %}
             {% if instance.instagram_link %}
             <a href="{{ instance.instagram_link }}" target="_blank" rel="noopener noreferrer" aria-label="ksau-instagram">
                 <div class="social-link social-links__instagram"></div>
@@ -55,6 +50,11 @@
             {% if instance.tiktok_link %}
             <a href="{{ instance.tiktok_link }}" target="_blank" rel="noopener noreferrer" aria-label="ksau-tiktok">
                 <div class="social-link social-links__tiktok"></div>
+            </a>
+            {% endif %}
+            {% if instance.linkedin_link %}
+            <a href="{{ instance.linkedin_link }}" target="_blank" rel="noopener noreferrer" aria-label="ksau-linkedin">
+                <div class="social-link social-links__linkedin"></div>
             </a>
             {% endif %}
         </div>
