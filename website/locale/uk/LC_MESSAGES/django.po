@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-09 17:02+0200\n"
+"POT-Creation-Date: 2021-03-10 22:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -180,7 +180,7 @@ msgstr ""
 msgid "Tiktok link"
 msgstr ""
 
-#: content/cms_models.py:145
+#: content/cms_models.py:145 templates/cms-plugins/footer.html:23
 msgid "Phone"
 msgstr "Телефон"
 
@@ -306,7 +306,7 @@ msgstr "Зображення"
 
 #: gallery/templates/gallery/catalog.html:5
 #: gallery/templates/gallery/catalog.html:11
-#: gallery/templates/gallery/gallery.html:24 templates/menu.html:33
+#: gallery/templates/gallery/gallery.html:24 templates/menu.html:38
 msgid "Галерея"
 msgstr ""
 
@@ -394,7 +394,7 @@ msgid "Announcement"
 msgstr "Оголошення"
 
 #: news/templates/news/article.html:20 news/templates/news/news.html:12
-#: searcher/templates/searcher/search.html:40 templates/menu.html:28
+#: searcher/templates/searcher/search.html:40 templates/menu.html:33
 msgid "Новини"
 msgstr ""
 
@@ -445,7 +445,7 @@ msgstr ""
 msgid "KSAEU"
 msgstr "ХДАЕУ"
 
-#: templates/cms-plugins/footer.html:3 templates/menu.html:38
+#: templates/cms-plugins/footer.html:3 templates/menu.html:43
 msgid "Контакти"
 msgstr ""
 
@@ -453,7 +453,7 @@ msgstr ""
 msgid "Адреса"
 msgstr ""
 
-#: templates/cms-plugins/footer.html:22
+#: templates/cms-plugins/footer.html:28
 msgid "Соцiальнi мережi"
 msgstr ""
 
@@ -539,28 +539,24 @@ msgstr ""
 msgid "Інтернет джерела"
 msgstr ""
 
-#: templates/header.html:10
+#: templates/header.html:10 templates/menu.html:7
 msgid "Університет"
 msgstr ""
 
-#: templates/header.html:11 templates/menu.html:48
+#: templates/header.html:11 templates/menu.html:53
 msgid "Абітурієнту"
 msgstr ""
 
-#: templates/header.html:12 templates/menu.html:139
+#: templates/header.html:12 templates/menu.html:144
 msgid "Освіта"
 msgstr ""
 
-#: templates/header.html:13 templates/menu.html:175
+#: templates/header.html:13 templates/menu.html:180
 msgid "Здобувачу"
 msgstr ""
 
-#: templates/header.html:14 templates/menu.html:221
+#: templates/header.html:14 templates/menu.html:226
 msgid "Наука"
-msgstr ""
-
-#: templates/menu.html:7
-msgid "Университет"
 msgstr ""
 
 #: templates/menu.html:13
@@ -572,146 +568,150 @@ msgid "Публічна і офіційна інформація"
 msgstr ""
 
 #: templates/menu.html:23
+msgid "Структура"
+msgstr ""
+
+#: templates/menu.html:28
 msgid "Нормативна база"
 msgstr ""
 
-#: templates/menu.html:54
+#: templates/menu.html:59
 msgid "Списки рекомендованих"
 msgstr ""
 
-#: templates/menu.html:59
+#: templates/menu.html:64
 msgid "Списки прийнятих"
 msgstr ""
 
-#: templates/menu.html:64
+#: templates/menu.html:69
 msgid "Предмети 2021"
 msgstr ""
 
-#: templates/menu.html:69
+#: templates/menu.html:74
 msgid "Освітній центр «Крим-Україна»"
 msgstr ""
 
-#: templates/menu.html:74
+#: templates/menu.html:79
 msgid "Освітній центр «Донбас-Україна»"
 msgstr ""
 
-#: templates/menu.html:79
+#: templates/menu.html:84
 msgid "Вартість навчання"
 msgstr ""
 
-#: templates/menu.html:84
+#: templates/menu.html:89
 msgid "Програми вступних випробувань"
 msgstr ""
 
-#: templates/menu.html:89
+#: templates/menu.html:94
 msgid "Розклад вступних випробувань"
 msgstr ""
 
-#: templates/menu.html:94
+#: templates/menu.html:99
 msgid "ЗНО для магістрів"
 msgstr ""
 
-#: templates/menu.html:99
+#: templates/menu.html:104
 msgid "Контакти приймальної комісії"
 msgstr ""
 
-#: templates/menu.html:104
+#: templates/menu.html:109
 msgid "Приймальна комісія"
 msgstr ""
 
-#: templates/menu.html:109
+#: templates/menu.html:114
 msgid "Довузівська підготовка"
 msgstr ""
 
-#: templates/menu.html:114
+#: templates/menu.html:119
 msgid "Правила прийому"
 msgstr ""
 
-#: templates/menu.html:119
+#: templates/menu.html:124
 msgid "Олімпіада"
 msgstr ""
 
-#: templates/menu.html:124
+#: templates/menu.html:129
 msgid "Спеціальності"
 msgstr ""
 
-#: templates/menu.html:129
+#: templates/menu.html:134
 msgid "Державне замовлення"
 msgstr ""
 
-#: templates/menu.html:145 university/templates/university/cathedra.html:62
+#: templates/menu.html:150 university/templates/university/cathedra.html:62
 msgid "Освітні програми"
 msgstr ""
 
-#: templates/menu.html:150 templates/menu.html:206
+#: templates/menu.html:155 templates/menu.html:211
 msgid "Бази практик"
 msgstr ""
 
-#: templates/menu.html:155
+#: templates/menu.html:160
 msgid "Дисципліни вільного вибору"
 msgstr ""
 
-#: templates/menu.html:160
+#: templates/menu.html:165
 msgid "Якість освіти"
 msgstr ""
 
-#: templates/menu.html:165
+#: templates/menu.html:170
 msgid "Онлайн опитування"
 msgstr ""
 
-#: templates/menu.html:181
+#: templates/menu.html:186
 msgid "Розклад занять"
 msgstr ""
 
-#: templates/menu.html:186
+#: templates/menu.html:191
 msgid "Студентська рада"
 msgstr ""
 
-#: templates/menu.html:191
+#: templates/menu.html:196
 msgid "Психологічна служба"
 msgstr ""
 
-#: templates/menu.html:196
+#: templates/menu.html:201
 msgid "Академічна доброчесність"
 msgstr ""
 
-#: templates/menu.html:201
+#: templates/menu.html:206
 msgid "Влаштування на роботу"
 msgstr ""
 
-#: templates/menu.html:211
+#: templates/menu.html:216
 msgid "Система Moodle"
 msgstr ""
 
-#: templates/menu.html:227
+#: templates/menu.html:232
 msgid "Спеціалізована вчена рада"
 msgstr ""
 
-#: templates/menu.html:232
+#: templates/menu.html:237
 msgid "Наукова бібліотека"
 msgstr ""
 
-#: templates/menu.html:237 university/templates/university/faculty.html:111
+#: templates/menu.html:242 university/templates/university/faculty.html:111
 msgid "Наукове товариство студентів, аспірантів, докторантів і молодих вчених"
 msgstr ""
 
-#: templates/menu.html:242
+#: templates/menu.html:247
 msgid "Вісники"
 msgstr ""
 
-#: templates/menu.html:247 university/models/staff.py:80
+#: templates/menu.html:252 university/models/staff.py:80
 msgid "Scopus"
 msgstr ""
 
-#: templates/menu.html:252 university/models/staff.py:77
+#: templates/menu.html:257 university/models/staff.py:77
 msgid "Web Of Science"
 msgstr ""
 
-#: templates/menu.html:257
+#: templates/menu.html:262
 msgid "Наукові школи"
 msgstr ""
 
-#: templates/menu.html:262
+#: templates/menu.html:267
 msgid "Наукові гуртки здобувачів вищої освіти"
 msgstr ""
 
