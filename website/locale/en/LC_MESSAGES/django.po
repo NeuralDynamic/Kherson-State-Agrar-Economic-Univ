@@ -404,20 +404,16 @@ msgid "Пошук"
 msgstr ""
 
 #: searcher/templates/searcher/search.html:17
-#, fuzzy
-#| msgid "Вибачте, ми не змогли знайти вашу сторінку!"
 msgid "Вибачте, ми не змогли нічого знайти."
-msgstr "Sorry, we could not find your page!"
+msgstr "Sorry, we couldn't find anything."
 
 #: searcher/templates/searcher/search.html:24
 msgid "Сторінки"
-msgstr ""
+msgstr "Pages"
 
 #: searcher/templates/searcher/search.html:52
-#, fuzzy
-#| msgid "Склад кафедры"
 msgid "Викладачі"
-msgstr "Cathedra staff"
+msgstr "Teachers"
 
 #: searcher/templates/searcher/search.html:74
 #: university/templates/university/faculty.html:53
@@ -425,14 +421,12 @@ msgid "Кафедри"
 msgstr "Units"
 
 #: searcher/templates/searcher/search.html:86
-#, fuzzy
-#| msgid "Галерея"
 msgid "Галереї"
-msgstr "Gallery"
+msgstr "Galleries"
 
 #: searcher/templates/searcher/search.html:107
 msgid "Фотографії"
-msgstr ""
+msgstr "Photos"
 
 #: searcher/templates/searcher/search.html:131
 #: university/templates/university/teacher.html:74
