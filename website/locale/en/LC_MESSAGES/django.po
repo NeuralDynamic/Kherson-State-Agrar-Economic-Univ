@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-10 22:07+0200\n"
+"POT-Creation-Date: 2021-03-11 13:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -456,6 +456,18 @@ msgstr "Address"
 msgid "Соцiальнi мережi"
 msgstr "Social networks"
 
+#: templates/cms-plugins/home__banner.html:9
+msgid "Херсонський державний"
+msgstr "Kherson State"
+
+#: templates/cms-plugins/home__banner.html:10
+msgid "аграрно-економічний"
+msgstr "Agrarian and Economic"
+
+#: templates/cms-plugins/home__banner.html:11
+msgid "університет"
+msgstr "University"
+
 #: templates/cms-plugins/home__news.html:6
 msgid "Останні новини"
 msgstr "Latest news"
@@ -479,12 +491,9 @@ msgid "required fields"
 msgstr ""
 
 #: templates/cms-plugins/home_contact-form.html:15
+#: templates/cms-plugins/home_contact-form.html:16
 msgid "Ваше ім'я"
 msgstr "Your name"
-
-#: templates/cms-plugins/home_contact-form.html:16
-msgid "John"
-msgstr ""
 
 #: templates/cms-plugins/home_contact-form.html:17
 #: templates/cms-plugins/home_contact-form.html:29
@@ -524,15 +533,15 @@ msgstr "Sorry, something broke!"
 msgid "Херсонський державний аграрно-економічний університет"
 msgstr "Kherson State Agrarian and Economic University"
 
-#: templates/footer.html:12
+#: templates/footer.html:13
 msgid "Факультети"
 msgstr "Faculties"
 
-#: templates/footer.html:18
+#: templates/footer.html:19
 msgid "Часто шукають"
 msgstr "Often sought"
 
-#: templates/footer.html:24
+#: templates/footer.html:25
 msgid "Інтернет джерела"
 msgstr "Internet sources"
 
@@ -548,11 +557,11 @@ msgstr "For enrollee"
 msgid "Освіта"
 msgstr "Education"
 
-#: templates/header.html:13 templates/menu.html:180
+#: templates/header.html:13 templates/menu.html:185
 msgid "Здобувачу"
 msgstr "Student"
 
-#: templates/header.html:14 templates/menu.html:226
+#: templates/header.html:14 templates/menu.html:231
 msgid "Наука"
 msgstr "Science"
 
@@ -640,7 +649,7 @@ msgstr "Government order"
 msgid "Освітні програми"
 msgstr "Educational programs"
 
-#: templates/menu.html:155 templates/menu.html:211
+#: templates/menu.html:155 templates/menu.html:216
 msgid "Бази практик"
 msgstr "Bases of practice"
 
@@ -653,64 +662,70 @@ msgid "Якість освіти"
 msgstr "Quality of education"
 
 #: templates/menu.html:170
+#, fuzzy
+#| msgid "Приймальна комісія"
+msgid "Неформальна освіта"
+msgstr "Admissions"
+
+#: templates/menu.html:175
 msgid "Онлайн опитування"
 msgstr "Online survey"
 
-#: templates/menu.html:186
+#: templates/menu.html:191
 msgid "Розклад занять"
 msgstr "Timetable"
 
-#: templates/menu.html:191
+#: templates/menu.html:196
 msgid "Студентська рада"
 msgstr "Student council"
 
-#: templates/menu.html:196
+#: templates/menu.html:201
 msgid "Психологічна служба"
 msgstr "Psychological service"
 
-#: templates/menu.html:201
+#: templates/menu.html:206
 msgid "Академічна доброчесність"
 msgstr "Academic integrity"
 
-#: templates/menu.html:206
+#: templates/menu.html:211
 msgid "Влаштування на роботу"
 msgstr "Job placement"
 
-#: templates/menu.html:216
+#: templates/menu.html:221
 msgid "Система Moodle"
 msgstr "Moodle System"
 
-#: templates/menu.html:232
+#: templates/menu.html:237
 msgid "Спеціалізована вчена рада"
 msgstr "Specialized Academic Council"
 
-#: templates/menu.html:237
+#: templates/menu.html:242
 msgid "Наукова бібліотека"
 msgstr "Scientific Library"
 
-#: templates/menu.html:242 university/templates/university/faculty.html:111
+#: templates/menu.html:247 university/templates/university/faculty.html:111
 msgid "Наукове товариство студентів, аспірантів, докторантів і молодих вчених"
 msgstr ""
 "Scientific society of students, graduate students, doctoral students and "
 "young scientists"
 
-#: templates/menu.html:247
+#: templates/menu.html:252
 msgid "Вісники"
 msgstr "Bulletins"
 
-#: templates/menu.html:252 university/models/staff.py:80
+#: templates/menu.html:257 university/models/staff.py:80
 msgid "Scopus"
 msgstr ""
 
-#: templates/menu.html:257 university/models/staff.py:77
+#: templates/menu.html:262 university/models/staff.py:77
 msgid "Web Of Science"
 msgstr ""
 
-#: templates/menu.html:262
+#: templates/menu.html:267
 msgid "Наукові школи"
 msgstr "Scientific schools"
 
-#: templates/menu.html:267
+#: templates/menu.html:272
 msgid "Наукові гуртки здобувачів вищої освіти"
 msgstr "Scientific circles of higher education seekers"
 
