@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-11 13:02+0200\n"
+"POT-Creation-Date: 2021-03-19 14:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -726,6 +726,10 @@ msgstr ""
 
 #: templates/menu.html:272
 msgid "Наукові гуртки здобувачів вищої освіти"
+msgstr ""
+
+#: templates/menu.html:277
+msgid "Відділ аспірантури та докторантури"
 msgstr ""
 
 #: university/apps.py:7
