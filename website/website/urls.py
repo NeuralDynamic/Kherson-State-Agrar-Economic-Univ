@@ -38,15 +38,16 @@ urlpatterns = [
     path("robots.txt/",TemplateView.as_view(template_name="robots.txt", 
                         content_type="text/plain")),
 
-    path("googleae5dff0b5f1d1aed.html",
-        TemplateView.as_view(template_name="googleae5dff0b5f1d1aed.html", 
-                        content_type="html")),
+    path("googleae5dff0b5f1d1aed.html/",
+        TemplateView.as_view(template_name="googleae5dff0b5f1d1aed.html")),
 
     path('i18n/', include('django.conf.urls.i18n')),
 ]
 
 
 urlpatterns += i18n_patterns(
+    path("googleae5dff0b5f1d1aed.html/",
+        TemplateView.as_view(template_name="googleae5dff0b5f1d1aed.html")),
 
     path('', include('gallery.urls')),
 
