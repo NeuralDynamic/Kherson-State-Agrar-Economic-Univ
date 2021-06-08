@@ -15,7 +15,7 @@
         </div>
         <div class="department-header__content">
             <div class="department-header__faculty-link">
-                <a href="{% url '' faculty_id=cathedra.faculty_id %">{{ cathedra.faculty.title }}</a>
+                <a href="{% url 'faculty' faculty_id=cathedra.faculty_id %}">{{ cathedra.faculty.title }}</a>
             </div>
             <div class="department-data__title">
                 {{ cathedra.title }}
@@ -38,9 +38,9 @@
 </section>
 <section>
     <div class="section-title">
-        {% trans 'Склад кафедры' %}
+        {% trans 'Склад кафедри' %}
     </div>
-    <div class="slider slider-scroller">
+    <div class="slider slider-scroller teachers-scroller">
         <div class="slider__prevSlideButton">
             <div class="prev-slide-button"></div>
         </div>
@@ -65,14 +65,15 @@
 </section>
 {% endif %}
 {% if matherial_base %}
-<section class="hiding active">
+<section class="hiding">
     <div class="section-title">
         {% trans 'Матерiально технiчна база' %}
+        <span class="section-title__button"></span>
     </div>
     <div class="section-body">
         <div class="content">
             {% for base in matherial_base %}
-            <div class="hiding-list active">
+            <div class="hiding-list">
                 <div class="hiding-list__title">
                     {{ base.title }}
                 </div>
@@ -85,20 +86,23 @@
     </div>
 </section>
 {% endif %}
+
 {% if gallery %}
 <section>
     <div class="section-title">
-        {% trans 'Соцiальна активнiсть профорiєнтація' %}
+        {% trans 'Соцiальна активнiсть і профорiєнтація' %}
     </div>
     {% with gallery as images %}
         {% include 'utils/gallery-slider.html' %}
     {% endwith %}
 </section>
 {% endif %}
+
 {% if cathedra.history %}
 <section class="hiding">
     <div class="section-title">
         {% trans 'Iсторiя кафедри' %}
+        <span class="section-title__button"></span>
     </div>
     <div class="section-body">
         <div class="content">
@@ -107,6 +111,7 @@
     </div>
 </section>
 {% endif %}
+
 <section>
     <div class="section-title">
         {% trans 'Контакти кафедри' %}

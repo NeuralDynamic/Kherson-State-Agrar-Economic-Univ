@@ -14,11 +14,6 @@
         transition: 1s;
         height: 100%;
         z-index: 3;
-
-        img{
-            width: 100%;
-            height: auto;
-        }
     }
 
     &.slider-scroller{
@@ -93,15 +88,17 @@
 
         .slider__slide{
             padding: 0 15px;
+            border-radius: 10px;
         }
 
-        img{
+        img, picture{
             width: auto;
             height: 400px;
 
             @include breakpoint($table-bp) {
                 width: 80vw;
                 height: auto;
+                max-height: 60vh;
             }
         }
 
@@ -141,6 +138,14 @@
             box-shadow: 5px 2.5px 10px rgba(0, 0, 0, 0.1);
             padding-left: 15px;
             transform: translateX(100%) translateY(50%);
+        }
+    }
+
+    &.popups-scroller{
+        position: relative;
+
+        .slider__container{
+            height: fit-content;
         }
     }
 

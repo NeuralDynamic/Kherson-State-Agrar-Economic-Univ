@@ -20,6 +20,7 @@ class GalleryAdmin(TranslatableAdmin):
     readonly_fields=["_images"]
     list_display=["__str__"]
     form=GalleryAdminForm
+    list_filter=["translations__title"]
     #endregion
 
     #region         -----Internal Methods-----

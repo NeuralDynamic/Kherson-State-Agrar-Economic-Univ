@@ -11,13 +11,6 @@ CMS_LANGUAGES = {
             'hide_untranslated': False,
         },
         {
-            'code': 'ru',
-            'name': gettext('ru'),
-            'redirect_on_fallback': True,
-            'public': True,
-            'hide_untranslated': False,
-        },
-        {
             'code': 'en',
             'name': gettext('en'),
             'redirect_on_fallback': True,
@@ -26,7 +19,7 @@ CMS_LANGUAGES = {
         },
     ],
     'default': {
-        'fallbacks': ['uk', 'ru', 'en',],
+        'fallbacks': ['uk', 'en',],
         'redirect_on_fallback': False,
         'public': True,
         'hide_untranslated': False,
@@ -41,8 +34,6 @@ CMS_TEMPLATES = (
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-CMS_PERMISSION = True
-
 CMS_PLACEHOLDER_CONF = {}
 
 THUMBNAIL_PROCESSORS = (
@@ -51,3 +42,6 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+DJANGOCMS_SNIPPET_SEARCH = True
+CMS_PERMISSION = False

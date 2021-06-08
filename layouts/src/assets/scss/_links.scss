@@ -13,20 +13,30 @@ a:hover{
 a.phone-link,
 a.email-link,
 a.location-link{
-    background-position: 2px 10px;
+    background-position: 2px 7px;
     background-repeat: no-repeat;
-    background-size: 20px 20px;
+    background-size: 18px 18px;
     line-height: 25px;
+    font-size: 18px;
 }
 
 a.phone-link{
     padding: 5px 0 5px 25px;
-    background-image: url(#{$url-redirrect}/images/svg/phone.svg);
+    fill: $black;
+    background-image: url(#{$url-redirrect}/images/svg/phone-black.svg);
+
+    &:hover{
+        background-image: url(#{$url-redirrect}/images/svg/phone-green.svg);
+    }
 }
 
 a.email-link{
     padding: 5px 0 5px 30px;
-    background-image: url(#{$url-redirrect}/images/svg/email.svg);
+    background-image: url(#{$url-redirrect}/images/svg/email-black.svg);
+
+    &:hover{
+        background-image: url(#{$url-redirrect}/images/svg/email-green.svg);
+    }
 }
 
 a.location-link{

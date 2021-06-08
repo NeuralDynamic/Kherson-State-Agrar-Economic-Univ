@@ -42,6 +42,12 @@ section{
         &:not(h2){
             font-size: 24px;
         }
+
+        @include breakpoint($mobile-bp){
+            &:not(h2){
+                font-size: 18px;
+            }
+        }
     }
 
     &:first-child{
@@ -80,7 +86,7 @@ section{
             padding: 40px 20px;
         }
 
-        &:nth-child(2n+1){
+        &:nth-child(2n){
             background-color: $grey;
         }
 
@@ -178,11 +184,11 @@ section.hiding{
             }
         }
 
+
         .section-body{
             padding: 20px 10px;
             opacity: 1;
             height: fit-content;
-            overflow: visible;
             
             .content{
                 height: fit-content;

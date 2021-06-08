@@ -20,15 +20,15 @@ class StaffCathedra(TranslatableModel):
 
     #region            -----Relation-----
     cathedras=ForeignKey("Cathedra", on_delete=CASCADE, 
-    null=True, verbose_name=_("Cathedra"))
+    null=True, verbose_name=_("Department"))
     staff=ForeignKey("Staff", on_delete=CASCADE, 
     null=True, verbose_name=_("Staff"))
     #endregion
 
     #region            -----Metadata-----
     class Meta(object):
-        verbose_name_plural=_("Cathedra staffs")
-        verbose_name=_("Cathedra staff")
+        verbose_name_plural=_("Department staffs")
+        verbose_name=_("Department staff")
     #endregion
 
     #region         -----Internal Methods-----
@@ -74,17 +74,17 @@ class StaffFaculty(TranslatableModel):
 class MaterialBaseNode(TranslatableModel):
     #region           -----Information-----
     translations=TranslatedFields(
-    title=CharField(verbose_name=_("Title"),
-    max_length=100),
-    
-    local_title=CharField(verbose_name=_("Local title"),max_length=100, 
-    help_text=_("""Additional field with local name for best admin usage experience.
-Will be filled from title field, if field empty."""), 
-    blank=True, null=True),
+    local_title=CharField(verbose_name=_("Local title"), 
+    help_text=_("""Additional field with local name 
+    for best admin usage experience. Will be filled 
+    from title field, if  field empty."""),
+    max_length=100, blank=True, null=True),
 
     content=HTMLField(verbose_name=_("Content"),
-    blank=False, default="")
-    )
+    blank=False, default=""),
+
+    title=CharField(verbose_name=_("Title"),
+    max_length=100))
     #endregion
 
     #region            -----Metadata-----

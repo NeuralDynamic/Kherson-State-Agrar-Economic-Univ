@@ -1,0 +1,18 @@
+{% load i18n %}
+
+<section class="home-intro-section">
+    <div class="home-intro" {% if instance.intro_image %}
+                            style="background-image: url({{ instance.intro_image.url }});"
+                            {% endif %}>
+        <div class="home-intro__text">
+            <h1 class="home-intro__header">
+                {% trans 'Херсонський державний' %}<br>
+                <span>{% trans 'аграрно-економічний' %}</span><br> 
+                {% trans 'університет' %}
+            </h1>
+            <h2 class="home-intro__subheader">
+                {{ instance.subheader }}
+            </h2>
+        </div>
+    </div>
+</section>

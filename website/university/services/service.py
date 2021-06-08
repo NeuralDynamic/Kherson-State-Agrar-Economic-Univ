@@ -78,11 +78,27 @@ class FacultyService(object):
             except Exception:
                 pass
 
-            try:
-                specialities = Speciality.objects.filter(cathedra__faculty__pk=faculty.pk)
-                context['specialities'] = specialities
-            except Exception:
-                pass
+            specialities = Speciality.objects.order_by('educational_level').\
+                filter(cathedra__faculty__pk=faculty.pk).all()
+            specialities_list = list()
+            specialities_dict = dict()
+            current = None
+
+            for speciality in specialities:
+                if not current:
+                    current = speciality.get_educational_level_display()
+
+                if current == speciality.get_educational_level_display():
+                    specialities_list.append(speciality)
+                else:
+                    specialities_dict[current] = specialities_list
+                    current = speciality.get_educational_level_display()
+                    specialities_list = []
+                    specialities_list.append(speciality)
+
+            specialities_dict[current] = specialities_list
+            del current
+            context['specialities_dict'] = specialities_dict
             
             return context
         except Faculty.DoesNotExist:

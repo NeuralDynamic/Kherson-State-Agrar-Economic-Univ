@@ -9,13 +9,13 @@
 <section>
     <div class="faculty-header">
         <div class="row faculty-header__main">
-            <div class="faculty-header__icon">
-                <img height="{{ emblem_height }}" width="{{ emblem_width }}" 
-                     src="{{ faculty.emblem.url }}" alt="faculty-logo">
-            </div>
             <h1 class="faculty-header__title">
                 {{ faculty.title }}
             </h1>
+            <div class="faculty-header__icon">
+                <img height="{{ emblem_height }}" width="{{ emblem_width }}" 
+                     src="{{ faculty.emblem.url }}" alt="{{ faculty.title }}-KSAU-faculty-logo">
+            </div>
         </div>
         <div class="row">
             <div class="faculty-header__description">
@@ -26,11 +26,12 @@
         </div>
     </div>
 </section>
+
 <section>
     <div class="section-title">
-        {% trans 'Викладачi' %}
+        <h2>{% trans 'Деканат' %}</h2> 
     </div>
-    <div class="slider slider-scroller">
+    <div class="slider slider-scroller teachers-scroller">
         <div class="slider__prevSlideButton">
             <div class="prev-slide-button"></div>
         </div>
@@ -46,9 +47,10 @@
         </div>
     </div>
 </section>
+
 <section>
     <div class="section-title">
-        {% trans 'Кафедри' %}
+        <h2>{% trans 'Кафедри' %}</h2>
     </div>
     <div class="faculty-departments-list row f-wrap">
         {% for cathedra in cathedras %}
@@ -56,31 +58,28 @@
         {% endfor %}
     </div>
 </section>
+ 
 <section>
     <div class="section-title">
-        {% trans 'Oсвітні програми' %}
+        <h2>{% trans 'Oсвітні програми' %}</h2> 
     </div>
     <div class="faculty-specialities">
-        <table class="faculty-specialities-table">
-            <thead>
-                <th>
-                    {% trans 'Освітня програма' %}
-                </th>
-                <th>
-                    {% trans 'Спецiальнiсть' %}
-                </th>
-            </thead>
-            <tbody>
-                {% for speciality in specialities %}
-                <tr>
-                    <td>{{ speciality.educational_level }}</td>
-                    <td>{{ speciality.number }}. {{ speciality.title }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</section>   
+        <div class="faculty-specialities__container">
+            {% for education_level, specialities in specialities_dict.items %}
+                <h3>{{ education_level }}</h3>
+                <div class="faculty-specialities__list">
+                    <ul>
+                        {% for speciality in specialities %}
+                        <li>
+                            {{ speciality.number }}. {{ speciality.title }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+</section>
+
 {% if gallery %}
 <section>
     <div class="section-title">
@@ -91,22 +90,26 @@
     {% endwith %}
 </section> 
 {% endif %}
-{% if faculty.employers %}
+
+{% if faculty.council_of_employers %}
 <section class="hiding">
     <div class="section-title">
-        {% trans 'Рада роботодавців агрономічного факультету' %}
+        {% trans 'Рада роботодавців факультету' %}
+        <span class="section-title__button"></span>
     </div>
     <div class="section-body">
         <div class="content">
-            {{ faculty.employers }}
+            {{ faculty.council_of_employers }}
         </div>
     </div>
 </section>
 {% endif %}
-{% if scientific_society %}
+
+{% if faculty.scientific_society %}
 <section class="hiding">
     <div class="section-title">
         {% trans 'Наукове товариство студентів, аспірантів, докторантів і молодих вчених' %}
+        <span class="section-title__button"></span>
     </div>
     <div class="section-body">
         <div class="content">
@@ -115,16 +118,16 @@
                     <div class="faculty-scientific-society__icon">
                     </div>
                     <div class="faculty-scientific-society__intro-text">
-                        {{ scientific_society.sub_title }}
+                        {{ faculty.scientific_society.sub_title }}
                     </div>
                 </div>
                 <div class="faculty-scientific-society__staff">
-                    <div class="slider slider-scroller">
+                    <div class="slider slider-scroller teachers-scroller">
                         <div class="slider__prevSlideButton">
                             <div class="prev-slide-button"></div>
                         </div>
                         <div class="slider__container">
-                            {% for teacher in scientific_society %}
+                            {% for teacher in faculty.scientific_society.staff.all %}
                                 {% include 'utils/teacher-card.html' %}
                             {% endfor %}
                         </div>
@@ -134,15 +137,17 @@
                     </div>
                 </div>
                 <div class="faculty-scientific-society__description">
-                    {{ scientific_society.description }}
+                    {{ faculty.scientific_society.description }}
                 </div>
                 <div class="faculty-scientific-society__contacts">
-                    <a href="tel:{{ scientific_society.phone }}" class="phone-link">
-                        {{ scientific_society.phone }}
+                    <a href="tel:{{ faculty.scientific_society.phone }}" class="phone-link">
+                        {{ faculty.scientific_society.phone }}
                     </a>
-                    <a href="mailto:{{ scientific_society.emails.first }}" class="email-link">
-                        {{ scientific_society.emails.first }}
+                    {% if faculty.scientific_society.emails %}
+                    <a href="mailto:{{ faculty.scientific_society.emails.0 }}" class="email-link">
+                        {{ faculty.scientific_society.emails.0 }}
                     </a>
+                    {% endif %}
                 </div>
             </div>
         </div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-01 11:02+0200\n"
+"POT-Creation-Date: 2021-03-19 14:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,225 +21,1053 @@ msgstr ""
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: .\gallery\apps.py:7
-msgid "Gallery App"
-msgstr "Галерея"
+#: content/apps.py:8
+msgid "Content App"
+msgstr "Контент"
 
-#: .\gallery\forms.py:14
-msgid "Add images"
-msgstr "Додати зображення"
+#: content/cms_models.py:15
+msgid "Subheader"
+msgstr "Підзаголовок"
 
-#: .\gallery\models.py:21 .\gallery\models.py:56 .\library\models.py:20
-#: .\library\models.py:51 .\news\models.py:24 .\university\models.py:74
-#: .\university\models.py:107 .\university\models.py:156
-#: .\university\models.py:194
-msgid "Description"
-msgstr "Опис"
+#: content/cms_models.py:18
+msgid "Banner image"
+msgstr "Банер зображення"
 
-#: .\gallery\models.py:24 .\library\models.py:23 .\library\models.py:57
-#: .\news\models.py:27 .\news\models.py:64 .\university\models.py:77
-#: .\university\models.py:113 .\university\models.py:159
+#: content/cms_models.py:26
+msgid "Left card image"
+msgstr ""
+
+#: content/cms_models.py:28
+msgid "Left card title"
+msgstr ""
+
+#: content/cms_models.py:30
+msgid "Left card text"
+msgstr ""
+
+#: content/cms_models.py:32
+msgid "Left card url"
+msgstr ""
+
+#: content/cms_models.py:35
+msgid "Middle card image"
+msgstr ""
+
+#: content/cms_models.py:37
+msgid "Middle card title"
+msgstr ""
+
+#: content/cms_models.py:39
+msgid "Middle card text"
+msgstr ""
+
+#: content/cms_models.py:41
+msgid "Middle card url"
+msgstr ""
+
+#: content/cms_models.py:44
+msgid "Right card image"
+msgstr ""
+
+#: content/cms_models.py:46
+msgid "Right card title"
+msgstr ""
+
+#: content/cms_models.py:48
+msgid "Right card text"
+msgstr ""
+
+#: content/cms_models.py:50
+msgid "Right card url"
+msgstr ""
+
+#: content/cms_models.py:58 content/cms_models.py:75 gallery/models.py:25
+#: library/models.py:23 news/models.py:26 news/models.py:49 news/models.py:96
+#: news/models.py:164 university/models/staff.py:28
+#: university/models/university.py:53 university/models/university.py:90
+#: university/models/university.py:141 university/models/university.py:214
+#: university/models/utils.py:86
 msgid "Title"
 msgstr "Назва"
 
-#: .\gallery\models.py:30
-msgid "Galleries"
-msgstr "Галереї"
+#: content/cms_models.py:61 gallery/models.py:22 gallery/models.py:58
+#: library/models.py:17 news/models.py:46 news/models.py:166
+#: university/models/staff.py:67 university/models/university.py:23
+#: university/models/university.py:82 university/models/university.py:137
+#: university/models/university.py:210
+msgid "Description"
+msgstr "Опис"
 
-#: .\gallery\models.py:31 .\gallery\models.py:69 .\news\models.py:79
-#: .\university\models.py:136 .\university\models.py:172
-msgid "Gallery"
-msgstr "Галерея"
+#: content/cms_models.py:64
+msgid "Button title"
+msgstr ""
 
-#: .\gallery\models.py:50 .\gallery\models.py:75
-msgid "Images"
-msgstr "Зображення"
+#: content/cms_models.py:67
+msgid "Button url"
+msgstr ""
 
-#: .\gallery\models.py:61 .\gallery\models.py:76
-msgid "Image"
-msgstr "Зображення"
+#: content/cms_models.py:80 content/cms_models.py:85
+#: university/models/utils.py:83
+msgid "Content"
+msgstr "Контент"
 
-#: .\library\apps.py:7
-msgid "Library App"
-msgstr "Бібліотека"
+#: content/cms_models.py:84 content/cms_models.py:88
+#, fuzzy
+#| msgid "Sub title"
+msgid "Section title"
+msgstr "Підзаголовок"
 
-#: .\library\models.py:29 .\library\models.py:68
-msgid "Libraries"
-msgstr "Бібліотеки"
-
-#: .\library\models.py:30 .\university\models.py:218
-msgid "Library"
-msgstr "Бібліотека"
-
-#: .\library\models.py:45 .\library\models.py:74
-msgid "Books"
-msgstr "Книги"
-
-#: .\library\models.py:54
-msgid "Authors"
-msgstr "Автори"
-
-#: .\library\models.py:62
-msgid "Cover"
-msgstr "Обкладинка"
-
-#: .\library\models.py:75
-msgid "Book"
-msgstr "Книга"
-
-#: .\news\apps.py:7
-msgid "News App"
-msgstr "Стрічка новин"
-
-#: .\news\models.py:33 .\news\models.py:34 .\news\models.py:75
-msgid "News Feed"
-msgstr "Стрічка новин"
-
-#: .\news\models.py:49 .\news\models.py:84
-msgid "Papers"
-msgstr "Статті"
-
-#: .\news\models.py:54
-msgid "Header"
-msgstr "Заголовок"
-
-#: .\news\models.py:61
-msgid "Story"
-msgstr "Історія"
-
-#: .\news\models.py:85
-msgid "Paper"
-msgstr "Стаття"
-
-#: .\university\apps.py:7
-msgid "University App"
-msgstr "Університет"
-
-#: .\university\models.py:20
-msgid "Rank"
-msgstr "Звання"
-
-#: .\university\models.py:26 .\university\models.py:89
-#: .\university\models.py:144
-msgid "Cathedra"
-msgstr "Кафедра"
-
-#: .\university\models.py:28 .\university\models.py:54
-#: .\university\models.py:138 .\university\models.py:174
-#: .\university\models.py:223 .\university\models.py:224
-#: .\university\models.py:252
+#: content/cms_models.py:90 university/models/staff.py:101
+#: university/models/staff.py:102 university/models/university.py:38
+#: university/models/university.py:180 university/models/university.py:236
+#: university/models/utils.py:25 university/models/utils.py:55
 msgid "Staff"
 msgstr "Працівник"
 
-#: .\university\models.py:33
-msgid "Cathedra staffs"
-msgstr "Працівники кафедр"
+#: content/cms_models.py:91
+msgid "You can choose staff from cathedra staff"
+msgstr ""
 
-#: .\university\models.py:34
-msgid "Cathedra staff"
-msgstr "Працівник кафедри"
+#: content/cms_models.py:100 content/cms_models.py:108
+msgid "Link title"
+msgstr ""
 
-#: .\university\models.py:46
-msgid "Position"
-msgstr "Посада"
+#: content/cms_models.py:102 content/cms_models.py:110 library/models.py:28
+msgid "Link"
+msgstr "Посилання"
 
-#: .\university\models.py:52 .\university\models.py:133
-#: .\university\models.py:180
-msgid "Faculty"
-msgstr "Факультет"
+#: content/cms_models.py:120
+msgid "Location link"
+msgstr ""
 
-#: .\university\models.py:59
-msgid "Faculty staffs"
-msgstr "Працівники факультетів"
+#: content/cms_models.py:122
+msgid "Location country"
+msgstr ""
 
-#: .\university\models.py:60
-msgid "Faculty staff"
-msgstr "Працівник факультету"
+#: content/cms_models.py:124
+msgid "Location city"
+msgstr ""
 
-#: .\university\models.py:82 .\university\models.py:121
-msgid "Number"
-msgstr "Номер"
+#: content/cms_models.py:127
+msgid "Location street"
+msgstr ""
 
-#: .\university\models.py:94
-msgid "Specialities"
-msgstr "Спеціальності"
+#: content/cms_models.py:129
+msgid "Location zip"
+msgstr ""
 
-#: .\university\models.py:95
-msgid "Speciality"
-msgstr "Спеціальність"
+#: content/cms_models.py:132
+msgid "Facebook link"
+msgstr ""
 
-#: .\university\models.py:111
-msgid "Goal"
-msgstr "Мета"
+#: content/cms_models.py:134
+msgid "Instagram link"
+msgstr ""
 
-#: .\university\models.py:119 .\university\models.py:165
-msgid "Emblem"
-msgstr "Емблема"
+#: content/cms_models.py:136
+msgid "Youtube link"
+msgstr ""
 
-#: .\university\models.py:127
-msgid "Created at"
-msgstr "Створено в"
+#: content/cms_models.py:138
+msgid "Telegram link"
+msgstr ""
 
-#: .\university\models.py:143
-msgid "Cathedras"
-msgstr "Кафедри"
+#: content/cms_models.py:140
+msgid "Linkedin link"
+msgstr ""
 
-#: .\university\models.py:179
-msgid "Faculties"
-msgstr "Факультети"
+#: content/cms_models.py:142
+msgid "Tiktok link"
+msgstr ""
 
-#: .\university\models.py:198
-msgid "Second name"
-msgstr "Прізвище"
-
-#: .\university\models.py:201
-msgid "First name"
-msgstr "Ім'я"
-
-#: .\university\models.py:204
-msgid "Third name"
-msgstr "По батькові"
-
-#: .\university\models.py:208
-msgid "Photo"
-msgstr "Фотографія"
-
-#: .\university\models.py:211
-msgid "Phone number"
+#: content/cms_models.py:145 templates/cms-plugins/footer.html:23
+msgid "Phone"
 msgstr "Телефон"
 
-#: .\university\models.py:238
-msgid "Google Scholar"
+#: content/cms_models.py:147 content/models.py:9
+msgid "Email"
 msgstr ""
 
-#: .\university\models.py:240
-msgid "Web Of Science"
+#: content/cms_plugins.py:17 content/cms_plugins.py:31
+#: content/cms_plugins.py:45 content/cms_plugins.py:59
+#: content/cms_plugins.py:76 content/cms_plugins.py:82
+msgid "Main page"
+msgstr "Головна"
+
+#: content/cms_plugins.py:19
+msgid "Banner"
+msgstr "Банер"
+
+#: content/cms_plugins.py:33
+msgid "Cards"
+msgstr "Картки"
+
+#: content/cms_plugins.py:47
+msgid "Info"
+msgstr "Информація"
+
+#: content/cms_plugins.py:61
+msgid "News"
+msgstr "Новини"
+
+#: content/cms_plugins.py:77
+msgid "Contact Form"
+msgstr "контактна форма"
+
+#: content/cms_plugins.py:83 news/models.py:184
+msgid "Announcements"
+msgstr "Оголошення"
+
+#: content/cms_plugins.py:96 content/cms_plugins.py:110
+msgid "Utils plugins"
+msgstr "Додаткові плагіни"
+
+#: content/cms_plugins.py:98
+msgid "External Link"
+msgstr "Зовнішнє посилання"
+
+#: content/cms_plugins.py:112
+msgid "Internal Link"
+msgstr "Внутрішнє посилання"
+
+#: content/cms_plugins.py:124 content/cms_plugins.py:136
+#: content/cms_plugins.py:148 content/cms_plugins.py:162
+msgid "Base blocks"
+msgstr "Головні блоки"
+
+#: content/cms_plugins.py:126
+msgid "Section Block"
 msgstr ""
 
-#: .\university\models.py:242
-msgid "Researchgate"
+#: content/cms_plugins.py:137
+msgid "Section Hiding Block"
 msgstr ""
 
-#: .\university\models.py:243
+#: content/cms_plugins.py:149
+msgid "Teacher Slider"
+msgstr ""
+
+#: content/cms_plugins.py:164
+msgid "Footer Block"
+msgstr "Блок Footer"
+
+#: content/models.py:7
+msgid "Ім'я"
+msgstr ""
+
+#: content/models.py:11
+msgid "Питання"
+msgstr ""
+
+#: content/models.py:13
+msgid "Дата"
+msgstr ""
+
+#: content/models.py:17
+msgid "Запити на контакт"
+msgstr ""
+
+#: content/models.py:18
+msgid "Запит на контакт"
+msgstr ""
+
+#: content/seo.py:39
+msgid "University Site"
+msgstr "Університет"
+
+#: content/views.py:22
+msgid "Спасибо, мы ответим как только сможем!"
+msgstr "Спасибі, ми відповімо як тільки зможемо!"
+
+#: gallery/apps.py:7
+msgid "Gallery App"
+msgstr "Галерея"
+
+#: gallery/forms.py:14
+msgid "Add images"
+msgstr "Додати зображення"
+
+#: gallery/models.py:31
+msgid "Galleries"
+msgstr "Галереї"
+
+#: gallery/models.py:32 gallery/models.py:79 news/models.py:115
+#: university/models/university.py:233
+msgid "Gallery"
+msgstr "Галерея"
+
+#: gallery/models.py:52 gallery/models.py:85
+msgid "Images"
+msgstr "Зображення"
+
+#: gallery/models.py:64 gallery/models.py:86 news/models.py:172
+msgid "Image"
+msgstr "Зображення"
+
+#: gallery/templates/gallery/catalog.html:5
+#: gallery/templates/gallery/catalog.html:11
+#: gallery/templates/gallery/gallery.html:24 templates/menu.html:38
+msgid "Галерея"
+msgstr ""
+
+#: gallery/templates/gallery/gallery.html:18
+#: news/templates/news/article.html:14
+msgid "Головна"
+msgstr ""
+
+#: library/apps.py:7
+msgid "Library App"
+msgstr "Бібліотека"
+
+#: library/models.py:20 news/models.py:99
+msgid "Authors"
+msgstr "Автори"
+
+#: library/models.py:30
+msgid "Cover"
+msgstr "Обкладинка"
+
+#: library/models.py:36
+msgid "Books"
+msgstr "Книги"
+
+#: library/models.py:37
+msgid "Book"
+msgstr "Книга"
+
+#: news/apps.py:7
+msgid "News App"
+msgstr "Стрічка новин"
+
+#: news/models.py:33
+msgid "Categories"
+msgstr "Категорії"
+
+#: news/models.py:34 news/models.py:119
+msgid "Category"
+msgstr "Категорія"
+
+#: news/models.py:55 news/models.py:56 news/models.py:111
+msgid "News Feed"
+msgstr "Стрічка новин"
+
+#: news/models.py:79 news/models.py:125
+msgid "Papers"
+msgstr "Статті"
+
+#: news/models.py:84
+msgid "Header"
+msgstr "Заголовок"
+
+#: news/models.py:87
+msgid "Primary article"
+msgstr "Первинна стаття"
+
+#: news/models.py:93
+msgid "Story"
+msgstr "Історія"
+
+#: news/models.py:104
+msgid "Article date"
+msgstr "Дата статті"
+
+#: news/models.py:126
+msgid "Paper"
+msgstr "Стаття"
+
+#: news/models.py:174
+msgid "Attach"
+msgstr "Додаток"
+
+#: news/models.py:176
+#, fuzzy
+#| msgid "Announcement"
+msgid "Active announcement"
+msgstr "Оголошення"
+
+#: news/models.py:178
+msgid "Announcement date"
+msgstr "Дата оголошення"
+
+#: news/models.py:185
+msgid "Announcement"
+msgstr "Оголошення"
+
+#: news/templates/news/article.html:20 news/templates/news/news.html:12
+#: searcher/templates/searcher/search.html:40 templates/menu.html:33
+msgid "Новини"
+msgstr ""
+
+#: news/templates/news/news.html:5
+msgid "Новости"
+msgstr "Новини"
+
+#: news/templates/news/news.html:12 templates/cms-plugins/footer.html:12
+msgid "ХДАЕУ"
+msgstr ""
+
+#: searcher/templates/searcher/search.html:9
+msgid "Пошук"
+msgstr ""
+
+#: searcher/templates/searcher/search.html:17
+msgid "Вибачте, ми не змогли нічого знайти."
+msgstr ""
+
+#: searcher/templates/searcher/search.html:24
+msgid "Сторінки"
+msgstr ""
+
+#: searcher/templates/searcher/search.html:52
+msgid "Викладачі"
+msgstr ""
+
+#: searcher/templates/searcher/search.html:74
+#: university/templates/university/faculty.html:53
+msgid "Кафедри"
+msgstr ""
+
+#: searcher/templates/searcher/search.html:86
+msgid "Галереї"
+msgstr ""
+
+#: searcher/templates/searcher/search.html:107
+msgid "Фотографії"
+msgstr ""
+
+#: searcher/templates/searcher/search.html:131
+#: university/templates/university/teacher.html:74
+msgid "Видання"
+msgstr ""
+
+#: templates/admin/base_site.html:27 templates/admin/base_site.html:35
+#: templates/base.html:9
+msgid "KSAEU"
+msgstr "ХДАЕУ"
+
+#: templates/cms-plugins/footer.html:3 templates/menu.html:43
+msgid "Контакти"
+msgstr ""
+
+#: templates/cms-plugins/footer.html:6
+msgid "Адреса"
+msgstr ""
+
+#: templates/cms-plugins/footer.html:28
+msgid "Соцiальнi мережi"
+msgstr ""
+
+#: templates/cms-plugins/home__banner.html:9
+msgid "Херсонський державний"
+msgstr ""
+
+#: templates/cms-plugins/home__banner.html:10
+msgid "аграрно-економічний"
+msgstr ""
+
+#: templates/cms-plugins/home__banner.html:11
+msgid "університет"
+msgstr ""
+
+#: templates/cms-plugins/home__news.html:6
+msgid "Останні новини"
+msgstr ""
+
+#: templates/cms-plugins/home__news.html:8
+msgid "Читати всі статті"
+msgstr ""
+
+#: templates/cms-plugins/home_contact-form.html:7
+msgid "Write to us"
+msgstr "Напишіть нам"
+
+#: templates/cms-plugins/home_contact-form.html:8
+msgid ""
+"If you have any questions, fill out the form on the right and we will be "
+"happy to answer them shortly."
+msgstr ""
+"Якщо у вас виникли запитання, заповніть форму праворуч, і ми із задоволенням "
+"відповімо на них найближчим часом."
+
+#: templates/cms-plugins/home_contact-form.html:9
+msgid "required fields"
+msgstr "обов'язкові поля"
+
+#: templates/cms-plugins/home_contact-form.html:15
+#: templates/cms-plugins/home_contact-form.html:16
+msgid "Ваше ім'я"
+msgstr ""
+
+#: templates/cms-plugins/home_contact-form.html:17
+#: templates/cms-plugins/home_contact-form.html:29
+msgid "Це поле є обов'язковим"
+msgstr ""
+
+#: templates/cms-plugins/home_contact-form.html:20
+msgid "Ваш"
+msgstr ""
+
+#: templates/cms-plugins/home_contact-form.html:22
+msgid "Ваш емейл недійсний"
+msgstr ""
+
+#: templates/cms-plugins/home_contact-form.html:27
+#: templates/cms-plugins/home_contact-form.html:28
+msgid "Текст повідомлення"
+msgstr ""
+
+#: templates/cms-plugins/home_contact-form.html:35
+msgid "Надіслати"
+msgstr ""
+
+#: templates/errors/404.html:12
+msgid "Вибачте, ми не змогли знайти вашу сторінку!"
+msgstr ""
+
+#: templates/errors/404.html:14 templates/errors/500.html:14
+msgid "Повернутися на головну"
+msgstr ""
+
+#: templates/errors/500.html:12
+msgid "Вибачте, у нас щось зламалося!"
+msgstr ""
+
+#: templates/footer.html:8
+msgid "Херсонський державний аграрно-економічний університет"
+msgstr ""
+
+#: templates/footer.html:13
+msgid "Факультети"
+msgstr ""
+
+#: templates/footer.html:19
+msgid "Часто шукають"
+msgstr ""
+
+#: templates/footer.html:25
+msgid "Інтернет джерела"
+msgstr ""
+
+#: templates/header.html:10 templates/menu.html:7
+msgid "Університет"
+msgstr ""
+
+#: templates/header.html:11 templates/menu.html:53
+msgid "Абітурієнту"
+msgstr ""
+
+#: templates/header.html:12 templates/menu.html:144
+msgid "Освіта"
+msgstr ""
+
+#: templates/header.html:13 templates/menu.html:185
+msgid "Здобувачу"
+msgstr ""
+
+#: templates/header.html:14 templates/menu.html:231
+msgid "Наука"
+msgstr ""
+
+#: templates/menu.html:13
+msgid "Про нас"
+msgstr ""
+
+#: templates/menu.html:18
+msgid "Публічна і офіційна інформація"
+msgstr ""
+
+#: templates/menu.html:23
+msgid "Структура"
+msgstr ""
+
+#: templates/menu.html:28
+msgid "Нормативна база"
+msgstr ""
+
+#: templates/menu.html:59
+msgid "Списки рекомендованих"
+msgstr ""
+
+#: templates/menu.html:64
+msgid "Списки прийнятих"
+msgstr ""
+
+#: templates/menu.html:69
+msgid "Предмети 2021"
+msgstr ""
+
+#: templates/menu.html:74
+msgid "Освітній центр «Крим-Україна»"
+msgstr ""
+
+#: templates/menu.html:79
+msgid "Освітній центр «Донбас-Україна»"
+msgstr ""
+
+#: templates/menu.html:84
+msgid "Вартість навчання"
+msgstr ""
+
+#: templates/menu.html:89
+msgid "Програми вступних випробувань"
+msgstr ""
+
+#: templates/menu.html:94
+msgid "Розклад вступних випробувань"
+msgstr ""
+
+#: templates/menu.html:99
+msgid "ЗНО для магістрів"
+msgstr ""
+
+#: templates/menu.html:104
+msgid "Контакти приймальної комісії"
+msgstr ""
+
+#: templates/menu.html:109
+msgid "Приймальна комісія"
+msgstr ""
+
+#: templates/menu.html:114
+msgid "Довузівська підготовка"
+msgstr ""
+
+#: templates/menu.html:119
+msgid "Правила прийому"
+msgstr ""
+
+#: templates/menu.html:124
+msgid "Олімпіада"
+msgstr ""
+
+#: templates/menu.html:129
+msgid "Спеціальності"
+msgstr ""
+
+#: templates/menu.html:134
+msgid "Державне замовлення"
+msgstr ""
+
+#: templates/menu.html:150 university/templates/university/cathedra.html:62
+msgid "Освітні програми"
+msgstr ""
+
+#: templates/menu.html:155 templates/menu.html:216
+msgid "Бази практик"
+msgstr ""
+
+#: templates/menu.html:160
+msgid "Дисципліни вільного вибору"
+msgstr ""
+
+#: templates/menu.html:165
+msgid "Якість освіти"
+msgstr ""
+
+#: templates/menu.html:170
+msgid "Неформальна освіта"
+msgstr ""
+
+#: templates/menu.html:175
+msgid "Онлайн опитування"
+msgstr ""
+
+#: templates/menu.html:191
+msgid "Розклад занять"
+msgstr ""
+
+#: templates/menu.html:196
+msgid "Студентська рада"
+msgstr ""
+
+#: templates/menu.html:201
+msgid "Психологічна служба"
+msgstr ""
+
+#: templates/menu.html:206
+msgid "Академічна доброчесність"
+msgstr ""
+
+#: templates/menu.html:211
+msgid "Влаштування на роботу"
+msgstr ""
+
+#: templates/menu.html:221
+msgid "Система Moodle"
+msgstr ""
+
+#: templates/menu.html:237
+msgid "Спеціалізована вчена рада"
+msgstr ""
+
+#: templates/menu.html:242
+msgid "Наукова бібліотека"
+msgstr ""
+
+#: templates/menu.html:247 university/templates/university/faculty.html:111
+msgid "Наукове товариство студентів, аспірантів, докторантів і молодих вчених"
+msgstr ""
+
+#: templates/menu.html:252
+msgid "Вісники"
+msgstr ""
+
+#: templates/menu.html:257 university/models/staff.py:80
 msgid "Scopus"
 msgstr ""
 
-#: .\university\models.py:245
+#: templates/menu.html:262 university/models/staff.py:77
+msgid "Web Of Science"
+msgstr ""
+
+#: templates/menu.html:267
+msgid "Наукові школи"
+msgstr ""
+
+#: templates/menu.html:272
+msgid "Наукові гуртки здобувачів вищої освіти"
+msgstr ""
+
+#: templates/menu.html:277
+msgid "Відділ аспірантури та докторантури"
+msgstr ""
+
+#: university/apps.py:7
+msgid "University App"
+msgstr "Університет"
+
+#: university/models/staff.py:32 university/models/university.py:162
+msgid "Year"
+msgstr "Рік"
+
+#: university/models/staff.py:38 university/models/staff.py:95
+msgid "Rewards"
+msgstr "Нагороди"
+
+#: university/models/staff.py:39
+msgid "Reward"
+msgstr "Нагорода"
+
+#: university/models/staff.py:52
+msgid "Second name"
+msgstr "Прізвище"
+
+#: university/models/staff.py:55
+msgid "First name"
+msgstr "Ім'я"
+
+#: university/models/staff.py:58
+msgid "Third name"
+msgstr "По батькові"
+
+#: university/models/staff.py:61 university/models/utils.py:17
+msgid "Rank"
+msgstr "Звання"
+
+#: university/models/staff.py:64
+msgid "Methodical works"
+msgstr "Методичні роботи"
+
+#: university/models/staff.py:70
+msgid "Topics of research work"
+msgstr "Теми науково-дослідної роботи"
+
+#: university/models/staff.py:75
+msgid "Google Scholar"
+msgstr ""
+
+#: university/models/staff.py:79
+msgid "Researchgate"
+msgstr ""
+
+#: university/models/staff.py:82
 msgid "ORCID"
 msgstr ""
 
-#: .\university\models.py:257 .\university\models.py:258
-msgid "Links"
-msgstr "Посилання"
+#: university/models/staff.py:84
+msgid "Photo"
+msgstr "Фотографія"
 
-#: .\website\settings\django.py:144 .\website\settings\third_party\cms.py:15
-msgid "ru"
+#: university/models/staff.py:87 university/models/university.py:32
+#: university/models/university.py:161
+msgid "Phone number"
+msgstr "Телефон"
+
+#: university/models/university.py:26
+msgid "Sub title"
+msgstr "Підзаголовок"
+
+#: university/models/university.py:43 university/models/university.py:229
+msgid "Scientific Societies"
+msgstr "Наукові товариства"
+
+#: university/models/university.py:44
+msgid "Scientific Society"
+msgstr "Наукове товариство"
+
+#: university/models/university.py:60
+msgid "Disciplines"
+msgstr "Дисципліни"
+
+#: university/models/university.py:61
+msgid "Discipline"
+msgstr "Дисципліна"
+
+#: university/models/university.py:72
+msgid "Junior bachelor"
+msgstr "молодший бакалавр"
+
+#: university/models/university.py:72
+msgid "Bachelor"
+msgstr "Бакалавр"
+
+#: university/models/university.py:73
+msgid "Doctor of Philosophy"
+msgstr "Доктор Філософії"
+
+#: university/models/university.py:74
+msgid "Master"
+msgstr "Магістр"
+
+#: university/models/university.py:74
+msgid "PHD"
+msgstr "Доктор Наук"
+
+#: university/models/university.py:77
+msgid "Day"
+msgstr "День"
+
+#: university/models/university.py:77
+msgid "Extramural"
+msgstr "Заочний"
+
+#: university/models/university.py:78
+msgid "Day, Extramural"
+msgstr "День, Заочний"
+
+#: university/models/university.py:86
+msgid "Form of studying"
+msgstr "Форма навчання"
+
+#: university/models/university.py:96
+msgid "Educational Level"
+msgstr "Освітній рівень"
+
+#: university/models/university.py:98
+msgid "Number"
+msgstr "Номер"
+
+#: university/models/university.py:106
+msgid "Cathedra"
+msgstr "Кафедра"
+
+#: university/models/university.py:111
+msgid "Specialities"
+msgstr "Спеціальності"
+
+#: university/models/university.py:112
+msgid "Speciality"
+msgstr "Спеціальність"
+
+#: university/models/university.py:145
+msgid "History of cathedra"
+msgstr "Історія кафедри"
+
+#: university/models/university.py:148
+msgid "Goal"
+msgstr "Мета"
+
+#: university/models/university.py:153
+msgid "Catalog of disciplines link"
+msgstr "Посилання на каталог дисциплін"
+
+#: university/models/university.py:155
+msgid "Educational programs link"
+msgstr "посилання на освітні программи"
+
+#: university/models/university.py:157 university/models/university.py:222
+msgid "Emblem"
+msgstr "Емблема"
+
+#: university/models/university.py:168 university/models/utils.py:93
+msgid "Material-technical base"
+msgstr "Матеріально-технічна база"
+
+#: university/models/university.py:171 university/models/university.py:242
+#: university/models/utils.py:53
+msgid "Faculty"
+msgstr "Факультет"
+
+#: university/models/university.py:176
+msgid "Career guidance"
+msgstr "Профорiєнтація"
+
+#: university/models/university.py:185 university/models/university.py:186
+msgid "Departments"
+msgstr "Відділи"
+
+#: university/models/university.py:217
+msgid "Council of employers"
+msgstr "Рада роботодавців"
+
+#: university/models/university.py:241
+msgid "Faculties"
+msgstr "Факультети"
+
+#: university/models/utils.py:23
+msgid "Department"
+msgstr "Відділ"
+
+#: university/models/utils.py:30
+msgid "Department staffs"
+msgstr "Працівники відділу"
+
+#: university/models/utils.py:31
+msgid "Department staff"
+msgstr "Працівник відділу"
+
+#: university/models/utils.py:47
+msgid "Position"
+msgstr "Посада"
+
+#: university/models/utils.py:60
+msgid "Faculty staffs"
+msgstr "Працівники факультетів"
+
+#: university/models/utils.py:61
+msgid "Faculty staff"
+msgstr "Працівник факультету"
+
+#: university/models/utils.py:77
+msgid "Local title"
 msgstr ""
 
-#: .\website\settings\django.py:145 .\website\settings\third_party\cms.py:8
+#: university/models/utils.py:78
+msgid ""
+"Additional field with local name \n"
+"    for best admin usage experience. Will be filled \n"
+"    from title field, if  field empty."
+msgstr ""
+"Додаткове поле, яке буде видно лишо в адмін панелі для більш зручної "
+"навігації"
+
+#: university/models/utils.py:92
+msgid "Material-technical bases"
+msgstr "Матерiально-технiчні бази"
+
+#: university/templates/university/cathedra.html:14
+msgid "cathedra emblem"
+msgstr "Емблема кафедри"
+
+#: university/templates/university/cathedra.html:29
+msgid "Рік заснування кафедри"
+msgstr ""
+
+#: university/templates/university/cathedra.html:33
+msgid "Призначення кафедри"
+msgstr ""
+
+#: university/templates/university/cathedra.html:41
+msgid "Склад кафедри"
+msgstr ""
+
+#: university/templates/university/cathedra.html:63
+msgid "Kаталог дисциплін"
+msgstr ""
+
+#: university/templates/university/cathedra.html:70
+msgid "Матерiально технiчна база"
+msgstr ""
+
+#: university/templates/university/cathedra.html:93
+msgid "Соцiальна активнiсть і профорiєнтація"
+msgstr ""
+
+#: university/templates/university/cathedra.html:104
+msgid "Iсторiя кафедри"
+msgstr ""
+
+#: university/templates/university/cathedra.html:117
+msgid "Контакти кафедри"
+msgstr ""
+
+#: university/templates/university/faculty.html:32
+msgid "Деканат"
+msgstr ""
+
+#: university/templates/university/faculty.html:64
+msgid "Oсвітні програми"
+msgstr ""
+
+#: university/templates/university/faculty.html:86
+msgid "Життя факультету"
+msgstr ""
+
+#: university/templates/university/faculty.html:97
+msgid "Рада роботодавців факультету"
+msgstr ""
+
+#: university/templates/university/teacher.html:48
+msgid "Дисципліни"
+msgstr ""
+
+#: university/templates/university/teacher.html:61
+msgid "Основнi науковi та методичi працi"
+msgstr ""
+
+#: university/templates/university/teacher/univ-data.html:5
+msgid "Професiйнi досягнення та нагороди"
+msgstr ""
+
+#: university/templates/university/teacher/univ-data.html:9
+msgid "year"
+msgstr "рік"
+
+#: university/templates/university/teacher/univ-data.html:17
+msgid "Тематика НДР"
+msgstr ""
+
+#: website/admin.py:7 website/admin.py:8 website/admin.py:9
+msgid "KSAU administration"
+msgstr "ХДАЕУ адміністрація"
+
+#: website/settings/django.py:147 website/settings/third_party/cms.py:15
 msgid "en"
 msgstr ""
 
-#: .\website\settings\django.py:151 .\website\settings\third_party\cms.py:22
+#: website/settings/django.py:153 website/settings/third_party/cms.py:8
 msgid "uk"
 msgstr ""
+
+#~ msgid "John"
+#~ msgstr "Джон"
+
+#~ msgid "Staffs"
+#~ msgstr "Працівники"
+
+#~ msgid "Cathedras"
+#~ msgstr "Кафедри"
+
+#~ msgid "Новости ХДАЕУ"
+#~ msgstr "Новини ХДАЕУ"
+
+#~ msgid "Your name"
+#~ msgstr "Ваше Ім'я"
+
+#~ msgid "Your E-mail"
+#~ msgstr "Ваш E-mail"
+
+#~ msgid "Message text"
+#~ msgstr "Ваше питання"
+
+#~ msgid "Send"
+#~ msgstr "Відправити"
+
+#~ msgid "Libraries"
+#~ msgstr "Бібліотеки"
+
+#~ msgid "Library"
+#~ msgstr "Бібліотека"
+
+#~ msgid "Created at"
+#~ msgstr "Створено в"

@@ -14,9 +14,10 @@
     {% endif %}
     {% if teacher.ndr_theme %}
     <div class="teacher-univ-data__info">
+        <div class="title">{% trans 'Тематика НДР' %}</div>
         <div class="row">
             <p>
-                {% trans 'Тематика НДР' %}: {{ teacher.ndr_theme }}
+                {{ teacher.ndr_theme }}
             </p>
         </div>
     </div>

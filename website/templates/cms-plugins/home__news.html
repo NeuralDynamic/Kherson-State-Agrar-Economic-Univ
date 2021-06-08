@@ -1,0 +1,33 @@
+{% load i18n %}
+
+<section class="main-section">
+    <div class="home-block">
+        <div class="block__header">
+            <h2>{% trans 'Останні новини' %}</h2>
+            <button class="button filled" data-src="{% url 'news' %}">
+                {% trans 'Читати всі статті' %}
+            </button>
+        </div>
+        <div class="home-news-container">
+            {% for article in articles %}
+                <div class="card news-card {% if articles.first == article %}bigger{% endif %}">
+                    <div class="article__preview" style="background-image: url({{ article.header.url }});"></div>
+                    <div class="article__tag">{{ article.category.title }}</div>
+                    <div class="card-body">
+                        <a class="article__title" href="{{ article.get_absolute_url }}">
+                            {{ article.title }}
+                        </a>
+                    </div>
+                    <div class="card-footer">
+                        <div class="article__author">
+                            <span>{{ article.authors }}</span> , 
+                        </div>
+                        <div class="article__date">
+                            {{ article.created_at|date:'d M Y' }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

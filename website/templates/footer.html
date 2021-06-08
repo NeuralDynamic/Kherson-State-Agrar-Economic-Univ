@@ -1,51 +1,35 @@
 {% load i18n cms_tags %}
 
 <footer class="footer">
-    {% static_placeholder "footer" %}
-    <div class="footer__block">
+    <div class="footer__content">
         <div class="column">
-            <div class="internal-links">
-                <div class="internal-links__header">
-                    {% trans 'Часто шукають' %}
+            <div class="footer__icon" style="background-image: url(/assets/images/apple-icon.png);"></div>
+            <div class="footer__copyright">
+                {% trans 'Херсонський державний аграрно-економічний університет' %} © 2006 - 2021
+            </div>
+        </div>
+        <div class="footer__row">
+            <div class="column">
+                <div class="footer__column-title">{% trans 'Факультети' %}</div>
+                <div class="footer__links">
+                    {% static_placeholder "faculties links" %}
                 </div>
-                <div class="internal-links__body">
+            </div>
+            <div class="column">
+                <div class="footer__column-title">{% trans 'Часто шукають' %}</div>
+                <div class="footer__links">
                     {% static_placeholder "faq questions links" %}
                 </div>
             </div>
-        </div>
-        <div class="column">
-            <div class="internal-links">
-                <div class="internal-links__header">
-                    {% trans 'Партнери' %}
-                </div>
-                <div class="internal-links__body">
-                    {% static_placeholder "partners links" %}
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="internal-links">
-                <div class="internal-links__header">
-                    {% trans 'Інтернет джерела' %}
-                </div>
-                <div class="internal-links__body">
-                    {% static_placeholder "internet resourses links" %}
-                </div>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="internal-links">
-                <div class="internal-links__header">
-                    {% trans 'Міжнародні звязки' %}
-                </div>
-                <div class="internal-links__body">
+            <div class="column">
+                <div class="footer__column-title">{% trans 'Інтернет джерела' %}</div>
+                <div class="footer__links">
                     {% static_placeholder "international relations links" %}
                 </div>
             </div>
         </div>
-    </div>
-    <div class="footer__copyright">
-        {% trans 'Херсонський державний аграрно-економічний університет' %} © 2006 - 2021
+        <div class="column">
+            {% static_placeholder "footer" %}
+        </div>
     </div>
 </footer>

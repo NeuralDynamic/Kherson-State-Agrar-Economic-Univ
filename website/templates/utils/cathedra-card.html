@@ -1,29 +1,26 @@
-<div class="card glassed department-card linked-card">
-    <div class="card__link" data-link="{% url 'cathedra' cathedra_id=cathedra.id %}">
-        <div class="department-card__body">
-            <div class="department-image">
-                <div class="department-image__container" 
-                    {% if cathedra.emblem %}style="background-image: url({{ cathedra.emblem.url }});"{% endif %}>
-                </div>
+<div class="card department-card">
+    <div class="department-card__body">
+        <div class="department-card__data">
+            <div class="department-card__image"
+            {% if cathedra.emblem %}style="background-image: url({{ cathedra.emblem.url }});"{% endif %}>
             </div>
-            <div class="department-data">
-                <div class="department-title">
+            <div class="department-card__title">
+                <a href="{% url 'cathedra' cathedra_id=cathedra.id %}">
                     {{ cathedra.title }}
-                </div>
-                <div class="department-contacts">
-                    {% if cathedra.phone %}
-                    <a href="tel:+380552416216" class="phone-link">
-                        {{ cathedra.phone }}
-                    </a>
-                    {% endif %}
-                    {% if cathedra.emails %}
-                    <a href="mailto:{{ cathedra.emails.0 }}" class="email-link">
-                        {{ cathedra.emails.0 }}
-                    </a>
-                    {% endif %}
-                </div>
+                </a>
             </div>
-            
+        </div>
+        <div class="department-card__contacts">
+            {% if cathedra.phone %}
+            <a href="tel:{{ cathedra.phone }}" class="department__phone-link">
+                {{ cathedra.phone }}
+            </a>
+            {% endif %}
+            {% if cathedra.emails %}
+            <a href="mailto:{{ cathedra.emails.0 }}" class="department__email-link">
+                {{ cathedra.emails.0 }}
+            </a>
+            {% endif %}
         </div>
     </div>
 </div>

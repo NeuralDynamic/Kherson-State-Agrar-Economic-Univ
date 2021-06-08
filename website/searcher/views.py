@@ -6,6 +6,8 @@ from django.shortcuts import render
 from .services.service import SearchService
 #endregion
 
-def search(request, phrase):
-    print(SearchService().search(phrase))
-    return render(request)
+def search(request):
+    phrase=request.GET.get("q")
+    result=SearchService().search(phrase, request.LANGUAGE_CODE)
+    return render(request,'searcher/search.html',
+                context={'search_result':result})

@@ -132,6 +132,14 @@ function cssWatch(cb) {
             extname: ".css"
         }))
         .pipe(dest(path.build.css))
+        .pipe(cssnano({
+            zindex: false,
+            discardComments: {
+                removeAll: true
+            }
+        }))
+        .pipe(removeComments())
+        .pipe(dest(path.build.css))
         .pipe(browserSync.reload({stream: true}));
 
     cb();

@@ -1,4 +1,4 @@
-{% load cms_tags menu_tags sekizai_tags static compress i18n structure_load %}
+{% load cms_tags menu_tags sekizai_tags static compress i18n %}
 
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
@@ -14,6 +14,7 @@
 
     {% block header %}{% endblock %}
     {% block styles %}{% endblock %}
+    {% static_placeholder "HEAD" %}
     {% render_block "css" %}
 
 </head>
@@ -22,18 +23,23 @@
 
     <div class="page">
         {% include 'header.html' %}
-        {% render_menu %}
         
         <main class="main">
             {% block content %}{% endblock %}
         </main>
 
         {% include 'footer.html' %}
+
+        <div class="alert-container">
+        </div>
     
     </div>
     {% compress js %}
         <script type="module" src="{% static '/js/app.js' %}"></script>
     {% endcompress %}
+    
+    {% render_block "js" %}
     {% block scripts %}{% endblock %}
+    {% static_placeholder 'END' %}
 </body>
 </html>

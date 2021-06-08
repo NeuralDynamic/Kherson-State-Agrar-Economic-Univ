@@ -6,51 +6,55 @@
 
 {% block content %}
 
-<section class="news-intro">
-    <h1 class="news-intro__title">
-        {{ paper.title }}
-    </h1>
-</section>
-<section>
-    <div class="article-container">
-        <div class="article-header">
-            <div class="bread-crumbs">
-                <ul>
-                    <li>
-                        <a href="/">Головна</a>
-                    </li>
-                    <li>
-                        /
-                    </li>
-                    <li>
-                        <a href="/gallery.html">Галерея</a>
-                    </li>
-                    <li>
-                        /
-                    </li>
-                    <li>
-                        <p>{{ paper.title }}</p>
-                    </li>
-                </ul>
-            </div>
+<section class="article-container">
+    <div class="article-header">
+        <div class="bread-crumbs">
+            <ul>
+                <li>
+                    <a href="/">{% trans 'Головна' %}</a>
+                </li>
+                <li>
+                    /
+                </li>
+                <li>
+                    <a href="{% url 'news' %}">{% trans 'Новини' %}</a>
+                </li>
+                <li>
+                    /
+                </li>
+                <li>
+                    <p>{{ paper.title }}</p>
+                </li>
+            </ul>
+        </div>
+        <div class="article-header__data">
             <div class="article-header__date">
                 {{ paper.created_at|date:'M d, Y' }}
             </div>
-        </div>
-        <div class="article-image">
-            <img {% if paper.header %}src="{{ paper.header.url }}"{% endif %} alt="article-image">
-        </div>
-        <div class="article-content">
-            <div class="article-data">
-                {{ paper.story }}
+            <div class="article-header__author">
+                {{ paper.authors }}
             </div>
-            {% if gallery %}
-                {% with gallery as images %}
-                    {% include 'utils/gallery-slider.html' %}
-                {% endwith %}
-            {% endif %}
         </div>
     </div>
+    <div class="section-title">
+        <h1>
+            {{ paper.title }}        
+        </h1>
+    </div>
+    <div class="article-image">
+        <img {% if paper.header %}src="{{ paper.header.url }}"{% endif %} alt="article-image">
+    </div>
+    <div class="article-content">
+        <div class="article-data">
+            {{ paper.story }}
+        </div>
+        {% if gallery %}
+            {% with gallery as images %}
+                {% include 'utils/gallery-slider.html' %}
+            {% endwith %}
+        {% endif %}
+    </div>
+
 </section>
 
 {% endblock %}
