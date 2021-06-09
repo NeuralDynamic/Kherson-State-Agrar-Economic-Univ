@@ -44,7 +44,7 @@
     </div>
 </section>
 
-{% if teacher.scienceworks %}
+{% if teacher.scienceworks.all %}
 <section class="hiding">
     <div class="section-title">
         {% trans 'Основнi науковi та методичi працi' %}
@@ -67,7 +67,7 @@
 </section>
 {% endif %}
 
-{% if teacher.certifications %}
+{% if teacher.certifications.all %}
 <section class="hiding">
     <div class="section-title">
         {% trans 'Підвищення кваліфікації' %}
