@@ -90,10 +90,14 @@ class Staff(TranslatableModel):
     #endregion
 
     #region            -----Relation-----
+    # Основні наукові та методичні праці
     scienceworks=ManyToManyField(StaffScienceWork, blank=True, 
-                        related_name="staff_science_works")
+                        related_name="staff_science_works",
+                        verbose_name=_("Basic scientific and methodical works"))
+    # Сертифікаційне навчання
     certifications=ManyToManyField(StaffCertification, blank=True, 
-                        related_name="staff_science_works")
+                        related_name="staff_science_works", 
+                        verbose_name=_("Certification training"))
     disciplines=ManyToManyField(Discipline, blank=True)
     books=ManyToManyField(Book, blank=True)
     rewards=ManyToManyField("Reward", blank=True,

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-19 14:00+0200\n"
+"POT-Creation-Date: 2021-06-09 12:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,18 +83,19 @@ msgstr ""
 
 #: content/cms_models.py:58 content/cms_models.py:75 gallery/models.py:25
 #: library/models.py:23 news/models.py:26 news/models.py:49 news/models.py:96
-#: news/models.py:164 university/models/staff.py:28
+#: news/models.py:164 university/models/staff.py:29
 #: university/models/university.py:53 university/models/university.py:90
-#: university/models/university.py:141 university/models/university.py:214
-#: university/models/utils.py:86
+#: university/models/university.py:141 university/models/university.py:212
+#: university/models/utils.py:80 university/models/utils.py:103
+#: university/models/utils.py:132
 msgid "Title"
 msgstr "Назва"
 
 #: content/cms_models.py:61 gallery/models.py:22 gallery/models.py:58
 #: library/models.py:17 news/models.py:46 news/models.py:166
-#: university/models/staff.py:67 university/models/university.py:23
+#: university/models/staff.py:68 university/models/university.py:23
 #: university/models/university.py:82 university/models/university.py:137
-#: university/models/university.py:210
+#: university/models/university.py:208
 msgid "Description"
 msgstr "Опис"
 
@@ -107,7 +108,8 @@ msgid "Button url"
 msgstr ""
 
 #: content/cms_models.py:80 content/cms_models.py:85
-#: university/models/utils.py:83
+#: university/models/utils.py:77 university/models/utils.py:100
+#: university/models/utils.py:129
 msgid "Content"
 msgstr "Контент"
 
@@ -117,9 +119,9 @@ msgstr "Контент"
 msgid "Section title"
 msgstr "Підзаголовок"
 
-#: content/cms_models.py:90 university/models/staff.py:101
-#: university/models/staff.py:102 university/models/university.py:38
-#: university/models/university.py:180 university/models/university.py:236
+#: content/cms_models.py:90 university/models/staff.py:109
+#: university/models/staff.py:110 university/models/university.py:38
+#: university/models/university.py:178 university/models/university.py:234
 #: university/models/utils.py:25 university/models/utils.py:55
 msgid "Staff"
 msgstr "Працівник"
@@ -292,7 +294,7 @@ msgid "Galleries"
 msgstr "Галереї"
 
 #: gallery/models.py:32 gallery/models.py:79 news/models.py:115
-#: university/models/university.py:233
+#: university/models/university.py:231
 msgid "Gallery"
 msgstr "Галерея"
 
@@ -436,7 +438,7 @@ msgid "Фотографії"
 msgstr ""
 
 #: searcher/templates/searcher/search.html:131
-#: university/templates/university/teacher.html:74
+#: university/templates/university/teacher.html:121
 msgid "Видання"
 msgstr ""
 
@@ -648,7 +650,7 @@ msgstr ""
 msgid "Державне замовлення"
 msgstr ""
 
-#: templates/menu.html:150 university/templates/university/cathedra.html:62
+#: templates/menu.html:150 university/templates/university/cathedra.html:64
 msgid "Освітні програми"
 msgstr ""
 
@@ -712,11 +714,11 @@ msgstr ""
 msgid "Вісники"
 msgstr ""
 
-#: templates/menu.html:257 university/models/staff.py:80
+#: templates/menu.html:257 university/models/staff.py:81
 msgid "Scopus"
 msgstr ""
 
-#: templates/menu.html:262 university/models/staff.py:77
+#: templates/menu.html:262 university/models/staff.py:78
 msgid "Web Of Science"
 msgstr ""
 
@@ -736,68 +738,76 @@ msgstr ""
 msgid "University App"
 msgstr "Університет"
 
-#: university/models/staff.py:32 university/models/university.py:162
+#: university/models/staff.py:33 university/models/university.py:160
 msgid "Year"
 msgstr "Рік"
 
-#: university/models/staff.py:38 university/models/staff.py:95
+#: university/models/staff.py:39 university/models/staff.py:103
 msgid "Rewards"
 msgstr "Нагороди"
 
-#: university/models/staff.py:39
+#: university/models/staff.py:40
 msgid "Reward"
 msgstr "Нагорода"
 
-#: university/models/staff.py:52
+#: university/models/staff.py:53
 msgid "Second name"
 msgstr "Прізвище"
 
-#: university/models/staff.py:55
+#: university/models/staff.py:56
 msgid "First name"
 msgstr "Ім'я"
 
-#: university/models/staff.py:58
+#: university/models/staff.py:59
 msgid "Third name"
 msgstr "По батькові"
 
-#: university/models/staff.py:61 university/models/utils.py:17
+#: university/models/staff.py:62 university/models/utils.py:17
 msgid "Rank"
 msgstr "Звання"
 
-#: university/models/staff.py:64
+#: university/models/staff.py:65
 msgid "Methodical works"
 msgstr "Методичні роботи"
 
-#: university/models/staff.py:70
+#: university/models/staff.py:71
 msgid "Topics of research work"
 msgstr "Теми науково-дослідної роботи"
 
-#: university/models/staff.py:75
+#: university/models/staff.py:76
 msgid "Google Scholar"
 msgstr ""
 
-#: university/models/staff.py:79
+#: university/models/staff.py:80
 msgid "Researchgate"
 msgstr ""
 
-#: university/models/staff.py:82
+#: university/models/staff.py:83
 msgid "ORCID"
 msgstr ""
 
-#: university/models/staff.py:84
+#: university/models/staff.py:85
 msgid "Photo"
 msgstr "Фотографія"
 
-#: university/models/staff.py:87 university/models/university.py:32
-#: university/models/university.py:161
+#: university/models/staff.py:88 university/models/university.py:32
+#: university/models/university.py:159
 msgid "Phone number"
 msgstr "Телефон"
+
+#: university/models/staff.py:96
+msgid "Basic scientific and methodical works"
+msgstr "Основні наукові та методичні праці"
+
+#: university/models/staff.py:99
+msgid "Certification training"
+msgstr "Сертифікаційне навчання"
 
 #: university/models/university.py:26
 msgid "Sub title"
 msgstr "Підзаголовок"
 
-#: university/models/university.py:43 university/models/university.py:229
+#: university/models/university.py:43 university/models/university.py:227
 msgid "Scientific Societies"
 msgstr "Наукові товариства"
 
@@ -873,44 +883,40 @@ msgstr "Спеціальність"
 msgid "History of cathedra"
 msgstr "Історія кафедри"
 
-#: university/models/university.py:148
-msgid "Goal"
-msgstr "Мета"
-
-#: university/models/university.py:153
+#: university/models/university.py:151
 msgid "Catalog of disciplines link"
 msgstr "Посилання на каталог дисциплін"
 
-#: university/models/university.py:155
+#: university/models/university.py:153
 msgid "Educational programs link"
 msgstr "посилання на освітні программи"
 
-#: university/models/university.py:157 university/models/university.py:222
+#: university/models/university.py:155 university/models/university.py:220
 msgid "Emblem"
 msgstr "Емблема"
 
-#: university/models/university.py:168 university/models/utils.py:93
+#: university/models/university.py:166 university/models/utils.py:139
 msgid "Material-technical base"
 msgstr "Матеріально-технічна база"
 
-#: university/models/university.py:171 university/models/university.py:242
+#: university/models/university.py:169 university/models/university.py:240
 #: university/models/utils.py:53
 msgid "Faculty"
 msgstr "Факультет"
 
-#: university/models/university.py:176
+#: university/models/university.py:174
 msgid "Career guidance"
 msgstr "Профорiєнтація"
 
-#: university/models/university.py:185 university/models/university.py:186
+#: university/models/university.py:183 university/models/university.py:184
 msgid "Departments"
 msgstr "Відділи"
 
-#: university/models/university.py:217
+#: university/models/university.py:215
 msgid "Council of employers"
 msgstr "Рада роботодавців"
 
-#: university/models/university.py:241
+#: university/models/university.py:239
 msgid "Faculties"
 msgstr "Факультети"
 
@@ -938,11 +944,27 @@ msgstr "Працівники факультетів"
 msgid "Faculty staff"
 msgstr "Працівник факультету"
 
-#: university/models/utils.py:77
+#: university/models/utils.py:87
+msgid "Staff science works"
+msgstr "Працівники (наукові та методичны праці)"
+
+#: university/models/utils.py:88
+msgid "Staff science work"
+msgstr "Працівники (наукова/методична праця)"
+
+#: university/models/utils.py:110
+msgid "Staff certifications"
+msgstr "Працівники (підвищення кваліфікації)"
+
+#: university/models/utils.py:111
+msgid "Staff certification"
+msgstr "Працівники (підвищення кваліфікації)"
+
+#: university/models/utils.py:123
 msgid "Local title"
 msgstr ""
 
-#: university/models/utils.py:78
+#: university/models/utils.py:124
 msgid ""
 "Additional field with local name \n"
 "    for best admin usage experience. Will be filled \n"
@@ -951,7 +973,7 @@ msgstr ""
 "Додаткове поле, яке буде видно лишо в адмін панелі для більш зручної "
 "навігації"
 
-#: university/models/utils.py:92
+#: university/models/utils.py:138
 msgid "Material-technical bases"
 msgstr "Матерiально-технiчні бази"
 
@@ -963,31 +985,27 @@ msgstr "Емблема кафедри"
 msgid "Рік заснування кафедри"
 msgstr ""
 
-#: university/templates/university/cathedra.html:33
-msgid "Призначення кафедри"
+#: university/templates/university/cathedra.html:34
+msgid "Iсторична довідка кафедри"
 msgstr ""
 
-#: university/templates/university/cathedra.html:41
+#: university/templates/university/cathedra.html:43
 msgid "Склад кафедри"
 msgstr ""
 
-#: university/templates/university/cathedra.html:63
+#: university/templates/university/cathedra.html:65
 msgid "Kаталог дисциплін"
 msgstr ""
 
-#: university/templates/university/cathedra.html:70
+#: university/templates/university/cathedra.html:72
 msgid "Матерiально технiчна база"
 msgstr ""
 
-#: university/templates/university/cathedra.html:93
+#: university/templates/university/cathedra.html:95
 msgid "Соцiальна активнiсть і профорiєнтація"
 msgstr ""
 
-#: university/templates/university/cathedra.html:104
-msgid "Iсторiя кафедри"
-msgstr ""
-
-#: university/templates/university/cathedra.html:117
+#: university/templates/university/cathedra.html:105
 msgid "Контакти кафедри"
 msgstr ""
 
@@ -1007,12 +1025,17 @@ msgstr ""
 msgid "Рада роботодавців факультету"
 msgstr ""
 
-#: university/templates/university/teacher.html:48
-msgid "Дисципліни"
+#: university/templates/university/teacher.html:50
+#: university/templates/university/teacher.html:108
+msgid "Основнi науковi та методичi працi"
 msgstr ""
 
-#: university/templates/university/teacher.html:61
-msgid "Основнi науковi та методичi працi"
+#: university/templates/university/teacher.html:73
+msgid "Підвищення кваліфікації"
+msgstr ""
+
+#: university/templates/university/teacher.html:95
+msgid "Дисципліни"
 msgstr ""
 
 #: university/templates/university/teacher/univ-data.html:5
@@ -1038,6 +1061,9 @@ msgstr ""
 #: website/settings/django.py:153 website/settings/third_party/cms.py:8
 msgid "uk"
 msgstr ""
+
+#~ msgid "Goal"
+#~ msgstr "Мета"
 
 #~ msgid "John"
 #~ msgstr "Джон"
