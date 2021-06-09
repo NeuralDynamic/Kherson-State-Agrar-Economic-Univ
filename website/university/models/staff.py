@@ -31,7 +31,7 @@ class Reward(TranslatableModel):
 
     #region           -----Information-----
     year=IntegerField(verbose_name=_("Year"), 
-    choices=YEAR_CHOICES, null=True)
+    choices=YEAR_CHOICES, null=True, blank=True)
     #endregion
 
     #region            -----Metadata-----

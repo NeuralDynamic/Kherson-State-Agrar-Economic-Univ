@@ -6,7 +6,11 @@
         <div class="teacher-univ-data__achievements">
             {% for reward in rewards %}
             <p>
+                {% if reward.year %}
                 · {{ reward.title }} ({{ reward.year }} {% trans 'year' %})
+                {% else %}
+                · {{ reward.title }}
+                {% endif %}
             </p>
             {% endfor %}
         </div>
