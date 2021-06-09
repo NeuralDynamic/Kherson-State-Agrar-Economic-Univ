@@ -15,6 +15,7 @@ from multi_email_field.fields import MultiEmailField
 
 #region				-----Internal Imports-----
 from .university import Discipline
+from .utils import StaffScienceWork, StaffCertification
 #endregion
 
 
@@ -89,6 +90,10 @@ class Staff(TranslatableModel):
     #endregion
 
     #region            -----Relation-----
+    scienceworks=ManyToManyField(StaffScienceWork, blank=True, 
+                        related_name="staff_science_works")
+    certifications=ManyToManyField(StaffCertification, blank=True, 
+                        related_name="staff_science_works")
     disciplines=ManyToManyField(Discipline, blank=True)
     books=ManyToManyField(Book, blank=True)
     rewards=ManyToManyField("Reward", blank=True,

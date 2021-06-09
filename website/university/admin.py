@@ -5,12 +5,15 @@ from parler.admin import TranslatableAdmin
 from django.shortcuts import redirect
 from django.utils.html import format_html
 from typing import (Dict, TypeVar)
+
+from parler.models import TranslatableModel
 #endregion
 
 #region				-----Internal Imports-----
 from .models import (Staff, Speciality,
 Cathedra, Faculty, StaffCathedra, StaffFaculty,
-Discipline, Reward, ScientificSociety, MaterialBaseNode)
+Discipline, Reward, ScientificSociety, MaterialBaseNode,
+StaffScienceWork, StaffCertification)
 #endregion
 
 #region				   -----Type Hints-----
@@ -55,7 +58,7 @@ class CathedraAdmin(TranslatableAdmin):
     #region           ----Configuration-----
     fields=["emblem", "title", "year", "faculty",
     "educational_programs","catalog_of_disciplines",
-    "goal", "description", "history",
+    "description", "history",
     "gallery","material_technical_base", "phone", "emails"]
     list_display=["__str__", "faculty", "preview"]
     list_filter=["faculty"]
@@ -136,6 +139,7 @@ class StaffAdmin(TranslatableAdmin):
     "first_name", "third_name", "rank",
     "phone", "emails", "ndr_theme", "books", 
     "methodical_works","description", "disciplines","rewards",
+    "scienceworks","certifications",
     "google_scholar", "web_of_science", "researchgate",
     "scopus", "orcid"]
     list_filter=["translations__first_name","translations__second_name", 
@@ -181,3 +185,11 @@ class MaterialBaseNodeAdmin(TranslatableAdmin):
     fields=["title","local_title",
             "content"]
     #endregion
+
+@register(StaffCertification)
+class StaffCertificationAdmin(TranslatableAdmin):
+    pass
+
+@register(StaffScienceWork)
+class StaffScienceWorkAdmin(TranslatableAdmin):
+    pass

@@ -1,4 +1,5 @@
 from .staff import Reward, Staff
 from .university import (Cathedra, Discipline, Faculty, 
                         ScientificSociety, Speciality)
-from .utils import StaffCathedra, StaffFaculty, MaterialBaseNode
+from .utils import (StaffCathedra, StaffFaculty, MaterialBaseNode, 
+                    StaffCertification, StaffScienceWork)

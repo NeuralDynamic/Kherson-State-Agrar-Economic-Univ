@@ -71,6 +71,52 @@ class StaffFaculty(TranslatableModel):
         return f"{self.staff} {self.faculties}"
     #endregion
 
+class StaffScienceWork(TranslatableModel):
+    #region           -----Information-----
+    translations=TranslatedFields(
+        content=HTMLField(verbose_name=_("Content"),
+        blank=False, default=""),
+
+        title=CharField(verbose_name=_("Title"),
+        max_length=100)
+    )
+    #endregion
+
+    #region            -----Metadata-----
+    class Meta(object):
+        verbose_name_plural=_("Staff science works")
+        verbose_name=_("Staff science work")
+    #endregion
+
+    #region         -----Internal Methods-----
+    def __str__(self)->str:
+        """@return local title of node"""
+        return f"{self.title}"
+    #endregion
+
+class StaffCertification(TranslatableModel):
+    #region           -----Information-----
+    translations=TranslatedFields(
+        content=HTMLField(verbose_name=_("Content"),
+        blank=False, default=""),
+
+        title=CharField(verbose_name=_("Title"),
+        max_length=100)
+    )
+    #endregion
+
+    #region            -----Metadata-----
+    class Meta(object):
+        verbose_name_plural=_("Staff certifications")
+        verbose_name=_("Staff certification")
+    #endregion
+
+    #region         -----Internal Methods-----
+    def __str__(self)->str:
+        """@return local title of node"""
+        return f"{self.title}"
+    #endregion
+
 class MaterialBaseNode(TranslatableModel):
     #region           -----Information-----
     translations=TranslatedFields(

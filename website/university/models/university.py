@@ -134,18 +134,16 @@ class Cathedra(TranslatableModel):
 
     #region           -----Translation-----
     translations=TranslatedFields(
-    description=HTMLField(verbose_name=_("Description"),
-    blank=True, default=""),
+        description=HTMLField(verbose_name=_("Description"),
+        blank=True, default=""),
 
-    title=CharField(default="", unique=True,
-    verbose_name=_("Title"), blank=False,
-    max_length=100),
-    
-    history=HTMLField(blank=True, default="",
-    verbose_name=_("History of cathedra")),
-    
-    goal=TextField(blank=False, default="",
-    verbose_name=_("Goal")))
+        title=CharField(default="", unique=True,
+        verbose_name=_("Title"), blank=False,
+        max_length=100),
+        
+        history=HTMLField(blank=True, default="",
+        verbose_name=_("History of cathedra"))
+    )
     #endregion
 
     #region           -----Information-----

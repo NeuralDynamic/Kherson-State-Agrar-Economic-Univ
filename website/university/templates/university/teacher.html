@@ -43,6 +43,53 @@
         {% include 'university/teacher/univ-data.html' %}
     </div>
 </section>
+
+{% if teacher.scienceworks %}
+<section class="hiding">
+    <div class="section-title">
+        {% trans 'Основнi науковi та методичi працi' %}
+        <span class="section-title__button"></span>
+    </div>
+    <div class="section-body">
+        <div class="content">
+            {% for sciencework in teacher.scienceworks.all %}
+            <div class="hiding-list">
+                <div class="hiding-list__title">
+                    {{ sciencework.title }}
+                </div>
+                <ul class="hiding-list__body">
+                    {{ sciencework.content }}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% if teacher.certifications %}
+<section class="hiding">
+    <div class="section-title">
+        {% trans 'Підвищення кваліфікації' %}
+        <span class="section-title__button"></span>
+    </div>
+    <div class="section-body">
+        <div class="content">
+            {% for certification in teacher.certifications.all %}
+            <div class="hiding-list">
+                <div class="hiding-list__title">
+                    {{ certification.title }}
+                </div>
+                <ul class="hiding-list__body">
+                    {{ certification.content }}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
 {% if disciplines %}
 <section>
     <div class="section-title">{% trans 'Дисципліни' %}</div>
