@@ -78,7 +78,8 @@ class FacultyService(object):
             except Exception:
                 pass
 
-            specialities = Speciality.objects.order_by('educational_level').\
+            specialities = Speciality.objects\
+                .order_by('educational_level','number').\
                 filter(cathedra__faculty__pk=faculty.pk).all()
             specialities_list = list()
             specialities_dict = dict()
