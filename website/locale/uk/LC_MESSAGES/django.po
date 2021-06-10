@@ -825,7 +825,7 @@ msgstr "Дисципліна"
 
 #: university/models/university.py:72
 msgid "Junior bachelor"
-msgstr "молодший бакалавр"
+msgstr "Молодший бакалавр"
 
 #: university/models/university.py:72
 msgid "Bachelor"
