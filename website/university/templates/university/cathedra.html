@@ -28,14 +28,14 @@
         <div class="department-year">
             <p><b>{% trans 'Рік заснування кафедри' %}:</b> {{ cathedra.year }}</p>
         </div>
-        {% if cathedra.history %}
+        <!-- {% if cathedra.history %}
         <div class="department-description">
             <p>
                 <b>{% trans 'Iсторична довідка кафедри' %}:</b> 
                 {{ cathedra.history }}
             </p>
         </div>
-        {% endif %}
+        {% endif %} -->
     </div>
 </section>
 <section>
@@ -58,6 +58,21 @@
         </div>
     </div>
 </section>
+
+{% if cathedra.history %}
+<section class="hiding">
+    <div class="section-title">
+        {% trans 'Iсторична довідка кафедри' %}
+        <span class="section-title__button"></span>
+    </div>
+    <div class="section-body">
+        <div class="content">
+            {{ cathedra.history }}
+        </div>
+    </div>
+</section>
+{% endif %}
+
 {% if cathedra.educational_programs and cathedra.catalog_of_disciplines %}
 <section>
     <div class="department-links__container">
