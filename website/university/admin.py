@@ -7,6 +7,9 @@ from django.utils.html import format_html
 from typing import (Dict, TypeVar)
 
 from parler.models import TranslatableModel
+from django.db.models import (F, Value, Subquery, OuterRef, Count)
+from django.utils.translation import ugettext_lazy as _
+from django.db.models.functions import Concat
 #endregion
 
 #region				-----Internal Imports-----
@@ -125,8 +128,10 @@ class FacultyAdmin(TranslatableAdmin):
 @register(Reward)
 class RewardAdmin(TranslatableAdmin):
     #region           ----Configuration-----
+
     fields=["title", "year"]
     list_display=["__str__"]
+    ordering=["year"]
     #endregion
 
 @register(Staff)
@@ -188,8 +193,44 @@ class MaterialBaseNodeAdmin(TranslatableAdmin):
 
 @register(StaffCertification)
 class StaffCertificationAdmin(TranslatableAdmin):
-    pass
+    list_display=["title", "content", "fst_sort"]
+    search_fields=[
+        "staff_science_works__translations__second_name",
+        "staff_science_works__translations__first_name",
+        "staff_science_works__translations__third_name"
+    ]
+
+    def fst_sort(self, obj):
+        authors=obj.staff_science_works\
+            .translated(obj.get_current_language()).all()
+
+        authors_fst=[
+            f"{author.second_name} {author.first_name} {author.third_name}"
+            for author in authors
+        ]
+        return authors_fst
+    
+    fst_sort.short_description=_("Staff")
+
 
 @register(StaffScienceWork)
 class StaffScienceWorkAdmin(TranslatableAdmin):
-    pass
+    list_display=["title", "content", "fst_sort"]
+
+    search_fields=[
+        "staff_science_works__translations__second_name",
+        "staff_science_works__translations__first_name",
+        "staff_science_works__translations__third_name"
+    ]
+    
+    def fst_sort(self, obj):
+        authors=obj.staff_science_works\
+            .translated(obj.get_current_language()).all()
+
+        authors_fst=[
+            f"{author.second_name} {author.first_name} {author.third_name}"
+            for author in authors
+        ]
+        return authors_fst
+    
+    fst_sort.short_description=_("Staff")

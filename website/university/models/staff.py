@@ -25,7 +25,7 @@ class Reward(TranslatableModel):
 
     #region           -----Translation-----
     translations=TranslatedFields(
-    title=CharField(max_length=300, blank=False,
+    title=CharField(max_length=1000, blank=False,
     verbose_name=_("Title")))
     #endregion
 

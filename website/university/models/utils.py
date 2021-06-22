@@ -101,7 +101,7 @@ class StaffCertification(TranslatableModel):
         blank=False, default=""),
 
         title=CharField(verbose_name=_("Title"),
-        max_length=100)
+        max_length=1000)
     )
     #endregion
 
