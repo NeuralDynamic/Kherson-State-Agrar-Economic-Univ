@@ -193,7 +193,7 @@ class MaterialBaseNodeAdmin(TranslatableAdmin):
 
 @register(StaffCertification)
 class StaffCertificationAdmin(TranslatableAdmin):
-    list_display=["title", "content", "fst_sort"]
+    list_display=["title", "fst_sort"]
     search_fields=[
         "staff_science_works__translations__second_name",
         "staff_science_works__translations__first_name",
@@ -215,7 +215,7 @@ class StaffCertificationAdmin(TranslatableAdmin):
 
 @register(StaffScienceWork)
 class StaffScienceWorkAdmin(TranslatableAdmin):
-    list_display=["title", "content", "fst_sort"]
+    list_display=["title", "fst_sort"]
 
     search_fields=[
         "staff_science_works__translations__second_name",
