@@ -29,12 +29,10 @@ def delete_on_change_announcement(instance: Announcement,
 **kwargs)->None:
     try: old_paper=sender.objects.get(pk=instance.pk)
     except: return "No such object in database"
-    if old_paper.header!=instance.header:
-        old_paper.header.delete(save=False)
+    if old_paper.image!=instance.image:
+        old_paper.image.delete(save=False)
 
 @receiver(post_delete, sender=Announcement)
 def delete_on_delete_announcement(instance: Announcement,
 **kwargs)->None:
-    instance.header.delete(save=False)
-    (instance.gallery.delete() if
-    instance.gallery else None)
+    instance.image.delete(save=False)
