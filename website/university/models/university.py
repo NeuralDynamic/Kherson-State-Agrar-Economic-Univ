@@ -71,11 +71,11 @@ class Speciality(TranslatableModel):
     EDUCATIONAL_RANKS=[(index, l) for index, l in 
     enumerate([_("Junior bachelor"), _("Bachelor"), 
     _("Master"), _("PHD"), _("Doctor of Philosophy"),])]
-    # Junior bachelor 0 
-    # Bachelor 1
-    # Doctor of Philosophy 2
-    # Master 3
-    # PHD 4 
+    # Junior bachelor 0 = 0
+    # Bachelor 1 = 1
+    # Doctor of Philosophy 2 = 4
+    # Master 3 = 2
+    # PHD 4 = 3
 
     FORM_OF_STUDING=[(f, f) for f in 
     [_("Day"), _("Extramural"), 
